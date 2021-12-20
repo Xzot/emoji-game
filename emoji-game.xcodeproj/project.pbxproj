@@ -1,0 +1,1784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3722803A2771305100466B64 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280362771305100466B64 /* MainRouter.swift */; };
+		3722803B2771305100466B64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280372771305100466B64 /* MainViewController.swift */; };
+		3722803C2771305100466B64 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280382771305100466B64 /* MainBuilder.swift */; };
+		3722803D2771305100466B64 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280392771305100466B64 /* MainViewModel.swift */; };
+		37548118277100A7003C3E16 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548114277100A7003C3E16 /* StartRouter.swift */; };
+		37548119277100A7003C3E16 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548115277100A7003C3E16 /* StartViewController.swift */; };
+		3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548116277100A7003C3E16 /* StartBuilder.swift */; };
+		3754811B277100A7003C3E16 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548117277100A7003C3E16 /* StartViewModel.swift */; };
+		378890D0276F229500B3D96C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890CF276F229500B3D96C /* AppDelegate.swift */; };
+		378890DC276F229700B3D96C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378890DA276F229700B3D96C /* LaunchScreen.storyboard */; };
+		378890E7276F229700B3D96C /* emoji_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890E6276F229700B3D96C /* emoji_gameTests.swift */; };
+		378890F1276F229700B3D96C /* emoji_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890F0276F229700B3D96C /* emoji_gameUITests.swift */; };
+		378890F3276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890F2276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift */; };
+		37889114276F238700B3D96C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889103276F238700B3D96C /* Strings.swift */; };
+		37889115276F238700B3D96C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889104276F238700B3D96C /* Assets.swift */; };
+		37889116276F238700B3D96C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37889105276F238700B3D96C /* Localizable.strings */; };
+		37889117276F238700B3D96C /* Palette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37889107276F238700B3D96C /* Palette.xcassets */; };
+		37889118276F238700B3D96C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37889108276F238700B3D96C /* Images.xcassets */; };
+		37889119276F238700B3D96C /* sheet.csv in Resources */ = {isa = PBXBuildFile; fileRef = 37889109276F238700B3D96C /* sheet.csv */; };
+		37889125276F27C700B3D96C /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889124276F27C700B3D96C /* DependencyProvider.swift */; };
+		37889127276F2A5C00B3D96C /* ApplicationObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889126276F2A5C00B3D96C /* ApplicationObservable.swift */; };
+		3788912B276F2AE100B3D96C /* EmojisProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788912A276F2AE100B3D96C /* EmojisProvider.swift */; };
+		3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788912D276F2B0200B3D96C /* EmojiModel.swift */; };
+		37889214276F2B2800B3D96C /* emoji_cat_with_tears_of_joy.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889130276F2B2700B3D96C /* emoji_cat_with_tears_of_joy.png */; };
+		37889215276F2B2800B3D96C /* emoji_upside_down_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889131276F2B2700B3D96C /* emoji_upside_down_face.png */; };
+		37889216276F2B2800B3D96C /* emoji_cowboy_hat_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889132276F2B2700B3D96C /* emoji_cowboy_hat_face.png */; };
+		37889217276F2B2800B3D96C /* emoji_weary_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889133276F2B2700B3D96C /* emoji_weary_face.png */; };
+		37889218276F2B2800B3D96C /* emoji_pensive_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889134276F2B2700B3D96C /* emoji_pensive_face.png */; };
+		37889219276F2B2800B3D96C /* emoji_love_letter.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889135276F2B2700B3D96C /* emoji_love_letter.png */; };
+		3788921A276F2B2800B3D96C /* emoji_lying_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889136276F2B2700B3D96C /* emoji_lying_face.png */; };
+		3788921B276F2B2800B3D96C /* emoji_face_with_medical_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889137276F2B2700B3D96C /* emoji_face_with_medical_mask.png */; };
+		3788921C276F2B2800B3D96C /* emoji_christmas_tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889138276F2B2700B3D96C /* emoji_christmas_tree.png */; };
+		3788921D276F2B2800B3D96C /* emoji_confused_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889139276F2B2700B3D96C /* emoji_confused_face.png */; };
+		3788921E276F2B2800B3D96C /* emoji_snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788913A276F2B2700B3D96C /* emoji_snowman.png */; };
+		3788921F276F2B2800B3D96C /* emoji_heart_decoration.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788913B276F2B2700B3D96C /* emoji_heart_decoration.png */; };
+		37889220276F2B2800B3D96C /* emoji_confounded_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788913C276F2B2700B3D96C /* emoji_confounded_face.png */; };
+		37889221276F2B2800B3D96C /* emoji_face_with_monocle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788913D276F2B2700B3D96C /* emoji_face_with_monocle.png */; };
+		37889222276F2B2800B3D96C /* emoji_green_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788913E276F2B2700B3D96C /* emoji_green_heart.png */; };
+		37889223276F2B2800B3D96C /* emoji_hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788913F276F2B2700B3D96C /* emoji_hole.png */; };
+		37889224276F2B2800B3D96C /* emoji_feather.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889140276F2B2700B3D96C /* emoji_feather.png */; };
+		37889225276F2B2800B3D96C /* emoji_bread.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889141276F2B2700B3D96C /* emoji_bread.png */; };
+		37889226276F2B2800B3D96C /* emoji_kissing_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889142276F2B2700B3D96C /* emoji_kissing_face.png */; };
+		37889227276F2B2800B3D96C /* emoji_heart_with_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889143276F2B2700B3D96C /* emoji_heart_with_arrow.png */; };
+		37889228276F2B2800B3D96C /* emoji_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889144276F2B2700B3D96C /* emoji_cat.png */; };
+		37889229276F2B2800B3D96C /* emoji_bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889145276F2B2700B3D96C /* emoji_bird.png */; };
+		3788922A276F2B2800B3D96C /* emoji_smiling_face_with_smiling_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889146276F2B2700B3D96C /* emoji_smiling_face_with_smiling_eyes.png */; };
+		3788922B276F2B2800B3D96C /* emoji_two_hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889147276F2B2700B3D96C /* emoji_two_hearts.png */; };
+		3788922C276F2B2800B3D96C /* emoji_nerd_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889148276F2B2700B3D96C /* emoji_nerd_face.png */; };
+		3788922D276F2B2800B3D96C /* emoji_cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889149276F2B2700B3D96C /* emoji_cactus.png */; };
+		3788922E276F2B2800B3D96C /* emoji_brown_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788914A276F2B2700B3D96C /* emoji_brown_heart.png */; };
+		3788922F276F2B2800B3D96C /* emoji_crystal_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788914B276F2B2700B3D96C /* emoji_crystal_ball.png */; };
+		37889230276F2B2800B3D96C /* emoji_hot_pepper.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788914C276F2B2700B3D96C /* emoji_hot_pepper.png */; };
+		37889231276F2B2800B3D96C /* emoji_strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788914D276F2B2700B3D96C /* emoji_strawberry.png */; };
+		37889232276F2B2800B3D96C /* emoji_nauseated_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788914E276F2B2700B3D96C /* emoji_nauseated_face.png */; };
+		37889233276F2B2800B3D96C /* emoji_cupcake.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788914F276F2B2700B3D96C /* emoji_cupcake.png */; };
+		37889234276F2B2800B3D96C /* emoji_monkey_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889150276F2B2700B3D96C /* emoji_monkey_face.png */; };
+		37889235276F2B2800B3D96C /* emoji_party_popper.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889151276F2B2700B3D96C /* emoji_party_popper.png */; };
+		37889236276F2B2800B3D96C /* emoji_beaming_face_with_smiling_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889152276F2B2700B3D96C /* emoji_beaming_face_with_smiling_eyes.png */; };
+		37889237276F2B2800B3D96C /* emoji_skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889153276F2B2700B3D96C /* emoji_skull.png */; };
+		37889238276F2B2800B3D96C /* emoji_cityscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889154276F2B2700B3D96C /* emoji_cityscape.png */; };
+		37889239276F2B2800B3D96C /* emoji_worried_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889155276F2B2700B3D96C /* emoji_worried_face.png */; };
+		3788923A276F2B2800B3D96C /* emoji_dizzy.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889156276F2B2700B3D96C /* emoji_dizzy.png */; };
+		3788923B276F2B2800B3D96C /* emoji_growing_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889157276F2B2700B3D96C /* emoji_growing_heart.png */; };
+		3788923C276F2B2800B3D96C /* emoji_pineapple.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889158276F2B2700B3D96C /* emoji_pineapple.png */; };
+		3788923D276F2B2800B3D96C /* emoji_mouse_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889159276F2B2700B3D96C /* emoji_mouse_face.png */; };
+		3788923E276F2B2800B3D96C /* emoji_rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788915A276F2B2700B3D96C /* emoji_rainbow.png */; };
+		3788923F276F2B2800B3D96C /* emoji_smiling_face_with_heart_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788915B276F2B2700B3D96C /* emoji_smiling_face_with_heart_eyes.png */; };
+		37889240276F2B2800B3D96C /* emoji_smiling_face_with_tear.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788915C276F2B2700B3D96C /* emoji_smiling_face_with_tear.png */; };
+		37889241276F2B2800B3D96C /* emoji_kissing_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788915D276F2B2700B3D96C /* emoji_kissing_cat.png */; };
+		37889242276F2B2800B3D96C /* emoji_sunglasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788915E276F2B2700B3D96C /* emoji_sunglasses.png */; };
+		37889243276F2B2800B3D96C /* emoji_blue_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788915F276F2B2700B3D96C /* emoji_blue_heart.png */; };
+		37889244276F2B2800B3D96C /* emoji_persevering_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889160276F2B2700B3D96C /* emoji_persevering_face.png */; };
+		37889245276F2B2800B3D96C /* emoji_sun_with_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889161276F2B2700B3D96C /* emoji_sun_with_face.png */; };
+		37889246276F2B2800B3D96C /* emoji_shushing_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889162276F2B2700B3D96C /* emoji_shushing_face.png */; };
+		37889247276F2B2800B3D96C /* emoji_eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889163276F2B2700B3D96C /* emoji_eye.png */; };
+		37889248276F2B2800B3D96C /* emoji_expressionless_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889164276F2B2700B3D96C /* emoji_expressionless_face.png */; };
+		37889249276F2B2800B3D96C /* emoji_baguette_bread.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889165276F2B2700B3D96C /* emoji_baguette_bread.png */; };
+		3788924A276F2B2800B3D96C /* emoji_zzz.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889166276F2B2700B3D96C /* emoji_zzz.png */; };
+		3788924B276F2B2800B3D96C /* emoji_fork_and_knife.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889167276F2B2700B3D96C /* emoji_fork_and_knife.png */; };
+		3788924C276F2B2800B3D96C /* emoji_revolving_hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889168276F2B2700B3D96C /* emoji_revolving_hearts.png */; };
+		3788924D276F2B2800B3D96C /* emoji_magic_wand.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889169276F2B2700B3D96C /* emoji_magic_wand.png */; };
+		3788924E276F2B2800B3D96C /* emoji_sleepy_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788916A276F2B2700B3D96C /* emoji_sleepy_face.png */; };
+		3788924F276F2B2800B3D96C /* emoji_glowing_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788916B276F2B2700B3D96C /* emoji_glowing_star.png */; };
+		37889250276F2B2800B3D96C /* emoji_sparkling_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788916C276F2B2700B3D96C /* emoji_sparkling_heart.png */; };
+		37889251276F2B2800B3D96C /* emoji_pouting_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788916D276F2B2700B3D96C /* emoji_pouting_cat.png */; };
+		37889252276F2B2800B3D96C /* emoji_broken_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788916E276F2B2700B3D96C /* emoji_broken_heart.png */; };
+		37889253276F2B2800B3D96C /* emoji_crying_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788916F276F2B2700B3D96C /* emoji_crying_cat.png */; };
+		37889254276F2B2800B3D96C /* emoji_bat.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889170276F2B2700B3D96C /* emoji_bat.png */; };
+		37889255276F2B2800B3D96C /* emoji_slightly_smiling_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889171276F2B2700B3D96C /* emoji_slightly_smiling_face.png */; };
+		37889256276F2B2800B3D96C /* emoji_frowning_face_with_open_mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889172276F2B2700B3D96C /* emoji_frowning_face_with_open_mouth.png */; };
+		37889257276F2B2800B3D96C /* emoji_face_with_raised_eyebrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889173276F2B2700B3D96C /* emoji_face_with_raised_eyebrow.png */; };
+		37889258276F2B2800B3D96C /* emoji_musical_notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889174276F2B2700B3D96C /* emoji_musical_notes.png */; };
+		37889259276F2B2800B3D96C /* emoji_smiling_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889175276F2B2700B3D96C /* emoji_smiling_face.png */; };
+		3788925A276F2B2800B3D96C /* emoji_heart_with_ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889176276F2B2700B3D96C /* emoji_heart_with_ribbon.png */; };
+		3788925B276F2B2800B3D96C /* emoji_squinting_face_with_tongue.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889177276F2B2700B3D96C /* emoji_squinting_face_with_tongue.png */; };
+		3788925C276F2B2800B3D96C /* emoji_heart_on_fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889178276F2B2700B3D96C /* emoji_heart_on_fire.png */; };
+		3788925D276F2B2800B3D96C /* emoji_face_with_symbols_on_mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889179276F2B2700B3D96C /* emoji_face_with_symbols_on_mouth.png */; };
+		3788925E276F2B2800B3D96C /* emoji_ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788917A276F2B2700B3D96C /* emoji_ghost.png */; };
+		3788925F276F2B2800B3D96C /* emoji_hedgehog.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788917B276F2B2700B3D96C /* emoji_hedgehog.png */; };
+		37889260276F2B2800B3D96C /* emoji_globe_showing_americas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788917C276F2B2700B3D96C /* emoji_globe_showing_americas.png */; };
+		37889261276F2B2800B3D96C /* emoji_gem_stone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788917D276F2B2700B3D96C /* emoji_gem_stone.png */; };
+		37889262276F2B2800B3D96C /* emoji_money_mouth_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788917E276F2B2700B3D96C /* emoji_money_mouth_face.png */; };
+		37889263276F2B2800B3D96C /* emoji_white_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788917F276F2B2700B3D96C /* emoji_white_heart.png */; };
+		37889264276F2B2800B3D96C /* emoji_panda.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889180276F2B2700B3D96C /* emoji_panda.png */; };
+		37889265276F2B2800B3D96C /* emoji_pig_nose.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889181276F2B2700B3D96C /* emoji_pig_nose.png */; };
+		37889266276F2B2800B3D96C /* emoji_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889182276F2B2700B3D96C /* emoji_balloon.png */; };
+		37889267276F2B2800B3D96C /* emoji_scorpion.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889183276F2B2700B3D96C /* emoji_scorpion.png */; };
+		37889268276F2B2800B3D96C /* emoji_kissing_face_with_smiling_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889184276F2B2700B3D96C /* emoji_kissing_face_with_smiling_eyes.png */; };
+		37889269276F2B2800B3D96C /* emoji_reminder_ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889185276F2B2700B3D96C /* emoji_reminder_ribbon.png */; };
+		3788926A276F2B2800B3D96C /* emoji_unamused_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889186276F2B2700B3D96C /* emoji_unamused_face.png */; };
+		3788926B276F2B2800B3D96C /* emoji_dashing_away.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889187276F2B2700B3D96C /* emoji_dashing_away.png */; };
+		3788926C276F2B2800B3D96C /* emoji_smirking_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889188276F2B2700B3D96C /* emoji_smirking_face.png */; };
+		3788926D276F2B2800B3D96C /* emoji_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889189276F2B2700B3D96C /* emoji_sun.png */; };
+		3788926E276F2B2800B3D96C /* emoji_spider.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788918A276F2B2700B3D96C /* emoji_spider.png */; };
+		3788926F276F2B2800B3D96C /* emoji_face_with_tears_of_joy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788918B276F2B2700B3D96C /* emoji_face_with_tears_of_joy.png */; };
+		37889270276F2B2800B3D96C /* emoji_yawning_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788918C276F2B2700B3D96C /* emoji_yawning_face.png */; };
+		37889271276F2B2800B3D96C /* emoji_zany_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788918D276F2B2700B3D96C /* emoji_zany_face.png */; };
+		37889272276F2B2800B3D96C /* emoji_exploding_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788918E276F2B2700B3D96C /* emoji_exploding_head.png */; };
+		37889273276F2B2800B3D96C /* emoji_woozy_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788918F276F2B2700B3D96C /* emoji_woozy_face.png */; };
+		37889274276F2B2800B3D96C /* emoji_turtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889190276F2B2700B3D96C /* emoji_turtle.png */; };
+		37889275276F2B2800B3D96C /* emoji_cherry_blossom.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889191276F2B2700B3D96C /* emoji_cherry_blossom.png */; };
+		37889276276F2B2800B3D96C /* emoji_yellow_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889192276F2B2700B3D96C /* emoji_yellow_heart.png */; };
+		37889277276F2B2800B3D96C /* emoji_avocado.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889193276F2B2700B3D96C /* emoji_avocado.png */; };
+		37889278276F2B2800B3D96C /* emoji_bouquet.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889194276F2B2700B3D96C /* emoji_bouquet.png */; };
+		37889279276F2B2800B3D96C /* emoji_pig.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889195276F2B2700B3D96C /* emoji_pig.png */; };
+		3788927A276F2B2800B3D96C /* emoji_birthday_cake.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889196276F2B2700B3D96C /* emoji_birthday_cake.png */; };
+		3788927B276F2B2800B3D96C /* emoji_face_with_tongue.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889197276F2B2700B3D96C /* emoji_face_with_tongue.png */; };
+		3788927C276F2B2800B3D96C /* emoji_snowflake.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889198276F2B2700B3D96C /* emoji_snowflake.png */; };
+		3788927D276F2B2800B3D96C /* emoji_rolling_on_the_floor_laughing.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889199276F2B2700B3D96C /* emoji_rolling_on_the_floor_laughing.png */; };
+		3788927E276F2B2800B3D96C /* emoji_newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788919A276F2B2700B3D96C /* emoji_newspaper.png */; };
+		3788927F276F2B2800B3D96C /* emoji_rose.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788919B276F2B2700B3D96C /* emoji_rose.png */; };
+		37889280276F2B2800B3D96C /* emoji_last_quarter_moon_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788919C276F2B2700B3D96C /* emoji_last_quarter_moon_face.png */; };
+		37889281276F2B2800B3D96C /* emoji_grinning_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788919D276F2B2700B3D96C /* emoji_grinning_face.png */; };
+		37889282276F2B2800B3D96C /* emoji_purple_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788919E276F2B2700B3D96C /* emoji_purple_heart.png */; };
+		37889283276F2B2800B3D96C /* emoji_cheese_wedge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788919F276F2B2700B3D96C /* emoji_cheese_wedge.png */; };
+		37889284276F2B2800B3D96C /* emoji_pig_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A0276F2B2700B3D96C /* emoji_pig_face.png */; };
+		37889285276F2B2800B3D96C /* emoji_partying_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A1276F2B2700B3D96C /* emoji_partying_face.png */; };
+		37889286276F2B2800B3D96C /* emoji_rabbit_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A2276F2B2700B3D96C /* emoji_rabbit_face.png */; };
+		37889287276F2B2800B3D96C /* emoji_fork_and_knife_with_plate.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A3276F2B2700B3D96C /* emoji_fork_and_knife_with_plate.png */; };
+		37889288276F2B2800B3D96C /* emoji_microbe.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A4276F2B2700B3D96C /* emoji_microbe.png */; };
+		37889289276F2B2800B3D96C /* emoji_deer.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A5276F2B2700B3D96C /* emoji_deer.png */; };
+		3788928A276F2B2800B3D96C /* emoji_face_in_clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A6276F2B2700B3D96C /* emoji_face_in_clouds.png */; };
+		3788928B276F2B2800B3D96C /* emoji_adhesive_bandage.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A7276F2B2700B3D96C /* emoji_adhesive_bandage.png */; };
+		3788928C276F2B2800B3D96C /* emoji_face_without_mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A8276F2B2700B3D96C /* emoji_face_without_mouth.png */; };
+		3788928D276F2B2800B3D96C /* emoji_lion.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891A9276F2B2700B3D96C /* emoji_lion.png */; };
+		3788928E276F2B2800B3D96C /* emoji_black_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891AA276F2B2700B3D96C /* emoji_black_heart.png */; };
+		3788928F276F2B2800B3D96C /* emoji_melting_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891AB276F2B2700B3D96C /* emoji_melting_face.png */; };
+		37889290276F2B2800B3D96C /* emoji_face_vomiting.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891AC276F2B2700B3D96C /* emoji_face_vomiting.png */; };
+		37889291276F2B2800B3D96C /* emoji_rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891AD276F2B2700B3D96C /* emoji_rabbit.png */; };
+		37889292276F2B2800B3D96C /* emoji_hundred_points.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891AE276F2B2700B3D96C /* emoji_hundred_points.png */; };
+		37889293276F2B2800B3D96C /* emoji_night_with_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891AF276F2B2700B3D96C /* emoji_night_with_stars.png */; };
+		37889294276F2B2800B3D96C /* emoji_octopus.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B0276F2B2700B3D96C /* emoji_octopus.png */; };
+		37889295276F2B2800B3D96C /* emoji_tulip.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B1276F2B2700B3D96C /* emoji_tulip.png */; };
+		37889296276F2B2800B3D96C /* emoji_sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B2276F2B2700B3D96C /* emoji_sunset.png */; };
+		37889297276F2B2800B3D96C /* emoji_tornado.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B3276F2B2700B3D96C /* emoji_tornado.png */; };
+		37889298276F2B2800B3D96C /* emoji_face_blowing_a_kiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B4276F2B2700B3D96C /* emoji_face_blowing_a_kiss.png */; };
+		37889299276F2B2800B3D96C /* emoji_carousel_horse.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B5276F2B2700B3D96C /* emoji_carousel_horse.png */; };
+		3788929A276F2B2800B3D96C /* emoji_skull_and_crossbones.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B6276F2B2700B3D96C /* emoji_skull_and_crossbones.png */; };
+		3788929B276F2B2800B3D96C /* emoji_jack_o_lantern.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B7276F2B2700B3D96C /* emoji_jack_o_lantern.png */; };
+		3788929C276F2B2800B3D96C /* emoji_fearful_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B8276F2B2700B3D96C /* emoji_fearful_face.png */; };
+		3788929D276F2B2800B3D96C /* emoji_snowman_without_snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891B9276F2B2700B3D96C /* emoji_snowman_without_snow.png */; };
+		3788929E276F2B2800B3D96C /* emoji_fog.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891BA276F2B2700B3D96C /* emoji_fog.png */; };
+		3788929F276F2B2800B3D96C /* emoji_smiling_face_with_halo.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891BB276F2B2700B3D96C /* emoji_smiling_face_with_halo.png */; };
+		378892A0276F2B2800B3D96C /* emoji_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891BC276F2B2700B3D96C /* emoji_star.png */; };
+		378892A1276F2B2800B3D96C /* emoji_grinning_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891BD276F2B2700B3D96C /* emoji_grinning_cat.png */; };
+		378892A2276F2B2800B3D96C /* emoji_cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891BE276F2B2700B3D96C /* emoji_cloud.png */; };
+		378892A3276F2B2800B3D96C /* emoji_globe_showing_asia_australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891BF276F2B2700B3D96C /* emoji_globe_showing_asia_australia.png */; };
+		378892A4276F2B2800B3D96C /* emoji_hugging_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C0276F2B2700B3D96C /* emoji_hugging_face.png */; };
+		378892A5276F2B2800B3D96C /* emoji_robot.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C1276F2B2700B3D96C /* emoji_robot.png */; };
+		378892A6276F2B2800B3D96C /* emoji_smiling_face_with_hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C2276F2B2700B3D96C /* emoji_smiling_face_with_hearts.png */; };
+		378892A7276F2B2800B3D96C /* emoji_teddy_bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C3276F2B2700B3D96C /* emoji_teddy_bear.png */; };
+		378892A8276F2B2800B3D96C /* emoji_musical_score.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C4276F2B2700B3D96C /* emoji_musical_score.png */; };
+		378892A9276F2B2800B3D96C /* emoji_face_screaming_in_fear.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C5276F2B2700B3D96C /* emoji_face_screaming_in_fear.png */; };
+		378892AA276F2B2800B3D96C /* emoji_sloth.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C6276F2B2700B3D96C /* emoji_sloth.png */; };
+		378892AB276F2B2800B3D96C /* emoji_kissing_face_with_closed_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C7276F2B2700B3D96C /* emoji_kissing_face_with_closed_eyes.png */; };
+		378892AC276F2B2800B3D96C /* emoji_dizzy_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C8276F2B2700B3D96C /* emoji_dizzy_face.png */; };
+		378892AD276F2B2800B3D96C /* emoji_alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891C9276F2B2700B3D96C /* emoji_alien.png */; };
+		378892AE276F2B2800B3D96C /* emoji_angry_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891CA276F2B2700B3D96C /* emoji_angry_face.png */; };
+		378892AF276F2B2800B3D96C /* emoji_smiling_cat_with_heart_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891CB276F2B2700B3D96C /* emoji_smiling_cat_with_heart_eyes.png */; };
+		378892B0276F2B2800B3D96C /* emoji_weary_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891CC276F2B2700B3D96C /* emoji_weary_cat.png */; };
+		378892B1276F2B2800B3D96C /* emoji_shooting_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891CD276F2B2700B3D96C /* emoji_shooting_star.png */; };
+		378892B2276F2B2800B3D96C /* emoji_face_with_head_bandage.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891CE276F2B2700B3D96C /* emoji_face_with_head_bandage.png */; };
+		378892B3276F2B2800B3D96C /* emoji_disappointed_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891CF276F2B2700B3D96C /* emoji_disappointed_face.png */; };
+		378892B4276F2B2800B3D96C /* emoji_bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D0276F2B2700B3D96C /* emoji_bear.png */; };
+		378892B5276F2B2800B3D96C /* emoji_downcast_face_with_sweat.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D1276F2B2700B3D96C /* emoji_downcast_face_with_sweat.png */; };
+		378892B6276F2B2800B3D96C /* emoji_face_with_rolling_eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D2276F2B2700B3D96C /* emoji_face_with_rolling_eyes.png */; };
+		378892B7276F2B2800B3D96C /* emoji_confetti_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D3276F2B2700B3D96C /* emoji_confetti_ball.png */; };
+		378892B8276F2B2800B3D96C /* emoji_loudly_crying_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D4276F2B2700B3D96C /* emoji_loudly_crying_face.png */; };
+		378892B9276F2B2800B3D96C /* emoji_hear_no_evil_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D5276F2B2700B3D96C /* emoji_hear_no_evil_monkey.png */; };
+		378892BA276F2B2800B3D96C /* emoji_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D6276F2B2700B3D96C /* emoji_monkey.png */; };
+		378892BB276F2B2800B3D96C /* emoji_zipper_mouth_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D7276F2B2700B3D96C /* emoji_zipper_mouth_face.png */; };
+		378892BC276F2B2800B3D96C /* emoji_honeybee.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D8276F2B2700B3D96C /* emoji_honeybee.png */; };
+		378892BD276F2B2800B3D96C /* emoji_pile_of_poo.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891D9276F2B2700B3D96C /* emoji_pile_of_poo.png */; };
+		378892BE276F2B2800B3D96C /* emoji_mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891DA276F2B2700B3D96C /* emoji_mouse.png */; };
+		378892BF276F2B2800B3D96C /* emoji_neutral_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891DB276F2B2700B3D96C /* emoji_neutral_face.png */; };
+		378892C0276F2B2800B3D96C /* emoji_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891DC276F2B2700B3D96C /* emoji_fish.png */; };
+		378892C1276F2B2800B3D96C /* emoji_goat.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891DD276F2B2700B3D96C /* emoji_goat.png */; };
+		378892C2276F2B2800B3D96C /* emoji_sweat_droplets.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891DE276F2B2700B3D96C /* emoji_sweat_droplets.png */; };
+		378892C3276F2B2800B3D96C /* emoji_unicorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891DF276F2B2700B3D96C /* emoji_unicorn.png */; };
+		378892C4276F2B2800B3D96C /* emoji_hot_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E0276F2B2700B3D96C /* emoji_hot_face.png */; };
+		378892C5276F2B2800B3D96C /* emoji_sleeping_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E1276F2B2700B3D96C /* emoji_sleeping_face.png */; };
+		378892C6276F2B2800B3D96C /* emoji_globe_with_meridians.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E2276F2B2700B3D96C /* emoji_globe_with_meridians.png */; };
+		378892C7276F2B2800B3D96C /* emoji_headphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E3276F2B2700B3D96C /* emoji_headphone.png */; };
+		378892C8276F2B2800B3D96C /* emoji_relieved_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E4276F2B2700B3D96C /* emoji_relieved_face.png */; };
+		378892C9276F2B2800B3D96C /* emoji_face_with_thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E5276F2B2700B3D96C /* emoji_face_with_thermometer.png */; };
+		378892CA276F2B2800B3D96C /* emoji_hot_dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E6276F2B2700B3D96C /* emoji_hot_dog.png */; };
+		378892CB276F2B2800B3D96C /* emoji_face_with_hand_over_mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E7276F2B2700B3D96C /* emoji_face_with_hand_over_mouth.png */; };
+		378892CC276F2B2800B3D96C /* emoji_fishing_pole.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E8276F2B2700B3D96C /* emoji_fishing_pole.png */; };
+		378892CD276F2B2800B3D96C /* emoji_snail.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891E9276F2B2700B3D96C /* emoji_snail.png */; };
+		378892CE276F2B2800B3D96C /* emoji_cat_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891EA276F2B2700B3D96C /* emoji_cat_face.png */; };
+		378892CF276F2B2800B3D96C /* emoji_clown_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891EB276F2B2700B3D96C /* emoji_clown_face.png */; };
+		378892D0276F2B2800B3D96C /* emoji_koala.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891EC276F2B2700B3D96C /* emoji_koala.png */; };
+		378892D1276F2B2800B3D96C /* emoji_globe_showing_europe_africa.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891ED276F2B2700B3D96C /* emoji_globe_showing_europe_africa.png */; };
+		378892D2276F2B2800B3D96C /* emoji_first_quarter_moon_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891EE276F2B2700B3D96C /* emoji_first_quarter_moon_face.png */; };
+		378892D3276F2B2800B3D96C /* emoji_mending_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891EF276F2B2700B3D96C /* emoji_mending_heart.png */; };
+		378892D4276F2B2800B3D96C /* emojis.json in Resources */ = {isa = PBXBuildFile; fileRef = 378891F0276F2B2700B3D96C /* emojis.json */; };
+		378892D5276F2B2800B3D96C /* emoji_face_with_open_mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F1276F2B2700B3D96C /* emoji_face_with_open_mouth.png */; };
+		378892D6276F2B2800B3D96C /* emoji_face_savoring_food.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F2276F2B2700B3D96C /* emoji_face_savoring_food.png */; };
+		378892D7276F2B2800B3D96C /* emoji_disguised_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F3276F2B2700B3D96C /* emoji_disguised_face.png */; };
+		378892D8276F2B2800B3D96C /* emoji_beating_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F4276F2B2700B3D96C /* emoji_beating_heart.png */; };
+		378892D9276F2B2800B3D96C /* emoji_sad_but_relieved_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F5276F2B2700B3D96C /* emoji_sad_but_relieved_face.png */; };
+		378892DA276F2B2800B3D96C /* emoji_winking_face_with_tongue.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F6276F2B2700B3D96C /* emoji_winking_face_with_tongue.png */; };
+		378892DB276F2B2800B3D96C /* emoji_blossom.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F7276F2B2700B3D96C /* emoji_blossom.png */; };
+		378892DC276F2B2800B3D96C /* emoji_sneezing_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F8276F2B2700B3D96C /* emoji_sneezing_face.png */; };
+		378892DD276F2B2800B3D96C /* emoji_cold_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891F9276F2B2700B3D96C /* emoji_cold_face.png */; };
+		378892DE276F2B2800B3D96C /* emoji_thinking_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891FA276F2B2700B3D96C /* emoji_thinking_face.png */; };
+		378892DF276F2B2800B3D96C /* emoji_hot_beverage.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891FB276F2B2700B3D96C /* emoji_hot_beverage.png */; };
+		378892E0276F2B2800B3D96C /* emoji_orange_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891FC276F2B2700B3D96C /* emoji_orange_heart.png */; };
+		378892E1276F2B2800B3D96C /* emoji_smiling_face_with_sunglasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891FD276F2B2700B3D96C /* emoji_smiling_face_with_sunglasses.png */; };
+		378892E2276F2B2800B3D96C /* emoji_star_struck.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891FE276F2B2700B3D96C /* emoji_star_struck.png */; };
+		378892E3276F2B2800B3D96C /* emoji_crown.png in Resources */ = {isa = PBXBuildFile; fileRef = 378891FF276F2B2700B3D96C /* emoji_crown.png */; };
+		378892E4276F2B2800B3D96C /* emoji_llama.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889200276F2B2700B3D96C /* emoji_llama.png */; };
+		378892E5276F2B2800B3D96C /* emoji_speak_no_evil_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889201276F2B2700B3D96C /* emoji_speak_no_evil_monkey.png */; };
+		378892E6276F2B2800B3D96C /* emoji_cat_with_wry_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889202276F2B2700B3D96C /* emoji_cat_with_wry_smile.png */; };
+		378892E7276F2B2800B3D96C /* emoji_grimacing_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889203276F2B2700B3D96C /* emoji_grimacing_face.png */; };
+		378892E8276F2B2800B3D96C /* emoji_angry_face_with_horns.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889204276F2B2700B3D96C /* emoji_angry_face_with_horns.png */; };
+		378892E9276F2B2800B3D96C /* emoji_see_no_evil_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889205276F2B2700B3D96C /* emoji_see_no_evil_monkey.png */; };
+		378892EA276F2B2800B3D96C /* emoji_winking_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889206276F2B2700B3D96C /* emoji_winking_face.png */; };
+		378892EB276F2B2800B3D96C /* emoji_sparkles.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889207276F2B2700B3D96C /* emoji_sparkles.png */; };
+		378892EC276F2B2800B3D96C /* emoji_cityscape_at_dusk.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889208276F2B2700B3D96C /* emoji_cityscape_at_dusk.png */; };
+		378892ED276F2B2800B3D96C /* emoji_grinning_face_with_sweat.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889209276F2B2700B3D96C /* emoji_grinning_face_with_sweat.png */; };
+		378892EE276F2B2800B3D96C /* emoji_musical_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788920A276F2B2700B3D96C /* emoji_musical_note.png */; };
+		378892EF276F2B2800B3D96C /* emoji_drooling_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788920B276F2B2700B3D96C /* emoji_drooling_face.png */; };
+		378892F0276F2B2800B3D96C /* emoji_kiss_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788920C276F2B2700B3D96C /* emoji_kiss_mark.png */; };
+		378892F1276F2B2800B3D96C /* emoji_smiling_face_with_horns.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788920D276F2B2700B3D96C /* emoji_smiling_face_with_horns.png */; };
+		378892F2276F2B2800B3D96C /* emoji_lemon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788920E276F2B2700B3D96C /* emoji_lemon.png */; };
+		378892F3276F2B2800B3D96C /* emoji_evergreen_tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3788920F276F2B2700B3D96C /* emoji_evergreen_tree.png */; };
+		378892F4276F2B2800B3D96C /* emoji_slightly_frowning_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889210276F2B2700B3D96C /* emoji_slightly_frowning_face.png */; };
+		378892F5276F2B2800B3D96C /* emoji_owl.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889211276F2B2700B3D96C /* emoji_owl.png */; };
+		378892F6276F2B2800B3D96C /* emoji_tired_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889212276F2B2700B3D96C /* emoji_tired_face.png */; };
+		378892F7276F2B2800B3D96C /* emoji_pouting_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889213276F2B2700B3D96C /* emoji_pouting_face.png */; };
+		378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */; };
+		378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892FA276F31A600B3D96C /* EmojiItemsModel.swift */; };
+		37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */; };
+		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		378890E3276F229700B3D96C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 378890C4276F229500B3D96C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 378890CB276F229500B3D96C;
+			remoteInfo = "emoji-game";
+		};
+		378890ED276F229700B3D96C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 378890C4276F229500B3D96C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 378890CB276F229500B3D96C;
+			remoteInfo = "emoji-game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		011E110A3CBE6E34CE104BE0 /* Pods-emoji-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.release.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.release.xcconfig"; sourceTree = "<group>"; };
+		372280362771305100466B64 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		372280372771305100466B64 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		372280382771305100466B64 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
+		372280392771305100466B64 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		37548114277100A7003C3E16 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
+		37548115277100A7003C3E16 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		37548116277100A7003C3E16 /* StartBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBuilder.swift; sourceTree = "<group>"; };
+		37548117277100A7003C3E16 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		378890CC276F229500B3D96C /* emoji-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "emoji-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		378890CF276F229500B3D96C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		378890DB276F229700B3D96C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		378890DD276F229700B3D96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		378890E2276F229700B3D96C /* emoji-gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "emoji-gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		378890E6276F229700B3D96C /* emoji_gameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emoji_gameTests.swift; sourceTree = "<group>"; };
+		378890EC276F229700B3D96C /* emoji-gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "emoji-gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		378890F0276F229700B3D96C /* emoji_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emoji_gameUITests.swift; sourceTree = "<group>"; };
+		378890F2276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emoji_gameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37889103276F238700B3D96C /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		37889104276F238700B3D96C /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		37889106276F238700B3D96C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37889107276F238700B3D96C /* Palette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Palette.xcassets; sourceTree = "<group>"; };
+		37889108276F238700B3D96C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		37889109276F238700B3D96C /* sheet.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sheet.csv; sourceTree = "<group>"; };
+		37889124276F27C700B3D96C /* DependencyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
+		37889126276F2A5C00B3D96C /* ApplicationObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationObservable.swift; sourceTree = "<group>"; };
+		3788912A276F2AE100B3D96C /* EmojisProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisProvider.swift; sourceTree = "<group>"; };
+		3788912D276F2B0200B3D96C /* EmojiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiModel.swift; sourceTree = "<group>"; };
+		37889130276F2B2700B3D96C /* emoji_cat_with_tears_of_joy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cat_with_tears_of_joy.png; sourceTree = "<group>"; };
+		37889131276F2B2700B3D96C /* emoji_upside_down_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_upside_down_face.png; sourceTree = "<group>"; };
+		37889132276F2B2700B3D96C /* emoji_cowboy_hat_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cowboy_hat_face.png; sourceTree = "<group>"; };
+		37889133276F2B2700B3D96C /* emoji_weary_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_weary_face.png; sourceTree = "<group>"; };
+		37889134276F2B2700B3D96C /* emoji_pensive_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pensive_face.png; sourceTree = "<group>"; };
+		37889135276F2B2700B3D96C /* emoji_love_letter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_love_letter.png; sourceTree = "<group>"; };
+		37889136276F2B2700B3D96C /* emoji_lying_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_lying_face.png; sourceTree = "<group>"; };
+		37889137276F2B2700B3D96C /* emoji_face_with_medical_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_medical_mask.png; sourceTree = "<group>"; };
+		37889138276F2B2700B3D96C /* emoji_christmas_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_christmas_tree.png; sourceTree = "<group>"; };
+		37889139276F2B2700B3D96C /* emoji_confused_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_confused_face.png; sourceTree = "<group>"; };
+		3788913A276F2B2700B3D96C /* emoji_snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_snowman.png; sourceTree = "<group>"; };
+		3788913B276F2B2700B3D96C /* emoji_heart_decoration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_heart_decoration.png; sourceTree = "<group>"; };
+		3788913C276F2B2700B3D96C /* emoji_confounded_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_confounded_face.png; sourceTree = "<group>"; };
+		3788913D276F2B2700B3D96C /* emoji_face_with_monocle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_monocle.png; sourceTree = "<group>"; };
+		3788913E276F2B2700B3D96C /* emoji_green_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_green_heart.png; sourceTree = "<group>"; };
+		3788913F276F2B2700B3D96C /* emoji_hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hole.png; sourceTree = "<group>"; };
+		37889140276F2B2700B3D96C /* emoji_feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_feather.png; sourceTree = "<group>"; };
+		37889141276F2B2700B3D96C /* emoji_bread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_bread.png; sourceTree = "<group>"; };
+		37889142276F2B2700B3D96C /* emoji_kissing_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_kissing_face.png; sourceTree = "<group>"; };
+		37889143276F2B2700B3D96C /* emoji_heart_with_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_heart_with_arrow.png; sourceTree = "<group>"; };
+		37889144276F2B2700B3D96C /* emoji_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cat.png; sourceTree = "<group>"; };
+		37889145276F2B2700B3D96C /* emoji_bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_bird.png; sourceTree = "<group>"; };
+		37889146276F2B2700B3D96C /* emoji_smiling_face_with_smiling_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_smiling_eyes.png; sourceTree = "<group>"; };
+		37889147276F2B2700B3D96C /* emoji_two_hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_two_hearts.png; sourceTree = "<group>"; };
+		37889148276F2B2700B3D96C /* emoji_nerd_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_nerd_face.png; sourceTree = "<group>"; };
+		37889149276F2B2700B3D96C /* emoji_cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cactus.png; sourceTree = "<group>"; };
+		3788914A276F2B2700B3D96C /* emoji_brown_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_brown_heart.png; sourceTree = "<group>"; };
+		3788914B276F2B2700B3D96C /* emoji_crystal_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_crystal_ball.png; sourceTree = "<group>"; };
+		3788914C276F2B2700B3D96C /* emoji_hot_pepper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hot_pepper.png; sourceTree = "<group>"; };
+		3788914D276F2B2700B3D96C /* emoji_strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_strawberry.png; sourceTree = "<group>"; };
+		3788914E276F2B2700B3D96C /* emoji_nauseated_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_nauseated_face.png; sourceTree = "<group>"; };
+		3788914F276F2B2700B3D96C /* emoji_cupcake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cupcake.png; sourceTree = "<group>"; };
+		37889150276F2B2700B3D96C /* emoji_monkey_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_monkey_face.png; sourceTree = "<group>"; };
+		37889151276F2B2700B3D96C /* emoji_party_popper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_party_popper.png; sourceTree = "<group>"; };
+		37889152276F2B2700B3D96C /* emoji_beaming_face_with_smiling_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_beaming_face_with_smiling_eyes.png; sourceTree = "<group>"; };
+		37889153276F2B2700B3D96C /* emoji_skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_skull.png; sourceTree = "<group>"; };
+		37889154276F2B2700B3D96C /* emoji_cityscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cityscape.png; sourceTree = "<group>"; };
+		37889155276F2B2700B3D96C /* emoji_worried_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_worried_face.png; sourceTree = "<group>"; };
+		37889156276F2B2700B3D96C /* emoji_dizzy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_dizzy.png; sourceTree = "<group>"; };
+		37889157276F2B2700B3D96C /* emoji_growing_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_growing_heart.png; sourceTree = "<group>"; };
+		37889158276F2B2700B3D96C /* emoji_pineapple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pineapple.png; sourceTree = "<group>"; };
+		37889159276F2B2700B3D96C /* emoji_mouse_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_mouse_face.png; sourceTree = "<group>"; };
+		3788915A276F2B2700B3D96C /* emoji_rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_rainbow.png; sourceTree = "<group>"; };
+		3788915B276F2B2700B3D96C /* emoji_smiling_face_with_heart_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_heart_eyes.png; sourceTree = "<group>"; };
+		3788915C276F2B2700B3D96C /* emoji_smiling_face_with_tear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_tear.png; sourceTree = "<group>"; };
+		3788915D276F2B2700B3D96C /* emoji_kissing_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_kissing_cat.png; sourceTree = "<group>"; };
+		3788915E276F2B2700B3D96C /* emoji_sunglasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sunglasses.png; sourceTree = "<group>"; };
+		3788915F276F2B2700B3D96C /* emoji_blue_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_blue_heart.png; sourceTree = "<group>"; };
+		37889160276F2B2700B3D96C /* emoji_persevering_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_persevering_face.png; sourceTree = "<group>"; };
+		37889161276F2B2700B3D96C /* emoji_sun_with_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sun_with_face.png; sourceTree = "<group>"; };
+		37889162276F2B2700B3D96C /* emoji_shushing_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_shushing_face.png; sourceTree = "<group>"; };
+		37889163276F2B2700B3D96C /* emoji_eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_eye.png; sourceTree = "<group>"; };
+		37889164276F2B2700B3D96C /* emoji_expressionless_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_expressionless_face.png; sourceTree = "<group>"; };
+		37889165276F2B2700B3D96C /* emoji_baguette_bread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_baguette_bread.png; sourceTree = "<group>"; };
+		37889166276F2B2700B3D96C /* emoji_zzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_zzz.png; sourceTree = "<group>"; };
+		37889167276F2B2700B3D96C /* emoji_fork_and_knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_fork_and_knife.png; sourceTree = "<group>"; };
+		37889168276F2B2700B3D96C /* emoji_revolving_hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_revolving_hearts.png; sourceTree = "<group>"; };
+		37889169276F2B2700B3D96C /* emoji_magic_wand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_magic_wand.png; sourceTree = "<group>"; };
+		3788916A276F2B2700B3D96C /* emoji_sleepy_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sleepy_face.png; sourceTree = "<group>"; };
+		3788916B276F2B2700B3D96C /* emoji_glowing_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_glowing_star.png; sourceTree = "<group>"; };
+		3788916C276F2B2700B3D96C /* emoji_sparkling_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sparkling_heart.png; sourceTree = "<group>"; };
+		3788916D276F2B2700B3D96C /* emoji_pouting_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pouting_cat.png; sourceTree = "<group>"; };
+		3788916E276F2B2700B3D96C /* emoji_broken_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_broken_heart.png; sourceTree = "<group>"; };
+		3788916F276F2B2700B3D96C /* emoji_crying_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_crying_cat.png; sourceTree = "<group>"; };
+		37889170276F2B2700B3D96C /* emoji_bat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_bat.png; sourceTree = "<group>"; };
+		37889171276F2B2700B3D96C /* emoji_slightly_smiling_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_slightly_smiling_face.png; sourceTree = "<group>"; };
+		37889172276F2B2700B3D96C /* emoji_frowning_face_with_open_mouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_frowning_face_with_open_mouth.png; sourceTree = "<group>"; };
+		37889173276F2B2700B3D96C /* emoji_face_with_raised_eyebrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_raised_eyebrow.png; sourceTree = "<group>"; };
+		37889174276F2B2700B3D96C /* emoji_musical_notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_musical_notes.png; sourceTree = "<group>"; };
+		37889175276F2B2700B3D96C /* emoji_smiling_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face.png; sourceTree = "<group>"; };
+		37889176276F2B2700B3D96C /* emoji_heart_with_ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_heart_with_ribbon.png; sourceTree = "<group>"; };
+		37889177276F2B2700B3D96C /* emoji_squinting_face_with_tongue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_squinting_face_with_tongue.png; sourceTree = "<group>"; };
+		37889178276F2B2700B3D96C /* emoji_heart_on_fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_heart_on_fire.png; sourceTree = "<group>"; };
+		37889179276F2B2700B3D96C /* emoji_face_with_symbols_on_mouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_symbols_on_mouth.png; sourceTree = "<group>"; };
+		3788917A276F2B2700B3D96C /* emoji_ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_ghost.png; sourceTree = "<group>"; };
+		3788917B276F2B2700B3D96C /* emoji_hedgehog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hedgehog.png; sourceTree = "<group>"; };
+		3788917C276F2B2700B3D96C /* emoji_globe_showing_americas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_globe_showing_americas.png; sourceTree = "<group>"; };
+		3788917D276F2B2700B3D96C /* emoji_gem_stone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_gem_stone.png; sourceTree = "<group>"; };
+		3788917E276F2B2700B3D96C /* emoji_money_mouth_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_money_mouth_face.png; sourceTree = "<group>"; };
+		3788917F276F2B2700B3D96C /* emoji_white_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_white_heart.png; sourceTree = "<group>"; };
+		37889180276F2B2700B3D96C /* emoji_panda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_panda.png; sourceTree = "<group>"; };
+		37889181276F2B2700B3D96C /* emoji_pig_nose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pig_nose.png; sourceTree = "<group>"; };
+		37889182276F2B2700B3D96C /* emoji_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_balloon.png; sourceTree = "<group>"; };
+		37889183276F2B2700B3D96C /* emoji_scorpion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_scorpion.png; sourceTree = "<group>"; };
+		37889184276F2B2700B3D96C /* emoji_kissing_face_with_smiling_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_kissing_face_with_smiling_eyes.png; sourceTree = "<group>"; };
+		37889185276F2B2700B3D96C /* emoji_reminder_ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_reminder_ribbon.png; sourceTree = "<group>"; };
+		37889186276F2B2700B3D96C /* emoji_unamused_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_unamused_face.png; sourceTree = "<group>"; };
+		37889187276F2B2700B3D96C /* emoji_dashing_away.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_dashing_away.png; sourceTree = "<group>"; };
+		37889188276F2B2700B3D96C /* emoji_smirking_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smirking_face.png; sourceTree = "<group>"; };
+		37889189276F2B2700B3D96C /* emoji_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sun.png; sourceTree = "<group>"; };
+		3788918A276F2B2700B3D96C /* emoji_spider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_spider.png; sourceTree = "<group>"; };
+		3788918B276F2B2700B3D96C /* emoji_face_with_tears_of_joy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_tears_of_joy.png; sourceTree = "<group>"; };
+		3788918C276F2B2700B3D96C /* emoji_yawning_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_yawning_face.png; sourceTree = "<group>"; };
+		3788918D276F2B2700B3D96C /* emoji_zany_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_zany_face.png; sourceTree = "<group>"; };
+		3788918E276F2B2700B3D96C /* emoji_exploding_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_exploding_head.png; sourceTree = "<group>"; };
+		3788918F276F2B2700B3D96C /* emoji_woozy_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_woozy_face.png; sourceTree = "<group>"; };
+		37889190276F2B2700B3D96C /* emoji_turtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_turtle.png; sourceTree = "<group>"; };
+		37889191276F2B2700B3D96C /* emoji_cherry_blossom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cherry_blossom.png; sourceTree = "<group>"; };
+		37889192276F2B2700B3D96C /* emoji_yellow_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_yellow_heart.png; sourceTree = "<group>"; };
+		37889193276F2B2700B3D96C /* emoji_avocado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_avocado.png; sourceTree = "<group>"; };
+		37889194276F2B2700B3D96C /* emoji_bouquet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_bouquet.png; sourceTree = "<group>"; };
+		37889195276F2B2700B3D96C /* emoji_pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pig.png; sourceTree = "<group>"; };
+		37889196276F2B2700B3D96C /* emoji_birthday_cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_birthday_cake.png; sourceTree = "<group>"; };
+		37889197276F2B2700B3D96C /* emoji_face_with_tongue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_tongue.png; sourceTree = "<group>"; };
+		37889198276F2B2700B3D96C /* emoji_snowflake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_snowflake.png; sourceTree = "<group>"; };
+		37889199276F2B2700B3D96C /* emoji_rolling_on_the_floor_laughing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_rolling_on_the_floor_laughing.png; sourceTree = "<group>"; };
+		3788919A276F2B2700B3D96C /* emoji_newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_newspaper.png; sourceTree = "<group>"; };
+		3788919B276F2B2700B3D96C /* emoji_rose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_rose.png; sourceTree = "<group>"; };
+		3788919C276F2B2700B3D96C /* emoji_last_quarter_moon_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_last_quarter_moon_face.png; sourceTree = "<group>"; };
+		3788919D276F2B2700B3D96C /* emoji_grinning_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_grinning_face.png; sourceTree = "<group>"; };
+		3788919E276F2B2700B3D96C /* emoji_purple_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_purple_heart.png; sourceTree = "<group>"; };
+		3788919F276F2B2700B3D96C /* emoji_cheese_wedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cheese_wedge.png; sourceTree = "<group>"; };
+		378891A0276F2B2700B3D96C /* emoji_pig_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pig_face.png; sourceTree = "<group>"; };
+		378891A1276F2B2700B3D96C /* emoji_partying_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_partying_face.png; sourceTree = "<group>"; };
+		378891A2276F2B2700B3D96C /* emoji_rabbit_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_rabbit_face.png; sourceTree = "<group>"; };
+		378891A3276F2B2700B3D96C /* emoji_fork_and_knife_with_plate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_fork_and_knife_with_plate.png; sourceTree = "<group>"; };
+		378891A4276F2B2700B3D96C /* emoji_microbe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_microbe.png; sourceTree = "<group>"; };
+		378891A5276F2B2700B3D96C /* emoji_deer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_deer.png; sourceTree = "<group>"; };
+		378891A6276F2B2700B3D96C /* emoji_face_in_clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_in_clouds.png; sourceTree = "<group>"; };
+		378891A7276F2B2700B3D96C /* emoji_adhesive_bandage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_adhesive_bandage.png; sourceTree = "<group>"; };
+		378891A8276F2B2700B3D96C /* emoji_face_without_mouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_without_mouth.png; sourceTree = "<group>"; };
+		378891A9276F2B2700B3D96C /* emoji_lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_lion.png; sourceTree = "<group>"; };
+		378891AA276F2B2700B3D96C /* emoji_black_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_black_heart.png; sourceTree = "<group>"; };
+		378891AB276F2B2700B3D96C /* emoji_melting_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_melting_face.png; sourceTree = "<group>"; };
+		378891AC276F2B2700B3D96C /* emoji_face_vomiting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_vomiting.png; sourceTree = "<group>"; };
+		378891AD276F2B2700B3D96C /* emoji_rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_rabbit.png; sourceTree = "<group>"; };
+		378891AE276F2B2700B3D96C /* emoji_hundred_points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hundred_points.png; sourceTree = "<group>"; };
+		378891AF276F2B2700B3D96C /* emoji_night_with_stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_night_with_stars.png; sourceTree = "<group>"; };
+		378891B0276F2B2700B3D96C /* emoji_octopus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_octopus.png; sourceTree = "<group>"; };
+		378891B1276F2B2700B3D96C /* emoji_tulip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_tulip.png; sourceTree = "<group>"; };
+		378891B2276F2B2700B3D96C /* emoji_sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sunset.png; sourceTree = "<group>"; };
+		378891B3276F2B2700B3D96C /* emoji_tornado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_tornado.png; sourceTree = "<group>"; };
+		378891B4276F2B2700B3D96C /* emoji_face_blowing_a_kiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_blowing_a_kiss.png; sourceTree = "<group>"; };
+		378891B5276F2B2700B3D96C /* emoji_carousel_horse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_carousel_horse.png; sourceTree = "<group>"; };
+		378891B6276F2B2700B3D96C /* emoji_skull_and_crossbones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_skull_and_crossbones.png; sourceTree = "<group>"; };
+		378891B7276F2B2700B3D96C /* emoji_jack_o_lantern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_jack_o_lantern.png; sourceTree = "<group>"; };
+		378891B8276F2B2700B3D96C /* emoji_fearful_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_fearful_face.png; sourceTree = "<group>"; };
+		378891B9276F2B2700B3D96C /* emoji_snowman_without_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_snowman_without_snow.png; sourceTree = "<group>"; };
+		378891BA276F2B2700B3D96C /* emoji_fog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_fog.png; sourceTree = "<group>"; };
+		378891BB276F2B2700B3D96C /* emoji_smiling_face_with_halo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_halo.png; sourceTree = "<group>"; };
+		378891BC276F2B2700B3D96C /* emoji_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_star.png; sourceTree = "<group>"; };
+		378891BD276F2B2700B3D96C /* emoji_grinning_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_grinning_cat.png; sourceTree = "<group>"; };
+		378891BE276F2B2700B3D96C /* emoji_cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cloud.png; sourceTree = "<group>"; };
+		378891BF276F2B2700B3D96C /* emoji_globe_showing_asia_australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_globe_showing_asia_australia.png; sourceTree = "<group>"; };
+		378891C0276F2B2700B3D96C /* emoji_hugging_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hugging_face.png; sourceTree = "<group>"; };
+		378891C1276F2B2700B3D96C /* emoji_robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_robot.png; sourceTree = "<group>"; };
+		378891C2276F2B2700B3D96C /* emoji_smiling_face_with_hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_hearts.png; sourceTree = "<group>"; };
+		378891C3276F2B2700B3D96C /* emoji_teddy_bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_teddy_bear.png; sourceTree = "<group>"; };
+		378891C4276F2B2700B3D96C /* emoji_musical_score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_musical_score.png; sourceTree = "<group>"; };
+		378891C5276F2B2700B3D96C /* emoji_face_screaming_in_fear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_screaming_in_fear.png; sourceTree = "<group>"; };
+		378891C6276F2B2700B3D96C /* emoji_sloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sloth.png; sourceTree = "<group>"; };
+		378891C7276F2B2700B3D96C /* emoji_kissing_face_with_closed_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_kissing_face_with_closed_eyes.png; sourceTree = "<group>"; };
+		378891C8276F2B2700B3D96C /* emoji_dizzy_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_dizzy_face.png; sourceTree = "<group>"; };
+		378891C9276F2B2700B3D96C /* emoji_alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_alien.png; sourceTree = "<group>"; };
+		378891CA276F2B2700B3D96C /* emoji_angry_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_angry_face.png; sourceTree = "<group>"; };
+		378891CB276F2B2700B3D96C /* emoji_smiling_cat_with_heart_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_cat_with_heart_eyes.png; sourceTree = "<group>"; };
+		378891CC276F2B2700B3D96C /* emoji_weary_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_weary_cat.png; sourceTree = "<group>"; };
+		378891CD276F2B2700B3D96C /* emoji_shooting_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_shooting_star.png; sourceTree = "<group>"; };
+		378891CE276F2B2700B3D96C /* emoji_face_with_head_bandage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_head_bandage.png; sourceTree = "<group>"; };
+		378891CF276F2B2700B3D96C /* emoji_disappointed_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_disappointed_face.png; sourceTree = "<group>"; };
+		378891D0276F2B2700B3D96C /* emoji_bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_bear.png; sourceTree = "<group>"; };
+		378891D1276F2B2700B3D96C /* emoji_downcast_face_with_sweat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_downcast_face_with_sweat.png; sourceTree = "<group>"; };
+		378891D2276F2B2700B3D96C /* emoji_face_with_rolling_eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_rolling_eyes.png; sourceTree = "<group>"; };
+		378891D3276F2B2700B3D96C /* emoji_confetti_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_confetti_ball.png; sourceTree = "<group>"; };
+		378891D4276F2B2700B3D96C /* emoji_loudly_crying_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_loudly_crying_face.png; sourceTree = "<group>"; };
+		378891D5276F2B2700B3D96C /* emoji_hear_no_evil_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hear_no_evil_monkey.png; sourceTree = "<group>"; };
+		378891D6276F2B2700B3D96C /* emoji_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_monkey.png; sourceTree = "<group>"; };
+		378891D7276F2B2700B3D96C /* emoji_zipper_mouth_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_zipper_mouth_face.png; sourceTree = "<group>"; };
+		378891D8276F2B2700B3D96C /* emoji_honeybee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_honeybee.png; sourceTree = "<group>"; };
+		378891D9276F2B2700B3D96C /* emoji_pile_of_poo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pile_of_poo.png; sourceTree = "<group>"; };
+		378891DA276F2B2700B3D96C /* emoji_mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_mouse.png; sourceTree = "<group>"; };
+		378891DB276F2B2700B3D96C /* emoji_neutral_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_neutral_face.png; sourceTree = "<group>"; };
+		378891DC276F2B2700B3D96C /* emoji_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_fish.png; sourceTree = "<group>"; };
+		378891DD276F2B2700B3D96C /* emoji_goat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_goat.png; sourceTree = "<group>"; };
+		378891DE276F2B2700B3D96C /* emoji_sweat_droplets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sweat_droplets.png; sourceTree = "<group>"; };
+		378891DF276F2B2700B3D96C /* emoji_unicorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_unicorn.png; sourceTree = "<group>"; };
+		378891E0276F2B2700B3D96C /* emoji_hot_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hot_face.png; sourceTree = "<group>"; };
+		378891E1276F2B2700B3D96C /* emoji_sleeping_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sleeping_face.png; sourceTree = "<group>"; };
+		378891E2276F2B2700B3D96C /* emoji_globe_with_meridians.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_globe_with_meridians.png; sourceTree = "<group>"; };
+		378891E3276F2B2700B3D96C /* emoji_headphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_headphone.png; sourceTree = "<group>"; };
+		378891E4276F2B2700B3D96C /* emoji_relieved_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_relieved_face.png; sourceTree = "<group>"; };
+		378891E5276F2B2700B3D96C /* emoji_face_with_thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_thermometer.png; sourceTree = "<group>"; };
+		378891E6276F2B2700B3D96C /* emoji_hot_dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hot_dog.png; sourceTree = "<group>"; };
+		378891E7276F2B2700B3D96C /* emoji_face_with_hand_over_mouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_hand_over_mouth.png; sourceTree = "<group>"; };
+		378891E8276F2B2700B3D96C /* emoji_fishing_pole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_fishing_pole.png; sourceTree = "<group>"; };
+		378891E9276F2B2700B3D96C /* emoji_snail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_snail.png; sourceTree = "<group>"; };
+		378891EA276F2B2700B3D96C /* emoji_cat_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cat_face.png; sourceTree = "<group>"; };
+		378891EB276F2B2700B3D96C /* emoji_clown_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_clown_face.png; sourceTree = "<group>"; };
+		378891EC276F2B2700B3D96C /* emoji_koala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_koala.png; sourceTree = "<group>"; };
+		378891ED276F2B2700B3D96C /* emoji_globe_showing_europe_africa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_globe_showing_europe_africa.png; sourceTree = "<group>"; };
+		378891EE276F2B2700B3D96C /* emoji_first_quarter_moon_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_first_quarter_moon_face.png; sourceTree = "<group>"; };
+		378891EF276F2B2700B3D96C /* emoji_mending_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_mending_heart.png; sourceTree = "<group>"; };
+		378891F0276F2B2700B3D96C /* emojis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis.json; sourceTree = "<group>"; };
+		378891F1276F2B2700B3D96C /* emoji_face_with_open_mouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_with_open_mouth.png; sourceTree = "<group>"; };
+		378891F2276F2B2700B3D96C /* emoji_face_savoring_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_face_savoring_food.png; sourceTree = "<group>"; };
+		378891F3276F2B2700B3D96C /* emoji_disguised_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_disguised_face.png; sourceTree = "<group>"; };
+		378891F4276F2B2700B3D96C /* emoji_beating_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_beating_heart.png; sourceTree = "<group>"; };
+		378891F5276F2B2700B3D96C /* emoji_sad_but_relieved_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sad_but_relieved_face.png; sourceTree = "<group>"; };
+		378891F6276F2B2700B3D96C /* emoji_winking_face_with_tongue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_winking_face_with_tongue.png; sourceTree = "<group>"; };
+		378891F7276F2B2700B3D96C /* emoji_blossom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_blossom.png; sourceTree = "<group>"; };
+		378891F8276F2B2700B3D96C /* emoji_sneezing_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sneezing_face.png; sourceTree = "<group>"; };
+		378891F9276F2B2700B3D96C /* emoji_cold_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cold_face.png; sourceTree = "<group>"; };
+		378891FA276F2B2700B3D96C /* emoji_thinking_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_thinking_face.png; sourceTree = "<group>"; };
+		378891FB276F2B2700B3D96C /* emoji_hot_beverage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_hot_beverage.png; sourceTree = "<group>"; };
+		378891FC276F2B2700B3D96C /* emoji_orange_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_orange_heart.png; sourceTree = "<group>"; };
+		378891FD276F2B2700B3D96C /* emoji_smiling_face_with_sunglasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_sunglasses.png; sourceTree = "<group>"; };
+		378891FE276F2B2700B3D96C /* emoji_star_struck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_star_struck.png; sourceTree = "<group>"; };
+		378891FF276F2B2700B3D96C /* emoji_crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_crown.png; sourceTree = "<group>"; };
+		37889200276F2B2700B3D96C /* emoji_llama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_llama.png; sourceTree = "<group>"; };
+		37889201276F2B2700B3D96C /* emoji_speak_no_evil_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_speak_no_evil_monkey.png; sourceTree = "<group>"; };
+		37889202276F2B2700B3D96C /* emoji_cat_with_wry_smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cat_with_wry_smile.png; sourceTree = "<group>"; };
+		37889203276F2B2700B3D96C /* emoji_grimacing_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_grimacing_face.png; sourceTree = "<group>"; };
+		37889204276F2B2700B3D96C /* emoji_angry_face_with_horns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_angry_face_with_horns.png; sourceTree = "<group>"; };
+		37889205276F2B2700B3D96C /* emoji_see_no_evil_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_see_no_evil_monkey.png; sourceTree = "<group>"; };
+		37889206276F2B2700B3D96C /* emoji_winking_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_winking_face.png; sourceTree = "<group>"; };
+		37889207276F2B2700B3D96C /* emoji_sparkles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_sparkles.png; sourceTree = "<group>"; };
+		37889208276F2B2700B3D96C /* emoji_cityscape_at_dusk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_cityscape_at_dusk.png; sourceTree = "<group>"; };
+		37889209276F2B2700B3D96C /* emoji_grinning_face_with_sweat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_grinning_face_with_sweat.png; sourceTree = "<group>"; };
+		3788920A276F2B2700B3D96C /* emoji_musical_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_musical_note.png; sourceTree = "<group>"; };
+		3788920B276F2B2700B3D96C /* emoji_drooling_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_drooling_face.png; sourceTree = "<group>"; };
+		3788920C276F2B2700B3D96C /* emoji_kiss_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_kiss_mark.png; sourceTree = "<group>"; };
+		3788920D276F2B2700B3D96C /* emoji_smiling_face_with_horns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_smiling_face_with_horns.png; sourceTree = "<group>"; };
+		3788920E276F2B2700B3D96C /* emoji_lemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_lemon.png; sourceTree = "<group>"; };
+		3788920F276F2B2700B3D96C /* emoji_evergreen_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_evergreen_tree.png; sourceTree = "<group>"; };
+		37889210276F2B2700B3D96C /* emoji_slightly_frowning_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_slightly_frowning_face.png; sourceTree = "<group>"; };
+		37889211276F2B2700B3D96C /* emoji_owl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_owl.png; sourceTree = "<group>"; };
+		37889212276F2B2700B3D96C /* emoji_tired_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_tired_face.png; sourceTree = "<group>"; };
+		37889213276F2B2700B3D96C /* emoji_pouting_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pouting_face.png; sourceTree = "<group>"; };
+		378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEmojisProvider.swift; sourceTree = "<group>"; };
+		378892FA276F31A600B3D96C /* EmojiItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItemsModel.swift; sourceTree = "<group>"; };
+		37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Global.swift"; sourceTree = "<group>"; };
+		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
+		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		378890C9276F229500B3D96C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		378890DF276F229700B3D96C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		378890E9276F229700B3D96C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		372280352771303300466B64 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				372280362771305100466B64 /* MainRouter.swift */,
+				372280372771305100466B64 /* MainViewController.swift */,
+				372280382771305100466B64 /* MainBuilder.swift */,
+				372280392771305100466B64 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3754811327710092003C3E16 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				37548114277100A7003C3E16 /* StartRouter.swift */,
+				37548115277100A7003C3E16 /* StartViewController.swift */,
+				37548116277100A7003C3E16 /* StartBuilder.swift */,
+				37548117277100A7003C3E16 /* StartViewModel.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		378890C3276F229500B3D96C = {
+			isa = PBXGroup;
+			children = (
+				378890CE276F229500B3D96C /* emoji-game */,
+				378890E5276F229700B3D96C /* emoji-gameTests */,
+				378890EF276F229700B3D96C /* emoji-gameUITests */,
+				378890CD276F229500B3D96C /* Products */,
+				B72B37EFBFF69AA655F25377 /* Pods */,
+				A32A26C25B13BD27FA18EF69 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		378890CD276F229500B3D96C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				378890CC276F229500B3D96C /* emoji-game.app */,
+				378890E2276F229700B3D96C /* emoji-gameTests.xctest */,
+				378890EC276F229700B3D96C /* emoji-gameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		378890CE276F229500B3D96C /* emoji-game */ = {
+			isa = PBXGroup;
+			children = (
+				378890CF276F229500B3D96C /* AppDelegate.swift */,
+				37889300276F939000B3D96C /* Scenes */,
+				37889123276F27BA00B3D96C /* Services */,
+				3788912C276F2AF100B3D96C /* Models */,
+				37889302276F953600B3D96C /* Extensions */,
+				37889100276F231400B3D96C /* Supporting Files */,
+				37889101276F238700B3D96C /* Resources */,
+				3788912F276F2B2700B3D96C /* assets */,
+			);
+			path = "emoji-game";
+			sourceTree = "<group>";
+		};
+		378890E5276F229700B3D96C /* emoji-gameTests */ = {
+			isa = PBXGroup;
+			children = (
+				378890E6276F229700B3D96C /* emoji_gameTests.swift */,
+			);
+			path = "emoji-gameTests";
+			sourceTree = "<group>";
+		};
+		378890EF276F229700B3D96C /* emoji-gameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				378890F0276F229700B3D96C /* emoji_gameUITests.swift */,
+				378890F2276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift */,
+			);
+			path = "emoji-gameUITests";
+			sourceTree = "<group>";
+		};
+		37889100276F231400B3D96C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				378890DA276F229700B3D96C /* LaunchScreen.storyboard */,
+				378890DD276F229700B3D96C /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37889101276F238700B3D96C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37889102276F238700B3D96C /* Generated */,
+				37889105276F238700B3D96C /* Localizable.strings */,
+				37889107276F238700B3D96C /* Palette.xcassets */,
+				37889108276F238700B3D96C /* Images.xcassets */,
+				37889109276F238700B3D96C /* sheet.csv */,
+				3788910A276F238700B3D96C /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		37889102276F238700B3D96C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				37889103276F238700B3D96C /* Strings.swift */,
+				37889104276F238700B3D96C /* Assets.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		3788910A276F238700B3D96C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		37889123276F27BA00B3D96C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				37889128276F2AA500B3D96C /* Infrastructure */,
+				37889129276F2AAF00B3D96C /* Emoji */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		37889128276F2AA500B3D96C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				37889126276F2A5C00B3D96C /* ApplicationObservable.swift */,
+				37889124276F27C700B3D96C /* DependencyProvider.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		37889129276F2AAF00B3D96C /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				3788912A276F2AE100B3D96C /* EmojisProvider.swift */,
+				378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		3788912C276F2AF100B3D96C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3788912D276F2B0200B3D96C /* EmojiModel.swift */,
+				378892FA276F31A600B3D96C /* EmojiItemsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3788912F276F2B2700B3D96C /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				37889130276F2B2700B3D96C /* emoji_cat_with_tears_of_joy.png */,
+				37889131276F2B2700B3D96C /* emoji_upside_down_face.png */,
+				37889132276F2B2700B3D96C /* emoji_cowboy_hat_face.png */,
+				37889133276F2B2700B3D96C /* emoji_weary_face.png */,
+				37889134276F2B2700B3D96C /* emoji_pensive_face.png */,
+				37889135276F2B2700B3D96C /* emoji_love_letter.png */,
+				37889136276F2B2700B3D96C /* emoji_lying_face.png */,
+				37889137276F2B2700B3D96C /* emoji_face_with_medical_mask.png */,
+				37889138276F2B2700B3D96C /* emoji_christmas_tree.png */,
+				37889139276F2B2700B3D96C /* emoji_confused_face.png */,
+				3788913A276F2B2700B3D96C /* emoji_snowman.png */,
+				3788913B276F2B2700B3D96C /* emoji_heart_decoration.png */,
+				3788913C276F2B2700B3D96C /* emoji_confounded_face.png */,
+				3788913D276F2B2700B3D96C /* emoji_face_with_monocle.png */,
+				3788913E276F2B2700B3D96C /* emoji_green_heart.png */,
+				3788913F276F2B2700B3D96C /* emoji_hole.png */,
+				37889140276F2B2700B3D96C /* emoji_feather.png */,
+				37889141276F2B2700B3D96C /* emoji_bread.png */,
+				37889142276F2B2700B3D96C /* emoji_kissing_face.png */,
+				37889143276F2B2700B3D96C /* emoji_heart_with_arrow.png */,
+				37889144276F2B2700B3D96C /* emoji_cat.png */,
+				37889145276F2B2700B3D96C /* emoji_bird.png */,
+				37889146276F2B2700B3D96C /* emoji_smiling_face_with_smiling_eyes.png */,
+				37889147276F2B2700B3D96C /* emoji_two_hearts.png */,
+				37889148276F2B2700B3D96C /* emoji_nerd_face.png */,
+				37889149276F2B2700B3D96C /* emoji_cactus.png */,
+				3788914A276F2B2700B3D96C /* emoji_brown_heart.png */,
+				3788914B276F2B2700B3D96C /* emoji_crystal_ball.png */,
+				3788914C276F2B2700B3D96C /* emoji_hot_pepper.png */,
+				3788914D276F2B2700B3D96C /* emoji_strawberry.png */,
+				3788914E276F2B2700B3D96C /* emoji_nauseated_face.png */,
+				3788914F276F2B2700B3D96C /* emoji_cupcake.png */,
+				37889150276F2B2700B3D96C /* emoji_monkey_face.png */,
+				37889151276F2B2700B3D96C /* emoji_party_popper.png */,
+				37889152276F2B2700B3D96C /* emoji_beaming_face_with_smiling_eyes.png */,
+				37889153276F2B2700B3D96C /* emoji_skull.png */,
+				37889154276F2B2700B3D96C /* emoji_cityscape.png */,
+				37889155276F2B2700B3D96C /* emoji_worried_face.png */,
+				37889156276F2B2700B3D96C /* emoji_dizzy.png */,
+				37889157276F2B2700B3D96C /* emoji_growing_heart.png */,
+				37889158276F2B2700B3D96C /* emoji_pineapple.png */,
+				37889159276F2B2700B3D96C /* emoji_mouse_face.png */,
+				3788915A276F2B2700B3D96C /* emoji_rainbow.png */,
+				3788915B276F2B2700B3D96C /* emoji_smiling_face_with_heart_eyes.png */,
+				3788915C276F2B2700B3D96C /* emoji_smiling_face_with_tear.png */,
+				3788915D276F2B2700B3D96C /* emoji_kissing_cat.png */,
+				3788915E276F2B2700B3D96C /* emoji_sunglasses.png */,
+				3788915F276F2B2700B3D96C /* emoji_blue_heart.png */,
+				37889160276F2B2700B3D96C /* emoji_persevering_face.png */,
+				37889161276F2B2700B3D96C /* emoji_sun_with_face.png */,
+				37889162276F2B2700B3D96C /* emoji_shushing_face.png */,
+				37889163276F2B2700B3D96C /* emoji_eye.png */,
+				37889164276F2B2700B3D96C /* emoji_expressionless_face.png */,
+				37889165276F2B2700B3D96C /* emoji_baguette_bread.png */,
+				37889166276F2B2700B3D96C /* emoji_zzz.png */,
+				37889167276F2B2700B3D96C /* emoji_fork_and_knife.png */,
+				37889168276F2B2700B3D96C /* emoji_revolving_hearts.png */,
+				37889169276F2B2700B3D96C /* emoji_magic_wand.png */,
+				3788916A276F2B2700B3D96C /* emoji_sleepy_face.png */,
+				3788916B276F2B2700B3D96C /* emoji_glowing_star.png */,
+				3788916C276F2B2700B3D96C /* emoji_sparkling_heart.png */,
+				3788916D276F2B2700B3D96C /* emoji_pouting_cat.png */,
+				3788916E276F2B2700B3D96C /* emoji_broken_heart.png */,
+				3788916F276F2B2700B3D96C /* emoji_crying_cat.png */,
+				37889170276F2B2700B3D96C /* emoji_bat.png */,
+				37889171276F2B2700B3D96C /* emoji_slightly_smiling_face.png */,
+				37889172276F2B2700B3D96C /* emoji_frowning_face_with_open_mouth.png */,
+				37889173276F2B2700B3D96C /* emoji_face_with_raised_eyebrow.png */,
+				37889174276F2B2700B3D96C /* emoji_musical_notes.png */,
+				37889175276F2B2700B3D96C /* emoji_smiling_face.png */,
+				37889176276F2B2700B3D96C /* emoji_heart_with_ribbon.png */,
+				37889177276F2B2700B3D96C /* emoji_squinting_face_with_tongue.png */,
+				37889178276F2B2700B3D96C /* emoji_heart_on_fire.png */,
+				37889179276F2B2700B3D96C /* emoji_face_with_symbols_on_mouth.png */,
+				3788917A276F2B2700B3D96C /* emoji_ghost.png */,
+				3788917B276F2B2700B3D96C /* emoji_hedgehog.png */,
+				3788917C276F2B2700B3D96C /* emoji_globe_showing_americas.png */,
+				3788917D276F2B2700B3D96C /* emoji_gem_stone.png */,
+				3788917E276F2B2700B3D96C /* emoji_money_mouth_face.png */,
+				3788917F276F2B2700B3D96C /* emoji_white_heart.png */,
+				37889180276F2B2700B3D96C /* emoji_panda.png */,
+				37889181276F2B2700B3D96C /* emoji_pig_nose.png */,
+				37889182276F2B2700B3D96C /* emoji_balloon.png */,
+				37889183276F2B2700B3D96C /* emoji_scorpion.png */,
+				37889184276F2B2700B3D96C /* emoji_kissing_face_with_smiling_eyes.png */,
+				37889185276F2B2700B3D96C /* emoji_reminder_ribbon.png */,
+				37889186276F2B2700B3D96C /* emoji_unamused_face.png */,
+				37889187276F2B2700B3D96C /* emoji_dashing_away.png */,
+				37889188276F2B2700B3D96C /* emoji_smirking_face.png */,
+				37889189276F2B2700B3D96C /* emoji_sun.png */,
+				3788918A276F2B2700B3D96C /* emoji_spider.png */,
+				3788918B276F2B2700B3D96C /* emoji_face_with_tears_of_joy.png */,
+				3788918C276F2B2700B3D96C /* emoji_yawning_face.png */,
+				3788918D276F2B2700B3D96C /* emoji_zany_face.png */,
+				3788918E276F2B2700B3D96C /* emoji_exploding_head.png */,
+				3788918F276F2B2700B3D96C /* emoji_woozy_face.png */,
+				37889190276F2B2700B3D96C /* emoji_turtle.png */,
+				37889191276F2B2700B3D96C /* emoji_cherry_blossom.png */,
+				37889192276F2B2700B3D96C /* emoji_yellow_heart.png */,
+				37889193276F2B2700B3D96C /* emoji_avocado.png */,
+				37889194276F2B2700B3D96C /* emoji_bouquet.png */,
+				37889195276F2B2700B3D96C /* emoji_pig.png */,
+				37889196276F2B2700B3D96C /* emoji_birthday_cake.png */,
+				37889197276F2B2700B3D96C /* emoji_face_with_tongue.png */,
+				37889198276F2B2700B3D96C /* emoji_snowflake.png */,
+				37889199276F2B2700B3D96C /* emoji_rolling_on_the_floor_laughing.png */,
+				3788919A276F2B2700B3D96C /* emoji_newspaper.png */,
+				3788919B276F2B2700B3D96C /* emoji_rose.png */,
+				3788919C276F2B2700B3D96C /* emoji_last_quarter_moon_face.png */,
+				3788919D276F2B2700B3D96C /* emoji_grinning_face.png */,
+				3788919E276F2B2700B3D96C /* emoji_purple_heart.png */,
+				3788919F276F2B2700B3D96C /* emoji_cheese_wedge.png */,
+				378891A0276F2B2700B3D96C /* emoji_pig_face.png */,
+				378891A1276F2B2700B3D96C /* emoji_partying_face.png */,
+				378891A2276F2B2700B3D96C /* emoji_rabbit_face.png */,
+				378891A3276F2B2700B3D96C /* emoji_fork_and_knife_with_plate.png */,
+				378891A4276F2B2700B3D96C /* emoji_microbe.png */,
+				378891A5276F2B2700B3D96C /* emoji_deer.png */,
+				378891A6276F2B2700B3D96C /* emoji_face_in_clouds.png */,
+				378891A7276F2B2700B3D96C /* emoji_adhesive_bandage.png */,
+				378891A8276F2B2700B3D96C /* emoji_face_without_mouth.png */,
+				378891A9276F2B2700B3D96C /* emoji_lion.png */,
+				378891AA276F2B2700B3D96C /* emoji_black_heart.png */,
+				378891AB276F2B2700B3D96C /* emoji_melting_face.png */,
+				378891AC276F2B2700B3D96C /* emoji_face_vomiting.png */,
+				378891AD276F2B2700B3D96C /* emoji_rabbit.png */,
+				378891AE276F2B2700B3D96C /* emoji_hundred_points.png */,
+				378891AF276F2B2700B3D96C /* emoji_night_with_stars.png */,
+				378891B0276F2B2700B3D96C /* emoji_octopus.png */,
+				378891B1276F2B2700B3D96C /* emoji_tulip.png */,
+				378891B2276F2B2700B3D96C /* emoji_sunset.png */,
+				378891B3276F2B2700B3D96C /* emoji_tornado.png */,
+				378891B4276F2B2700B3D96C /* emoji_face_blowing_a_kiss.png */,
+				378891B5276F2B2700B3D96C /* emoji_carousel_horse.png */,
+				378891B6276F2B2700B3D96C /* emoji_skull_and_crossbones.png */,
+				378891B7276F2B2700B3D96C /* emoji_jack_o_lantern.png */,
+				378891B8276F2B2700B3D96C /* emoji_fearful_face.png */,
+				378891B9276F2B2700B3D96C /* emoji_snowman_without_snow.png */,
+				378891BA276F2B2700B3D96C /* emoji_fog.png */,
+				378891BB276F2B2700B3D96C /* emoji_smiling_face_with_halo.png */,
+				378891BC276F2B2700B3D96C /* emoji_star.png */,
+				378891BD276F2B2700B3D96C /* emoji_grinning_cat.png */,
+				378891BE276F2B2700B3D96C /* emoji_cloud.png */,
+				378891BF276F2B2700B3D96C /* emoji_globe_showing_asia_australia.png */,
+				378891C0276F2B2700B3D96C /* emoji_hugging_face.png */,
+				378891C1276F2B2700B3D96C /* emoji_robot.png */,
+				378891C2276F2B2700B3D96C /* emoji_smiling_face_with_hearts.png */,
+				378891C3276F2B2700B3D96C /* emoji_teddy_bear.png */,
+				378891C4276F2B2700B3D96C /* emoji_musical_score.png */,
+				378891C5276F2B2700B3D96C /* emoji_face_screaming_in_fear.png */,
+				378891C6276F2B2700B3D96C /* emoji_sloth.png */,
+				378891C7276F2B2700B3D96C /* emoji_kissing_face_with_closed_eyes.png */,
+				378891C8276F2B2700B3D96C /* emoji_dizzy_face.png */,
+				378891C9276F2B2700B3D96C /* emoji_alien.png */,
+				378891CA276F2B2700B3D96C /* emoji_angry_face.png */,
+				378891CB276F2B2700B3D96C /* emoji_smiling_cat_with_heart_eyes.png */,
+				378891CC276F2B2700B3D96C /* emoji_weary_cat.png */,
+				378891CD276F2B2700B3D96C /* emoji_shooting_star.png */,
+				378891CE276F2B2700B3D96C /* emoji_face_with_head_bandage.png */,
+				378891CF276F2B2700B3D96C /* emoji_disappointed_face.png */,
+				378891D0276F2B2700B3D96C /* emoji_bear.png */,
+				378891D1276F2B2700B3D96C /* emoji_downcast_face_with_sweat.png */,
+				378891D2276F2B2700B3D96C /* emoji_face_with_rolling_eyes.png */,
+				378891D3276F2B2700B3D96C /* emoji_confetti_ball.png */,
+				378891D4276F2B2700B3D96C /* emoji_loudly_crying_face.png */,
+				378891D5276F2B2700B3D96C /* emoji_hear_no_evil_monkey.png */,
+				378891D6276F2B2700B3D96C /* emoji_monkey.png */,
+				378891D7276F2B2700B3D96C /* emoji_zipper_mouth_face.png */,
+				378891D8276F2B2700B3D96C /* emoji_honeybee.png */,
+				378891D9276F2B2700B3D96C /* emoji_pile_of_poo.png */,
+				378891DA276F2B2700B3D96C /* emoji_mouse.png */,
+				378891DB276F2B2700B3D96C /* emoji_neutral_face.png */,
+				378891DC276F2B2700B3D96C /* emoji_fish.png */,
+				378891DD276F2B2700B3D96C /* emoji_goat.png */,
+				378891DE276F2B2700B3D96C /* emoji_sweat_droplets.png */,
+				378891DF276F2B2700B3D96C /* emoji_unicorn.png */,
+				378891E0276F2B2700B3D96C /* emoji_hot_face.png */,
+				378891E1276F2B2700B3D96C /* emoji_sleeping_face.png */,
+				378891E2276F2B2700B3D96C /* emoji_globe_with_meridians.png */,
+				378891E3276F2B2700B3D96C /* emoji_headphone.png */,
+				378891E4276F2B2700B3D96C /* emoji_relieved_face.png */,
+				378891E5276F2B2700B3D96C /* emoji_face_with_thermometer.png */,
+				378891E6276F2B2700B3D96C /* emoji_hot_dog.png */,
+				378891E7276F2B2700B3D96C /* emoji_face_with_hand_over_mouth.png */,
+				378891E8276F2B2700B3D96C /* emoji_fishing_pole.png */,
+				378891E9276F2B2700B3D96C /* emoji_snail.png */,
+				378891EA276F2B2700B3D96C /* emoji_cat_face.png */,
+				378891EB276F2B2700B3D96C /* emoji_clown_face.png */,
+				378891EC276F2B2700B3D96C /* emoji_koala.png */,
+				378891ED276F2B2700B3D96C /* emoji_globe_showing_europe_africa.png */,
+				378891EE276F2B2700B3D96C /* emoji_first_quarter_moon_face.png */,
+				378891EF276F2B2700B3D96C /* emoji_mending_heart.png */,
+				378891F0276F2B2700B3D96C /* emojis.json */,
+				378891F1276F2B2700B3D96C /* emoji_face_with_open_mouth.png */,
+				378891F2276F2B2700B3D96C /* emoji_face_savoring_food.png */,
+				378891F3276F2B2700B3D96C /* emoji_disguised_face.png */,
+				378891F4276F2B2700B3D96C /* emoji_beating_heart.png */,
+				378891F5276F2B2700B3D96C /* emoji_sad_but_relieved_face.png */,
+				378891F6276F2B2700B3D96C /* emoji_winking_face_with_tongue.png */,
+				378891F7276F2B2700B3D96C /* emoji_blossom.png */,
+				378891F8276F2B2700B3D96C /* emoji_sneezing_face.png */,
+				378891F9276F2B2700B3D96C /* emoji_cold_face.png */,
+				378891FA276F2B2700B3D96C /* emoji_thinking_face.png */,
+				378891FB276F2B2700B3D96C /* emoji_hot_beverage.png */,
+				378891FC276F2B2700B3D96C /* emoji_orange_heart.png */,
+				378891FD276F2B2700B3D96C /* emoji_smiling_face_with_sunglasses.png */,
+				378891FE276F2B2700B3D96C /* emoji_star_struck.png */,
+				378891FF276F2B2700B3D96C /* emoji_crown.png */,
+				37889200276F2B2700B3D96C /* emoji_llama.png */,
+				37889201276F2B2700B3D96C /* emoji_speak_no_evil_monkey.png */,
+				37889202276F2B2700B3D96C /* emoji_cat_with_wry_smile.png */,
+				37889203276F2B2700B3D96C /* emoji_grimacing_face.png */,
+				37889204276F2B2700B3D96C /* emoji_angry_face_with_horns.png */,
+				37889205276F2B2700B3D96C /* emoji_see_no_evil_monkey.png */,
+				37889206276F2B2700B3D96C /* emoji_winking_face.png */,
+				37889207276F2B2700B3D96C /* emoji_sparkles.png */,
+				37889208276F2B2700B3D96C /* emoji_cityscape_at_dusk.png */,
+				37889209276F2B2700B3D96C /* emoji_grinning_face_with_sweat.png */,
+				3788920A276F2B2700B3D96C /* emoji_musical_note.png */,
+				3788920B276F2B2700B3D96C /* emoji_drooling_face.png */,
+				3788920C276F2B2700B3D96C /* emoji_kiss_mark.png */,
+				3788920D276F2B2700B3D96C /* emoji_smiling_face_with_horns.png */,
+				3788920E276F2B2700B3D96C /* emoji_lemon.png */,
+				3788920F276F2B2700B3D96C /* emoji_evergreen_tree.png */,
+				37889210276F2B2700B3D96C /* emoji_slightly_frowning_face.png */,
+				37889211276F2B2700B3D96C /* emoji_owl.png */,
+				37889212276F2B2700B3D96C /* emoji_tired_face.png */,
+				37889213276F2B2700B3D96C /* emoji_pouting_face.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		37889300276F939000B3D96C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3754811327710092003C3E16 /* Start */,
+				372280352771303300466B64 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		37889302276F953600B3D96C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B72B37EFBFF69AA655F25377 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */,
+				011E110A3CBE6E34CE104BE0 /* Pods-emoji-game.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		378890CB276F229500B3D96C /* emoji-game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378890F6276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-game" */;
+			buildPhases = (
+				1DB8BEC067D163AC66A79863 /* [CP] Check Pods Manifest.lock */,
+				378890C8276F229500B3D96C /* Sources */,
+				378890C9276F229500B3D96C /* Frameworks */,
+				378890CA276F229500B3D96C /* Resources */,
+				155AB31E14573A09C3759123 /* [CP] Embed Pods Frameworks */,
+				3754811C27710193003C3E16 /* SwiftGen */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "emoji-game";
+			productName = "emoji-game";
+			productReference = 378890CC276F229500B3D96C /* emoji-game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		378890E1276F229700B3D96C /* emoji-gameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378890F9276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameTests" */;
+			buildPhases = (
+				378890DE276F229700B3D96C /* Sources */,
+				378890DF276F229700B3D96C /* Frameworks */,
+				378890E0276F229700B3D96C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				378890E4276F229700B3D96C /* PBXTargetDependency */,
+			);
+			name = "emoji-gameTests";
+			productName = "emoji-gameTests";
+			productReference = 378890E2276F229700B3D96C /* emoji-gameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		378890EB276F229700B3D96C /* emoji-gameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378890FC276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameUITests" */;
+			buildPhases = (
+				378890E8276F229700B3D96C /* Sources */,
+				378890E9276F229700B3D96C /* Frameworks */,
+				378890EA276F229700B3D96C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				378890EE276F229700B3D96C /* PBXTargetDependency */,
+			);
+			name = "emoji-gameUITests";
+			productName = "emoji-gameUITests";
+			productReference = 378890EC276F229700B3D96C /* emoji-gameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		378890C4276F229500B3D96C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					378890CB276F229500B3D96C = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					378890E1276F229700B3D96C = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 378890CB276F229500B3D96C;
+					};
+					378890EB276F229700B3D96C = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 378890CB276F229500B3D96C;
+					};
+				};
+			};
+			buildConfigurationList = 378890C7276F229500B3D96C /* Build configuration list for PBXProject "emoji-game" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 378890C3276F229500B3D96C;
+			productRefGroup = 378890CD276F229500B3D96C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				378890CB276F229500B3D96C /* emoji-game */,
+				378890E1276F229700B3D96C /* emoji-gameTests */,
+				378890EB276F229700B3D96C /* emoji-gameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		378890CA276F229500B3D96C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3788923B276F2B2800B3D96C /* emoji_growing_heart.png in Resources */,
+				37889234276F2B2800B3D96C /* emoji_monkey_face.png in Resources */,
+				37889224276F2B2800B3D96C /* emoji_feather.png in Resources */,
+				37889282276F2B2800B3D96C /* emoji_purple_heart.png in Resources */,
+				378892A1276F2B2800B3D96C /* emoji_grinning_cat.png in Resources */,
+				378892A0276F2B2800B3D96C /* emoji_star.png in Resources */,
+				37889238276F2B2800B3D96C /* emoji_cityscape.png in Resources */,
+				37889293276F2B2800B3D96C /* emoji_night_with_stars.png in Resources */,
+				37889261276F2B2800B3D96C /* emoji_gem_stone.png in Resources */,
+				378892A9276F2B2800B3D96C /* emoji_face_screaming_in_fear.png in Resources */,
+				378892C2276F2B2800B3D96C /* emoji_sweat_droplets.png in Resources */,
+				378892B1276F2B2800B3D96C /* emoji_shooting_star.png in Resources */,
+				378892AC276F2B2800B3D96C /* emoji_dizzy_face.png in Resources */,
+				37889229276F2B2800B3D96C /* emoji_bird.png in Resources */,
+				37889243276F2B2800B3D96C /* emoji_blue_heart.png in Resources */,
+				3788924B276F2B2800B3D96C /* emoji_fork_and_knife.png in Resources */,
+				37889245276F2B2800B3D96C /* emoji_sun_with_face.png in Resources */,
+				3788923D276F2B2800B3D96C /* emoji_mouse_face.png in Resources */,
+				37889240276F2B2800B3D96C /* emoji_smiling_face_with_tear.png in Resources */,
+				378892ED276F2B2800B3D96C /* emoji_grinning_face_with_sweat.png in Resources */,
+				3788924F276F2B2800B3D96C /* emoji_glowing_star.png in Resources */,
+				37889279276F2B2800B3D96C /* emoji_pig.png in Resources */,
+				37889263276F2B2800B3D96C /* emoji_white_heart.png in Resources */,
+				378892AF276F2B2800B3D96C /* emoji_smiling_cat_with_heart_eyes.png in Resources */,
+				3788927E276F2B2800B3D96C /* emoji_newspaper.png in Resources */,
+				378892E4276F2B2800B3D96C /* emoji_llama.png in Resources */,
+				37889223276F2B2800B3D96C /* emoji_hole.png in Resources */,
+				378890DC276F229700B3D96C /* LaunchScreen.storyboard in Resources */,
+				37889265276F2B2800B3D96C /* emoji_pig_nose.png in Resources */,
+				37889269276F2B2800B3D96C /* emoji_reminder_ribbon.png in Resources */,
+				378892B0276F2B2800B3D96C /* emoji_weary_cat.png in Resources */,
+				378892EE276F2B2800B3D96C /* emoji_musical_note.png in Resources */,
+				37889288276F2B2800B3D96C /* emoji_microbe.png in Resources */,
+				37889258276F2B2800B3D96C /* emoji_musical_notes.png in Resources */,
+				3788926D276F2B2800B3D96C /* emoji_sun.png in Resources */,
+				378892E7276F2B2800B3D96C /* emoji_grimacing_face.png in Resources */,
+				378892A6276F2B2800B3D96C /* emoji_smiling_face_with_hearts.png in Resources */,
+				37889273276F2B2800B3D96C /* emoji_woozy_face.png in Resources */,
+				37889256276F2B2800B3D96C /* emoji_frowning_face_with_open_mouth.png in Resources */,
+				37889251276F2B2800B3D96C /* emoji_pouting_cat.png in Resources */,
+				37889257276F2B2800B3D96C /* emoji_face_with_raised_eyebrow.png in Resources */,
+				3788928F276F2B2800B3D96C /* emoji_melting_face.png in Resources */,
+				37889284276F2B2800B3D96C /* emoji_pig_face.png in Resources */,
+				37889247276F2B2800B3D96C /* emoji_eye.png in Resources */,
+				37889235276F2B2800B3D96C /* emoji_party_popper.png in Resources */,
+				37889217276F2B2800B3D96C /* emoji_weary_face.png in Resources */,
+				3788922D276F2B2800B3D96C /* emoji_cactus.png in Resources */,
+				378892D0276F2B2800B3D96C /* emoji_koala.png in Resources */,
+				37889230276F2B2800B3D96C /* emoji_hot_pepper.png in Resources */,
+				37889227276F2B2800B3D96C /* emoji_heart_with_arrow.png in Resources */,
+				37889242276F2B2800B3D96C /* emoji_sunglasses.png in Resources */,
+				378892F0276F2B2800B3D96C /* emoji_kiss_mark.png in Resources */,
+				378892A3276F2B2800B3D96C /* emoji_globe_showing_asia_australia.png in Resources */,
+				378892BE276F2B2800B3D96C /* emoji_mouse.png in Resources */,
+				378892BB276F2B2800B3D96C /* emoji_zipper_mouth_face.png in Resources */,
+				378892C5276F2B2800B3D96C /* emoji_sleeping_face.png in Resources */,
+				378892DD276F2B2800B3D96C /* emoji_cold_face.png in Resources */,
+				37889214276F2B2800B3D96C /* emoji_cat_with_tears_of_joy.png in Resources */,
+				378892DC276F2B2800B3D96C /* emoji_sneezing_face.png in Resources */,
+				378892F5276F2B2800B3D96C /* emoji_owl.png in Resources */,
+				37889262276F2B2800B3D96C /* emoji_money_mouth_face.png in Resources */,
+				378892F4276F2B2800B3D96C /* emoji_slightly_frowning_face.png in Resources */,
+				37889237276F2B2800B3D96C /* emoji_skull.png in Resources */,
+				37889286276F2B2800B3D96C /* emoji_rabbit_face.png in Resources */,
+				3788925E276F2B2800B3D96C /* emoji_ghost.png in Resources */,
+				37889249276F2B2800B3D96C /* emoji_baguette_bread.png in Resources */,
+				37889119276F238700B3D96C /* sheet.csv in Resources */,
+				378892A4276F2B2800B3D96C /* emoji_hugging_face.png in Resources */,
+				378892B6276F2B2800B3D96C /* emoji_face_with_rolling_eyes.png in Resources */,
+				378892E6276F2B2800B3D96C /* emoji_cat_with_wry_smile.png in Resources */,
+				378892C6276F2B2800B3D96C /* emoji_globe_with_meridians.png in Resources */,
+				37889246276F2B2800B3D96C /* emoji_shushing_face.png in Resources */,
+				378892C8276F2B2800B3D96C /* emoji_relieved_face.png in Resources */,
+				3788928D276F2B2800B3D96C /* emoji_lion.png in Resources */,
+				37889232276F2B2800B3D96C /* emoji_nauseated_face.png in Resources */,
+				3788927B276F2B2800B3D96C /* emoji_face_with_tongue.png in Resources */,
+				378892DF276F2B2800B3D96C /* emoji_hot_beverage.png in Resources */,
+				378892AD276F2B2800B3D96C /* emoji_alien.png in Resources */,
+				378892B8276F2B2800B3D96C /* emoji_loudly_crying_face.png in Resources */,
+				37889221276F2B2800B3D96C /* emoji_face_with_monocle.png in Resources */,
+				37889290276F2B2800B3D96C /* emoji_face_vomiting.png in Resources */,
+				3788926F276F2B2800B3D96C /* emoji_face_with_tears_of_joy.png in Resources */,
+				378892BC276F2B2800B3D96C /* emoji_honeybee.png in Resources */,
+				37889239276F2B2800B3D96C /* emoji_worried_face.png in Resources */,
+				378892C7276F2B2800B3D96C /* emoji_headphone.png in Resources */,
+				37889219276F2B2800B3D96C /* emoji_love_letter.png in Resources */,
+				378892AA276F2B2800B3D96C /* emoji_sloth.png in Resources */,
+				378892DB276F2B2800B3D96C /* emoji_blossom.png in Resources */,
+				378892E3276F2B2800B3D96C /* emoji_crown.png in Resources */,
+				37889297276F2B2800B3D96C /* emoji_tornado.png in Resources */,
+				378892F2276F2B2800B3D96C /* emoji_lemon.png in Resources */,
+				37889292276F2B2800B3D96C /* emoji_hundred_points.png in Resources */,
+				3788926B276F2B2800B3D96C /* emoji_dashing_away.png in Resources */,
+				378892C9276F2B2800B3D96C /* emoji_face_with_thermometer.png in Resources */,
+				37889291276F2B2800B3D96C /* emoji_rabbit.png in Resources */,
+				3788929C276F2B2800B3D96C /* emoji_fearful_face.png in Resources */,
+				378892F7276F2B2800B3D96C /* emoji_pouting_face.png in Resources */,
+				378892F6276F2B2800B3D96C /* emoji_tired_face.png in Resources */,
+				3788925F276F2B2800B3D96C /* emoji_hedgehog.png in Resources */,
+				3788926C276F2B2800B3D96C /* emoji_smirking_face.png in Resources */,
+				3788921C276F2B2800B3D96C /* emoji_christmas_tree.png in Resources */,
+				3788923A276F2B2800B3D96C /* emoji_dizzy.png in Resources */,
+				3788924A276F2B2800B3D96C /* emoji_zzz.png in Resources */,
+				37889278276F2B2800B3D96C /* emoji_bouquet.png in Resources */,
+				378892B5276F2B2800B3D96C /* emoji_downcast_face_with_sweat.png in Resources */,
+				37889218276F2B2800B3D96C /* emoji_pensive_face.png in Resources */,
+				378892D1276F2B2800B3D96C /* emoji_globe_showing_europe_africa.png in Resources */,
+				3788924C276F2B2800B3D96C /* emoji_revolving_hearts.png in Resources */,
+				37889270276F2B2800B3D96C /* emoji_yawning_face.png in Resources */,
+				37889275276F2B2800B3D96C /* emoji_cherry_blossom.png in Resources */,
+				378892B2276F2B2800B3D96C /* emoji_face_with_head_bandage.png in Resources */,
+				378892B3276F2B2800B3D96C /* emoji_disappointed_face.png in Resources */,
+				37889236276F2B2800B3D96C /* emoji_beaming_face_with_smiling_eyes.png in Resources */,
+				3788927F276F2B2800B3D96C /* emoji_rose.png in Resources */,
+				3788927A276F2B2800B3D96C /* emoji_birthday_cake.png in Resources */,
+				37889254276F2B2800B3D96C /* emoji_bat.png in Resources */,
+				378892DE276F2B2800B3D96C /* emoji_thinking_face.png in Resources */,
+				37889281276F2B2800B3D96C /* emoji_grinning_face.png in Resources */,
+				37889118276F238700B3D96C /* Images.xcassets in Resources */,
+				378892C4276F2B2800B3D96C /* emoji_hot_face.png in Resources */,
+				378892D3276F2B2800B3D96C /* emoji_mending_heart.png in Resources */,
+				3788923E276F2B2800B3D96C /* emoji_rainbow.png in Resources */,
+				37889280276F2B2800B3D96C /* emoji_last_quarter_moon_face.png in Resources */,
+				378892CA276F2B2800B3D96C /* emoji_hot_dog.png in Resources */,
+				378892CF276F2B2800B3D96C /* emoji_clown_face.png in Resources */,
+				37889268276F2B2800B3D96C /* emoji_kissing_face_with_smiling_eyes.png in Resources */,
+				3788922A276F2B2800B3D96C /* emoji_smiling_face_with_smiling_eyes.png in Resources */,
+				37889216276F2B2800B3D96C /* emoji_cowboy_hat_face.png in Resources */,
+				378892C1276F2B2800B3D96C /* emoji_goat.png in Resources */,
+				378892D8276F2B2800B3D96C /* emoji_beating_heart.png in Resources */,
+				37889215276F2B2800B3D96C /* emoji_upside_down_face.png in Resources */,
+				37889225276F2B2800B3D96C /* emoji_bread.png in Resources */,
+				37889250276F2B2800B3D96C /* emoji_sparkling_heart.png in Resources */,
+				3788925A276F2B2800B3D96C /* emoji_heart_with_ribbon.png in Resources */,
+				37889253276F2B2800B3D96C /* emoji_crying_cat.png in Resources */,
+				3788921E276F2B2800B3D96C /* emoji_snowman.png in Resources */,
+				3788927C276F2B2800B3D96C /* emoji_snowflake.png in Resources */,
+				378892D9276F2B2800B3D96C /* emoji_sad_but_relieved_face.png in Resources */,
+				3788926E276F2B2800B3D96C /* emoji_spider.png in Resources */,
+				3788925B276F2B2800B3D96C /* emoji_squinting_face_with_tongue.png in Resources */,
+				37889276276F2B2800B3D96C /* emoji_yellow_heart.png in Resources */,
+				378892EB276F2B2800B3D96C /* emoji_sparkles.png in Resources */,
+				378892E1276F2B2800B3D96C /* emoji_smiling_face_with_sunglasses.png in Resources */,
+				37889283276F2B2800B3D96C /* emoji_cheese_wedge.png in Resources */,
+				37889117276F238700B3D96C /* Palette.xcassets in Resources */,
+				378892E8276F2B2800B3D96C /* emoji_angry_face_with_horns.png in Resources */,
+				378892A7276F2B2800B3D96C /* emoji_teddy_bear.png in Resources */,
+				3788921D276F2B2800B3D96C /* emoji_confused_face.png in Resources */,
+				3788921F276F2B2800B3D96C /* emoji_heart_decoration.png in Resources */,
+				3788922E276F2B2800B3D96C /* emoji_brown_heart.png in Resources */,
+				37889274276F2B2800B3D96C /* emoji_turtle.png in Resources */,
+				3788925D276F2B2800B3D96C /* emoji_face_with_symbols_on_mouth.png in Resources */,
+				37889233276F2B2800B3D96C /* emoji_cupcake.png in Resources */,
+				37889298276F2B2800B3D96C /* emoji_face_blowing_a_kiss.png in Resources */,
+				378892EC276F2B2800B3D96C /* emoji_cityscape_at_dusk.png in Resources */,
+				3788929A276F2B2800B3D96C /* emoji_skull_and_crossbones.png in Resources */,
+				37889289276F2B2800B3D96C /* emoji_deer.png in Resources */,
+				378892A5276F2B2800B3D96C /* emoji_robot.png in Resources */,
+				3788923F276F2B2800B3D96C /* emoji_smiling_face_with_heart_eyes.png in Resources */,
+				37889287276F2B2800B3D96C /* emoji_fork_and_knife_with_plate.png in Resources */,
+				378892BA276F2B2800B3D96C /* emoji_monkey.png in Resources */,
+				3788928C276F2B2800B3D96C /* emoji_face_without_mouth.png in Resources */,
+				378892CB276F2B2800B3D96C /* emoji_face_with_hand_over_mouth.png in Resources */,
+				378892AB276F2B2800B3D96C /* emoji_kissing_face_with_closed_eyes.png in Resources */,
+				3788922F276F2B2800B3D96C /* emoji_crystal_ball.png in Resources */,
+				37889272276F2B2800B3D96C /* emoji_exploding_head.png in Resources */,
+				378892B4276F2B2800B3D96C /* emoji_bear.png in Resources */,
+				378892BF276F2B2800B3D96C /* emoji_neutral_face.png in Resources */,
+				37889226276F2B2800B3D96C /* emoji_kissing_face.png in Resources */,
+				378892E5276F2B2800B3D96C /* emoji_speak_no_evil_monkey.png in Resources */,
+				378892A2276F2B2800B3D96C /* emoji_cloud.png in Resources */,
+				37889260276F2B2800B3D96C /* emoji_globe_showing_americas.png in Resources */,
+				3788929D276F2B2800B3D96C /* emoji_snowman_without_snow.png in Resources */,
+				378892D5276F2B2800B3D96C /* emoji_face_with_open_mouth.png in Resources */,
+				378892D7276F2B2800B3D96C /* emoji_disguised_face.png in Resources */,
+				378892DA276F2B2800B3D96C /* emoji_winking_face_with_tongue.png in Resources */,
+				37889271276F2B2800B3D96C /* emoji_zany_face.png in Resources */,
+				37889259276F2B2800B3D96C /* emoji_smiling_face.png in Resources */,
+				378892E0276F2B2800B3D96C /* emoji_orange_heart.png in Resources */,
+				37889252276F2B2800B3D96C /* emoji_broken_heart.png in Resources */,
+				378892C3276F2B2800B3D96C /* emoji_unicorn.png in Resources */,
+				37889277276F2B2800B3D96C /* emoji_avocado.png in Resources */,
+				3788928A276F2B2800B3D96C /* emoji_face_in_clouds.png in Resources */,
+				3788922C276F2B2800B3D96C /* emoji_nerd_face.png in Resources */,
+				378892A8276F2B2800B3D96C /* emoji_musical_score.png in Resources */,
+				378892CC276F2B2800B3D96C /* emoji_fishing_pole.png in Resources */,
+				3788929B276F2B2800B3D96C /* emoji_jack_o_lantern.png in Resources */,
+				37889266276F2B2800B3D96C /* emoji_balloon.png in Resources */,
+				3788923C276F2B2800B3D96C /* emoji_pineapple.png in Resources */,
+				37889231276F2B2800B3D96C /* emoji_strawberry.png in Resources */,
+				378892CE276F2B2800B3D96C /* emoji_cat_face.png in Resources */,
+				3788928E276F2B2800B3D96C /* emoji_black_heart.png in Resources */,
+				37889220276F2B2800B3D96C /* emoji_confounded_face.png in Resources */,
+				3788922B276F2B2800B3D96C /* emoji_two_hearts.png in Resources */,
+				3788928B276F2B2800B3D96C /* emoji_adhesive_bandage.png in Resources */,
+				378892CD276F2B2800B3D96C /* emoji_snail.png in Resources */,
+				378892D4276F2B2800B3D96C /* emojis.json in Resources */,
+				378892B7276F2B2800B3D96C /* emoji_confetti_ball.png in Resources */,
+				37889295276F2B2800B3D96C /* emoji_tulip.png in Resources */,
+				378892C0276F2B2800B3D96C /* emoji_fish.png in Resources */,
+				378892AE276F2B2800B3D96C /* emoji_angry_face.png in Resources */,
+				3788926A276F2B2800B3D96C /* emoji_unamused_face.png in Resources */,
+				37889299276F2B2800B3D96C /* emoji_carousel_horse.png in Resources */,
+				3788927D276F2B2800B3D96C /* emoji_rolling_on_the_floor_laughing.png in Resources */,
+				3788929F276F2B2800B3D96C /* emoji_smiling_face_with_halo.png in Resources */,
+				37889116276F238700B3D96C /* Localizable.strings in Resources */,
+				37889296276F2B2800B3D96C /* emoji_sunset.png in Resources */,
+				378892EA276F2B2800B3D96C /* emoji_winking_face.png in Resources */,
+				3788921B276F2B2800B3D96C /* emoji_face_with_medical_mask.png in Resources */,
+				3788921A276F2B2800B3D96C /* emoji_lying_face.png in Resources */,
+				37889222276F2B2800B3D96C /* emoji_green_heart.png in Resources */,
+				378892D2276F2B2800B3D96C /* emoji_first_quarter_moon_face.png in Resources */,
+				378892D6276F2B2800B3D96C /* emoji_face_savoring_food.png in Resources */,
+				378892BD276F2B2800B3D96C /* emoji_pile_of_poo.png in Resources */,
+				378892EF276F2B2800B3D96C /* emoji_drooling_face.png in Resources */,
+				378892E9276F2B2800B3D96C /* emoji_see_no_evil_monkey.png in Resources */,
+				378892F3276F2B2800B3D96C /* emoji_evergreen_tree.png in Resources */,
+				37889241276F2B2800B3D96C /* emoji_kissing_cat.png in Resources */,
+				3788924E276F2B2800B3D96C /* emoji_sleepy_face.png in Resources */,
+				37889255276F2B2800B3D96C /* emoji_slightly_smiling_face.png in Resources */,
+				378892E2276F2B2800B3D96C /* emoji_star_struck.png in Resources */,
+				37889285276F2B2800B3D96C /* emoji_partying_face.png in Resources */,
+				37889294276F2B2800B3D96C /* emoji_octopus.png in Resources */,
+				37889244276F2B2800B3D96C /* emoji_persevering_face.png in Resources */,
+				37889267276F2B2800B3D96C /* emoji_scorpion.png in Resources */,
+				37889264276F2B2800B3D96C /* emoji_panda.png in Resources */,
+				378892B9276F2B2800B3D96C /* emoji_hear_no_evil_monkey.png in Resources */,
+				3788925C276F2B2800B3D96C /* emoji_heart_on_fire.png in Resources */,
+				378892F1276F2B2800B3D96C /* emoji_smiling_face_with_horns.png in Resources */,
+				37889248276F2B2800B3D96C /* emoji_expressionless_face.png in Resources */,
+				3788924D276F2B2800B3D96C /* emoji_magic_wand.png in Resources */,
+				37889228276F2B2800B3D96C /* emoji_cat.png in Resources */,
+				3788929E276F2B2800B3D96C /* emoji_fog.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		378890E0276F229700B3D96C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		378890EA276F229700B3D96C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		155AB31E14573A09C3759123 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-emoji-game/Pods-emoji-game-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-emoji-game/Pods-emoji-game-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-emoji-game/Pods-emoji-game-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1DB8BEC067D163AC66A79863 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-emoji-game-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3754811C27710193003C3E16 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		378890C8276F229500B3D96C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */,
+				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
+				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
+				378890D0276F229500B3D96C /* AppDelegate.swift in Sources */,
+				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
+				3722803A2771305100466B64 /* MainRouter.swift in Sources */,
+				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
+				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
+				37548119277100A7003C3E16 /* StartViewController.swift in Sources */,
+				3754811B277100A7003C3E16 /* StartViewModel.swift in Sources */,
+				3788912B276F2AE100B3D96C /* EmojisProvider.swift in Sources */,
+				37889125276F27C700B3D96C /* DependencyProvider.swift in Sources */,
+				37889127276F2A5C00B3D96C /* ApplicationObservable.swift in Sources */,
+				3722803C2771305100466B64 /* MainBuilder.swift in Sources */,
+				37889114276F238700B3D96C /* Strings.swift in Sources */,
+				37889115276F238700B3D96C /* Assets.swift in Sources */,
+				378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */,
+				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		378890DE276F229700B3D96C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378890E7276F229700B3D96C /* emoji_gameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		378890E8276F229700B3D96C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378890F1276F229700B3D96C /* emoji_gameUITests.swift in Sources */,
+				378890F3276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		378890E4276F229700B3D96C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 378890CB276F229500B3D96C /* emoji-game */;
+			targetProxy = 378890E3276F229700B3D96C /* PBXContainerItemProxy */;
+		};
+		378890EE276F229700B3D96C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 378890CB276F229500B3D96C /* emoji-game */;
+			targetProxy = 378890ED276F229700B3D96C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		378890DA276F229700B3D96C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				378890DB276F229700B3D96C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		37889105276F238700B3D96C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37889106276F238700B3D96C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		378890F4276F229700B3D96C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		378890F5276F229700B3D96C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		378890F7276F229700B3D96C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDQPWCCGCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "emoji-game/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Mashup Emojis";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		378890F8276F229700B3D96C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 011E110A3CBE6E34CE104BE0 /* Pods-emoji-game.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDQPWCCGCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "emoji-game/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Mashup Emojis";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		378890FA276F229700B3D96C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDQPWCCGCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emoji-game.app/emoji-game";
+			};
+			name = Debug;
+		};
+		378890FB276F229700B3D96C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDQPWCCGCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emoji-game.app/emoji-game";
+			};
+			name = Release;
+		};
+		378890FD276F229700B3D96C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDQPWCCGCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "emoji-game";
+			};
+			name = Debug;
+		};
+		378890FE276F229700B3D96C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDQPWCCGCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "emoji-game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		378890C7276F229500B3D96C /* Build configuration list for PBXProject "emoji-game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378890F4276F229700B3D96C /* Debug */,
+				378890F5276F229700B3D96C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		378890F6276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378890F7276F229700B3D96C /* Debug */,
+				378890F8276F229700B3D96C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		378890F9276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378890FA276F229700B3D96C /* Debug */,
+				378890FB276F229700B3D96C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		378890FC276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378890FD276F229700B3D96C /* Debug */,
+				378890FE276F229700B3D96C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 378890C4276F229500B3D96C /* Project object */;
+}
