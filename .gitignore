@@ -1,3 +1,5 @@
+
+.DS_Store
 Pods/**
 vendor/
 fastlane/report.xml
@@ -15,5 +17,4 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
-.DS_Store
 Podfile.lock
