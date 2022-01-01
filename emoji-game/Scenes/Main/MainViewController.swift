@@ -57,6 +57,14 @@ final class MainViewController: UIViewController {
             usingSafeArea: true
         )
         
+        let aConfig = AppConstants.MainScene.PulseAnimation()
+        label.pulseAnimated(
+            minScale: aConfig.minScale,
+            maxScale: aConfig.maxScale,
+            duration: aConfig.duration,
+            delay: aConfig.delay
+        )
+        
         view.addSubview(gameBar)
         gameBar.edgesToSuperview(excluding: .top)
         gameBar.topToBottom(of: label)
