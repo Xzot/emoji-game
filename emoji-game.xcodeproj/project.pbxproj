@@ -261,6 +261,21 @@
 		378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */; };
 		378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892FA276F31A600B3D96C /* EmojiItemsModel.swift */; };
 		37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */; };
+		37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */; };
+		37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A5277F2D000076CD06 /* UIViewController+.swift */; };
+		37D602AC27809DE60076CD06 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602A727809DE60076CD06 /* Quicksand-Bold.ttf */; };
+		37D602AD27809DE60076CD06 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602A827809DE60076CD06 /* Quicksand-Regular.ttf */; };
+		37D602AE27809DE60076CD06 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602A927809DE60076CD06 /* Quicksand-Light.ttf */; };
+		37D602AF27809DE60076CD06 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602AA27809DE60076CD06 /* Quicksand-Medium.ttf */; };
+		37D602B027809DE60076CD06 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602AB27809DE60076CD06 /* Quicksand-SemiBold.ttf */; };
+		37D602B227809E740076CD06 /* UIFont+Quicksand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B127809E740076CD06 /* UIFont+Quicksand.swift */; };
+		37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B32780A11E0076CD06 /* UIDevice+.swift */; };
+		37D602B72780AD450076CD06 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B62780AD450076CD06 /* PlayButton.swift */; };
+		37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B82780ADA90076CD06 /* PlaySceneBar.swift */; };
+		37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */; };
+		37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */; };
+		37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BF2780D0D10076CD06 /* AppConstants.swift */; };
+		37D602C22780D2520076CD06 /* AnimatedPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C12780D2520076CD06 /* AnimatedPlayButton.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -541,6 +556,21 @@
 		378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEmojisProvider.swift; sourceTree = "<group>"; };
 		378892FA276F31A600B3D96C /* EmojiItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItemsModel.swift; sourceTree = "<group>"; };
 		37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Global.swift"; sourceTree = "<group>"; };
+		37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeOperator.swift; sourceTree = "<group>"; };
+		37D602A5277F2D000076CD06 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		37D602A727809DE60076CD06 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		37D602A827809DE60076CD06 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		37D602A927809DE60076CD06 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		37D602AA27809DE60076CD06 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		37D602AB27809DE60076CD06 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		37D602B127809E740076CD06 /* UIFont+Quicksand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Quicksand.swift"; sourceTree = "<group>"; };
+		37D602B32780A11E0076CD06 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
+		37D602B62780AD450076CD06 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		37D602B82780ADA90076CD06 /* PlaySceneBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySceneBar.swift; sourceTree = "<group>"; };
+		37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAbsorbingView.swift; sourceTree = "<group>"; };
+		37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PulsingAnimation.swift"; sourceTree = "<group>"; };
+		37D602BF2780D0D10076CD06 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		37D602C12780D2520076CD06 /* AnimatedPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPlayButton.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -574,10 +604,11 @@
 		372280352771303300466B64 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				37D602B52780AD2B0076CD06 /* Views */,
 				372280362771305100466B64 /* MainRouter.swift */,
-				372280372771305100466B64 /* MainViewController.swift */,
 				372280382771305100466B64 /* MainBuilder.swift */,
 				372280392771305100466B64 /* MainViewModel.swift */,
+				372280372771305100466B64 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -586,9 +617,9 @@
 			isa = PBXGroup;
 			children = (
 				37548114277100A7003C3E16 /* StartRouter.swift */,
-				37548115277100A7003C3E16 /* StartViewController.swift */,
 				37548116277100A7003C3E16 /* StartBuilder.swift */,
 				37548117277100A7003C3E16 /* StartViewModel.swift */,
+				37548115277100A7003C3E16 /* StartViewController.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -623,6 +654,7 @@
 				37889123276F27BA00B3D96C /* Services */,
 				3788912C276F2AF100B3D96C /* Models */,
 				37889302276F953600B3D96C /* Extensions */,
+				37D602A2277F29A30076CD06 /* Utils */,
 				37889100276F231400B3D96C /* Supporting Files */,
 				37889101276F238700B3D96C /* Resources */,
 				3788912F276F2B2700B3D96C /* assets */,
@@ -650,6 +682,7 @@
 		37889100276F231400B3D96C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				37D602BF2780D0D10076CD06 /* AppConstants.swift */,
 				378890DA276F229700B3D96C /* LaunchScreen.storyboard */,
 				378890DD276F229700B3D96C /* Info.plist */,
 			);
@@ -681,6 +714,11 @@
 		3788910A276F238700B3D96C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				37D602A727809DE60076CD06 /* Quicksand-Bold.ttf */,
+				37D602A927809DE60076CD06 /* Quicksand-Light.ttf */,
+				37D602AA27809DE60076CD06 /* Quicksand-Medium.ttf */,
+				37D602A827809DE60076CD06 /* Quicksand-Regular.ttf */,
+				37D602AB27809DE60076CD06 /* Quicksand-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -969,8 +1007,39 @@
 			isa = PBXGroup;
 			children = (
 				37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */,
+				37D602A5277F2D000076CD06 /* UIViewController+.swift */,
+				37D602B127809E740076CD06 /* UIFont+Quicksand.swift */,
+				37D602B32780A11E0076CD06 /* UIDevice+.swift */,
+				37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		37D602A2277F29A30076CD06 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		37D602B52780AD2B0076CD06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37D602BA2780B44B0076CD06 /* PlayButton */,
+				37D602B82780ADA90076CD06 /* PlaySceneBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37D602BA2780B44B0076CD06 /* PlayButton */ = {
+			isa = PBXGroup;
+			children = (
+				37D602C12780D2520076CD06 /* AnimatedPlayButton.swift */,
+				37D602B62780AD450076CD06 /* PlayButton.swift */,
+				37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */,
+			);
+			path = PlayButton;
 			sourceTree = "<group>";
 		};
 		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
@@ -1161,6 +1230,7 @@
 				378892F4276F2B2800B3D96C /* emoji_slightly_frowning_face.png in Resources */,
 				37889237276F2B2800B3D96C /* emoji_skull.png in Resources */,
 				37889286276F2B2800B3D96C /* emoji_rabbit_face.png in Resources */,
+				37D602AD27809DE60076CD06 /* Quicksand-Regular.ttf in Resources */,
 				3788925E276F2B2800B3D96C /* emoji_ghost.png in Resources */,
 				37889249276F2B2800B3D96C /* emoji_baguette_bread.png in Resources */,
 				37889119276F238700B3D96C /* sheet.csv in Resources */,
@@ -1171,6 +1241,7 @@
 				37889246276F2B2800B3D96C /* emoji_shushing_face.png in Resources */,
 				378892C8276F2B2800B3D96C /* emoji_relieved_face.png in Resources */,
 				3788928D276F2B2800B3D96C /* emoji_lion.png in Resources */,
+				37D602B027809DE60076CD06 /* Quicksand-SemiBold.ttf in Resources */,
 				37889232276F2B2800B3D96C /* emoji_nauseated_face.png in Resources */,
 				3788927B276F2B2800B3D96C /* emoji_face_with_tongue.png in Resources */,
 				378892DF276F2B2800B3D96C /* emoji_hot_beverage.png in Resources */,
@@ -1206,6 +1277,7 @@
 				378892D1276F2B2800B3D96C /* emoji_globe_showing_europe_africa.png in Resources */,
 				3788924C276F2B2800B3D96C /* emoji_revolving_hearts.png in Resources */,
 				37889270276F2B2800B3D96C /* emoji_yawning_face.png in Resources */,
+				37D602AF27809DE60076CD06 /* Quicksand-Medium.ttf in Resources */,
 				37889275276F2B2800B3D96C /* emoji_cherry_blossom.png in Resources */,
 				378892B2276F2B2800B3D96C /* emoji_face_with_head_bandage.png in Resources */,
 				378892B3276F2B2800B3D96C /* emoji_disappointed_face.png in Resources */,
@@ -1236,6 +1308,7 @@
 				3788927C276F2B2800B3D96C /* emoji_snowflake.png in Resources */,
 				378892D9276F2B2800B3D96C /* emoji_sad_but_relieved_face.png in Resources */,
 				3788926E276F2B2800B3D96C /* emoji_spider.png in Resources */,
+				37D602AC27809DE60076CD06 /* Quicksand-Bold.ttf in Resources */,
 				3788925B276F2B2800B3D96C /* emoji_squinting_face_with_tongue.png in Resources */,
 				37889276276F2B2800B3D96C /* emoji_yellow_heart.png in Resources */,
 				378892EB276F2B2800B3D96C /* emoji_sparkles.png in Resources */,
@@ -1262,6 +1335,7 @@
 				378892CB276F2B2800B3D96C /* emoji_face_with_hand_over_mouth.png in Resources */,
 				378892AB276F2B2800B3D96C /* emoji_kissing_face_with_closed_eyes.png in Resources */,
 				3788922F276F2B2800B3D96C /* emoji_crystal_ball.png in Resources */,
+				37D602AE27809DE60076CD06 /* Quicksand-Light.ttf in Resources */,
 				37889272276F2B2800B3D96C /* emoji_exploding_head.png in Resources */,
 				378892B4276F2B2800B3D96C /* emoji_bear.png in Resources */,
 				378892BF276F2B2800B3D96C /* emoji_neutral_face.png in Resources */,
@@ -1415,10 +1489,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */,
+				37D602B72780AD450076CD06 /* PlayButton.swift in Sources */,
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
+				37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */,
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
+				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
+				37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */,
+				37D602B227809E740076CD06 /* UIFont+Quicksand.swift in Sources */,
 				378890D0276F229500B3D96C /* AppDelegate.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
+				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
 				3722803A2771305100466B64 /* MainRouter.swift in Sources */,
 				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
@@ -1427,10 +1507,14 @@
 				3788912B276F2AE100B3D96C /* EmojisProvider.swift in Sources */,
 				37889125276F27C700B3D96C /* DependencyProvider.swift in Sources */,
 				37889127276F2A5C00B3D96C /* ApplicationObservable.swift in Sources */,
+				37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */,
+				37D602C22780D2520076CD06 /* AnimatedPlayButton.swift in Sources */,
 				3722803C2771305100466B64 /* MainBuilder.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
+				37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */,
 				378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */,
+				37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */,
 				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1617,8 +1701,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Mashup Emojis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1647,8 +1732,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Mashup Emojis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

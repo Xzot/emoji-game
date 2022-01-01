@@ -5,9 +5,12 @@
 
 import UIKit
 
+// MARK: - MainBuilder class
 final class MainBuilder {
+    // MARK: Properties
     private let provider: DependencyProvider
 
+    // MARK: Life Cycle
     init(provider: DependencyProvider) {
         self.provider = provider
     }

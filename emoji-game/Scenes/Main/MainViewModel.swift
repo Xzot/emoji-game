@@ -5,18 +5,25 @@
 
 import Combine
 
+// MARK: - MainViewModel class
 final class MainViewModel {
-
+    // MARK: Output
+    var scoreOutut: AnyPublisher<Int, Never> {
+        scoreState.eraseToAnyPublisher()
+    }
+    
+    // MARK: Properties
     private let provider: DependencyProvider
-
     private var router: MainRouter!
-
     private var cancellables: [AnyCancellable] = []
+    private let scoreState = CurrentValueSubject<Int, Never>(0)
 
+    // MARK: Life Cycle
     init(provider: DependencyProvider) {
         self.provider = provider
     }
-
+    
+    // MARK: Public
     func inject(router: MainRouter) {
         self.router = router
     }

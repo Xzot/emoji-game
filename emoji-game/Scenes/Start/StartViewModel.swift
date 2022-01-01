@@ -36,6 +36,6 @@ final class StartViewModel {
     }
     
     func routeToNextScene() {
-        
+        router.routeToNextScene()
     }
 }

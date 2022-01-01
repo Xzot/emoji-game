@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         
+        application.statusBarStyle = .darkContent
+        
         return true
     }
 }

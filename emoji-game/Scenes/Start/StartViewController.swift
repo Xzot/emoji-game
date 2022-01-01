@@ -12,6 +12,7 @@ final class StartViewController: UIViewController {
     // MARK: Properties
     private let viewModel: StartViewModel
     private var cancellable = Set<AnyCancellable>()
+    private var currentViewController: UIViewController?
     
     // MARK: UI
     private lazy var revealingSplashView = RevealingSplashView(
@@ -43,9 +44,14 @@ final class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        revealingSplashView.startAnimation() { [weak self] in
-            self?.viewModel.routeToNextScene()
-        }
+        revealingSplashView.startAnimation(nil)
+    }
+    
+    func swapCurrentChild(with newViewController: UIViewController) {
+        swapChildAnimated(currentViewController, with: newViewController, on: view)
+        currentViewController = newViewController
+        newViewController.view.centerInSuperview()
+        newViewController.view.size(to: view)
     }
 }
 
@@ -59,6 +65,7 @@ private extension StartViewController {
                     return
                 }
                 self?.revealingSplashView.heartAttack = true
+                self?.viewModel.routeToNextScene()
             }
             .store(in: &cancellable)
     }

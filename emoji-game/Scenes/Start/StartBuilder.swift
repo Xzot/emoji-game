@@ -15,7 +15,11 @@ final class StartBuilder {
     func build() -> UIViewController {
         let viewModel = StartViewModel(provider: provider)
         let viewController = StartViewController(viewModel: viewModel)
-        let router = StartRouter(presentable: viewController)
+        let bilder = MainBuilder(provider: provider)
+        let router = StartRouter(
+            presentable: viewController,
+            builder: bilder
+        )
         viewModel.inject(router: router)
         return viewController
     }

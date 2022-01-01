@@ -11,9 +11,14 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
 
-  internal enum General {
-    /// Close
-    internal static let close = Strings.tr("Localizable", "general.close")
+  internal enum MainScene {
+    /// Who's that
+    /// Emoji?
+    internal static let labelText = Strings.tr("Localizable", "mainScene.labelText")
+    /// PLAY
+    internal static let playButtonName = Strings.tr("Localizable", "mainScene.playButtonName")
+    /// Best: 
+    internal static let playButtonScoreTitle = Strings.tr("Localizable", "mainScene.playButtonScoreTitle")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

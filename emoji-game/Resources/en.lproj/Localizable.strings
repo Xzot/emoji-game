@@ -1,2 +1,4 @@
-"general.close"                     = "Close";
 
+"mainScene.labelText" = "Who's that\nEmoji?";
+"mainScene.playButtonName" = "PLAY";
+"mainScene.playButtonScoreTitle" = "Best: ";

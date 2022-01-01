@@ -5,9 +5,12 @@
 
 import UIKit
 
+// MARK: - MainRouter class
 final class MainRouter {
+    // MARK: Properties
     private weak var presentable: MainViewController?
-
+    
+    // MARK: Life Cycle
     init(presentable: MainViewController) {
         self.presentable = presentable
     }
