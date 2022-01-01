@@ -275,7 +275,8 @@
 		37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */; };
 		37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */; };
 		37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BF2780D0D10076CD06 /* AppConstants.swift */; };
-		37D602C22780D2520076CD06 /* AnimatedPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C12780D2520076CD06 /* AnimatedPlayButton.swift */; };
+		37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C327810C1B0076CD06 /* CustomButton.swift */; };
+		37D602C627810D550076CD06 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C527810D550076CD06 /* ImageButton.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -570,7 +571,8 @@
 		37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAbsorbingView.swift; sourceTree = "<group>"; };
 		37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PulsingAnimation.swift"; sourceTree = "<group>"; };
 		37D602BF2780D0D10076CD06 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		37D602C12780D2520076CD06 /* AnimatedPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPlayButton.swift; sourceTree = "<group>"; };
+		37D602C327810C1B0076CD06 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		37D602C527810D550076CD06 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1035,9 +1037,10 @@
 		37D602BA2780B44B0076CD06 /* PlayButton */ = {
 			isa = PBXGroup;
 			children = (
-				37D602C12780D2520076CD06 /* AnimatedPlayButton.swift */,
 				37D602B62780AD450076CD06 /* PlayButton.swift */,
+				37D602C527810D550076CD06 /* ImageButton.swift */,
 				37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */,
+				37D602C327810C1B0076CD06 /* CustomButton.swift */,
 			);
 			path = PlayButton;
 			sourceTree = "<group>";
@@ -1492,6 +1495,7 @@
 				37D602B72780AD450076CD06 /* PlayButton.swift in Sources */,
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
 				37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */,
+				37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */,
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
 				37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */,
@@ -1508,11 +1512,11 @@
 				37889125276F27C700B3D96C /* DependencyProvider.swift in Sources */,
 				37889127276F2A5C00B3D96C /* ApplicationObservable.swift in Sources */,
 				37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */,
-				37D602C22780D2520076CD06 /* AnimatedPlayButton.swift in Sources */,
 				3722803C2771305100466B64 /* MainBuilder.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
 				37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */,
+				37D602C627810D550076CD06 /* ImageButton.swift in Sources */,
 				378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */,
 				37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */,
 				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,

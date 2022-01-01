@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias VoidCompletion = () -> Void
+
 enum AppConstants {
     
 }
