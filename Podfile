@@ -10,6 +10,7 @@ target 'emoji-game' do
   pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'Swinject'
+  pod 'SkeletonView'
   pod 'TinyConstraints'
   pod 'SwiftyUserDefaults'
   pod 'RevealingSplashView'
