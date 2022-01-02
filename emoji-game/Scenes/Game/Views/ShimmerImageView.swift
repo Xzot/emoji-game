@@ -25,6 +25,17 @@ final class ShimmerImageView: UIView {
         $0.clipsToBounds = true
     }
     
+    // MARK: API
+    func update(_ image: ImagePublisher) {
+        cancellable.forEach { $0.cancel() }
+        cancellable.removeAll()
+        
+        image
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: handle(_:))
+            .store(in: &cancellable)
+    }
+    
     // MARK: Life Cycle
     init(image: ImagePublisher) {
         super.init(frame: .zero)
@@ -50,7 +61,7 @@ final class ShimmerImageView: UIView {
 private extension ShimmerImageView {
     func handle(_ image: UIImage?) {
         content = image
-        imageView.image = image
+        imageView.image = image == nil ? Asset.Images.gamePlaceholder.image : image
         if image == nil {
             skeletonView.showSkeleton()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in

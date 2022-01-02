@@ -10,10 +10,17 @@ import TinyConstraints
 final class GameViewController: UIViewController {
     // MARK: Properties
     private let viewModel: GameViewModel
+    private let spacing: CGFloat = 16
+    private let numberOfItemsInBar: CGFloat = 3
+    private var screenWidth: CGFloat {
+        view.window?.frame.size.width ?? 0
+    }
     
     // MARK: UI
-    
-    private lazy var gameField = UIView()
+    private lazy var gameField = GameField(
+        spacing: spacing,
+        viewModel: viewModel
+    )
     
     // MARK: Life Cycle
     init(viewModel: GameViewModel) {

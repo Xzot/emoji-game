@@ -13,6 +13,9 @@ import TinyConstraints
 final class GameOptionsPanel: UIView {
     // MARK: Properties
     private let spacing: CGFloat
+    private var leftImage: ImagePublisher
+    private var centerImage: ImagePublisher
+    private var rightImage: ImagePublisher
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
@@ -20,6 +23,24 @@ final class GameOptionsPanel: UIView {
         $0.spacing = spacing
         $0.axis = .horizontal
         $0.distribution = .fillEqually
+    }
+    private lazy var leftImageView = ShimmerImageView(image: leftImage)
+    private lazy var centerImageView = ShimmerImageView(image: centerImage)
+    private lazy var rightImageView = ShimmerImageView(image: rightImage)
+    
+    // MARK: API
+    func update(
+        leftImage: ImagePublisher,
+        centerImage: ImagePublisher,
+        rightImage: ImagePublisher
+    ) {
+        self.leftImage = leftImage
+        self.centerImage = centerImage
+        self.rightImage = rightImage
+        
+        leftImageView.update(leftImage)
+        centerImageView.update(centerImage)
+        rightImageView.update(rightImage)
     }
     
     // MARK: Life Cycle
@@ -30,49 +51,21 @@ final class GameOptionsPanel: UIView {
         rightImage: ImagePublisher
     ) {
         self.spacing = spacing
+        self.leftImage = leftImage
+        self.centerImage = centerImage
+        self.rightImage = rightImage
         
         super.init(frame: .zero)
         
         addSubview(stackView)
         stackView.edgesToSuperview()
         
-        bind(
-            leftImage: leftImage,
-            centerImage: centerImage,
-            rightImage: rightImage
-        )
+        stackView.addArrangedSubview(leftImageView)
+        stackView.addArrangedSubview(centerImageView)
+        stackView.addArrangedSubview(rightImageView)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-private extension GameOptionsPanel {
-    func bind(
-        leftImage: ImagePublisher,
-        centerImage: ImagePublisher,
-        rightImage: ImagePublisher
-    ) {
-        leftImage
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                
-            }
-            .store(in: &cancellable)
-        
-        centerImage
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                
-            }
-            .store(in: &cancellable)
-        
-        rightImage
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                
-            }
-            .store(in: &cancellable)
     }
 }

@@ -284,6 +284,7 @@
 		37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D02781177E0076CD06 /* SwapChildViewController.swift */; };
 		37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */; };
 		37D602D6278121610076CD06 /* ShimmerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D5278121610076CD06 /* ShimmerImageView.swift */; };
+		37D602D82781979B0076CD06 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D72781979B0076CD06 /* GameField.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -587,6 +588,7 @@
 		37D602D02781177E0076CD06 /* SwapChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapChildViewController.swift; sourceTree = "<group>"; };
 		37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOptionsPanel.swift; sourceTree = "<group>"; };
 		37D602D5278121610076CD06 /* ShimmerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerImageView.swift; sourceTree = "<group>"; };
+		37D602D72781979B0076CD06 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1076,6 +1078,7 @@
 		37D602D227811CC60076CD06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37D602D72781979B0076CD06 /* GameField.swift */,
 				37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */,
 				37D602D5278121610076CD06 /* ShimmerImageView.swift */,
 			);
@@ -1533,6 +1536,7 @@
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
 				37D602CF278115250076CD06 /* GameViewModel.swift in Sources */,
 				37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */,
+				37D602D82781979B0076CD06 /* GameField.swift in Sources */,
 				37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */,
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
