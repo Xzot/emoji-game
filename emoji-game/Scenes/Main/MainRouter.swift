@@ -9,9 +9,20 @@ import UIKit
 final class MainRouter {
     // MARK: Properties
     private weak var presentable: MainViewController?
+    private let gameSceneBuilder: GameBuilder
     
     // MARK: Life Cycle
-    init(presentable: MainViewController) {
+    init(
+        presentable: MainViewController,
+        gameSceneBuilder: GameBuilder
+    ) {
         self.presentable = presentable
+        self.gameSceneBuilder = gameSceneBuilder
+    }
+    
+    // MARK: API
+    func makeGameSceneRoute() {
+        let gameScene = gameSceneBuilder.build(listener: nil)
+        presentable?.swapCurrentChild(with: gameScene)
     }
 }

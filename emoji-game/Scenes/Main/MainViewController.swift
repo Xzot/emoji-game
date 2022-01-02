@@ -7,7 +7,7 @@ import Combine
 import TinyConstraints
 
 // MARK: - MainViewController class
-final class MainViewController: UIViewController {
+final class MainViewController: SwapChildViewController {
     // MARK: Properties
     private let viewModel: MainViewModel
     
@@ -74,7 +74,7 @@ final class MainViewController: UIViewController {
 // MARK: - PlaySceneBarDelegate extension
 extension MainViewController: PlaySceneBarDelegate {
     func didTapPlay() {
-        
+        viewModel.playTapped()
     }
     
     func didTapAds() {

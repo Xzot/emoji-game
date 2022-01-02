@@ -277,6 +277,13 @@
 		37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BF2780D0D10076CD06 /* AppConstants.swift */; };
 		37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C327810C1B0076CD06 /* CustomButton.swift */; };
 		37D602C627810D550076CD06 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C527810D550076CD06 /* ImageButton.swift */; };
+		37D602CC278115250076CD06 /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C8278115250076CD06 /* GameRouter.swift */; };
+		37D602CD278115250076CD06 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C9278115250076CD06 /* GameViewController.swift */; };
+		37D602CE278115250076CD06 /* GameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602CA278115250076CD06 /* GameBuilder.swift */; };
+		37D602CF278115250076CD06 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602CB278115250076CD06 /* GameViewModel.swift */; };
+		37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D02781177E0076CD06 /* SwapChildViewController.swift */; };
+		37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */; };
+		37D602D6278121610076CD06 /* ShimmerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D5278121610076CD06 /* ShimmerImageView.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -573,6 +580,13 @@
 		37D602BF2780D0D10076CD06 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		37D602C327810C1B0076CD06 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		37D602C527810D550076CD06 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		37D602C8278115250076CD06 /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		37D602C9278115250076CD06 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		37D602CA278115250076CD06 /* GameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuilder.swift; sourceTree = "<group>"; };
+		37D602CB278115250076CD06 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		37D602D02781177E0076CD06 /* SwapChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapChildViewController.swift; sourceTree = "<group>"; };
+		37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOptionsPanel.swift; sourceTree = "<group>"; };
+		37D602D5278121610076CD06 /* ShimmerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerImageView.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1001,6 +1015,7 @@
 			children = (
 				3754811327710092003C3E16 /* Start */,
 				372280352771303300466B64 /* Main */,
+				37D602C7278113BD0076CD06 /* Game */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1021,6 +1036,7 @@
 			isa = PBXGroup;
 			children = (
 				37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */,
+				37D602D02781177E0076CD06 /* SwapChildViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1043,6 +1059,27 @@
 				37D602C327810C1B0076CD06 /* CustomButton.swift */,
 			);
 			path = PlayButton;
+			sourceTree = "<group>";
+		};
+		37D602C7278113BD0076CD06 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				37D602D227811CC60076CD06 /* Views */,
+				37D602C8278115250076CD06 /* GameRouter.swift */,
+				37D602CA278115250076CD06 /* GameBuilder.swift */,
+				37D602CB278115250076CD06 /* GameViewModel.swift */,
+				37D602C9278115250076CD06 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		37D602D227811CC60076CD06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */,
+				37D602D5278121610076CD06 /* ShimmerImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
@@ -1494,24 +1531,31 @@
 				3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */,
 				37D602B72780AD450076CD06 /* PlayButton.swift in Sources */,
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
+				37D602CF278115250076CD06 /* GameViewModel.swift in Sources */,
 				37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */,
 				37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */,
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
+				37D602D6278121610076CD06 /* ShimmerImageView.swift in Sources */,
 				37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */,
 				37D602B227809E740076CD06 /* UIFont+Quicksand.swift in Sources */,
 				378890D0276F229500B3D96C /* AppDelegate.swift in Sources */,
+				37D602CC278115250076CD06 /* GameRouter.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
 				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
+				37D602CE278115250076CD06 /* GameBuilder.swift in Sources */,
+				37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */,
 				3722803A2771305100466B64 /* MainRouter.swift in Sources */,
 				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
+				37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */,
 				37548119277100A7003C3E16 /* StartViewController.swift in Sources */,
 				3754811B277100A7003C3E16 /* StartViewModel.swift in Sources */,
 				3788912B276F2AE100B3D96C /* EmojisProvider.swift in Sources */,
 				37889125276F27C700B3D96C /* DependencyProvider.swift in Sources */,
 				37889127276F2A5C00B3D96C /* ApplicationObservable.swift in Sources */,
 				37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */,
+				37D602CD278115250076CD06 /* GameViewController.swift in Sources */,
 				3722803C2771305100466B64 /* MainBuilder.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,

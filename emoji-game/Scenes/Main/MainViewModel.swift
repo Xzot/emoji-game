@@ -23,8 +23,12 @@ final class MainViewModel {
         self.provider = provider
     }
     
-    // MARK: Public
+    // MARK: API
     func inject(router: MainRouter) {
         self.router = router
+    }
+    
+    func playTapped() {
+        router.makeGameSceneRoute()
     }
 }

@@ -13,18 +13,11 @@ import UIKit
 class CustomButton: UIView {
     // MARK: Properties
     private var completion: VoidCompletion?
-    private let tapGestureRecognaizer = UITapGestureRecognizer(
-        target: self,
-        action: #selector(handleTapp)
-    )
     
     // MARK: Life Cycle
     init(completion: @escaping VoidCompletion) {
         self.completion = completion
-        
         super.init(frame: .zero)
-        
-        addGestureRecognizer(tapGestureRecognaizer)
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +33,7 @@ class CustomButton: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         alpha = 1
+        handleTap()
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -51,7 +45,7 @@ class CustomButton: UIView {
 // MARK: - PlayButton extension
 private extension CustomButton {
     @objc
-    func handleTapp() {
+    func handleTap() {
         completion?()
     }
 }
