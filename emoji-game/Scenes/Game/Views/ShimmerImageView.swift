@@ -1,5 +1,5 @@
 //
-//  ShimmerImageView.swift
+//  ImageView.swift
 //  emoji-game
 //
 //  Created by Vlad Shchuka on 02.01.2022.
@@ -7,21 +7,24 @@
 
 import UIKit
 import Combine
-import SkeletonView
 import TinyConstraints
 
-// MARK: - ShimmerImageView class
-final class ShimmerImageView: UIView {
+// MARK: - ImageViewType enum
+enum ImageViewType {
+    case embded
+    case def
+}
+
+// MARK: - ImageView class
+final class ImageView: UIView {
     // MARK: Properties
+    private let type: ImageViewType
     private var content: UIImage?
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
-    private lazy var skeletonView = UIView()&>.do {
-        $0.isSkeletonable = true
-    }
     private lazy var imageView = UIImageView()&>.do {
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
     }
     
@@ -37,14 +40,22 @@ final class ShimmerImageView: UIView {
     }
     
     // MARK: Life Cycle
-    init(image: ImagePublisher) {
+    init(
+        image: ImagePublisher,
+        type: ImageViewType = .def
+    ) {
+        self.type = type
+        
         super.init(frame: .zero)
         
         addSubview(imageView)
-        imageView.edgesToSuperview()
-        
-        addSubview(skeletonView)
-        skeletonView.edgesToSuperview()
+        if type == .def {
+            imageView.edgesToSuperview()
+        } else {
+            imageView.height(to: self, multiplier: 0.538)
+            imageView.width(to: self, multiplier: 0.538)
+            imageView.centerInSuperview()
+        }
         
         image
             .receive(on: DispatchQueue.main)
@@ -57,21 +68,10 @@ final class ShimmerImageView: UIView {
     }
 }
 
-// MARK: - ShimmerImageView extension
-private extension ShimmerImageView {
+// MARK: - ImageView extension
+private extension ImageView {
     func handle(_ image: UIImage?) {
         content = image
         imageView.image = image == nil ? Asset.Images.gamePlaceholder.image : image
-        if image == nil {
-            skeletonView.showSkeleton()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-                guard self?.content == nil else {
-                    return
-                }
-                self?.skeletonView.startSkeletonAnimation()
-            }
-        } else {
-            skeletonView.hideSkeleton(transition: .none)
-        }
     }
 }

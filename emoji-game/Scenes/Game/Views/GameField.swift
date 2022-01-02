@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import SkeletonView
 import TinyConstraints
 
 // MARK: - GameField class
@@ -17,7 +16,7 @@ final class GameField: UIView {
     private let numberOfItemsInBar: CGFloat
     private let viewModel: GameViewModel
     private var screenWidth: CGFloat {
-        window?.frame.size.width ?? 0
+        UIScreen.main.bounds.size.width
     }
     
     // MARK: UI
@@ -26,6 +25,16 @@ final class GameField: UIView {
         leftImage: viewModel.topLeftImage,
         centerImage: viewModel.topCenterImage,
         rightImage: viewModel.topRightImage
+    )
+    private lazy var mixedEmojiView = ImageView(
+        image: viewModel.centerImage,
+        type: .embded
+    )
+    private lazy var bottomPanel = GameOptionsPanel(
+        spacing: spacing,
+        leftImage: viewModel.bottomLeftImage,
+        centerImage: viewModel.bottomCenterImage,
+        rightImage: viewModel.bottomRightImage
     )
     
     // MARK: Life Cycle
@@ -42,10 +51,22 @@ final class GameField: UIView {
         
         let verticalOffset: CGFloat = max(40, 56 * UIDevice.sizeFactor)
         let barHeight: CGFloat = (screenWidth - (spacing * (numberOfItemsInBar + 1))) / numberOfItemsInBar
+        
         addSubview(topPanel)
         topPanel.height(barHeight)
         topPanel.horizontalToSuperview(insets: .left(spacing) + .right(spacing))
         topPanel.topToSuperview(offset: verticalOffset)
+        
+        addSubview(bottomPanel)
+        bottomPanel.height(barHeight)
+        bottomPanel.horizontalToSuperview(insets: .left(spacing) + .right(spacing))
+        bottomPanel.bottomToSuperview(offset: -verticalOffset)
+        
+        addSubview(mixedEmojiView)
+        let emojiOffset: CGFloat = max(18, 24 * UIDevice.sizeFactor)
+        mixedEmojiView.horizontalToSuperview(insets: .left(emojiOffset) + .right(emojiOffset))
+        mixedEmojiView.topToBottom(of: topPanel, offset: emojiOffset)
+        mixedEmojiView.bottomToTop(of: bottomPanel, offset: -emojiOffset)
     }
     
     required init?(coder: NSCoder) {

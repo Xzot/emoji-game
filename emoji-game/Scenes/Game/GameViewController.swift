@@ -13,7 +13,7 @@ final class GameViewController: UIViewController {
     private let spacing: CGFloat = 16
     private let numberOfItemsInBar: CGFloat = 3
     private var screenWidth: CGFloat {
-        view.window?.frame.size.width ?? 0
+        UIScreen.main.bounds.size.width
     }
     
     // MARK: UI

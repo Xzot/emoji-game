@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         application.statusBarStyle = .darkContent
-        SkeletonAppearance.default.tintColor = .clear
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let startScene = StartBuilder(provider: provider).build()

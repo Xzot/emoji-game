@@ -24,9 +24,30 @@ final class GameOptionsPanel: UIView {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
     }
-    private lazy var leftImageView = ShimmerImageView(image: leftImage)
-    private lazy var centerImageView = ShimmerImageView(image: centerImage)
-    private lazy var rightImageView = ShimmerImageView(image: rightImage)
+    private lazy var leftImageView = ImageView(
+        image: leftImage,
+        type: .embded
+    )&>.do {
+        $0.layer.borderWidth = 4
+        $0.layer.cornerRadius = 24
+        $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
+    }
+    private lazy var centerImageView = ImageView(
+        image: centerImage,
+        type: .embded
+    )&>.do {
+        $0.layer.borderWidth = 4
+        $0.layer.cornerRadius = 24
+        $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
+    }
+    private lazy var rightImageView = ImageView(
+        image: rightImage,
+        type: .embded
+    )&>.do {
+        $0.layer.borderWidth = 4
+        $0.layer.cornerRadius = 24
+        $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
+    }
     
     // MARK: API
     func update(
