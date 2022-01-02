@@ -14,7 +14,11 @@ import TinyConstraints
 final class GameField: UIView {
     // MARK: Properties
     private let spacing: CGFloat
+    private let numberOfItemsInBar: CGFloat
     private let viewModel: GameViewModel
+    private var screenWidth: CGFloat {
+        window?.frame.size.width ?? 0
+    }
     
     // MARK: UI
     private lazy var topPanel = GameOptionsPanel(
@@ -25,11 +29,23 @@ final class GameField: UIView {
     )
     
     // MARK: Life Cycle
-    init(spacing: CGFloat, viewModel: GameViewModel) {
+    init(
+        spacing: CGFloat,
+        numberOfItemsInBar: CGFloat,
+        viewModel: GameViewModel
+    ) {
         self.spacing = spacing
+        self.numberOfItemsInBar = numberOfItemsInBar
         self.viewModel = viewModel
         
         super.init(frame: .zero)
+        
+        let verticalOffset: CGFloat = max(40, 56 * UIDevice.sizeFactor)
+        let barHeight: CGFloat = (screenWidth - (spacing * (numberOfItemsInBar + 1))) / numberOfItemsInBar
+        addSubview(topPanel)
+        topPanel.height(barHeight)
+        topPanel.horizontalToSuperview(insets: .left(spacing) + .right(spacing))
+        topPanel.topToSuperview(offset: verticalOffset)
     }
     
     required init?(coder: NSCoder) {

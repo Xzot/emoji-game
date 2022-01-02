@@ -19,6 +19,7 @@ final class GameViewController: UIViewController {
     // MARK: UI
     private lazy var gameField = GameField(
         spacing: spacing,
+        numberOfItemsInBar: numberOfItemsInBar,
         viewModel: viewModel
     )
     
