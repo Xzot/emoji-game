@@ -6,11 +6,6 @@
 //
 
 import UIKit
-import Combine
-
-typealias VoidCompletion = () -> Void
-typealias ImagePublisher = AnyPublisher<UIImage?, Never>
-typealias ImageState = CurrentValueSubject<UIImage?, Never>
 
 enum AppConstants {
     

@@ -14,6 +14,13 @@ struct ImageButtonConfig {
     let defaultImage: UIImage?
 }
 
+extension ImageButtonConfig {
+    init(_ image: UIImage?) {
+        selectedImage = image
+        defaultImage = image
+    }
+}
+
 // MARK: - ImageButton
 final class ImageButton: CustomButton {
     // MARK: Properties

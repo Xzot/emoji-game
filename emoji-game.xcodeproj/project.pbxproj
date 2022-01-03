@@ -285,6 +285,11 @@
 		37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */; };
 		37D602D6278121610076CD06 /* ShimmerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D5278121610076CD06 /* ShimmerImageView.swift */; };
 		37D602D82781979B0076CD06 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602D72781979B0076CD06 /* GameField.swift */; };
+		37D602DB2781DF8B0076CD06 /* GameStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602DA2781DF8B0076CD06 /* GameStatusBar.swift */; };
+		37D602DD27822DBF0076CD06 /* GameScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602DC27822DBF0076CD06 /* GameScoreLabel.swift */; };
+		37D602DF278336760076CD06 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602DE278336760076CD06 /* Typealiases.swift */; };
+		37D602E127833AD60076CD06 /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E027833AD60076CD06 /* GameScore.swift */; };
+		37D602E527833EDC0076CD06 /* GameTimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E427833EDC0076CD06 /* GameTimerLabel.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -589,6 +594,11 @@
 		37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOptionsPanel.swift; sourceTree = "<group>"; };
 		37D602D5278121610076CD06 /* ShimmerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerImageView.swift; sourceTree = "<group>"; };
 		37D602D72781979B0076CD06 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
+		37D602DA2781DF8B0076CD06 /* GameStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusBar.swift; sourceTree = "<group>"; };
+		37D602DC27822DBF0076CD06 /* GameScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreLabel.swift; sourceTree = "<group>"; };
+		37D602DE278336760076CD06 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		37D602E027833AD60076CD06 /* GameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScore.swift; sourceTree = "<group>"; };
+		37D602E427833EDC0076CD06 /* GameTimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimerLabel.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -701,6 +711,7 @@
 			isa = PBXGroup;
 			children = (
 				37D602BF2780D0D10076CD06 /* AppConstants.swift */,
+				37D602DE278336760076CD06 /* Typealiases.swift */,
 				378890DA276F229700B3D96C /* LaunchScreen.storyboard */,
 				378890DD276F229700B3D96C /* Info.plist */,
 			);
@@ -773,6 +784,7 @@
 			children = (
 				3788912D276F2B0200B3D96C /* EmojiModel.swift */,
 				378892FA276F31A600B3D96C /* EmojiItemsModel.swift */,
+				37D602E027833AD60076CD06 /* GameScore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1078,11 +1090,30 @@
 		37D602D227811CC60076CD06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37D602E327833EB30076CD06 /* Scene */,
+				37D602E227833EA90076CD06 /* Status Bar */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37D602E227833EA90076CD06 /* Status Bar */ = {
+			isa = PBXGroup;
+			children = (
+				37D602DA2781DF8B0076CD06 /* GameStatusBar.swift */,
+				37D602DC27822DBF0076CD06 /* GameScoreLabel.swift */,
+				37D602E427833EDC0076CD06 /* GameTimerLabel.swift */,
+			);
+			path = "Status Bar";
+			sourceTree = "<group>";
+		};
+		37D602E327833EB30076CD06 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
 				37D602D72781979B0076CD06 /* GameField.swift */,
 				37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */,
 				37D602D5278121610076CD06 /* ShimmerImageView.swift */,
 			);
-			path = Views;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
@@ -1538,7 +1569,9 @@
 				37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */,
 				37D602D82781979B0076CD06 /* GameField.swift in Sources */,
 				37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */,
+				37D602DB2781DF8B0076CD06 /* GameStatusBar.swift in Sources */,
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
+				37D602DD27822DBF0076CD06 /* GameScoreLabel.swift in Sources */,
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
 				37D602D6278121610076CD06 /* ShimmerImageView.swift in Sources */,
 				37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */,
@@ -1553,6 +1586,8 @@
 				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
 				37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */,
+				37D602E527833EDC0076CD06 /* GameTimerLabel.swift in Sources */,
+				37D602E127833AD60076CD06 /* GameScore.swift in Sources */,
 				37548119277100A7003C3E16 /* StartViewController.swift in Sources */,
 				3754811B277100A7003C3E16 /* StartViewModel.swift in Sources */,
 				3788912B276F2AE100B3D96C /* EmojisProvider.swift in Sources */,
@@ -1561,6 +1596,7 @@
 				37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */,
 				37D602CD278115250076CD06 /* GameViewController.swift in Sources */,
 				3722803C2771305100466B64 /* MainBuilder.swift in Sources */,
+				37D602DF278336760076CD06 /* Typealiases.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
 				37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */,

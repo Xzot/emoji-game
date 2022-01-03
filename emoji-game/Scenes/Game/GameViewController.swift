@@ -17,6 +17,7 @@ final class GameViewController: UIViewController {
     }
     
     // MARK: UI
+    private lazy var gameStatusBar = GameStatusBar(viewModel)
     private lazy var gameField = GameField(
         spacing: spacing,
         numberOfItemsInBar: numberOfItemsInBar,
@@ -34,6 +35,10 @@ final class GameViewController: UIViewController {
         gameField.horizontalToSuperview()
         gameField.bottomToSuperview(usingSafeArea: true)
         gameField.height(to: view, multiplier: 0.825)
+        
+        view.addSubview(gameStatusBar)
+        gameStatusBar.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
+        gameStatusBar.bottomToTop(of: gameField)
     }
     
     required init?(coder: NSCoder) {
