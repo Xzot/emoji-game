@@ -69,7 +69,7 @@ final class GameScoreLabel: UIView {
 }
 
 extension GameScoreLabel {
-    func handle(_ score: GameScore?) {
+    func handle(_ score: GameScoreModel?) {
         
     }
 }

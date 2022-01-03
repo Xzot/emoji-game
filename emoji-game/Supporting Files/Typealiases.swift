@@ -23,5 +23,5 @@ typealias ImagePublisher = AnyPublisher<UIImage?, Never>
 typealias ImageState = CurrentValueSubject<UIImage?, Never>
 
 // MARK: Score
-typealias GameScorePublisher = AnyPublisher<GameScore?, Never>
-typealias GameScoreState = CurrentValueSubject<GameScore?, Never>
+typealias GameScorePublisher = AnyPublisher<GameScoreModel?, Never>
+typealias GameScoreState = CurrentValueSubject<GameScoreModel?, Never>

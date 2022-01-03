@@ -258,7 +258,6 @@
 		378892F5276F2B2800B3D96C /* emoji_owl.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889211276F2B2700B3D96C /* emoji_owl.png */; };
 		378892F6276F2B2800B3D96C /* emoji_tired_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889212276F2B2700B3D96C /* emoji_tired_face.png */; };
 		378892F7276F2B2800B3D96C /* emoji_pouting_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889213276F2B2700B3D96C /* emoji_pouting_face.png */; };
-		378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */; };
 		378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892FA276F31A600B3D96C /* EmojiItemsModel.swift */; };
 		37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */; };
 		37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */; };
@@ -288,8 +287,13 @@
 		37D602DB2781DF8B0076CD06 /* GameStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602DA2781DF8B0076CD06 /* GameStatusBar.swift */; };
 		37D602DD27822DBF0076CD06 /* GameScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602DC27822DBF0076CD06 /* GameScoreLabel.swift */; };
 		37D602DF278336760076CD06 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602DE278336760076CD06 /* Typealiases.swift */; };
-		37D602E127833AD60076CD06 /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E027833AD60076CD06 /* GameScore.swift */; };
+		37D602E127833AD60076CD06 /* GameScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E027833AD60076CD06 /* GameScoreModel.swift */; };
 		37D602E527833EDC0076CD06 /* GameTimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E427833EDC0076CD06 /* GameTimerLabel.swift */; };
+		37D602E7278374250076CD06 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E6278374250076CD06 /* GameModel.swift */; };
+		37D602EA27837CBF0076CD06 /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602E927837CBF0076CD06 /* GameDataProvider.swift */; };
+		37D602EC27838AC10076CD06 /* ImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602EB27838AC10076CD06 /* ImageDataLoader.swift */; };
+		37D602EF27838B2F0076CD06 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602EE27838B2F0076CD06 /* Queue.swift */; };
+		37D602F127838B470076CD06 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602F027838B470076CD06 /* DataLoader.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -567,7 +571,6 @@
 		37889211276F2B2700B3D96C /* emoji_owl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_owl.png; sourceTree = "<group>"; };
 		37889212276F2B2700B3D96C /* emoji_tired_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_tired_face.png; sourceTree = "<group>"; };
 		37889213276F2B2700B3D96C /* emoji_pouting_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pouting_face.png; sourceTree = "<group>"; };
-		378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEmojisProvider.swift; sourceTree = "<group>"; };
 		378892FA276F31A600B3D96C /* EmojiItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItemsModel.swift; sourceTree = "<group>"; };
 		37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Global.swift"; sourceTree = "<group>"; };
 		37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeOperator.swift; sourceTree = "<group>"; };
@@ -597,8 +600,13 @@
 		37D602DA2781DF8B0076CD06 /* GameStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusBar.swift; sourceTree = "<group>"; };
 		37D602DC27822DBF0076CD06 /* GameScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreLabel.swift; sourceTree = "<group>"; };
 		37D602DE278336760076CD06 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		37D602E027833AD60076CD06 /* GameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScore.swift; sourceTree = "<group>"; };
+		37D602E027833AD60076CD06 /* GameScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreModel.swift; sourceTree = "<group>"; };
 		37D602E427833EDC0076CD06 /* GameTimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimerLabel.swift; sourceTree = "<group>"; };
+		37D602E6278374250076CD06 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		37D602E927837CBF0076CD06 /* GameDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataProvider.swift; sourceTree = "<group>"; };
+		37D602EB27838AC10076CD06 /* ImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLoader.swift; sourceTree = "<group>"; };
+		37D602EE27838B2F0076CD06 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		37D602F027838B470076CD06 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -755,8 +763,10 @@
 		37889123276F27BA00B3D96C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				37D602ED27838B140076CD06 /* Utils */,
 				37889128276F2AA500B3D96C /* Infrastructure */,
 				37889129276F2AAF00B3D96C /* Emoji */,
+				37D602E827837CA10076CD06 /* Game */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -774,7 +784,6 @@
 			isa = PBXGroup;
 			children = (
 				3788912A276F2AE100B3D96C /* EmojisProvider.swift */,
-				378892F8276F2C3600B3D96C /* JSONEmojisProvider.swift */,
 			);
 			path = Emoji;
 			sourceTree = "<group>";
@@ -784,7 +793,8 @@
 			children = (
 				3788912D276F2B0200B3D96C /* EmojiModel.swift */,
 				378892FA276F31A600B3D96C /* EmojiItemsModel.swift */,
-				37D602E027833AD60076CD06 /* GameScore.swift */,
+				37D602E027833AD60076CD06 /* GameScoreModel.swift */,
+				37D602E6278374250076CD06 /* GameModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1114,6 +1124,24 @@
 				37D602D5278121610076CD06 /* ShimmerImageView.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		37D602E827837CA10076CD06 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				37D602E927837CBF0076CD06 /* GameDataProvider.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		37D602ED27838B140076CD06 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				37D602EB27838AC10076CD06 /* ImageDataLoader.swift */,
+				37D602F027838B470076CD06 /* DataLoader.swift */,
+				37D602EE27838B2F0076CD06 /* Queue.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
@@ -1562,7 +1590,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D602E7278374250076CD06 /* GameModel.swift in Sources */,
 				3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */,
+				37D602F127838B470076CD06 /* DataLoader.swift in Sources */,
 				37D602B72780AD450076CD06 /* PlayButton.swift in Sources */,
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
 				37D602CF278115250076CD06 /* GameViewModel.swift in Sources */,
@@ -1579,15 +1609,18 @@
 				378890D0276F229500B3D96C /* AppDelegate.swift in Sources */,
 				37D602CC278115250076CD06 /* GameRouter.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
+				37D602EA27837CBF0076CD06 /* GameDataProvider.swift in Sources */,
 				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
+				37D602EC27838AC10076CD06 /* ImageDataLoader.swift in Sources */,
 				37D602CE278115250076CD06 /* GameBuilder.swift in Sources */,
 				37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */,
 				3722803A2771305100466B64 /* MainRouter.swift in Sources */,
 				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
+				37D602EF27838B2F0076CD06 /* Queue.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
 				37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */,
 				37D602E527833EDC0076CD06 /* GameTimerLabel.swift in Sources */,
-				37D602E127833AD60076CD06 /* GameScore.swift in Sources */,
+				37D602E127833AD60076CD06 /* GameScoreModel.swift in Sources */,
 				37548119277100A7003C3E16 /* StartViewController.swift in Sources */,
 				3754811B277100A7003C3E16 /* StartViewModel.swift in Sources */,
 				3788912B276F2AE100B3D96C /* EmojisProvider.swift in Sources */,
@@ -1601,7 +1634,6 @@
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
 				37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */,
 				37D602C627810D550076CD06 /* ImageButton.swift in Sources */,
-				378892F9276F2C3600B3D96C /* JSONEmojisProvider.swift in Sources */,
 				37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */,
 				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,
 			);

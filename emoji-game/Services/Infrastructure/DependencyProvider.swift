@@ -28,7 +28,7 @@ class ProductionAssmebly: Assembly {
         container.register(
             EmojisProvider.self,
             factory: { _ in
-                JSONEmojisProvider()
+                EmojisProvider()
             }
         )
     }
