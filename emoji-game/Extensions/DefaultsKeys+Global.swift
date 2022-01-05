@@ -8,11 +8,7 @@
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    var usedEmojiIndexes: DefaultsKey<[Int]> {
-        .init("EmojiGame.DefaultsKeys.usedEmojiIndexes", defaultValue: [])
-    }
-    
-    var readyToUseEmojiIndexes: DefaultsKey<[Int]> {
-        .init("EmojiGame.DefaultsKeys.usedEmojiIndexes", defaultValue: [])
+    var usedHypo: DefaultsKey<[String]> {
+        .init("EmojiGame.DefaultsKeys.usedEmojiHypo", defaultValue: [])
     }
 }

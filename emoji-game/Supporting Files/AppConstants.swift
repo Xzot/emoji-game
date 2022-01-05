@@ -12,6 +12,12 @@ enum AppConstants {
 }
 
 extension AppConstants {
+    struct Defaults {
+        let usedHypoKey: String = "EmojiGame.AppConstants.Defaults.usedHypoKey"
+    }
+}
+
+extension AppConstants {
     struct MainScene {
         
     }

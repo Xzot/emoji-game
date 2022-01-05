@@ -12,4 +12,8 @@ struct EmojiModel: Decodable {
     let name: String
     let unicode: String
     let imageName: String
+    
+    var idAsIndex: Int {
+        id > 0 ? id - 1 : 0
+    }
 }

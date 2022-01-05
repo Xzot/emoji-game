@@ -6,15 +6,28 @@
 //
 
 import Foundation
+import Combine
 
-struct Queue<T> {
+// MARK: - Combine
+extension Queue {
+    // MARK: Output
+    var listCount: AnyPublisher<Int, Never> {
+        listCountState.eraseToAnyPublisher()
+    }
+}
+
+// MARK: - Queue
+final class Queue<T> {
+    // MARK: Properties
     var list = [T]()
+    private lazy var listCountState = CurrentValueSubject<Int, Never>(list.count)
     
-    mutating func enqueue(_ element: T) {
+    // MARK: API
+    func enqueue(_ element: T) {
         list.append(element)
     }
     
-    mutating func dequeue() -> T? {
+    func dequeue() -> T? {
         if !list.isEmpty {
             return list.removeFirst()
         } else {

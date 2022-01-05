@@ -15,20 +15,19 @@ protocol Assembly {
 // MARK: - ProductionAssmebly class
 class ProductionAssmebly: Assembly {
     func assemble(in container: Container) {
-//        container.register(
-//            UserService.self,
-//            factory: { resolver in
-//                return UserService(
-//                    infoProvider: resolver.resolve(UserInfoProvider.self)!,
-//                    storageService: resolver.resolve(StorageService.self)!
-//                )
-//            }
-//        )
-//            .inObjectScope(.container)
         container.register(
-            EmojisProvider.self,
+            EmojiModelsProvider.self,
             factory: { _ in
-                EmojisProvider()
+                EmojiModelsProvider()
+            }
+        )
+            .inObjectScope(.container)
+        container.register(
+            HypothesisProvider.self,
+            factory: { resolver in
+                HypothesisProvider(
+                    emojisProvider: resolver.resolve(EmojiModelsProvider.self)!
+                )
             }
         )
     }
