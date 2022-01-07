@@ -2,10 +2,30 @@
 //  Created by Vlad Shchuka on 02.01.2022.
 //
 
+import UIKit
 import Combine
 
 // MARK: - GameListener protocol
 protocol GameListener: AnyObject {}
+
+// MARK: - PanelItem struct
+extension GameViewModel {
+    struct PanelItem {
+        let image: UIImage
+        let isCorrect: Bool
+        let state: PState
+        
+    }
+}
+
+// MARK: - PanelItem's state
+extension GameViewModel.PanelItem {
+    enum PState {
+        case normal
+        case correct
+        case wrong
+    }
+}
 
 // MARK: - Output
 extension GameViewModel {
@@ -105,8 +125,11 @@ private extension GameViewModel {
             .store(in: &cancellables)
         
         scheduler.completion
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                guard let oldTime = self?.timeState.value else {
+                guard
+                    self?.shouldStartTimeCount == true,
+                    let oldTime = self?.timeState.value else {
                     return
                 }
                 let newTime = oldTime - 1

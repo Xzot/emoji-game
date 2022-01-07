@@ -16,6 +16,7 @@ final class MainViewController: SwapChildViewController {
         $0.contentMode = .scaleAspectFill
     }
     private lazy var label = UILabel()&>.do {
+        $0.textColor = Asset.Palette.black.color
         $0.textAlignment = .center
         $0.numberOfLines = 2
         $0.text = Strings.MainScene.labelText

@@ -52,6 +52,7 @@ extension DataLoader {
 // MARK: - PendingOperations class
 fileprivate final class PendingOperations {
     // MARK: Properties
+    private let lock = NSLock()
     private let config: DataLoader.Config
     private lazy var downloadsInProgress = [String : Operation]()
     private lazy var downloadQueue: OperationQueue = {
@@ -68,11 +69,14 @@ fileprivate final class PendingOperations {
     
     // MARK: Public API
     func append(_ operation: LoadDataOperation) {
+        lock.lock()
         guard downloadsInProgress[operation.linkToData] == nil else {
+            lock.unlock()
             return
         }
         downloadsInProgress[operation.linkToData] = operation
         downloadQueue.addOperation(operation)
+        lock.unlock()
     }
 }
 

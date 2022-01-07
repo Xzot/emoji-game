@@ -12,7 +12,6 @@ import Combine
 // MARK: Completions
 typealias VoidCompletion = () -> Void
 
-
 // MARK: - Combine publishers
 // MARK: Int
 typealias IntPublisher = AnyPublisher<Int?, Never>
@@ -25,3 +24,7 @@ typealias ImageState = CurrentValueSubject<UIImage?, Never>
 // MARK: Score
 typealias GameScorePublisher = AnyPublisher<GameScoreModel?, Never>
 typealias GameScoreState = CurrentValueSubject<GameScoreModel?, Never>
+
+// MARK: Game scene panel item
+typealias GSPanelItemPublisher = AnyPublisher<GameViewModel.PanelItem?, Never>
+typealias GSPanelItemState = CurrentValueSubject<GameViewModel.PanelItem?, Never>
