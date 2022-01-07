@@ -30,9 +30,7 @@ final class StartViewModel {
     }
     
     func handleViewDidLoad() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.isReadyToShowNextSceneSubject.send(true)
-        }
+        isReadyToShowNextSceneSubject.send(true)
     }
     
     func routeToNextScene() {

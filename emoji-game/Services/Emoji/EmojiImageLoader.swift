@@ -34,7 +34,6 @@ final class EmojiImageLoader {
             case .success(let image):
                 publisher.send(image)
             case .failure(let error):
-                print(error)
                 publisher.send(nil)
             }
         }

@@ -26,8 +26,6 @@ final class EmojiModelsProvider {
                 
                 return data.emojis
             } catch {
-                print(error)
-                
                 return [EmojiModel]()
             }
         }
@@ -49,9 +47,7 @@ private extension EmojiModelsProvider {
             else { return nil }
             
             return jsonData
-        } catch {
-            print(error)
-            
+        } catch {            
             return nil
         }
     }
