@@ -18,7 +18,6 @@ struct Hypothesis {
 // MARK: - HypothesisProvider class
 final class HypothesisProvider {
     // MARK: Properties
-    private let numberOfItemsInside: Int = 2
     private let emojisProvider: EmojiModelsProvider
     
     // MARK: Life Cycle

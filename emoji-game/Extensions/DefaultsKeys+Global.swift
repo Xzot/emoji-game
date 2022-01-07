@@ -8,7 +8,7 @@
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    var usedHypo: DefaultsKey<[String]> {
-        .init("EmojiGame.DefaultsKeys.usedEmojiHypo", defaultValue: [])
+    var usedHypo: DefaultsKey<[String : Bool]> {
+        .init("EmojiGame.DefaultsKeys.usedEmojiHypo", defaultValue: [:])
     }
 }

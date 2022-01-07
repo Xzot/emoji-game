@@ -22,12 +22,70 @@ class ProductionAssmebly: Assembly {
             }
         )
             .inObjectScope(.container)
+        
         container.register(
             HypothesisProvider.self,
             factory: { resolver in
                 HypothesisProvider(
                     emojisProvider: resolver.resolve(EmojiModelsProvider.self)!
                 )
+            }
+        )
+        
+        container.register(
+            GameDataProvider.self,
+            factory: { resolver in
+                GameDataProvider(
+                    modelsProvider: resolver.resolve(GameModelsProvider.self)!
+                )
+            }
+        )
+            .inObjectScope(.container)
+        
+        container.register(
+            GameModelsProvider.self,
+            factory: { resolver in
+                GameModelsProvider(
+                    hypoProvider: resolver.resolve(HypothesisProvider.self)!,
+                    gModelsFactory: resolver.resolve(GameModelFactory.self)!,
+                    emojiImageLoader: resolver.resolve(EmojiImageLoader.self)!,
+                    emojiModelsProvider: resolver.resolve(EmojiModelsProvider.self)!
+                )
+            }
+        )
+            .inObjectScope(.container)
+        
+        container.register(
+            HypothesisProvider.self,
+            factory: { resolver in
+                HypothesisProvider(
+                    emojisProvider: resolver.resolve(EmojiModelsProvider.self)!
+                )
+            }
+        )
+        
+        container.register(
+            GameModelFactory.self,
+            factory: { resolver in
+                GameModelFactory(
+                    emojisList: resolver.resolve(EmojiModelsProvider.self)!
+                )
+            }
+        )
+        
+        container.register(
+            EmojiImageLoader.self,
+            factory: { resolver in
+                EmojiImageLoader(
+                    imageDataLoader: resolver.resolve(ImageDataLoader.self)!
+                )
+            }
+        )
+        
+        container.register(
+            ImageDataLoader.self,
+            factory: { _ in
+                ImageDataLoader()
             }
         )
     }

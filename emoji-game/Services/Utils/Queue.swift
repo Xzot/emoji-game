@@ -19,7 +19,11 @@ extension Queue {
 // MARK: - Queue
 final class Queue<T> {
     // MARK: Properties
-    var list = [T]()
+    var list = [T]() {
+        didSet {
+            listCountState.send(list.count)
+        }
+    }
     private lazy var listCountState = CurrentValueSubject<Int, Never>(list.count)
     
     // MARK: API

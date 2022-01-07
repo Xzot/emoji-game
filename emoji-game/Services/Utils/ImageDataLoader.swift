@@ -36,8 +36,8 @@ final class ImageDataLoader {
             switch result {
             case .success(let loadedData):
                 publisher.send(loadedData)
-            case .failure(let error):
-                print(error)
+            case .failure(_):
+                publisher.send(nil)
             }
         }
         return publisher.eraseToAnyPublisher()

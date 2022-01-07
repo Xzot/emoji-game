@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SwiftyUserDefaults
 
 // MARK: - GameModelsProvider class
 final class GameModelsProvider {
@@ -79,8 +80,9 @@ private extension GameModelsProvider {
                         let fImage = UIImage(named: firstEmoji.imageName),
                         let sImage = UIImage(named: seccondEmoji.imageName),
                         let gameModel = self?.gModelsFactory.assembly(from: image, and: fImage, sImage)
-                    else { return }
-                    
+                    else {
+                        return
+                    }
                     self?.allFetchedModels.append(gameModel)
                     self?.latestFetchedModelSubject.send(gameModel)
                 }
@@ -100,19 +102,11 @@ private extension GameModelsProvider {
 // MARK: - DefaultsChecker fileprivate struct
 fileprivate struct DefaultsChecker {
     static func isValueExist(_ value: String) -> Bool {
-        let key = AppConstants.Defaults().usedHypoKey
-        if var storedItems = UserDefaults.standard.object(forKey: key) as? Set<String> {
-            if storedItems.contains(value) {
-                return true
-            } else {
-                storedItems.insert(value)
-                UserDefaults.standard.set(storedItems, forKey: key)
-                return false
-            }
+        var storedItems = Defaults[\.usedHypo]
+        if storedItems[value] != nil {
+            return true
         } else {
-            var storedItems = Set<String>()
-            storedItems.insert(value)
-            UserDefaults.standard.set(storedItems, forKey: key)
+            storedItems[value] = true
             return false
         }
     }
