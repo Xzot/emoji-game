@@ -17,7 +17,7 @@ final class GameStatusBar: UIView {
     private lazy var pauseButton = ImageButton(
         config: ImageButtonConfig(Asset.Images.gamePause.image)
     ) { [weak self] in
-        self?.viewModel.pauseGame()
+        self?.viewModel.handlePause()
     }
     private lazy var scoreLabel = GameScoreLabel(viewModel.score)
     private lazy var timerLabel = GameTimerLabel(viewModel.time)

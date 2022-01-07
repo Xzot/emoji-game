@@ -33,6 +33,13 @@ class ProductionAssmebly: Assembly {
         )
         
         container.register(
+            TimeUpdater.self,
+            factory: { _ in
+                TimeUpdater()
+            }
+        )
+        
+        container.register(
             GameDataProvider.self,
             factory: { resolver in
                 GameDataProvider(

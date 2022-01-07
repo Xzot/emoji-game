@@ -13,4 +13,12 @@ final class GameRouter {
     init(presentable: GameViewController) {
         self.presentable = presentable
     }
+    
+    func routeToGameOverScene() {
+        
+    }
+    
+    func routeToPauseScene() {
+        
+    }
 }

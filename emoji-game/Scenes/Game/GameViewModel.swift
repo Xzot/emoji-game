@@ -51,8 +51,8 @@ extension GameViewModel {
         self.router = router
     }
     
-    func pauseGame() {
-        
+    func handlePause() {
+        router.routeToPauseScene()
     }
 }
 
@@ -63,11 +63,13 @@ final class GameViewModel {
     private var router: GameRouter!
     private weak var listener: GameListener?
     private let gDataProvider: GameDataProvider
+    private let scheduler: TimeUpdater
+    private var shouldStartTimeCount: Bool = false
     
     // MARK: - State
     // Status Bar
     private let scoreState = GameScoreState(nil)
-    private let timeState = IntState(nil)
+    private let timeState = IntState(10)
     // Top
     private let topLeftImageState = ImageState(nil)
     private let topCenterImageState = ImageState(nil)
@@ -88,11 +90,10 @@ final class GameViewModel {
         self.provider = provider
         self.listener = listener
         self.gDataProvider = provider.get(GameDataProvider.self)
+        self.scheduler = provider.get(TimeUpdater.self)
         
         self.bind()
     }
-    
-    
 }
 
 // MARK: - Private
@@ -101,6 +102,20 @@ private extension GameViewModel {
         gDataProvider
             .data
             .sink(receiveValue: handle(_:))
+            .store(in: &cancellables)
+        
+        scheduler.completion
+            .sink { [weak self] _ in
+                guard let oldTime = self?.timeState.value else {
+                    return
+                }
+                let newTime = oldTime - 1
+                if newTime > 0 {
+                    self?.timeState.send(newTime)
+                } else {
+                    self?.gameOver()
+                }
+            }
             .store(in: &cancellables)
     }
     
@@ -114,5 +129,16 @@ private extension GameViewModel {
         bottomRightImageState.send(gameModel?.bottomPanel.right.image)
         
         centerImageState.send(gameModel?.result)
+        
+        guard
+            shouldStartTimeCount == false,
+            gameModel != nil
+        else { return }
+        shouldStartTimeCount = true
+    }
+    
+    func gameOver() {
+        router.routeToGameOverScene()
+        scheduler.invalidate()
     }
 }

@@ -12,11 +12,11 @@ import TinyConstraints
 // MARK: - GameTimerLabel class
 final class GameTimerLabel: UIView {
     // MARK: Properties
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
     private lazy var timerImage = UIImageView(image: Asset.Images.gameTimer.image)
     private lazy var label = UILabel()&>.do {
-        $0.text = "7"
         $0.font = .quicksand(
             ofSize: max(28, 32 * UIDevice.sizeFactor),
             weight: .bold
@@ -38,6 +38,13 @@ final class GameTimerLabel: UIView {
         label.verticalToSuperview()
         label.leftToRight(of: timerImage, offset: 8)
         label.rightToSuperview()
+        
+        timeValuePublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newTimeValue in
+                self?.label.text = String(newTimeValue ?? 0)
+            }
+            .store(in: &cancellable)
     }
     
     required init?(coder: NSCoder) {
