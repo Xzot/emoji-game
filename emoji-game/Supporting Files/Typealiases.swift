@@ -26,5 +26,5 @@ typealias GameScorePublisher = AnyPublisher<GameScoreModel?, Never>
 typealias GameScoreState = CurrentValueSubject<GameScoreModel?, Never>
 
 // MARK: Game scene panel item
-typealias GSPanelItemPublisher = AnyPublisher<GameViewModel.PanelItem?, Never>
-typealias GSPanelItemState = CurrentValueSubject<GameViewModel.PanelItem?, Never>
+typealias GOPIVMPublisher = AnyPublisher<GOPItemModel?, Never>
+typealias GOPIVMState = CurrentValueSubject<GOPItemModel?, Never>

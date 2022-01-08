@@ -22,9 +22,9 @@ final class GameField: UIView {
     // MARK: UI
     private lazy var topPanel = GameOptionsPanel(
         spacing: spacing,
-        leftImage: viewModel.topLeftImage,
-        centerImage: viewModel.topCenterImage,
-        rightImage: viewModel.topRightImage
+        leftPublisher: viewModel.topLeft,
+        centerPublisher: viewModel.topCenter,
+        rightPublisher: viewModel.topRight
     )
     private lazy var mixedEmojiView = ImageView(
         image: viewModel.centerImage,
@@ -32,9 +32,9 @@ final class GameField: UIView {
     )
     private lazy var bottomPanel = GameOptionsPanel(
         spacing: spacing,
-        leftImage: viewModel.bottomLeftImage,
-        centerImage: viewModel.bottomCenterImage,
-        rightImage: viewModel.bottomRightImage
+        leftPublisher: viewModel.bottomLeft,
+        centerPublisher: viewModel.bottomCenter,
+        rightPublisher: viewModel.bottomRight
     )
     
     // MARK: Life Cycle

@@ -8,25 +8,6 @@ import Combine
 // MARK: - GameListener protocol
 protocol GameListener: AnyObject {}
 
-// MARK: - PanelItem struct
-extension GameViewModel {
-    struct PanelItem {
-        let image: UIImage
-        let isCorrect: Bool
-        let state: PState
-        
-    }
-}
-
-// MARK: - PanelItem's state
-extension GameViewModel.PanelItem {
-    enum PState {
-        case normal
-        case correct
-        case wrong
-    }
-}
-
 // MARK: - Output
 extension GameViewModel {
     // Status Bar
@@ -38,14 +19,14 @@ extension GameViewModel {
     }
     
     // Top
-    var topLeftImage: ImagePublisher {
-        topLeftImageState.eraseToAnyPublisher()
+    var topLeft: GOPIVMPublisher {
+        topLeftState.eraseToAnyPublisher()
     }
-    var topCenterImage: ImagePublisher {
-        topCenterImageState.eraseToAnyPublisher()
+    var topCenter: GOPIVMPublisher {
+        topCenterState.eraseToAnyPublisher()
     }
-    var topRightImage: ImagePublisher {
-        topRightImageState.eraseToAnyPublisher()
+    var topRight: GOPIVMPublisher {
+        topRightState.eraseToAnyPublisher()
     }
     
     // Center
@@ -54,14 +35,14 @@ extension GameViewModel {
     }
     
     // Bottom
-    var bottomLeftImage: ImagePublisher {
-        bottomLeftImageState.eraseToAnyPublisher()
+    var bottomLeft: GOPIVMPublisher {
+        bottomLeftState.eraseToAnyPublisher()
     }
-    var bottomCenterImage: ImagePublisher {
-        bottomCenterImageState.eraseToAnyPublisher()
+    var bottomCenter: GOPIVMPublisher {
+        bottomCenterState.eraseToAnyPublisher()
     }
-    var bottomRightImage: ImagePublisher {
-        bottomRightImageState.eraseToAnyPublisher()
+    var bottomRight: GOPIVMPublisher {
+        bottomRightState.eraseToAnyPublisher()
     }
 }
 
@@ -91,15 +72,15 @@ final class GameViewModel {
     private let scoreState = GameScoreState(nil)
     private let timeState = IntState(10)
     // Top
-    private let topLeftImageState = ImageState(nil)
-    private let topCenterImageState = ImageState(nil)
-    private let topRightImageState = ImageState(nil)
+    private let topLeftState = GOPIVMState(nil)
+    private let topCenterState = GOPIVMState(nil)
+    private let topRightState = GOPIVMState(nil)
     // Center
     private let centerImageState = ImageState(nil)
     // Bottom
-    private let bottomLeftImageState = ImageState(nil)
-    private let bottomCenterImageState = ImageState(nil)
-    private let bottomRightImageState = ImageState(nil)
+    private let bottomLeftState = GOPIVMState(nil)
+    private let bottomCenterState = GOPIVMState(nil)
+    private let bottomRightState = GOPIVMState(nil)
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: Life Cycle
@@ -133,7 +114,7 @@ private extension GameViewModel {
                     return
                 }
                 let newTime = oldTime - 1
-                if newTime > 0 {
+                if newTime >= 0 {
                     self?.timeState.send(newTime)
                 } else {
                     self?.gameOver()
@@ -143,13 +124,37 @@ private extension GameViewModel {
     }
     
     func handle(_ gameModel: GameModel?) {
-        topLeftImageState.send(gameModel?.topPanel.left.image)
-        topCenterImageState.send(gameModel?.topPanel.center.image)
-        topRightImageState.send(gameModel?.topPanel.right.image)
+        topLeftState.send(
+            GOPItemModel(asset: gameModel?.topPanel.left) { [weak self] model in
+                
+            }
+        )
+        topCenterState.send(
+            GOPItemModel(asset: gameModel?.topPanel.center) { [weak self] model in
+                
+            }
+        )
+        topRightState.send(
+            GOPItemModel(asset: gameModel?.topPanel.right) { [weak self] model in
+                
+            }
+        )
         
-        bottomLeftImageState.send(gameModel?.bottomPanel.left.image)
-        bottomCenterImageState.send(gameModel?.bottomPanel.center.image)
-        bottomRightImageState.send(gameModel?.bottomPanel.right.image)
+        bottomLeftState.send(
+            GOPItemModel(asset: gameModel?.bottomPanel.left) { [weak self] model in
+                
+            }
+        )
+        bottomCenterState.send(
+            GOPItemModel(asset: gameModel?.bottomPanel.center) { [weak self] model in
+                
+            }
+        )
+        bottomRightState.send(
+            GOPItemModel(asset: gameModel?.bottomPanel.right) { [weak self] model in
+                
+            }
+        )
         
         centerImageState.send(gameModel?.result)
         

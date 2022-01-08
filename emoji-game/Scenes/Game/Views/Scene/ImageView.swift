@@ -28,17 +28,6 @@ final class ImageView: UIView {
         $0.clipsToBounds = true
     }
     
-    // MARK: API
-    func update(_ image: ImagePublisher) {
-        cancellable.forEach { $0.cancel() }
-        cancellable.removeAll()
-        
-        image
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: handle(_:))
-            .store(in: &cancellable)
-    }
-    
     // MARK: Life Cycle
     init(
         image: ImagePublisher,

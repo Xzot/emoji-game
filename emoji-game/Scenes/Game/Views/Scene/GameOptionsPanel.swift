@@ -13,9 +13,9 @@ import TinyConstraints
 final class GameOptionsPanel: UIView {
     // MARK: Properties
     private let spacing: CGFloat
-    private var leftImage: ImagePublisher
-    private var centerImage: ImagePublisher
-    private var rightImage: ImagePublisher
+    private let leftPublisher: GOPIVMPublisher
+    private let centerPublisher: GOPIVMPublisher
+    private let rightPublisher: GOPIVMPublisher
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
@@ -24,57 +24,21 @@ final class GameOptionsPanel: UIView {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
     }
-    private lazy var leftImageView = ImageView(
-        image: leftImage,
-        type: .embded
-    )&>.do {
-        $0.layer.borderWidth = 4
-        $0.layer.cornerRadius = 24
-        $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
-    }
-    private lazy var centerImageView = ImageView(
-        image: centerImage,
-        type: .embded
-    )&>.do {
-        $0.layer.borderWidth = 4
-        $0.layer.cornerRadius = 24
-        $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
-    }
-    private lazy var rightImageView = ImageView(
-        image: rightImage,
-        type: .embded
-    )&>.do {
-        $0.layer.borderWidth = 4
-        $0.layer.cornerRadius = 24
-        $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
-    }
-    
-    // MARK: API
-    func update(
-        leftImage: ImagePublisher,
-        centerImage: ImagePublisher,
-        rightImage: ImagePublisher
-    ) {
-        self.leftImage = leftImage
-        self.centerImage = centerImage
-        self.rightImage = rightImage
-        
-        leftImageView.update(leftImage)
-        centerImageView.update(centerImage)
-        rightImageView.update(rightImage)
-    }
+    private lazy var leftImageView = GOPItemView(publisher: leftPublisher)
+    private lazy var centerImageView = GOPItemView(publisher: centerPublisher)
+    private lazy var rightImageView = GOPItemView(publisher: rightPublisher)
     
     // MARK: Life Cycle
     init(
         spacing: CGFloat,
-        leftImage: ImagePublisher,
-        centerImage: ImagePublisher,
-        rightImage: ImagePublisher
+        leftPublisher: GOPIVMPublisher,
+        centerPublisher: GOPIVMPublisher,
+        rightPublisher: GOPIVMPublisher
     ) {
         self.spacing = spacing
-        self.leftImage = leftImage
-        self.centerImage = centerImage
-        self.rightImage = rightImage
+        self.leftPublisher = leftPublisher
+        self.centerPublisher = centerPublisher
+        self.rightPublisher = rightPublisher
         
         super.init(frame: .zero)
         
