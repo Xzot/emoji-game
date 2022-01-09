@@ -60,16 +60,19 @@ extension GameViewModel {
 // MARK: - GameViewModel class
 final class GameViewModel {
     // MARK: Properties
-    private let provider: DependencyProvider
-    private var router: GameRouter!
     private weak var listener: GameListener?
+    private var router: GameRouter!
+    private let provider: DependencyProvider
     private let gDataProvider: GameDataProvider
     private let scheduler: TimeUpdater
+    private let scoreHandler: GameScoreHandler
     private var shouldStartTimeCount: Bool = false
     
     // MARK: - State
     // Status Bar
-    private let scoreState = GameScoreState(nil)
+    private lazy var scoreState = GameScoreState(
+        .init(old: nil, new: self.scoreHandler.score)
+    )
     private let timeState = IntState(10)
     // Top
     private let topLeftState = GOPIVMState(nil)
@@ -92,6 +95,7 @@ final class GameViewModel {
         self.listener = listener
         self.gDataProvider = provider.get(GameDataProvider.self)
         self.scheduler = provider.get(TimeUpdater.self)
+        self.scoreHandler = provider.get(GameScoreHandler.self)
         
         self.bind()
     }
@@ -121,39 +125,42 @@ private extension GameViewModel {
                 }
             }
             .store(in: &cancellables)
+        
+        scoreHandler.scorePublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] newScore in
+                guard let self = self else {
+                    return
+                }
+                if newScore >= 0 {
+                    let model = self.scoreState.value.makeNew(with: newScore)
+                    self.scoreState.send(model)
+                } else {
+                    self.gameOver()
+                }
+            })
+            .store(in: &cancellables)
     }
     
     func handle(_ gameModel: GameModel?) {
         topLeftState.send(
-            GOPItemModel(asset: gameModel?.topPanel.left) { [weak self] model in
-                
-            }
+            GOPItemModel(asset: gameModel?.topPanel.left, completion: handleUserTouch(for:))
         )
         topCenterState.send(
-            GOPItemModel(asset: gameModel?.topPanel.center) { [weak self] model in
-                
-            }
+            GOPItemModel(asset: gameModel?.topPanel.center, completion: handleUserTouch(for:))
         )
         topRightState.send(
-            GOPItemModel(asset: gameModel?.topPanel.right) { [weak self] model in
-                
-            }
+            GOPItemModel(asset: gameModel?.topPanel.right, completion: handleUserTouch(for:))
         )
         
         bottomLeftState.send(
-            GOPItemModel(asset: gameModel?.bottomPanel.left) { [weak self] model in
-                
-            }
+            GOPItemModel(asset: gameModel?.bottomPanel.left, completion: handleUserTouch(for:))
         )
         bottomCenterState.send(
-            GOPItemModel(asset: gameModel?.bottomPanel.center) { [weak self] model in
-                
-            }
+            GOPItemModel(asset: gameModel?.bottomPanel.center, completion: handleUserTouch(for:))
         )
         bottomRightState.send(
-            GOPItemModel(asset: gameModel?.bottomPanel.right) { [weak self] model in
-                
-            }
+            GOPItemModel(asset: gameModel?.bottomPanel.right, completion: handleUserTouch(for:))
         )
         
         centerImageState.send(gameModel?.result)
@@ -163,6 +170,19 @@ private extension GameViewModel {
             gameModel != nil
         else { return }
         shouldStartTimeCount = true
+    }
+    
+    func handleUserTouch(for model: GOPItemModel) {
+        let isAlreadyHandled: Bool = gDataProvider.latestPickedModels
+            .filter {
+                $0.unicode == model.unicode
+            }
+            .count > 0
+        guard isAlreadyHandled == false else {
+            return
+        }
+        model.isCorrect ? scoreHandler.userDidGuess() : scoreHandler.userDidNotGuess()
+        gDataProvider.handleModelSelection(model)
     }
     
     func gameOver() {

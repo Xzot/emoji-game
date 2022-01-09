@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - GOPItemViewModel class
 struct GOPItemModel {
+    let unicode: String
     let image: UIImage?
     let isCorrect: Bool
     var isUsed: Bool = false
@@ -27,5 +28,13 @@ extension GOPItemModel {
         self.image = asset.image
         self.isCorrect = asset.truly
         self.tryUseCompletion = completion
+        self.unicode = asset.unicode
+    }
+}
+
+// MARK: - GOPItemModel
+extension GOPItemModel: Equatable {
+    static func == (lhs: GOPItemModel, rhs: GOPItemModel) -> Bool {
+        lhs.unicode == rhs.unicode
     }
 }

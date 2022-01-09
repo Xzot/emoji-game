@@ -68,7 +68,8 @@ final class GameScoreLabel: UIView {
     }
 }
 
-extension GameScoreLabel {
+// MARK: - Private
+private extension GameScoreLabel {
     func handle(_ score: GameScoreModel?) {
         
     }

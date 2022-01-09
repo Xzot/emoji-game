@@ -41,7 +41,7 @@ final class GameStatusBar: UIView {
         timerLabel.rightToSuperview()
         timerLabel.widthToSuperview(multiplier: 0.225)
         
-        scoreLabel.rightToLeft(of: timerLabel   )
+        scoreLabel.rightToLeft(of: timerLabel)
     }
     
     required init?(coder: NSCoder) {

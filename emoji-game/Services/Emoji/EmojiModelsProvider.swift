@@ -43,7 +43,8 @@ private extension EmojiModelsProvider {
                 ),
                 let jsonData = try String(
                     contentsOfFile: bundlePath
-                ).data(using: .utf8)
+                )
+                    .data(using: .utf8)
             else { return nil }
             
             return jsonData

@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import TinyConstraints
 
 // MARK: - GOPItemView class
 final class GOPItemView: UIView {
@@ -18,6 +19,13 @@ final class GOPItemView: UIView {
         $0.layer.borderWidth = 4
         $0.layer.cornerRadius = 24
         $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
+    }
+    private lazy var button = UIButton()&>.do {
+        $0.addTarget(
+            self,
+            action: #selector(handleTap),
+            for: .touchUpInside
+        )
     }
     
     // MARK: Properties
@@ -36,6 +44,9 @@ final class GOPItemView: UIView {
         addSubview(imageView)
         imageView.edgesToSuperview()
         
+        addSubview(button)
+        button.edgesToSuperview()
+        
         publisher
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: handle(viewModel:))
@@ -51,5 +62,14 @@ final class GOPItemView: UIView {
 private extension GOPItemView {
     func handle(viewModel: GOPItemModel?) {
         self.viewModel = viewModel
+    }
+    
+    @objc
+    func handleTap() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        // Выглядит странно, нужно будет подправить :)
+        viewModel.tryUseCompletion(viewModel)
     }
 }

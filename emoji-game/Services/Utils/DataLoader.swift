@@ -52,32 +52,32 @@ extension DataLoader {
 // MARK: - PendingOperations class
 fileprivate final class PendingOperations {
     // MARK: Properties
-    private let lock = NSLock()
     private let config: DataLoader.Config
     private lazy var downloadsInProgress = [String : Operation]()
-    private lazy var downloadQueue: OperationQueue = {
-        var queue = OperationQueue()
-        queue.name = config.queName
-        queue.maxConcurrentOperationCount = config.maxConcurrentOperationCount
-        return queue
-    }()
+    private let downloadQueue: OperationQueue
     
     // MARK: Life Cycle
     init(_ config: DataLoader.Config) {
         self.config = config
+        self.downloadQueue = makeQueue(config)
     }
     
     // MARK: Public API
     func append(_ operation: LoadDataOperation) {
-        lock.lock()
         guard downloadsInProgress[operation.linkToData] == nil else {
-            lock.unlock()
             return
         }
         downloadsInProgress[operation.linkToData] = operation
         downloadQueue.addOperation(operation)
-        lock.unlock()
     }
+}
+
+// MARK: - Factory to produce OperationQueue
+fileprivate func makeQueue(_ config: DataLoader.Config) -> OperationQueue {
+    let queue = OperationQueue()
+    queue.name = config.queName
+    queue.maxConcurrentOperationCount = config.maxConcurrentOperationCount
+    return queue
 }
 
 // MARK: - LoadDataOperation class

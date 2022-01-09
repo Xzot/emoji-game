@@ -34,11 +34,6 @@ final class HypothesisProvider {
             Hypothesis(
                 pivotIndex: items.0.idAsIndex,
                 firstItemIndex: items.0.idAsIndex,
-                seccondItemIndex: items.0.idAsIndex
-            ),
-            Hypothesis(
-                pivotIndex: items.0.idAsIndex,
-                firstItemIndex: items.0.idAsIndex,
                 seccondItemIndex: items.1.idAsIndex
             ),
             Hypothesis(

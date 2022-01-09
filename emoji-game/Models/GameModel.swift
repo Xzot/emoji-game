@@ -16,8 +16,43 @@ struct GameModel {
 }
 
 extension GameModel {
-    struct SpecAsset {
+    struct SpecAsset: Hashable {
         let truly: Bool
         let image: UIImage
+        let unicode: String
+    }
+}
+
+extension GameModel {
+    func isFullyGuessed(_ models: [GOPItemModel]) -> Bool {
+        models.removingDuplicates().count == numberOfTrullyItems
+    }
+}
+
+private extension GameModel {
+    var numberOfTrullyItems: Int {
+        var value: Int = 0
+        
+        if topPanel.left.truly {
+            value += 1
+        }
+        if topPanel.center.truly {
+            value += 1
+        }
+        if topPanel.right.truly {
+            value += 1
+        }
+        
+        if bottomPanel.left.truly {
+            value += 1
+        }
+        if bottomPanel.center.truly {
+            value += 1
+        }
+        if bottomPanel.right.truly {
+            value += 1
+        }
+        
+        return value
     }
 }

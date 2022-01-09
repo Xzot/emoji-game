@@ -301,6 +301,8 @@
 		37D60304278859E80076CD06 /* TimeUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D60303278859E80076CD06 /* TimeUpdater.swift */; };
 		37D603072788CC640076CD06 /* GOPItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D603062788CC640076CD06 /* GOPItemModel.swift */; };
 		37D603092788CEC80076CD06 /* GOPItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D603082788CEC80076CD06 /* GOPItemView.swift */; };
+		37D6030B278A20DA0076CD06 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030A278A20DA0076CD06 /* Array+.swift */; };
+		37D6030D278A91E20076CD06 /* GameScoreHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030C278A91E20076CD06 /* GameScoreHandler.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -621,6 +623,8 @@
 		37D60303278859E80076CD06 /* TimeUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpdater.swift; sourceTree = "<group>"; };
 		37D603062788CC640076CD06 /* GOPItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOPItemModel.swift; sourceTree = "<group>"; };
 		37D603082788CEC80076CD06 /* GOPItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOPItemView.swift; sourceTree = "<group>"; };
+		37D6030A278A20DA0076CD06 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		37D6030C278A91E20076CD06 /* GameScoreHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreHandler.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1068,6 +1072,7 @@
 				37D602B127809E740076CD06 /* UIFont+Quicksand.swift */,
 				37D602B32780A11E0076CD06 /* UIDevice+.swift */,
 				37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */,
+				37D6030A278A20DA0076CD06 /* Array+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1149,6 +1154,7 @@
 				37D602E927837CBF0076CD06 /* GameDataProvider.swift */,
 				37D602F827849CB90076CD06 /* GameModelsProvider.swift */,
 				37D602FF278570E40076CD06 /* GameModelFactory.swift */,
+				37D6030C278A91E20076CD06 /* GameScoreHandler.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1639,6 +1645,7 @@
 				378890D0276F229500B3D96C /* AppDelegate.swift in Sources */,
 				37D603092788CEC80076CD06 /* GOPItemView.swift in Sources */,
 				37D602CC278115250076CD06 /* GameRouter.swift in Sources */,
+				37D6030D278A91E20076CD06 /* GameScoreHandler.swift in Sources */,
 				37D60304278859E80076CD06 /* TimeUpdater.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
 				37D602EA27837CBF0076CD06 /* GameDataProvider.swift in Sources */,
@@ -1650,6 +1657,7 @@
 				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
 				37D602EF27838B2F0076CD06 /* Queue.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
+				37D6030B278A20DA0076CD06 /* Array+.swift in Sources */,
 				37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */,
 				37D602E527833EDC0076CD06 /* GameTimerLabel.swift in Sources */,
 				37D602E127833AD60076CD06 /* GameScoreModel.swift in Sources */,

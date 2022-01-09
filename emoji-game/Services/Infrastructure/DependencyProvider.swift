@@ -16,6 +16,15 @@ protocol Assembly {
 class ProductionAssmebly: Assembly {
     func assemble(in container: Container) {
         container.register(
+            GameScoreHandler.self,
+            factory: { _ in
+                GameScoreHandler(
+                    config: .init(addedPoints: 10, takenAwayPoints: 15)
+                )
+            }
+        )
+        
+        container.register(
             EmojiModelsProvider.self,
             factory: { _ in
                 EmojiModelsProvider()

@@ -22,8 +22,8 @@ typealias ImagePublisher = AnyPublisher<UIImage?, Never>
 typealias ImageState = CurrentValueSubject<UIImage?, Never>
 
 // MARK: Score
-typealias GameScorePublisher = AnyPublisher<GameScoreModel?, Never>
-typealias GameScoreState = CurrentValueSubject<GameScoreModel?, Never>
+typealias GameScorePublisher = AnyPublisher<GameScoreModel, Never>
+typealias GameScoreState = CurrentValueSubject<GameScoreModel, Never>
 
 // MARK: Game scene panel item
 typealias GOPIVMPublisher = AnyPublisher<GOPItemModel?, Never>

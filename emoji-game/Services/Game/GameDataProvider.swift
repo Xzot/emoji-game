@@ -20,12 +20,27 @@ final class GameDataProvider {
     private let readyToPlayQueue = Queue<GameModel>()
     private let dataSubject = CurrentValueSubject<GameModel?, Never>(nil)
     private var cancellable = Set<AnyCancellable>()
+    private(set) var latestPickedModels = [GOPItemModel]()
     
     // MARK: Life Cycle
     init(modelsProvider: GameModelsProvider) {
         self.modelsProvider = modelsProvider
         self.modelsProvider.allFetchedModels.forEach { self.readyToPlayQueue.enqueue($0) }
         self.bind()
+    }
+    
+    // MARK: API
+    func handleModelSelection(_ model: GOPItemModel) {
+        guard
+            model.isCorrect == true,
+            let gameData = dataSubject.value
+        else { return }
+        latestPickedModels.append(model)
+        guard gameData.isFullyGuessed(latestPickedModels) == true else {
+            return
+        }
+        latestPickedModels.removeAll()
+        dataSubject.send(readyToPlayQueue.dequeue())
     }
 }
 

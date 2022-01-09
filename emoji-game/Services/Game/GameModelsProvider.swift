@@ -73,18 +73,32 @@ private extension GameModelsProvider {
             makeNextGameModel()
         } else {
             emojiImageLoader.loadImagePublisher(patternString)
+                .receive(on: DispatchQueue.main)
                 .sink { [weak self] image in
-                    self?.makeNextGameModel()
                     guard
                         let image = image,
                         let fImage = UIImage(named: firstEmoji.imageName),
                         let sImage = UIImage(named: seccondEmoji.imageName),
-                        let gameModel = self?.gModelsFactory.assembly(from: image, and: fImage, sImage)
+                        let gameModel = self?.gModelsFactory.assembly(
+                            from: image,
+                            and: [
+                                GameModelFactory.Item(
+                                    image: fImage,
+                                    unicode: firstEmoji.unicode
+                                ),
+                                GameModelFactory.Item(
+                                    image: sImage,
+                                    unicode: seccondEmoji.unicode
+                                )
+                            ]
+                        )
                     else {
+                        self?.makeNextGameModel()
                         return
                     }
                     self?.allFetchedModels.append(gameModel)
                     self?.latestFetchedModelSubject.send(gameModel)
+                    self?.makeNextGameModel()
                 }
                 .store(in: &cancellable)
         }

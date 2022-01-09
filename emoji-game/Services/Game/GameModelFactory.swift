@@ -7,6 +7,14 @@
 
 import UIKit
 
+// MARK: - GameModelFactory's Item
+extension GameModelFactory {
+    struct Item {
+        let image: UIImage
+        let unicode: String
+    }
+}
+
 // MARK: - GameModelFactory class
 final class GameModelFactory {
     // MARK: Properties
@@ -20,12 +28,18 @@ final class GameModelFactory {
     // MARK: API
     func assembly(
         from resultImage: UIImage,
-        and modelImages: UIImage...
+        and modelImages: [GameModelFactory.Item]
     ) -> GameModel? {
-        var specs = [GameModel.SpecAsset]()
-        specs.append(
-            contentsOf: modelImages.map { GameModel.SpecAsset(truly: true, image: $0) }
-        )
+        var specs: [GameModel.SpecAsset] = modelImages
+            .map {
+                GameModel.SpecAsset(
+                    truly: true,
+                    image: $0.image,
+                    unicode: $0.unicode
+                )
+            }
+            .uniqued()
+        
         repeat {
             let list = emojisList.fetchEmojis()
             let item: EmojiModel? = list.count > 0 ? list[Int.random(in: (0..<list.count))] : nil
@@ -33,7 +47,14 @@ final class GameModelFactory {
                 let item = item,
                 let image = UIImage(named: item.imageName)
             else { return nil }
-            specs.append(GameModel.SpecAsset.init(truly: false, image: image))
+            specs.append(
+                GameModel.SpecAsset(
+                    truly: false,
+                    image: image,
+                    unicode: item.unicode
+                )
+            )
+            specs = specs.uniqued()
         } while specs.count < 6
         
         specs.shuffle()

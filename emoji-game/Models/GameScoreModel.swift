@@ -11,3 +11,9 @@ struct GameScoreModel {
     let old: Int?
     let new: Int
 }
+
+extension GameScoreModel {
+    func makeNew(with value: Int) -> GameScoreModel {
+        .init(old: new, new: value)
+    }
+}

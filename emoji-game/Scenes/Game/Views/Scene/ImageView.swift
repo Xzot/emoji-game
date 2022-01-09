@@ -21,6 +21,7 @@ final class ImageView: UIView {
     private let type: ImageViewType
     private var content: UIImage?
     private var cancellable = Set<AnyCancellable>()
+    private lazy var animator = UIViewPropertyAnimator(duration: 1.0, curve: .easeIn, animations: animation)
     
     // MARK: UI
     private lazy var imageView = UIImageView()&>.do {
@@ -61,6 +62,19 @@ final class ImageView: UIView {
 private extension ImageView {
     func handle(_ image: UIImage?) {
         content = image
-        imageView.image = image == nil ? Asset.Images.gamePlaceholder.image : image
+        if image == nil {
+            imageView.image = Asset.Images.gamePlaceholder.image
+            animator.startAnimation()
+        } else {
+            animator.stopAnimation(true)
+            imageView.image = image
+        }
+    }
+    
+    func animation() {
+        let minTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        let maxTransform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        let newTransform = imageView.transform == minTransform ? maxTransform : minTransform
+        imageView.transform = newTransform
     }
 }
