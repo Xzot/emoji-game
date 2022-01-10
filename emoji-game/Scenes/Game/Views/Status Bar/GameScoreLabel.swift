@@ -59,7 +59,6 @@ final class GameScoreLabel: UIView {
 // MARK: - Private
 private extension GameScoreLabel {
     func handle(new score: GameScoreModel?) {
-        // Thead safe call for reference value
         _latestUsedScore.mutate { $0 = score }
         
         guard let score = score else {

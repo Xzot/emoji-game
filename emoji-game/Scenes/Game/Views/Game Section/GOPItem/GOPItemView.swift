@@ -21,6 +21,12 @@ final class GOPItemView: UIView {
         $0.layer.borderColor = Asset.Palette.gallery.color.cgColor
     }
     private lazy var button = UIButton()&>.do {
+        $0.publisher(for: \.isSelected)
+            .sink(receiveValue: setIsSelected(_:))
+            .store(in: &cancellable)
+        $0.publisher(for: \.isHighlighted)
+            .sink(receiveValue: setIsHiglighted(_:))
+            .store(in: &cancellable)
         $0.addTarget(
             self,
             action: #selector(handleTap),
@@ -60,16 +66,36 @@ final class GOPItemView: UIView {
 
 // MARK: - GOPItemView private
 private extension GOPItemView {
-    func handle(viewModel: GOPItemModel?) {
-        self.viewModel = viewModel
-    }
-    
     @objc
     func handleTap() {
         guard let viewModel = viewModel else {
             return
         }
+        button.isSelected = true
         // Выглядит странно, нужно будет подправить :)
         viewModel.tryUseCompletion(viewModel)
+    }
+    
+    func handle(viewModel: GOPItemModel?) {
+        button.isSelected = false
+        self.viewModel = viewModel
+    }
+    
+    func setIsHiglighted(_ value: Bool) {
+        if value == true {
+            let maxTransform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            transform = maxTransform
+        } else {
+            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
+            transform = minTransform
+        }
+    }
+    
+    func setIsSelected(_ value: Bool) {
+        if value == true {
+            imageView.layer.borderColor = viewModel?.isCorrect == true ? Asset.Palette.jungleGreen.color.cgColor : Asset.Palette.burntSienna.color.cgColor
+        } else {
+            imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
+        }
     }
 }
