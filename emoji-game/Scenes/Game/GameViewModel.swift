@@ -67,6 +67,7 @@ final class GameViewModel {
     private let scheduler: TimeUpdater
     private let scoreHandler: GameScoreHandler
     private var shouldStartTimeCount: Bool = false
+    private var gameModelInUse: GameModel?
     
     // MARK: - State
     // Status Bar
@@ -143,6 +144,10 @@ private extension GameViewModel {
     }
     
     func handle(_ gameModel: GameModel?) {
+        let incrementedTime = (timeState.value ?? 0) + 2
+        gameModelInUse != nil ? timeState.send(incrementedTime) : nil
+        gameModelInUse = gameModel
+        
         topLeftState.send(
             GOPItemModel(asset: gameModel?.topPanel.left, completion: handleUserTouch(for:))
         )

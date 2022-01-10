@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameScoreModel {
+struct GameScoreModel: Equatable {
     let old: Int?
     let new: Int
 }
@@ -15,5 +15,9 @@ struct GameScoreModel {
 extension GameScoreModel {
     func makeNew(with value: Int) -> GameScoreModel {
         .init(old: new, new: value)
+    }
+    
+    func makeWithoutOld() -> GameScoreModel {
+        .init(old: nil, new: new)
     }
 }

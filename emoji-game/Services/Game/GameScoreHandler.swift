@@ -22,7 +22,7 @@ extension GameScoreHandler {
 final class GameScoreHandler {
     // MARK: Properties
     private let config: GameScoreHandler.Config
-    private let scoreSubject = CurrentValueSubject<Int, Never>(0)
+    private let scoreSubject = CurrentValueSubject<Int, Never>(5)
     
     init(config: GameScoreHandler.Config) {
         self.config = config

@@ -5,7 +5,7 @@
 
 import UIKit
 import Combine
-import RevealingSplashView
+import TinyConstraints
 
 // MARK: - StartViewController class
 final class StartViewController: SwapChildViewController {
@@ -14,11 +14,11 @@ final class StartViewController: SwapChildViewController {
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
-    private lazy var revealingSplashView = RevealingSplashView(
-        iconImage: Asset.Images.launchScreen.image,
-        iconInitialSize: CGSize(width: 172, height: 138),
-        backgroundColor: Asset.Palette.jungleGreen.color
-    )
+    private lazy var imageView = UIImageView(
+        image: Asset.Images.launchScreen.image
+    )&>.do {
+        $0.contentMode = .center
+    }
     
     // MARK: Life Cycle
     init(viewModel: StartViewModel) {
@@ -26,8 +26,8 @@ final class StartViewController: SwapChildViewController {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = Asset.Palette.jungleGreen.color
         
-        revealingSplashView.animationType = .heartBeat
-        view.addSubview(revealingSplashView)
+        view.addSubview(imageView)
+        imageView.centerInSuperview()
         
         self.bind()
     }
@@ -43,7 +43,6 @@ final class StartViewController: SwapChildViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        revealingSplashView.startAnimation(nil)
     }
 }
 
@@ -56,7 +55,6 @@ private extension StartViewController {
                 guard canShowNext == true else {
                     return
                 }
-                self?.revealingSplashView.heartAttack = true
                 self?.viewModel.routeToNextScene()
             }
             .store(in: &cancellable)

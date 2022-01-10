@@ -272,7 +272,7 @@
 		37D602B72780AD450076CD06 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B62780AD450076CD06 /* PlayButton.swift */; };
 		37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B82780ADA90076CD06 /* PlaySceneBar.swift */; };
 		37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */; };
-		37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */; };
+		37D602BE2780CFCA0076CD06 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BD2780CFCA0076CD06 /* UIView+.swift */; };
 		37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BF2780D0D10076CD06 /* AppConstants.swift */; };
 		37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C327810C1B0076CD06 /* CustomButton.swift */; };
 		37D602C627810D550076CD06 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C527810D550076CD06 /* ImageButton.swift */; };
@@ -303,6 +303,9 @@
 		37D603092788CEC80076CD06 /* GOPItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D603082788CEC80076CD06 /* GOPItemView.swift */; };
 		37D6030B278A20DA0076CD06 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030A278A20DA0076CD06 /* Array+.swift */; };
 		37D6030D278A91E20076CD06 /* GameScoreHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030C278A91E20076CD06 /* GameScoreHandler.swift */; };
+		37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */; };
+		37E330B6278C6F49007DE487 /* ThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330B5278C6F49007DE487 /* ThreadSafe.swift */; };
+		37E330B8278C72DE007DE487 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330B7278C72DE007DE487 /* Transaction.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -594,7 +597,7 @@
 		37D602B62780AD450076CD06 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		37D602B82780ADA90076CD06 /* PlaySceneBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySceneBar.swift; sourceTree = "<group>"; };
 		37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAbsorbingView.swift; sourceTree = "<group>"; };
-		37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PulsingAnimation.swift"; sourceTree = "<group>"; };
+		37D602BD2780CFCA0076CD06 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		37D602BF2780D0D10076CD06 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		37D602C327810C1B0076CD06 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		37D602C527810D550076CD06 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
@@ -625,6 +628,9 @@
 		37D603082788CEC80076CD06 /* GOPItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOPItemView.swift; sourceTree = "<group>"; };
 		37D6030A278A20DA0076CD06 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		37D6030C278A91E20076CD06 /* GameScoreHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreHandler.swift; sourceTree = "<group>"; };
+		37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
+		37E330B5278C6F49007DE487 /* ThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafe.swift; sourceTree = "<group>"; };
+		37E330B7278C72DE007DE487 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1071,8 +1077,9 @@
 				37D602A5277F2D000076CD06 /* UIViewController+.swift */,
 				37D602B127809E740076CD06 /* UIFont+Quicksand.swift */,
 				37D602B32780A11E0076CD06 /* UIDevice+.swift */,
-				37D602BD2780CFCA0076CD06 /* UIView+PulsingAnimation.swift */,
+				37D602BD2780CFCA0076CD06 /* UIView+.swift */,
 				37D6030A278A20DA0076CD06 /* Array+.swift */,
+				37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1082,6 +1089,8 @@
 			children = (
 				37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */,
 				37D602D02781177E0076CD06 /* SwapChildViewController.swift */,
+				37E330B5278C6F49007DE487 /* ThreadSafe.swift */,
+				37E330B7278C72DE007DE487 /* Transaction.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1121,8 +1130,8 @@
 		37D602D227811CC60076CD06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37D602E327833EB30076CD06 /* Scene */,
 				37D602E227833EA90076CD06 /* Status Bar */,
+				37D602E327833EB30076CD06 /* Game Section */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1137,7 +1146,7 @@
 			path = "Status Bar";
 			sourceTree = "<group>";
 		};
-		37D602E327833EB30076CD06 /* Scene */ = {
+		37D602E327833EB30076CD06 /* Game Section */ = {
 			isa = PBXGroup;
 			children = (
 				37D602D5278121610076CD06 /* ImageView.swift */,
@@ -1145,7 +1154,7 @@
 				37D602D327811CFA0076CD06 /* GameOptionsPanel.swift */,
 				37D603052788CC510076CD06 /* GOPItem */,
 			);
-			path = Scene;
+			path = "Game Section";
 			sourceTree = "<group>";
 		};
 		37D602E827837CA10076CD06 /* Game */ = {
@@ -1636,6 +1645,7 @@
 				37D602C427810C1B0076CD06 /* CustomButton.swift in Sources */,
 				37D602DB2781DF8B0076CD06 /* GameStatusBar.swift in Sources */,
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
+				37E330B6278C6F49007DE487 /* ThreadSafe.swift in Sources */,
 				37D602DD27822DBF0076CD06 /* GameScoreLabel.swift in Sources */,
 				37D60300278570E40076CD06 /* GameModelFactory.swift in Sources */,
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
@@ -1649,6 +1659,8 @@
 				37D60304278859E80076CD06 /* TimeUpdater.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
 				37D602EA27837CBF0076CD06 /* GameDataProvider.swift in Sources */,
+				37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */,
+				37E330B8278C72DE007DE487 /* Transaction.swift in Sources */,
 				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
 				37D602EC27838AC10076CD06 /* ImageDataLoader.swift in Sources */,
 				37D602CE278115250076CD06 /* GameBuilder.swift in Sources */,
@@ -1674,7 +1686,7 @@
 				37D602DF278336760076CD06 /* Typealiases.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
-				37D602BE2780CFCA0076CD06 /* UIView+PulsingAnimation.swift in Sources */,
+				37D602BE2780CFCA0076CD06 /* UIView+.swift in Sources */,
 				37D602C627810D550076CD06 /* ImageButton.swift in Sources */,
 				37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */,
 				37D602F5278442630076CD06 /* EmojiImageLoader.swift in Sources */,

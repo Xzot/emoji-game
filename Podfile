@@ -12,7 +12,7 @@ target 'emoji-game' do
   pod 'Swinject'
   pod 'TinyConstraints'
   pod 'SwiftyUserDefaults'
-  pod 'RevealingSplashView'
+  pod 'TOMSMorphingLabel'
 end
 
 post_install do |installer|
