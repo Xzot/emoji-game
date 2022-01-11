@@ -5,16 +5,23 @@
 //  Created by Vlad Shchuka on 09.01.2022.
 //
 
-import Foundation
 import Combine
+import Foundation
+import SwiftyUserDefaults
 
 // MARK: - Output
 extension GameScoreHandler {
+    var score: Int {
+        scoreSubject.value
+    }
     var scorePublisher: AnyPublisher<Int, Never> {
         scoreSubject.eraseToAnyPublisher()
     }
-    var score: Int {
-        scoreSubject.value
+    var highestScore: Int {
+        highestScoreSubject.value
+    }
+    var highestScorePublisher: AnyPublisher<Int, Never> {
+        highestScoreSubject.eraseToAnyPublisher()
     }
 }
 
@@ -22,7 +29,8 @@ extension GameScoreHandler {
 final class GameScoreHandler {
     // MARK: Properties
     private let config: GameScoreHandler.Config
-    private let scoreSubject = CurrentValueSubject<Int, Never>(5)
+    private let scoreSubject = CurrentValueSubject<Int, Never>(0)
+    private let highestScoreSubject = CurrentValueSubject<Int, Never>(Defaults[\.scoreRecordValue])
     
     init(config: GameScoreHandler.Config) {
         self.config = config
@@ -31,6 +39,11 @@ final class GameScoreHandler {
     // MARK: API
     func userDidGuess() {
         scoreSubject.send(scoreSubject.value + config.addedPoints)
+        guard scoreSubject.value > highestScoreSubject.value else {
+            return
+        }
+        highestScoreSubject.send(scoreSubject.value)
+        Defaults[\.scoreRecordValue] = scoreSubject.value
     }
     
     func userDidNotGuess() {

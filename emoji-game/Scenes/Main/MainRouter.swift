@@ -23,6 +23,9 @@ final class MainRouter {
     // MARK: API
     func makeGameSceneRoute() {
         let gameScene = gameSceneBuilder.build(listener: nil)
-        presentable?.swapCurrentChild(with: gameScene)
+        presentable?.navigationController?.pushViewController(
+            gameScene,
+            animated: false
+        )
     }
 }

@@ -18,7 +18,11 @@ final class GameBuilder {
     func build(listener: GameListener?) -> UIViewController {
         let viewModel = GameViewModel(provider: provider, listener: listener)
         let viewController = GameViewController(viewModel: viewModel)
-        let router = GameRouter(presentable: viewController)
+        let finalSceneBuilder = FinalBuilder(provider: provider)
+        let router = GameRouter(
+            presentable: viewController,
+            finalSceneBuilder: finalSceneBuilder
+        )
         viewModel.inject(router: router)
         return viewController
     }

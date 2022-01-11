@@ -9,18 +9,19 @@ import Combine
 final class MainViewModel {
     // MARK: Output
     var scoreOutut: AnyPublisher<Int, Never> {
-        scoreState.eraseToAnyPublisher()
+        scoreHandler.highestScorePublisher
     }
     
     // MARK: Properties
     private let provider: DependencyProvider
     private var router: MainRouter!
+    private let scoreHandler: GameScoreHandler
     private var cancellables: [AnyCancellable] = []
-    private let scoreState = CurrentValueSubject<Int, Never>(0)
 
     // MARK: Life Cycle
     init(provider: DependencyProvider) {
         self.provider = provider
+        self.scoreHandler = provider.get(GameScoreHandler.self)
     }
     
     // MARK: API

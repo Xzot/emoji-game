@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import TinyConstraints
 
 // MARK: - ImageButtonConfig
@@ -22,7 +23,7 @@ extension ImageButtonConfig {
 }
 
 // MARK: - ImageButton
-final class ImageButton: CustomButton {
+final class ImageButton: UIView, SelectableTransform {
     // MARK: Properties
     var isSelected: Bool = false {
         didSet {
@@ -30,11 +31,23 @@ final class ImageButton: CustomButton {
         }
     }
     private let config: ImageButtonConfig
+    private let completion: VoidCompletion
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
     private lazy var imageView = UIImageView()&>.do {
         $0.clipsToBounds = true
         $0.contentMode = .scaleAspectFill
+    }
+    private lazy var button = UIButton()&>.do {
+        $0.publisher(for: \.isHighlighted)
+            .sink(receiveValue: setIsHighlighted(_:))
+            .store(in: &cancellable)
+        $0.addTarget(
+            self,
+            action: #selector(handleButtonTap),
+            for: .touchUpInside
+        )
     }
 
     // MARK: Life Cycle
@@ -43,11 +56,15 @@ final class ImageButton: CustomButton {
         completion: @escaping VoidCompletion
     ) {
         self.config = config
+        self.completion = completion
         
-        super.init(completion: completion)
+        super.init(frame: .zero)
         
         addSubview(imageView)
         imageView.edgesToSuperview()
+        
+        addSubview(button)
+        button.edgesToSuperview()
         
         setImage(for: isSelected)
     }
@@ -57,6 +74,7 @@ final class ImageButton: CustomButton {
     }
 }
 
+// MARK: - Private
 private extension ImageButton {
     func setImage(for isSelected: Bool) {
         if isSelected {
@@ -64,5 +82,10 @@ private extension ImageButton {
         } else {
             imageView.image = config.defaultImage
         }
+    }
+    
+    @objc
+    func handleButtonTap() {
+        completion()
     }
 }

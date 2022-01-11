@@ -6,13 +6,13 @@ inhibit_all_warnings!
 target 'emoji-game' do
   use_frameworks!
   # Утилиты
+  pod 'Gifu'
   pod 'Realm'
   pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'Swinject'
   pod 'TinyConstraints'
   pod 'SwiftyUserDefaults'
-  pod 'TOMSMorphingLabel'
 end
 
 post_install do |installer|

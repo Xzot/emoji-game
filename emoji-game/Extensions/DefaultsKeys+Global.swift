@@ -11,4 +11,8 @@ extension DefaultsKeys {
     var usedHypo: DefaultsKey<[String : Bool]> {
         .init("EmojiGame.DefaultsKeys.usedEmojiHypo", defaultValue: [:])
     }
+    
+    var scoreRecordValue: DefaultsKey<Int> {
+        .init("EmojiGame.DefaultsKeys.scoreRecordValue", defaultValue: 0)
+    }
 }

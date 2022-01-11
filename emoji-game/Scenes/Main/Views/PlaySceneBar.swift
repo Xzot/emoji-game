@@ -55,7 +55,8 @@ final class PlaySceneBar: UIView {
         super.init(frame: .zero)
         
         addSubview(playButton)
-        let playButtonSize: CGFloat = max(160, 196 * UIDevice.sizeFactor)
+        
+        let playButtonSize = AppConstants.MainScene.playButtonSize
         playButton.size(
             CGSize(
                 width: playButtonSize,
@@ -64,9 +65,6 @@ final class PlaySceneBar: UIView {
         )
         playButton.centerXToSuperview()
         playButton.topToSuperview(offset: max(30, 40 * UIDevice.sizeFactor))
-        
-        playButton.clipsToBounds = true
-        playButton.layer.cornerRadius = playButtonSize / 2
         
         let smallButtonsSize: CGFloat = max(60, 72 * UIDevice.sizeFactor)
         let smallButtonBottomOffset: CGFloat = max(10, 16 * UIDevice.sizeFactor)

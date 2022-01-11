@@ -133,12 +133,8 @@ private extension GameViewModel {
                 guard let self = self else {
                     return
                 }
-                if newScore >= 0 {
-                    let model = self.scoreState.value.makeNew(with: newScore)
-                    self.scoreState.send(model)
-                } else {
-                    self.gameOver()
-                }
+                let model = self.scoreState.value.makeNew(with: newScore)
+                self.scoreState.send(model)
             })
             .store(in: &cancellables)
     }

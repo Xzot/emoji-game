@@ -13,15 +13,7 @@ enum AppConstants {
 
 extension AppConstants {
     struct MainScene {
-        
-    }
-}
-
-extension AppConstants.MainScene {
-    struct PulseAnimation {
-        let duration: CGFloat = 1
-        let delay: CGFloat = 0
-        let minScale: CGFloat = 0.95
-        let maxScale: CGFloat = 1.0
+        static let gifMultiplier: CGFloat = 0.34
+        static let playButtonSize: CGFloat = max(160, 196 * UIDevice.sizeFactor)
     }
 }

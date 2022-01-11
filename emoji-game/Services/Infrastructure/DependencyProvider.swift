@@ -19,10 +19,11 @@ class ProductionAssmebly: Assembly {
             GameScoreHandler.self,
             factory: { _ in
                 GameScoreHandler(
-                    config: .init(addedPoints: 10, takenAwayPoints: 15)
+                    config: .init(addedPoints: 10, takenAwayPoints: 25)
                 )
             }
         )
+            .inObjectScope(.container)
         
         container.register(
             EmojiModelsProvider.self,

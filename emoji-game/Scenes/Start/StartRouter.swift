@@ -18,6 +18,9 @@ final class StartRouter {
     }
     
     func routeToNextScene() {
-        presentable?.swapCurrentChild(with:  builder.build())
+        presentable?.navigationController?.pushViewController(
+            builder.build(),
+            animated: false
+        )
     }
 }

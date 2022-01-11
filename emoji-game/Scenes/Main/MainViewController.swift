@@ -2,6 +2,7 @@
 //  Created by Vlad Shchuka on 20.12.2021.
 //
 
+import Gifu
 import UIKit
 import Combine
 import TinyConstraints
@@ -12,8 +13,10 @@ final class MainViewController: SwapChildViewController {
     private let viewModel: MainViewModel
     
     // MARK: UI
-    private lazy var imageView = UIImageView(image: Asset.Images.startHeader.image)&>.do {
-        $0.contentMode = .scaleAspectFill
+    private lazy var imageView = GIFImageView(
+        image: Asset.Images.startHeader.image
+    )&>.do {
+        $0.contentMode = .scaleAspectFit
     }
     private lazy var label = UILabel()&>.do {
         $0.textColor = Asset.Palette.black.color
@@ -48,7 +51,10 @@ final class MainViewController: SwapChildViewController {
         view.addSubview(imageView)
         imageView.topToSuperview(usingSafeArea: true)
         imageView.horizontalToSuperview()
-        imageView.height(to: view, multiplier: 0.34)
+        imageView.height(
+            to: view,
+            multiplier: AppConstants.MainScene.gifMultiplier
+        )
         
         view.addSubview(label)
         label.topToBottom(of: imageView)
@@ -58,17 +64,24 @@ final class MainViewController: SwapChildViewController {
             usingSafeArea: true
         )
         
-        let aConfig = AppConstants.MainScene.PulseAnimation()
-        label.pulseAnimated(
-            minScale: aConfig.minScale,
-            maxScale: aConfig.maxScale,
-            duration: aConfig.duration,
-            delay: aConfig.delay
-        )
-        
         view.addSubview(gameBar)
         gameBar.edgesToSuperview(excluding: .top)
         gameBar.topToBottom(of: label)
+        
+        imageView.prepareForAnimation(
+            withGIFNamed: "main_emojis",
+            completionHandler: nil
+        )
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        imageView.startAnimatingGIF()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        imageView.stopAnimatingGIF()
     }
 }
 
