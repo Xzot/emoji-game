@@ -14,6 +14,7 @@ final class AppAdService: NSObject {
     // MARK: Properties
     private var completion: (() -> Void)?
     private var interstitialAdQueue = Queue<GADInterstitialAd>()
+    private var latestUsedAdd: GADInterstitialAd?
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: API
@@ -26,6 +27,7 @@ final class AppAdService: NSObject {
         with completion: @escaping () -> Void
     ) {
         if let interstitialAd = interstitialAdQueue.dequeue() {
+            latestUsedAdd = interstitialAd
             interstitialAd.fullScreenContentDelegate = self
             self.completion = completion
             interstitialAd.present(fromRootViewController: scene)
