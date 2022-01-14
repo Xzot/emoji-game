@@ -8,8 +8,8 @@
 import Foundation
 import Combine
 
-// MARK: - GameDataProvider class
-final class GameDataProvider {
+// MARK: - GameDataService class
+final class GameDataService {
     // MARK: OutPut
     var data: AnyPublisher<GameModel?, Never> {
         dataSubject.eraseToAnyPublisher()
@@ -44,8 +44,8 @@ final class GameDataProvider {
     }
 }
 
-// MARK: - GameDataProvider private extension
-private extension GameDataProvider {
+// MARK: - GameDataService private extension
+private extension GameDataService {
     func bind() {
         readyToPlayQueue.listCount
             .sink { [weak self] value in

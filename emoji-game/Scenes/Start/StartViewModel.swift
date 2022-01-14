@@ -16,12 +16,14 @@ final class StartViewModel {
     // MARK: Properties
     private let provider: DependencyProvider
     private var router: StartRouter!
+    private let adService: AppAdService
     private var cancellables: [AnyCancellable] = []
     private let isReadyToShowNextSceneSubject = CurrentValueSubject<Bool, Never>(false)
     
     // MARK: Life Cycle
     init(provider: DependencyProvider) {
         self.provider = provider
+        self.adService = provider.get(AppAdService.self)
     }
     
     // MARK: Public
@@ -30,6 +32,7 @@ final class StartViewModel {
     }
     
     func handleViewDidLoad() {
+        adService.prefetchAds()
         isReadyToShowNextSceneSubject.send(true)
     }
     

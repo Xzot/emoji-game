@@ -118,7 +118,7 @@ private extension FinalViewController {
         case .giveUp:
             viewModel.userTapGameOver()
         case .tryAgain:
-            break
+            viewModel.userTapContinue()
         }
     }
 }

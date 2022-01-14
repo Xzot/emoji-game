@@ -64,7 +64,7 @@ final class GameViewModel {
     private weak var listener: GameListener?
     private var router: GameRouter!
     private let provider: DependencyProvider
-    private let gDataProvider: GameDataProvider
+    private let gDataProvider: GameDataService
     private let scheduler: TimeUpdater
     private let scoreHandler: GameScoreHandler
     private var shouldStartTimeCount: Bool = false
@@ -95,7 +95,7 @@ final class GameViewModel {
     ) {
         self.provider = provider
         self.listener = listener
-        self.gDataProvider = provider.get(GameDataProvider.self)
+        self.gDataProvider = provider.get(GameDataService.self)
         self.scheduler = provider.get(TimeUpdater.self)
         self.scoreHandler = provider.get(GameScoreHandler.self)
         

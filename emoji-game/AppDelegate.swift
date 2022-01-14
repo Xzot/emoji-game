@@ -6,22 +6,20 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    private lazy var provider: DependencyProvider = {
-#if DEBUG
-        DependencyProvider(
-            assembly: DebugAssmebly()
-        )
-#else
-        DependencyProvider(assembly: ProductionAssmebly())
-#endif
-    }()
+    private let provider: DependencyProvider = .standart
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["90f1ee3e8b40010acb7fd8a343e3300c"]
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         application.statusBarStyle = .darkContent
         

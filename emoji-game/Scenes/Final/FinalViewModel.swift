@@ -21,6 +21,7 @@ final class FinalViewModel {
     private var router: FinalRouter!
     private let scoreHandler: GameScoreHandler
     private weak var listener: FinalListener?
+    private let adService: AppAdService
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: Life Cycle
@@ -31,6 +32,7 @@ final class FinalViewModel {
         self.provider = provider
         self.listener = listener
         self.scoreHandler = provider.get(GameScoreHandler.self)
+        self.adService = provider.get(AppAdService.self)
     }
     
     // MARK: API
@@ -41,5 +43,11 @@ final class FinalViewModel {
     func userTapGameOver() {
         router.routeToMain()
         scoreHandler.reset()
+    }
+    
+    func userTapContinue() {
+        adService.showInterstitialAd(for: router.presentable!) { [weak self] in
+            self?.router.routeBack()
+        }
     }
 }

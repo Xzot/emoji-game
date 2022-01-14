@@ -13,6 +13,7 @@ target 'emoji-game' do
   pod 'Swinject'
   pod 'TinyConstraints'
   pod 'SwiftyUserDefaults'
+  pod 'Google-Mobile-Ads-SDK'
 end
 
 post_install do |installer|

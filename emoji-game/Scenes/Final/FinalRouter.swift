@@ -7,7 +7,7 @@ import UIKit
 // MARK: - FinalRouter class
 final class FinalRouter {
     // MARK: Properties
-    private weak var presentable: FinalViewController?
+    private(set) weak var presentable: FinalViewController?
 
     // MARK: Life Cycle
     init(presentable: FinalViewController) {
@@ -22,5 +22,9 @@ final class FinalRouter {
             mainScene,
             animated: false
         )
+    }
+    
+    func routeBack() {
+        presentable?.navigationController?.popViewController(animated: false)
     }
 }

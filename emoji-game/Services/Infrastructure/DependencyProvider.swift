@@ -7,14 +7,17 @@
 
 import Swinject
 
-// MARK: - Assembly protocol
-protocol Assembly {
-    func assemble(in container: Container)
-}
-
-// MARK: - ProductionAssmebly class
-class ProductionAssmebly: Assembly {
+// MARK: - DependencyAssembly class
+final class DependencyAssembly {
     func assemble(in container: Container) {
+        container.register(
+            AppAdService.self,
+            factory: { _ in
+                AppAdService()
+            }
+        )
+            .inObjectScope(.container)
+        
         container.register(
             GameScoreHandler.self,
             factory: { _ in
@@ -50,9 +53,9 @@ class ProductionAssmebly: Assembly {
         )
         
         container.register(
-            GameDataProvider.self,
+            GameDataService.self,
             factory: { resolver in
-                GameDataProvider(
+                GameDataService(
                     modelsProvider: resolver.resolve(GameModelsProvider.self)!
                 )
             }
@@ -108,17 +111,10 @@ class ProductionAssmebly: Assembly {
     }
 }
 
-// MARK: - DebugAssmebly class
-class DebugAssmebly: ProductionAssmebly {
-    override func assemble(in container: Container) {
-        super.assemble(in: container)
-    }
-}
-
 // MARK: - DependencyProvider final class
 final class DependencyProvider {
     private let container = Container()
-    private let assembly: Assembly
+    private let assembly: DependencyAssembly
     
     var applicationObservableServices: [ApplicationObservable] {
 //        [
@@ -127,12 +123,21 @@ final class DependencyProvider {
         fatalError()
     }
     
-    init(assembly: Assembly) {
+    init(assembly: DependencyAssembly) {
         self.assembly = assembly
         assembly.assemble(in: container)
     }
     
     func get<Service>(_ serviceType: Service.Type) -> Service {
         return container.resolve(serviceType)!
+    }
+}
+
+// MARK: - API
+extension DependencyProvider {
+    static var standart: DependencyProvider {
+        .init(
+            assembly: DependencyAssembly()
+        )
     }
 }

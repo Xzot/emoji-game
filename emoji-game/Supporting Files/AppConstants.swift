@@ -9,6 +9,7 @@ import UIKit
 
 enum AppConstants {
     static let startGameScore = 0
+    static let adUnitId = "ca-app-pub-4674777145864617/9890688531"
 }
 
 extension AppConstants {
