@@ -51,7 +51,7 @@ final class GameModelFactory {
             .shuffled()
         
         let topSpecs = [
-            trullySpecs[0],
+            trullySpecs.count > 0 ? trullySpecs[0] : wrongSpecs[5],
             wrongSpecs[0],
             wrongSpecs[1]
         ]

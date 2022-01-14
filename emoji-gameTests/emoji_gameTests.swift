@@ -8,6 +8,8 @@
 import XCTest
 @testable import emoji_game
 
+fileprivate let emojiProvider: EmojiModelsProvider = .init()
+
 class emoji_gameTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -36,13 +38,8 @@ class emoji_gameTests: XCTestCase {
 }
 
 class EmojiFromJSONTests: XCTestCase {
-    private let emojiProvider: JSONEmojisProvider = .init()
-    
     func testIfAssetsMatchJson() {
-        guard let emojis = emojiProvider.fetchEmojis() else {
-            XCTFail("Shouldn't be nil")
-            return
-        }
+        let emojis = emojiProvider.fetchEmojis()
         var assets: [UIImage] = []
         emojis.forEach { model in
             guard let image = UIImage(named: model.imageName) else {
@@ -51,6 +48,40 @@ class EmojiFromJSONTests: XCTestCase {
             }
             assets.append(image)
         }
-        XCTAssertEqual(assets.count, emojis.count, "FAILED: Number of fetched emojis should be equal to number of produced images")
+        XCTAssertEqual(
+            assets.count,
+            emojis.count,
+            "FAILED: Number of fetched emojis should be equal to number of produced images"
+        )
+    }
+}
+
+class GameModelFactoryTests: XCTestCase {
+    private let factory: GameModelFactory = .init(emojisList: emojiProvider)
+    
+    func testForDuplicates() {
+        (0...100).forEach { _ in
+            let gameModel = factory.assembly(
+                from: UIImage(),
+                and: []
+            )
+            
+            let fetched = [
+                gameModel?.topPanel.left.unicode,
+                gameModel?.topPanel.center.unicode,
+                gameModel?.topPanel.right.unicode,
+                gameModel?.bottomPanel.left.unicode,
+                gameModel?.bottomPanel.center.unicode,
+                gameModel?.bottomPanel.right.unicode
+            ]
+            
+            let cleaned = fetched.uniqued()
+            
+            XCTAssertEqual(
+                fetched.count,
+                cleaned.count,
+                "FAILED: For some reason specs list contain dublicates"
+            )
+        }
     }
 }
