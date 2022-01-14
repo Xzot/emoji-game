@@ -29,7 +29,7 @@ extension GameScoreHandler {
 final class GameScoreHandler {
     // MARK: Properties
     private let config: GameScoreHandler.Config
-    private let scoreSubject = CurrentValueSubject<Int, Never>(0)
+    private let scoreSubject = CurrentValueSubject<Int, Never>(AppConstants.startGameScore)
     private let highestScoreSubject = CurrentValueSubject<Int, Never>(Defaults[\.scoreRecordValue])
     
     init(config: GameScoreHandler.Config) {
@@ -37,6 +37,10 @@ final class GameScoreHandler {
     }
     
     // MARK: API
+    func reset() {
+        scoreSubject.send(AppConstants.startGameScore)
+    }
+    
     func userDidGuess() {
         scoreSubject.send(scoreSubject.value + config.addedPoints)
         guard scoreSubject.value > highestScoreSubject.value else {

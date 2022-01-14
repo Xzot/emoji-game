@@ -8,7 +8,7 @@
 import UIKit
 
 enum AppConstants {
-    
+    static let startGameScore = 0
 }
 
 extension AppConstants {

@@ -37,4 +37,9 @@ final class FinalViewModel {
     func inject(router: FinalRouter) {
         self.router = router
     }
+    
+    func userTapGameOver() {
+        router.routeToMain()
+        scoreHandler.reset()
+    }
 }

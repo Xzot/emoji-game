@@ -13,4 +13,14 @@ final class FinalRouter {
     init(presentable: FinalViewController) {
         self.presentable = presentable
     }
+    
+    func routeToMain() {
+        guard let mainScene = presentable?.navigationController?.viewControllers
+                .filter({ $0.isKind(of: MainViewController.self) })
+                .first else { return }
+        presentable?.navigationController?.popToViewController(
+            mainScene,
+            animated: false
+        )
+    }
 }

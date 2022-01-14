@@ -34,7 +34,7 @@ final class FinalSceneBar: UIView {
     )
     private lazy var gameOverButton = GameOverButton(
         completion: { [weak self] in
-            self?.completion(.tryAgain)
+            self?.completion(.giveUp)
         }
     )
     

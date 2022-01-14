@@ -53,6 +53,7 @@ extension GameViewModel {
     }
     
     func handlePause() {
+        shouldStartTimeCount = false
         router.routeToPauseScene()
     }
 }

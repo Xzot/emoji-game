@@ -116,7 +116,7 @@ private extension FinalViewController {
     func handle(action: FinalSceneBar.Action) {
         switch action {
         case .giveUp:
-            break
+            viewModel.userTapGameOver()
         case .tryAgain:
             break
         }
