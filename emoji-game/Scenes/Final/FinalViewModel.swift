@@ -7,11 +7,19 @@ import Combine
 // MARK: - FinalListener protocol
 protocol FinalListener: AnyObject {}
 
+// MARK: - Output
+extension FinalViewModel {
+    var scorePublisher: AnyPublisher<Int, Never> {
+        scoreHandler.scorePublisher.eraseToAnyPublisher()
+    }
+}
+
 // MARK: - FinalViewModel class
 final class FinalViewModel {
     // MARK: Properties
     private let provider: DependencyProvider
     private var router: FinalRouter!
+    private let scoreHandler: GameScoreHandler
     private weak var listener: FinalListener?
     private var cancellables = Set<AnyCancellable>()
     
@@ -22,6 +30,7 @@ final class FinalViewModel {
     ) {
         self.provider = provider
         self.listener = listener
+        self.scoreHandler = provider.get(GameScoreHandler.self)
     }
     
     // MARK: API

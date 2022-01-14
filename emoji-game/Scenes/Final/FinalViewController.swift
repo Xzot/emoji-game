@@ -37,6 +37,7 @@ final class FinalViewController: UIViewController {
     // MARK: Properties
     private let sceneType: FinalViewController.SceneType
     private let viewModel: FinalViewModel
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
     private lazy var imageView = UIImageView(
@@ -44,7 +45,7 @@ final class FinalViewController: UIViewController {
     )&>.do {
         $0.contentMode = .center
     }
-    private lazy var label = UILabel()&>.do {
+    private lazy var descriptionLabel = UILabel()&>.do {
         $0.textColor = Asset.Palette.black.color
         $0.textAlignment = .center
         $0.text = sceneType.titleText
@@ -53,6 +54,15 @@ final class FinalViewController: UIViewController {
             weight: .bold
         )
     }
+    private lazy var scoreLabel = UILabel()&>.do {
+        $0.textColor = Asset.Palette.black.color
+        $0.textAlignment = .center
+        $0.font = .quicksand(
+            ofSize: max(20, 24 * UIDevice.sizeFactor),
+            weight: .bold
+        )
+    }
+    private lazy var bottomBar = FinalSceneBar(completion: handle(action:))
     
     // MARK: Life Cycle
     init(
@@ -74,20 +84,41 @@ final class FinalViewController: UIViewController {
             multiplier: 0.4
         )
         
-        view.addSubview(label)
-        label.topToBottom(of: imageView)
-        label.centerXToSuperview()
-        label.horizontalToSuperview(
-            relation: .equalOrGreater,
-            usingSafeArea: true
-        )
+        view.addSubview(descriptionLabel)
+        descriptionLabel.topToBottom(of: imageView)
+        descriptionLabel.horizontalToSuperview()
+        
+        view.addSubview(scoreLabel)
+        scoreLabel.topToBottom(of: descriptionLabel, offset: 4)
+        scoreLabel.horizontalToSuperview()
+        
+        view.addSubview(bottomBar)
+        let insetValue: CGFloat = max(16, 24 * UIDevice.sizeFactor)
+        bottomBar.horizontalToSuperview(insets: .left(insetValue) + .right(insetValue))
+        bottomBar.bottomToSuperview(usingSafeArea: true)
+        bottomBar.height(to: view, multiplier: 0.28)
+        
+        viewModel.scorePublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.scoreLabel.text = "Your Score: " + String(value)
+            }
+            .store(in: &self.cancellable)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+}
+
+// MARK: - FinalViewController private
+private extension FinalViewController {
+    func handle(action: FinalSceneBar.Action) {
+        switch action {
+        case .giveUp:
+            break
+        case .tryAgain:
+            break
+        }
     }
 }

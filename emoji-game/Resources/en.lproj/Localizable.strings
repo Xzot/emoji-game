@@ -2,3 +2,7 @@
 "mainScene.labelText" = "Who's that\nEmoji?";
 "mainScene.playButtonName" = "PLAY";
 "mainScene.playButtonScoreTitle" = "Best: ";
+
+
+"finalScene.continueButtonTitle" = "CONTINUE";
+"finalScene.gameOverButtonTitle" = "NO, GIVE UP";

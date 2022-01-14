@@ -11,6 +11,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
 
+  internal enum FinalScene {
+    /// CONTINUE
+    internal static let continueButtonTitle = Strings.tr("Localizable", "finalScene.continueButtonTitle")
+    /// NO, GIVE UP
+    internal static let gameOverButtonTitle = Strings.tr("Localizable", "finalScene.gameOverButtonTitle")
+  }
+
   internal enum MainScene {
     /// Who's that
     /// Emoji?

@@ -312,6 +312,9 @@
 		37E330CA278D551A007DE487 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330C6278D551A007DE487 /* FinalViewController.swift */; };
 		37E330CB278D551A007DE487 /* FinalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330C7278D551A007DE487 /* FinalBuilder.swift */; };
 		37E330CC278D551A007DE487 /* FinalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330C8278D551A007DE487 /* FinalViewModel.swift */; };
+		37E330CF278F5AA8007DE487 /* FinalSceneBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330CE278F5AA8007DE487 /* FinalSceneBar.swift */; };
+		37E330D127906549007DE487 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330D027906549007DE487 /* ContinueButton.swift */; };
+		37E330D327917718007DE487 /* GameOverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330D227917718007DE487 /* GameOverButton.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -643,6 +646,9 @@
 		37E330C6278D551A007DE487 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		37E330C7278D551A007DE487 /* FinalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalBuilder.swift; sourceTree = "<group>"; };
 		37E330C8278D551A007DE487 /* FinalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewModel.swift; sourceTree = "<group>"; };
+		37E330CE278F5AA8007DE487 /* FinalSceneBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSceneBar.swift; sourceTree = "<group>"; };
+		37E330D027906549007DE487 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		37E330D227917718007DE487 /* GameOverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverButton.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1206,12 +1212,23 @@
 		37E330C4278D550B007DE487 /* Final */ = {
 			isa = PBXGroup;
 			children = (
+				37E330CD278F573D007DE487 /* Views */,
 				37E330C5278D551A007DE487 /* FinalRouter.swift */,
 				37E330C7278D551A007DE487 /* FinalBuilder.swift */,
 				37E330C8278D551A007DE487 /* FinalViewModel.swift */,
 				37E330C6278D551A007DE487 /* FinalViewController.swift */,
 			);
 			path = Final;
+			sourceTree = "<group>";
+		};
+		37E330CD278F573D007DE487 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37E330CE278F5AA8007DE487 /* FinalSceneBar.swift */,
+				37E330D027906549007DE487 /* ContinueButton.swift */,
+				37E330D227917718007DE487 /* GameOverButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
@@ -1665,6 +1682,7 @@
 				3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */,
 				37D602F127838B470076CD06 /* DataLoader.swift in Sources */,
 				37D602B72780AD450076CD06 /* PlayButton.swift in Sources */,
+				37E330D127906549007DE487 /* ContinueButton.swift in Sources */,
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
 				37D602CF278115250076CD06 /* GameViewModel.swift in Sources */,
 				37E330BF278CA30A007DE487 /* UIImage+Gif.swift in Sources */,
@@ -1688,6 +1706,7 @@
 				37E330CC278D551A007DE487 /* FinalViewModel.swift in Sources */,
 				37E330CA278D551A007DE487 /* FinalViewController.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
+				37E330CF278F5AA8007DE487 /* FinalSceneBar.swift in Sources */,
 				37D602EA27837CBF0076CD06 /* GameDataProvider.swift in Sources */,
 				37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */,
 				37E330B8278C72DE007DE487 /* Transaction.swift in Sources */,
@@ -1716,6 +1735,7 @@
 				3722803C2771305100466B64 /* MainBuilder.swift in Sources */,
 				37D602DF278336760076CD06 /* Typealiases.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
+				37E330D327917718007DE487 /* GameOverButton.swift in Sources */,
 				37E330CB278D551A007DE487 /* FinalBuilder.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
 				37D602BE2780CFCA0076CD06 /* UIView+.swift in Sources */,
