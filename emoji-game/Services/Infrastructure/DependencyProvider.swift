@@ -11,6 +11,14 @@ import Swinject
 final class DependencyAssembly {
     func assemble(in container: Container) {
         container.register(
+            HapticService.self,
+            factory: { _ in
+                HapticService()
+            }
+        )
+            .inObjectScope(.container)
+        
+        container.register(
             AppAdService.self,
             factory: { _ in
                 AppAdService()

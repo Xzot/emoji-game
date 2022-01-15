@@ -16,12 +16,14 @@ final class MainViewModel {
     private let provider: DependencyProvider
     private var router: MainRouter!
     private let scoreHandler: GameScoreHandler
+    private let haptic: HapticService
     private var cancellables: [AnyCancellable] = []
 
     // MARK: Life Cycle
     init(provider: DependencyProvider) {
         self.provider = provider
         self.scoreHandler = provider.get(GameScoreHandler.self)
+        self.haptic = provider.get(HapticService.self)
     }
     
     // MARK: API
@@ -30,6 +32,15 @@ final class MainViewModel {
     }
     
     func playTapped() {
+        haptic.impact(as: .defaultTap)
         router.makeGameSceneRoute()
+    }
+    
+    func adsTapped() {
+        haptic.impact(as: .defaultTap)
+    }
+    
+    func soundTapped() {
+        haptic.impact(as: .defaultTap)
     }
 }

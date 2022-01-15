@@ -53,6 +53,7 @@ extension GameViewModel {
     }
     
     func handlePause() {
+        haptic.impact(as: .defaultTap)
         shouldStartTimeCount = false
         router.routeToPauseScene()
     }
@@ -73,6 +74,7 @@ final class GameViewModel {
     private let gDataProvider: GameDataService
     private let scheduler: TimeUpdater
     private let scoreHandler: GameScoreHandler
+    private let haptic: HapticService
     private var shouldStartTimeCount: Bool = false
     private var gameModelInUse: GameModel?
     
@@ -104,6 +106,7 @@ final class GameViewModel {
         self.gDataProvider = provider.get(GameDataService.self)
         self.scheduler = provider.get(TimeUpdater.self)
         self.scoreHandler = provider.get(GameScoreHandler.self)
+        self.haptic = provider.get(HapticService.self)
         
         self.bind()
     }
@@ -189,11 +192,18 @@ private extension GameViewModel {
         guard isAlreadyHandled == false else {
             return
         }
-        model.isCorrect ? scoreHandler.userDidGuess() : scoreHandler.userDidNotGuess()
+        if model.isCorrect {
+            haptic.impact(as: .rightSelection)
+            scoreHandler.userDidGuess()
+        } else {
+            haptic.impact(as: .wrongSelection)
+            scoreHandler.userDidNotGuess()
+        }
         gDataProvider.handleModelSelection(model)
     }
     
     func gameOver() {
+        haptic.impact(as: .gameOver)
         router.routeToGameOverScene()
         scheduler.invalidate()
     }

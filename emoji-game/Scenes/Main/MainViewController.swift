@@ -92,10 +92,10 @@ extension MainViewController: PlaySceneBarDelegate {
     }
     
     func didTapAds() {
-        
+        viewModel.adsTapped()
     }
     
     func didTapSound() {
-        
+        viewModel.soundTapped()
     }
 }

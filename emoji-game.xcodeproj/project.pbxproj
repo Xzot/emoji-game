@@ -12,6 +12,16 @@
 		3722803C2771305100466B64 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280382771305100466B64 /* MainBuilder.swift */; };
 		3722803D2771305100466B64 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280392771305100466B64 /* MainViewModel.swift */; };
 		372F2A232791C7C10066E051 /* AppAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F2A222791C7C10066E051 /* AppAdService.swift */; };
+		3749B9A62793111F0019C171 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9A52793111F0019C171 /* HapticService.swift */; };
+		3749B9AC27931C090019C171 /* default_tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3749B9A827931C090019C171 /* default_tap.mp3 */; };
+		3749B9AD27931C090019C171 /* right_selection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3749B9A927931C090019C171 /* right_selection.mp3 */; };
+		3749B9AE27931C090019C171 /* wrong_selection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3749B9AA27931C090019C171 /* wrong_selection.mp3 */; };
+		3749B9AF27931C090019C171 /* game_over.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3749B9AB27931C090019C171 /* game_over.wav */; };
+		3749B9B227932C680019C171 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9B127932C680019C171 /* HapticEngine.swift */; };
+		3749B9B427932C7C0019C171 /* DefaultHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9B327932C7C0019C171 /* DefaultHapticEngine.swift */; };
+		3749B9B7279339240019C171 /* GameOverHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9B6279339240019C171 /* GameOverHapticEngine.swift */; };
+		3749B9B9279339AE0019C171 /* RightSelectionHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9B8279339AE0019C171 /* RightSelectionHapticEngine.swift */; };
+		3749B9BB279339FE0019C171 /* WrongSelectionHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9BA279339FE0019C171 /* WrongSelectionHapticEngine.swift */; };
 		37548118277100A7003C3E16 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548114277100A7003C3E16 /* StartRouter.swift */; };
 		37548119277100A7003C3E16 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548115277100A7003C3E16 /* StartViewController.swift */; };
 		3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548116277100A7003C3E16 /* StartBuilder.swift */; };
@@ -343,6 +353,16 @@
 		372280382771305100466B64 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		372280392771305100466B64 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		372F2A222791C7C10066E051 /* AppAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdService.swift; sourceTree = "<group>"; };
+		3749B9A52793111F0019C171 /* HapticService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		3749B9A827931C090019C171 /* default_tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default_tap.mp3; sourceTree = "<group>"; };
+		3749B9A927931C090019C171 /* right_selection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right_selection.mp3; sourceTree = "<group>"; };
+		3749B9AA27931C090019C171 /* wrong_selection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong_selection.mp3; sourceTree = "<group>"; };
+		3749B9AB27931C090019C171 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
+		3749B9B127932C680019C171 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
+		3749B9B327932C7C0019C171 /* DefaultHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHapticEngine.swift; sourceTree = "<group>"; };
+		3749B9B6279339240019C171 /* GameOverHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverHapticEngine.swift; sourceTree = "<group>"; };
+		3749B9B8279339AE0019C171 /* RightSelectionHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSelectionHapticEngine.swift; sourceTree = "<group>"; };
+		3749B9BA279339FE0019C171 /* WrongSelectionHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongSelectionHapticEngine.swift; sourceTree = "<group>"; };
 		37548114277100A7003C3E16 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
 		37548115277100A7003C3E16 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		37548116277100A7003C3E16 /* StartBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBuilder.swift; sourceTree = "<group>"; };
@@ -693,6 +713,38 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		3749B9A727931BF70019C171 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3749B9A827931C090019C171 /* default_tap.mp3 */,
+				3749B9AB27931C090019C171 /* game_over.wav */,
+				3749B9A927931C090019C171 /* right_selection.mp3 */,
+				3749B9AA27931C090019C171 /* wrong_selection.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3749B9B027932C5F0019C171 /* Haptic */ = {
+			isa = PBXGroup;
+			children = (
+				3749B9A52793111F0019C171 /* HapticService.swift */,
+				3749B9B5279339100019C171 /* Engines */,
+			);
+			path = Haptic;
+			sourceTree = "<group>";
+		};
+		3749B9B5279339100019C171 /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				3749B9B127932C680019C171 /* HapticEngine.swift */,
+				3749B9B327932C7C0019C171 /* DefaultHapticEngine.swift */,
+				3749B9B6279339240019C171 /* GameOverHapticEngine.swift */,
+				3749B9B8279339AE0019C171 /* RightSelectionHapticEngine.swift */,
+				3749B9BA279339FE0019C171 /* WrongSelectionHapticEngine.swift */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
 		3754811327710092003C3E16 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +788,7 @@
 				37889302276F953600B3D96C /* Extensions */,
 				37D602A2277F29A30076CD06 /* Utils */,
 				37889100276F231400B3D96C /* Supporting Files */,
+				3749B9A727931BF70019C171 /* Sounds */,
 				37889101276F238700B3D96C /* Resources */,
 				3788912F276F2B2700B3D96C /* assets */,
 			);
@@ -1199,6 +1252,7 @@
 				37D602F027838B470076CD06 /* DataLoader.swift */,
 				37D602EB27838AC10076CD06 /* ImageDataLoader.swift */,
 				37D60303278859E80076CD06 /* TimeUpdater.swift */,
+				3749B9B027932C5F0019C171 /* Haptic */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1464,6 +1518,7 @@
 				3788921C276F2B2800B3D96C /* emoji_christmas_tree.png in Resources */,
 				3788923A276F2B2800B3D96C /* emoji_dizzy.png in Resources */,
 				3788924A276F2B2800B3D96C /* emoji_zzz.png in Resources */,
+				3749B9AD27931C090019C171 /* right_selection.mp3 in Resources */,
 				37889278276F2B2800B3D96C /* emoji_bouquet.png in Resources */,
 				378892B5276F2B2800B3D96C /* emoji_downcast_face_with_sweat.png in Resources */,
 				37889218276F2B2800B3D96C /* emoji_pensive_face.png in Resources */,
@@ -1486,6 +1541,7 @@
 				3788923E276F2B2800B3D96C /* emoji_rainbow.png in Resources */,
 				37889280276F2B2800B3D96C /* emoji_last_quarter_moon_face.png in Resources */,
 				378892CA276F2B2800B3D96C /* emoji_hot_dog.png in Resources */,
+				3749B9AE27931C090019C171 /* wrong_selection.mp3 in Resources */,
 				378892CF276F2B2800B3D96C /* emoji_clown_face.png in Resources */,
 				37889268276F2B2800B3D96C /* emoji_kissing_face_with_smiling_eyes.png in Resources */,
 				3788922A276F2B2800B3D96C /* emoji_smiling_face_with_smiling_eyes.png in Resources */,
@@ -1565,6 +1621,7 @@
 				37889295276F2B2800B3D96C /* emoji_tulip.png in Resources */,
 				378892C0276F2B2800B3D96C /* emoji_fish.png in Resources */,
 				378892AE276F2B2800B3D96C /* emoji_angry_face.png in Resources */,
+				3749B9AF27931C090019C171 /* game_over.wav in Resources */,
 				3788926A276F2B2800B3D96C /* emoji_unamused_face.png in Resources */,
 				37889299276F2B2800B3D96C /* emoji_carousel_horse.png in Resources */,
 				3788927D276F2B2800B3D96C /* emoji_rolling_on_the_floor_laughing.png in Resources */,
@@ -1588,6 +1645,7 @@
 				37889285276F2B2800B3D96C /* emoji_partying_face.png in Resources */,
 				37889294276F2B2800B3D96C /* emoji_octopus.png in Resources */,
 				37889244276F2B2800B3D96C /* emoji_persevering_face.png in Resources */,
+				3749B9AC27931C090019C171 /* default_tap.mp3 in Resources */,
 				37889267276F2B2800B3D96C /* emoji_scorpion.png in Resources */,
 				37889264276F2B2800B3D96C /* emoji_panda.png in Resources */,
 				378892B9276F2B2800B3D96C /* emoji_hear_no_evil_monkey.png in Resources */,
@@ -1700,8 +1758,11 @@
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
 				37D602D6278121610076CD06 /* ImageView.swift in Sources */,
 				37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */,
+				3749B9A62793111F0019C171 /* HapticService.swift in Sources */,
+				3749B9BB279339FE0019C171 /* WrongSelectionHapticEngine.swift in Sources */,
 				37D602B227809E740076CD06 /* UIFont+Quicksand.swift in Sources */,
 				378890D0276F229500B3D96C /* AppDelegate.swift in Sources */,
+				3749B9B427932C7C0019C171 /* DefaultHapticEngine.swift in Sources */,
 				37D603092788CEC80076CD06 /* GOPItemView.swift in Sources */,
 				37D602CC278115250076CD06 /* GameRouter.swift in Sources */,
 				37D6030D278A91E20076CD06 /* GameScoreHandler.swift in Sources */,
@@ -1739,11 +1800,14 @@
 				37D602DF278336760076CD06 /* Typealiases.swift in Sources */,
 				372F2A232791C7C10066E051 /* AppAdService.swift in Sources */,
 				37889114276F238700B3D96C /* Strings.swift in Sources */,
+				3749B9B9279339AE0019C171 /* RightSelectionHapticEngine.swift in Sources */,
 				37E330D327917718007DE487 /* GameOverButton.swift in Sources */,
 				37E330CB278D551A007DE487 /* FinalBuilder.swift in Sources */,
 				37889115276F238700B3D96C /* Assets.swift in Sources */,
 				37D602BE2780CFCA0076CD06 /* UIView+.swift in Sources */,
+				3749B9B7279339240019C171 /* GameOverHapticEngine.swift in Sources */,
 				37D602C627810D550076CD06 /* ImageButton.swift in Sources */,
+				3749B9B227932C680019C171 /* HapticEngine.swift in Sources */,
 				37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */,
 				37D602F5278442630076CD06 /* EmojiImageLoader.swift in Sources */,
 				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,

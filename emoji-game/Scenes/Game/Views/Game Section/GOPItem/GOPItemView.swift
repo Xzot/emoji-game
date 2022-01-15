@@ -68,9 +68,9 @@ final class GOPItemView: UIView {
 private extension GOPItemView {
     @objc
     func handleTap() {
-        guard let viewModel = viewModel else {
-            return
-        }
+        guard
+            let viewModel = viewModel,
+            button.isSelected == false else { return }
         button.isSelected = true
         // Выглядит странно, нужно будет подправить :)
         viewModel.tryUseCompletion(viewModel)
