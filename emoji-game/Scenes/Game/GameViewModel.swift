@@ -59,6 +59,8 @@ extension GameViewModel {
     
     func viewDidAppear() {
         shouldStartTimeCount = true
+        timeState.value == 0 ? timeState.send(AppConstants.startGameTime) : nil
+        scheduler.isInvalidated ? scheduler.restart() : nil
     }
 }
 
@@ -79,7 +81,7 @@ final class GameViewModel {
     private lazy var scoreState = GameScoreState(
         .init(old: nil, new: self.scoreHandler.score)
     )
-    private let timeState = IntState(10)
+    private let timeState = IntState(AppConstants.startGameTime)
     // Top
     private let topLeftState = GOPIVMState(nil)
     private let topCenterState = GOPIVMState(nil)

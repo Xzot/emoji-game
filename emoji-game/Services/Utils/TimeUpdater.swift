@@ -11,6 +11,9 @@ import Combine
 // MARK: - TimeUpdater class
 final class TimeUpdater {
     // MARK: Output
+    var isInvalidated: Bool {
+        timer.isValid == false
+    }
     var completion: AnyPublisher<Void, Never> {
         completionSubject.eraseToAnyPublisher()
     }

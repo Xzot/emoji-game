@@ -45,9 +45,7 @@ final class AppAdService: NSObject {
 
 // MARK: - GADFullScreenContentDelegate
 extension AppAdService: GADFullScreenContentDelegate {
-    func adDidDismissFullScreenContent(
-        _ ad: GADFullScreenPresentingAd
-    ) {
+    func adWillDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         if let completion = self.completion {
             self.completion = nil
             completion()
