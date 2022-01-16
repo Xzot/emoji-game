@@ -15,4 +15,12 @@ extension DefaultsKeys {
     var scoreRecordValue: DefaultsKey<Int> {
         .init("EmojiGame.DefaultsKeys.scoreRecordValue", defaultValue: 0)
     }
+    
+    var isAdsHidden: DefaultsKey<Bool> {
+        .init("EmojiGame.DefaultsKeys.isAdsHidden", defaultValue: false)
+    }
+    
+    var isSoundsHidden: DefaultsKey<Bool> {
+        .init("EmojiGame.DefaultsKeys.isSoundsHidden", defaultValue: false)
+    }
 }

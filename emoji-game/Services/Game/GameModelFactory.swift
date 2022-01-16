@@ -27,7 +27,8 @@ final class GameModelFactory {
     
     // MARK: API
     func assembly(
-        from resultImage: UIImage,
+        using pattern: String,
+        with resultImage: UIImage,
         and modelImages: [GameModelFactory.Item]
     ) -> GameModel? {
         let specs: [GameModel.SpecAsset] = fill(
@@ -67,7 +68,12 @@ final class GameModelFactory {
         let top = GamePanelItems(topSpecs[0], topSpecs[1], topSpecs[2])
         let bottom = GamePanelItems(bottomSpecs[0], bottomSpecs[1], bottomSpecs[2])
         
-        return GameModel(topPanel: top, bottomPanel: bottom, result: resultImage)
+        return GameModel(
+            topPanel: top,
+            bottomPanel: bottom,
+            result: resultImage,
+            pattern: pattern
+        )
     }
 }
 

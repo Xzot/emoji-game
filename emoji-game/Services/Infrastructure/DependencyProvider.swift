@@ -11,9 +11,19 @@ import Swinject
 final class DependencyAssembly {
     func assemble(in container: Container) {
         container.register(
-            HapticService.self,
+            GASProvider.self,
             factory: { _ in
-                HapticService()
+                GASProvider()
+            }
+        )
+            .inObjectScope(.container)
+        
+        container.register(
+            HapticService.self,
+            factory: { resolver in
+                HapticService(
+                    gameStateProvider: resolver.resolve(GASProvider.self)!
+                )
             }
         )
             .inObjectScope(.container)

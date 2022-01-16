@@ -30,6 +30,15 @@ final class GameDataService {
     }
     
     // MARK: API
+    func nextGame() {
+        guard latestPickedModels.count > 0 else {
+            return
+        }
+        dataSubject.value?.markAsUsed()
+        latestPickedModels.removeAll()
+        dataSubject.send(readyToPlayQueue.dequeue())
+    }
+    
     func handleModelSelection(_ model: GOPItemModel) {
         guard
             model.isCorrect == true,
@@ -39,8 +48,7 @@ final class GameDataService {
         guard gameData.isFullyGuessed(latestPickedModels) == true else {
             return
         }
-        latestPickedModels.removeAll()
-        dataSubject.send(readyToPlayQueue.dequeue())
+        nextGame()
     }
 }
 

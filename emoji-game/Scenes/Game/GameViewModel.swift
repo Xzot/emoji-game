@@ -71,7 +71,7 @@ final class GameViewModel {
     private weak var listener: GameListener?
     private var router: GameRouter!
     private let provider: DependencyProvider
-    private let gDataProvider: GameDataService
+    private let gameDataProvider: GameDataService
     private let scheduler: TimeUpdater
     private let scoreHandler: GameScoreHandler
     private let haptic: HapticService
@@ -103,7 +103,7 @@ final class GameViewModel {
     ) {
         self.provider = provider
         self.listener = listener
-        self.gDataProvider = provider.get(GameDataService.self)
+        self.gameDataProvider = provider.get(GameDataService.self)
         self.scheduler = provider.get(TimeUpdater.self)
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.haptic = provider.get(HapticService.self)
@@ -115,7 +115,7 @@ final class GameViewModel {
 // MARK: - Private
 private extension GameViewModel {
     func bind() {
-        gDataProvider
+        gameDataProvider
             .data
             .sink(receiveValue: handle(_:))
             .store(in: &cancellables)
@@ -184,7 +184,7 @@ private extension GameViewModel {
     }
     
     func handleUserTouch(for model: GOPItemModel) {
-        let isAlreadyHandled: Bool = gDataProvider.latestPickedModels
+        let isAlreadyHandled: Bool = gameDataProvider.latestPickedModels
             .filter {
                 $0.unicode == model.unicode
             }
@@ -199,7 +199,7 @@ private extension GameViewModel {
             haptic.impact(as: .wrongSelection)
             scoreHandler.userDidNotGuess()
         }
-        gDataProvider.handleModelSelection(model)
+        gameDataProvider.handleModelSelection(model)
     }
     
     func gameOver() {

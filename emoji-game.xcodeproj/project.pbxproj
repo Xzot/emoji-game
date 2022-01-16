@@ -12,6 +12,8 @@
 		3722803C2771305100466B64 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280382771305100466B64 /* MainBuilder.swift */; };
 		3722803D2771305100466B64 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280392771305100466B64 /* MainViewModel.swift */; };
 		372F2A232791C7C10066E051 /* AppAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F2A222791C7C10066E051 /* AppAdService.swift */; };
+		3738340B279405320054A23E /* GameModelsInUseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738340A279405320054A23E /* GameModelsInUseChecker.swift */; };
+		3738340D27943A050054A23E /* GASProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738340C27943A050054A23E /* GASProvider.swift */; };
 		3749B9A62793111F0019C171 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749B9A52793111F0019C171 /* HapticService.swift */; };
 		3749B9AC27931C090019C171 /* default_tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3749B9A827931C090019C171 /* default_tap.mp3 */; };
 		3749B9AD27931C090019C171 /* right_selection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3749B9A927931C090019C171 /* right_selection.mp3 */; };
@@ -353,6 +355,8 @@
 		372280382771305100466B64 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		372280392771305100466B64 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		372F2A222791C7C10066E051 /* AppAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdService.swift; sourceTree = "<group>"; };
+		3738340A279405320054A23E /* GameModelsInUseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelsInUseChecker.swift; sourceTree = "<group>"; };
+		3738340C27943A050054A23E /* GASProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASProvider.swift; sourceTree = "<group>"; };
 		3749B9A52793111F0019C171 /* HapticService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		3749B9A827931C090019C171 /* default_tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default_tap.mp3; sourceTree = "<group>"; };
 		3749B9A927931C090019C171 /* right_selection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right_selection.mp3; sourceTree = "<group>"; };
@@ -1247,11 +1251,13 @@
 		37D602ED27838B140076CD06 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3738340C27943A050054A23E /* GASProvider.swift */,
 				372F2A222791C7C10066E051 /* AppAdService.swift */,
 				37D602EE27838B2F0076CD06 /* Queue.swift */,
 				37D602F027838B470076CD06 /* DataLoader.swift */,
 				37D602EB27838AC10076CD06 /* ImageDataLoader.swift */,
 				37D60303278859E80076CD06 /* TimeUpdater.swift */,
+				3738340A279405320054A23E /* GameModelsInUseChecker.swift */,
 				3749B9B027932C5F0019C171 /* Haptic */,
 			);
 			path = Utils;
@@ -1775,6 +1781,7 @@
 				37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */,
 				37E330B8278C72DE007DE487 /* Transaction.swift in Sources */,
 				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
+				3738340B279405320054A23E /* GameModelsInUseChecker.swift in Sources */,
 				37D602EC27838AC10076CD06 /* ImageDataLoader.swift in Sources */,
 				37D602CE278115250076CD06 /* GameBuilder.swift in Sources */,
 				37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */,
@@ -1783,6 +1790,7 @@
 				37D602EF27838B2F0076CD06 /* Queue.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
 				37D6030B278A20DA0076CD06 /* Array+.swift in Sources */,
+				3738340D27943A050054A23E /* GASProvider.swift in Sources */,
 				37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */,
 				37D602E527833EDC0076CD06 /* GameTimerLabel.swift in Sources */,
 				37D602E127833AD60076CD06 /* GameScoreModel.swift in Sources */,

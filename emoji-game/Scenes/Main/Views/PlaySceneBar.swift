@@ -9,20 +9,13 @@ import UIKit
 import Combine
 import TinyConstraints
 
-// MARK: - PlaySceneBarDelegate
-protocol PlaySceneBarDelegate: NSObject {
-    func didTapPlay()
-    func didTapAds()
-    func didTapSound()
-}
-
 // MARK: - PlaySceneBar class
 final class PlaySceneBar: UIView {
     // MARK: UI
     private lazy var playButton = PlayButton(
-        score: scorePublisher,
+        score: viewModel.scoreOutut,
         completion: { [weak self] in
-            self?.delegate?.didTapPlay()
+            self?.viewModel.playTapped()
         }
     )
     private lazy var adsButton = ImageButton(
@@ -31,7 +24,7 @@ final class PlaySceneBar: UIView {
             defaultImage: Asset.Images.startNoAds.image
         ),
         completion: { [weak self] in
-            self?.delegate?.didTapAds()
+            self?.viewModel.adsTapped()
         }
     )
     private lazy var soundButton = ImageButton(
@@ -40,18 +33,18 @@ final class PlaySceneBar: UIView {
             defaultImage: Asset.Images.startSoundOn.image
         ),
         completion: { [weak self] in
-            self?.delegate?.didTapSound()
+            self?.viewModel.soundTapped()
         }
     )
     
     // MARK: Properties
-    private weak var delegate: PlaySceneBarDelegate?
-    private let scorePublisher: AnyPublisher<Int, Never>
+    private let viewModel: MainViewModel
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: Life Cycle
-    init(score: AnyPublisher<Int, Never>, delegate: PlaySceneBarDelegate) {
-        self.scorePublisher = score
-        self.delegate = delegate
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+        
         super.init(frame: .zero)
         
         addSubview(playButton)
@@ -95,9 +88,23 @@ final class PlaySceneBar: UIView {
                 height: smallButtonsSize
             )
         )
+        
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - Private
+private extension PlaySceneBar {
+    func bind() {
+        viewModel.isSoundsHiddenOutput
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.soundButton.isSelected = value == false
+            }
+            .store(in: &cancellable)
     }
 }

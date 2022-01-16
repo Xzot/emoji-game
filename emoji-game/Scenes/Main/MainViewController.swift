@@ -28,10 +28,7 @@ final class MainViewController: SwapChildViewController {
             weight: .bold
         )
     }
-    private lazy var gameBar = PlaySceneBar(
-        score: viewModel.scoreOutut,
-        delegate: self
-    )
+    private lazy var gameBar = PlaySceneBar(viewModel: viewModel)
     
     // MARK: Life Cycle
     init(viewModel: MainViewModel) {
@@ -82,20 +79,5 @@ final class MainViewController: SwapChildViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         imageView.stopAnimatingGIF()
-    }
-}
-
-// MARK: - PlaySceneBarDelegate extension
-extension MainViewController: PlaySceneBarDelegate {
-    func didTapPlay() {
-        viewModel.playTapped()
-    }
-    
-    func didTapAds() {
-        viewModel.adsTapped()
-    }
-    
-    func didTapSound() {
-        viewModel.soundTapped()
     }
 }

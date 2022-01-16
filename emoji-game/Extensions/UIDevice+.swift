@@ -18,6 +18,8 @@ public extension UIDevice {
                 return .iPhone_6_6S_7_8_SE2
             case 1920, 2208:
                 return .iPhone_6Plus_6SPlus_7Plus_8Plus
+            case 2340:
+                return .iPhone_13mini
             case 2436:
                 return .iPhone_X_XS_11Pro_12mini
             case 2532:
@@ -73,6 +75,7 @@ public extension UIDevice {
         case iPhone_6Plus_6SPlus_7Plus_8Plus
         
         case iPhone_X_XS_11Pro_12mini
+        case iPhone_13mini
         case iPhone_XR_11
         case iPhone_XSMax_11ProMax
         case iPhone_12Pro
@@ -80,6 +83,7 @@ public extension UIDevice {
         
         static var notch: [SizeType] = [
             iPhone_X_XS_11Pro_12mini,
+            iPhone_13mini,
             iPhone_XR_11,
             iPhone_XSMax_11ProMax,
             iPhone_12Pro,

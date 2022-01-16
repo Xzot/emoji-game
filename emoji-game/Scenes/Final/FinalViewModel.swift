@@ -20,6 +20,7 @@ final class FinalViewModel {
     private let provider: DependencyProvider
     private var router: FinalRouter!
     private let scoreHandler: GameScoreHandler
+    private let gameDataProvider: GameDataService
     private let haptic: HapticService
     private weak var listener: FinalListener?
     private let adService: AppAdService
@@ -35,6 +36,7 @@ final class FinalViewModel {
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.adService = provider.get(AppAdService.self)
         self.haptic = provider.get(HapticService.self)
+        self.gameDataProvider = provider.get(GameDataService.self)
     }
     
     // MARK: API
@@ -44,6 +46,7 @@ final class FinalViewModel {
     
     func userTapGameOver() {
         haptic.impact(as: .defaultTap)
+        gameDataProvider.nextGame()
         router.routeToMain()
         scoreHandler.reset()
     }

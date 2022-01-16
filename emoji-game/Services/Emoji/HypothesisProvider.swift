@@ -39,11 +39,6 @@ final class HypothesisProvider {
             Hypothesis(
                 pivotIndex: items.1.idAsIndex,
                 firstItemIndex: items.1.idAsIndex,
-                seccondItemIndex: items.1.idAsIndex
-            ),
-            Hypothesis(
-                pivotIndex: items.1.idAsIndex,
-                firstItemIndex: items.1.idAsIndex,
                 seccondItemIndex: items.0.idAsIndex
             )
         ]
@@ -55,9 +50,18 @@ private extension HypothesisProvider {
     func fetchRandomEmojis() -> (EmojiModel, EmojiModel)? {
         let eList = emojisProvider.fetchEmojis()
         if eList.count > 0 {
+            // Generate random indexes
+            let firstIndex = Int.random(in: (0..<eList.count))
+            var seccondIndex = Int.random(in: (0..<eList.count))
+            
+            // If generated indexes are equal, then it will be regenerate seccond index untill it won't become different
+            repeat {
+                seccondIndex = Int.random(in: (0..<eList.count))
+            } while firstIndex == seccondIndex
+            
             return (
-                eList[Int.random(in: (0..<eList.count))],
-                eList[Int.random(in: (0..<eList.count))]
+                eList[firstIndex],
+                eList[seccondIndex]
             )
         } else {
             return nil

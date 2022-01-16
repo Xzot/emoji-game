@@ -11,12 +11,19 @@ final class MainViewModel {
     var scoreOutut: AnyPublisher<Int, Never> {
         scoreHandler.highestScorePublisher
     }
+    var isAdsHiddenOutput: AnyPublisher<Bool, Never> {
+        appStateProvider.publisher(for: .isAdsHidden)
+    }
+    var isSoundsHiddenOutput: AnyPublisher<Bool, Never> {
+        appStateProvider.publisher(for: .isSoundsHidden)
+    }
     
     // MARK: Properties
     private let provider: DependencyProvider
     private var router: MainRouter!
     private let scoreHandler: GameScoreHandler
     private let haptic: HapticService
+    private let appStateProvider: GASProvider
     private var cancellables: [AnyCancellable] = []
 
     // MARK: Life Cycle
@@ -24,6 +31,7 @@ final class MainViewModel {
         self.provider = provider
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.haptic = provider.get(HapticService.self)
+        self.appStateProvider = provider.get(GASProvider.self)
     }
     
     // MARK: API
@@ -41,6 +49,7 @@ final class MainViewModel {
     }
     
     func soundTapped() {
+        appStateProvider.revert(.isSoundsHidden)
         haptic.impact(as: .defaultTap)
     }
 }

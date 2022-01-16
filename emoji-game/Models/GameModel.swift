@@ -13,6 +13,11 @@ struct GameModel {
     let topPanel: GamePanelItems
     let bottomPanel: GamePanelItems
     let result: UIImage
+    let pattern: String
+    
+    func markAsUsed() {
+        GameModelsInUseChecker.markAsUsed(pattern)
+    }
 }
 
 extension GameModel {

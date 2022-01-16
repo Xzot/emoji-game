@@ -25,10 +25,18 @@ final class HapticService {
     private lazy var gameOverEngine = GameOverHapticEngine()
     private lazy var rightSelectionEngine = RightSelectionHapticEngine()
     private lazy var wrongSelectionEngine = WrongSelectionHapticEngine()
+    private let gameStateProvider: GASProvider
     
+    // MARK: Life Cycle
+    init(gameStateProvider: GASProvider) {
+        self.gameStateProvider = gameStateProvider
+    }
     
     // MARK: API
     func impact(as style: HapticService.FeedbackStyle) {
+        guard gameStateProvider.isHiddenValue(for: .isSoundsHidden) == false else {
+            return
+        }
         switch style {
         case .defaultTap:
             defaultEngine.impact()

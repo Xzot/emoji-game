@@ -69,7 +69,7 @@ private extension GameModelsProvider {
             seccond: seccondEmoji.unicode
         )
         
-        if DefaultsChecker.isValueExist(patternString) {
+        if GameModelsInUseChecker.isValueExist(patternString) {
             makeNextGameModel()
         } else {
             emojiImageLoader.loadImagePublisher(patternString)
@@ -80,7 +80,8 @@ private extension GameModelsProvider {
                         let fImage = UIImage(named: firstEmoji.imageName),
                         let sImage = UIImage(named: seccondEmoji.imageName),
                         let gameModel = self?.gModelsFactory.assembly(
-                            from: image,
+                            using: patternString,
+                            with: image,
                             and: [
                                 GameModelFactory.Item(
                                     image: fImage,
@@ -110,18 +111,5 @@ private extension GameModelsProvider {
         seccond sUnicode: String
     ) -> String {
         "\(pUnicode)%2F\(fUnicode)_\(sUnicode).png"
-    }
-}
-
-// MARK: - DefaultsChecker fileprivate struct
-fileprivate struct DefaultsChecker {
-    static func isValueExist(_ value: String) -> Bool {
-        var storedItems = Defaults[\.usedHypo]
-        if storedItems[value] != nil {
-            return true
-        } else {
-            storedItems[value] = true
-            return false
-        }
     }
 }
