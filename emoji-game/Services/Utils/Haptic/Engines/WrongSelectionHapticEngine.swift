@@ -8,11 +8,25 @@
 import UIKit
 import AVFoundation
 
-final class WrongSelectionHapticEngine: HapticEngine {
+final class WrongSelectionHapticEngine: NSObject, HapticEngine {
+    var id: String = UUID().uuidString
+    func set(_ callback: @escaping (String) -> Void) {
+        closure = callback
+    }
+    private var closure: ((String) -> Void)!
+    
     var player: AVAudioPlayer { _player }
     private lazy var _player: AVAudioPlayer = {
-        makePlayer(for: "wrong_selection", with: "mp3")
+        let player = makePlayer(for: "wrong_selection", with: "mp3")
+        player.delegate = self
+        return player
     }()
     var impactGenerator: UIImpactFeedbackGenerator { feedbackGenerator }
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+}
+
+extension WrongSelectionHapticEngine: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        closure(id)
+    }
 }

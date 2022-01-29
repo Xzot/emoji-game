@@ -17,6 +17,7 @@ final class StartViewModel {
     private let provider: DependencyProvider
     private var router: StartRouter!
     private let adService: AppAdService
+    private let purchaseService: NoAdsPurchaseService
     private var cancellables: [AnyCancellable] = []
     private let isReadyToShowNextSceneSubject = CurrentValueSubject<Bool, Never>(false)
     
@@ -24,6 +25,7 @@ final class StartViewModel {
     init(provider: DependencyProvider) {
         self.provider = provider
         self.adService = provider.get(AppAdService.self)
+        self.purchaseService = provider.get(NoAdsPurchaseService.self)
     }
     
     // MARK: Public
@@ -34,6 +36,9 @@ final class StartViewModel {
     func handleViewDidLoad() {
         adService.prefetchAds()
         isReadyToShowNextSceneSubject.send(true)
+//        purchaseService.tryToRestore { [weak self] in
+//            self?.isReadyToShowNextSceneSubject.send(true)
+//        }
     }
     
     func routeToNextScene() {

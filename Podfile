@@ -11,6 +11,7 @@ target 'emoji-game' do
   pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'Swinject'
+  pod 'SwiftyStoreKit'
   pod 'TinyConstraints'
   pod 'SwiftyUserDefaults'
   pod 'Google-Mobile-Ads-SDK'

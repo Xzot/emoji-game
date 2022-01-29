@@ -19,12 +19,9 @@ extension HapticService {
 }
 
 // MARK: - HapticService class
-final class HapticService {
+final class HapticService: NSObject {
     // MARK: Properties
-    private lazy var defaultEngine = DefaultHapticEngine()
-    private lazy var gameOverEngine = GameOverHapticEngine()
-    private lazy var rightSelectionEngine = RightSelectionHapticEngine()
-    private lazy var wrongSelectionEngine = WrongSelectionHapticEngine()
+    private var store = [String : HapticEngine]()
     private let gameStateProvider: GASProvider
     
     // MARK: Life Cycle
@@ -37,15 +34,54 @@ final class HapticService {
         guard gameStateProvider.isHiddenValue(for: .isSoundsHidden) == false else {
             return
         }
-        switch style {
-        case .defaultTap:
-            defaultEngine.impact()
-        case .gameOver:
-            gameOverEngine.impact()
-        case .rightSelection:
-            rightSelectionEngine.impact()
-        case .wrongSelection:
-            wrongSelectionEngine.impact()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            switch style {
+            case .defaultTap:
+                let defaultEngine = self.makeDefaultEngine()
+                self.store[defaultEngine.id] = defaultEngine
+                defaultEngine.impact { [weak self] id in
+                    self?.store[id] = nil
+                }
+            case .gameOver:
+                let gameOverEngine = self.makeGameOverEngine()
+                self.store[gameOverEngine.id] = gameOverEngine
+                gameOverEngine.impact { [weak self] id in
+                    self?.store[id] = nil
+                }
+            case .rightSelection:
+                let rightSelectionEngine = self.makeRightSelectionEngine()
+                self.store[rightSelectionEngine.id] = rightSelectionEngine
+                rightSelectionEngine.impact { [weak self] id in
+                    self?.store[id] = nil
+                }
+            case .wrongSelection:
+                let wrongSelectionEngine = self.makeWrongSelectionEngine()
+                self.store[wrongSelectionEngine.id] = wrongSelectionEngine
+                wrongSelectionEngine.impact { [weak self] id in
+                    self?.store[id] = nil
+                }
+            }
         }
+    }
+}
+
+private extension HapticService {
+    func makeDefaultEngine() -> HapticEngine {
+        DefaultHapticEngine()
+    }
+    
+    func makeGameOverEngine() -> HapticEngine {
+        GameOverHapticEngine()
+    }
+    
+    func makeRightSelectionEngine() -> HapticEngine {
+        RightSelectionHapticEngine()
+    }
+    
+    func makeWrongSelectionEngine() -> HapticEngine {
+        WrongSelectionHapticEngine()
     }
 }

@@ -51,7 +51,12 @@ final class GameScoreHandler {
     }
     
     func userDidNotGuess() {
-        scoreSubject.send(scoreSubject.value - config.takenAwayPoints)
+        let newValue = scoreSubject.value - config.takenAwayPoints
+        guard newValue > 0 else {
+            scoreSubject.send(.zero)
+            return
+        }
+        scoreSubject.send(newValue)
     }
 }
 

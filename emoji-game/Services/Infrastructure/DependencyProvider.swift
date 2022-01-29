@@ -11,6 +11,14 @@ import Swinject
 final class DependencyAssembly {
     func assemble(in container: Container) {
         container.register(
+            NoAdsPurchaseService.self,
+            factory: { _ in
+                NoAdsPurchaseService()
+            }
+        )
+            .inObjectScope(.container)
+        
+        container.register(
             GASProvider.self,
             factory: { _ in
                 GASProvider()

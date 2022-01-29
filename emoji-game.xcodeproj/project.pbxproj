@@ -328,6 +328,7 @@
 		37E330CF278F5AA8007DE487 /* FinalSceneBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330CE278F5AA8007DE487 /* FinalSceneBar.swift */; };
 		37E330D127906549007DE487 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330D027906549007DE487 /* ContinueButton.swift */; };
 		37E330D327917718007DE487 /* GameOverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330D227917718007DE487 /* GameOverButton.swift */; };
+		37F8D64227A2B50E00C780F6 /* NoAdsPurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8D64127A2B50D00C780F6 /* NoAdsPurchaseService.swift */; };
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -675,6 +676,7 @@
 		37E330CE278F5AA8007DE487 /* FinalSceneBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSceneBar.swift; sourceTree = "<group>"; };
 		37E330D027906549007DE487 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		37E330D227917718007DE487 /* GameOverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverButton.swift; sourceTree = "<group>"; };
+		37F8D64127A2B50D00C780F6 /* NoAdsPurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAdsPurchaseService.swift; sourceTree = "<group>"; };
 		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emoji_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -864,6 +866,7 @@
 		37889123276F27BA00B3D96C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				37F8D63727A0239D00C780F6 /* Purchases */,
 				37889128276F2AA500B3D96C /* Infrastructure */,
 				37D602ED27838B140076CD06 /* Utils */,
 				37889129276F2AAF00B3D96C /* Emoji */,
@@ -1292,6 +1295,14 @@
 				37E330D227917718007DE487 /* GameOverButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		37F8D63727A0239D00C780F6 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				37F8D64127A2B50D00C780F6 /* NoAdsPurchaseService.swift */,
+			);
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
@@ -1783,6 +1794,7 @@
 				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
 				3738340B279405320054A23E /* GameModelsInUseChecker.swift in Sources */,
 				37D602EC27838AC10076CD06 /* ImageDataLoader.swift in Sources */,
+				37F8D64227A2B50E00C780F6 /* NoAdsPurchaseService.swift in Sources */,
 				37D602CE278115250076CD06 /* GameBuilder.swift in Sources */,
 				37D602D427811CFA0076CD06 /* GameOptionsPanel.swift in Sources */,
 				3722803A2771305100466B64 /* MainRouter.swift in Sources */,
@@ -2002,7 +2014,7 @@
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "emoji-game/Supporting Files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Mashup Emojis";
+				INFOPLIST_KEY_CFBundleDisplayName = "Emoji Mix Quiz";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -2014,11 +2026,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-game";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnh.emojiMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2033,7 +2045,7 @@
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "emoji-game/Supporting Files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Mashup Emojis";
+				INFOPLIST_KEY_CFBundleDisplayName = "Emoji Mix Quiz";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -2045,11 +2057,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-game";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnh.emojiMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

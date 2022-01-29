@@ -57,10 +57,21 @@ final class GOPItemView: UIView {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: handle(viewModel:))
             .store(in: &cancellable)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(deselectItem),
+            name: AppConstants.deselectGameItemNotificationName,
+            object: nil
+        )
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -74,6 +85,11 @@ private extension GOPItemView {
         button.isSelected = true
         // Выглядит странно, нужно будет подправить :)
         viewModel.tryUseCompletion(viewModel)
+    }
+    
+    @objc
+    func deselectItem() {
+        button.isSelected = false
     }
     
     func handle(viewModel: GOPItemModel?) {

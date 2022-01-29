@@ -124,6 +124,7 @@ private extension GameViewModel {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard
+                    self?.gameModelInUse != nil,
                     self?.shouldStartTimeCount == true,
                     let oldTime = self?.timeState.value else {
                     return
@@ -150,8 +151,7 @@ private extension GameViewModel {
     }
     
     func handle(_ gameModel: GameModel?) {
-        let incrementedTime = (timeState.value ?? 0) + 2
-        gameModelInUse != nil ? timeState.send(incrementedTime) : nil
+        gameModelInUse != nil ? timeState.send(AppConstants.startGameTime) : nil
         gameModelInUse = gameModel
         
         topLeftState.send(
@@ -206,5 +206,9 @@ private extension GameViewModel {
         haptic.impact(as: .gameOver)
         router.routeToGameOverScene()
         scheduler.invalidate()
+        NotificationCenter.default.post(
+            name: AppConstants.deselectGameItemNotificationName,
+            object: nil
+        )
     }
 }
