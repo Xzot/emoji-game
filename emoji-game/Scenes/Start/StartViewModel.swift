@@ -36,9 +36,6 @@ final class StartViewModel {
     func handleViewDidLoad() {
         adService.prefetchAds()
         isReadyToShowNextSceneSubject.send(true)
-//        purchaseService.tryToRestore { [weak self] in
-//            self?.isReadyToShowNextSceneSubject.send(true)
-//        }
     }
     
     func routeToNextScene() {

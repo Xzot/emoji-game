@@ -24,14 +24,16 @@ final class MainViewModel {
     private let scoreHandler: GameScoreHandler
     private let haptic: HapticService
     private let appStateProvider: GASProvider
+    private let purchaseService: NoAdsPurchaseService
     private var cancellables: [AnyCancellable] = []
-
+    
     // MARK: Life Cycle
     init(provider: DependencyProvider) {
         self.provider = provider
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.haptic = provider.get(HapticService.self)
         self.appStateProvider = provider.get(GASProvider.self)
+        self.purchaseService = provider.get(NoAdsPurchaseService.self)
     }
     
     // MARK: API
@@ -46,6 +48,7 @@ final class MainViewModel {
     
     func adsTapped() {
         haptic.impact(as: .defaultTap)
+        purchaseService.purchaseNoAds()
     }
     
     func soundTapped() {

@@ -100,6 +100,13 @@ final class PlaySceneBar: UIView {
 // MARK: - Private
 private extension PlaySceneBar {
     func bind() {
+        viewModel.isAdsHiddenOutput
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.adsButton.isHidden = value
+            }
+            .store(in: &cancellable)
+        
         viewModel.isSoundsHiddenOutput
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in

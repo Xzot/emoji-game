@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        provider.get(NoAdsPurchaseService.self).completeTransactions(nil)
+        
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["90f1ee3e8b40010acb7fd8a343e3300c"]
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         

@@ -12,8 +12,10 @@ final class DependencyAssembly {
     func assemble(in container: Container) {
         container.register(
             NoAdsPurchaseService.self,
-            factory: { _ in
-                NoAdsPurchaseService()
+            factory: { resolver in
+                NoAdsPurchaseService(
+                    resolver.resolve(GASProvider.self)!
+                )
             }
         )
             .inObjectScope(.container)
