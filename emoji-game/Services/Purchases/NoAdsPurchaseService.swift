@@ -17,9 +17,7 @@ extension NoAdsPurchaseService {
             guard
                 self?.isProductRetrieved == true,
                 self?.state.isHiddenValue(for: .isAdsHidden) == false
-            else {
-                fatalError("WARNING: Should not to purchase before product where retrieved")
-            }
+            else { return }
             self?.purchase()
         }
     }
