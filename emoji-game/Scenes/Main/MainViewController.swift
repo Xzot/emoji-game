@@ -11,6 +11,7 @@ import TinyConstraints
 final class MainViewController: SwapChildViewController {
     // MARK: Properties
     private let viewModel: MainViewModel
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: UI
     private lazy var imageView = GIFImageView(
@@ -29,6 +30,25 @@ final class MainViewController: SwapChildViewController {
         )
     }
     private lazy var gameBar = PlaySceneBar(viewModel: viewModel)
+    private lazy var restoreButton = UIButton()&>.do {
+        $0.titleLabel?.font = .quicksand(
+            ofSize: 17,
+            weight: .bold
+        )
+        $0.setTitleColor(
+            Asset.Palette.black.color,
+            for: .normal
+        )
+        $0.setTitle(
+            "Restore purchase",
+            for: .normal
+        )
+        $0.addTarget(
+            self,
+            action: #selector(handleButtonTap),
+            for: .touchUpInside
+        )
+    }
     
     // MARK: Life Cycle
     init(viewModel: MainViewModel) {
@@ -69,6 +89,18 @@ final class MainViewController: SwapChildViewController {
             withGIFNamed: "main_emojis",
             completionHandler: nil
         )
+        
+        view.addSubview(restoreButton)
+        restoreButton.size(CGSize(width: 160, height: 40))
+        restoreButton.topToSuperview(usingSafeArea: true)
+        restoreButton.leftToSuperview(offset: 16, usingSafeArea: true)
+        
+        viewModel.isAdsHiddenOutput
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.restoreButton.isHidden = value
+            }
+            .store(in: &cancellable)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,5 +111,13 @@ final class MainViewController: SwapChildViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         imageView.stopAnimatingGIF()
+    }
+}
+
+// MARK: - Private
+private extension MainViewController {
+    @objc
+    func handleButtonTap() {
+        viewModel.restoreNoAdsTapped()
     }
 }

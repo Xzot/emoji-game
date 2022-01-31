@@ -12,13 +12,19 @@ import SwiftyStoreKit
 
 // MARK: - API
 extension NoAdsPurchaseService {
+    func restoreNoAds() {
+        restore(nil)
+    }
+    
     func purchaseNoAds() {
-        tryToRestore { [weak self] in
+        if isProductRetrieved == false {
+            retrieveProduct(self.purchaseNoAds())
+        } else {
             guard
-                self?.isProductRetrieved == true,
-                self?.state.isHiddenValue(for: .isAdsHidden) == false
+                isInPurchaseAction == false,
+                state.isHiddenValue(for: .isAdsHidden) == false
             else { return }
-            self?.purchase()
+            purchase()
         }
     }
     
@@ -47,6 +53,7 @@ extension NoAdsPurchaseService {
 // MARK: - NoAdsPurchaseService final class
 final class NoAdsPurchaseService {
     // MARK: Properties
+    private var isInPurchaseAction = false
     private var isProductRetrieved = false
     private let state: GASProvider
     
@@ -80,6 +87,7 @@ private extension NoAdsPurchaseService {
     }
     
     func purchase() {
+        isInPurchaseAction = true
         SwiftyStoreKit.purchaseProduct(
             AppConstants.adsPurchaseProductId
         ) { [weak self] result in
@@ -89,6 +97,7 @@ private extension NoAdsPurchaseService {
             case .error(_):
                 break
             }
+            self?.isInPurchaseAction = false
         }
     }
 }

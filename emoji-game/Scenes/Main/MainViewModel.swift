@@ -46,6 +46,11 @@ final class MainViewModel {
         router.makeGameSceneRoute()
     }
     
+    func restoreNoAdsTapped() {
+        haptic.impact(as: .defaultTap)
+        purchaseService.restoreNoAds()
+    }
+    
     func adsTapped() {
         haptic.impact(as: .defaultTap)
         purchaseService.purchaseNoAds()
