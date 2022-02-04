@@ -17,10 +17,19 @@ final class GameScoreLabel: UIView {
         queue: DispatchQueue.global(qos: .userInitiated)
     ) private var latestUsedScore: GameScoreModel?
     private var cancellable = Set<AnyCancellable>()
+    private var pendingDiff: Int?
+    private var isInAnimation = false
     
     // MARK: UI
     private lazy var startView = UIImageView(image: Asset.Images.gameScoreStar.image)
     private lazy var scoreLabel = UILabel()&>.do {
+        $0.font = .quicksand(
+            ofSize: max(28, 32 * UIDevice.sizeFactor),
+            weight: .bold
+        )
+        $0.textColor = Asset.Palette.black.color
+    }
+    private lazy var addedScoreLabel = UILabel()&>.do {
         $0.font = .quicksand(
             ofSize: max(28, 32 * UIDevice.sizeFactor),
             weight: .bold
@@ -45,6 +54,11 @@ final class GameScoreLabel: UIView {
         scoreLabel.verticalToSuperview()
         scoreLabel.leftToRight(of: startView, offset: 8)
         
+        addSubview(addedScoreLabel)
+        addedScoreLabel.verticalToSuperview()
+        addedScoreLabel.leftToRight(of: scoreLabel, offset: 8)
+        addedScoreLabel.width(60)
+        
         score
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: handle(new:))
@@ -65,58 +79,35 @@ private extension GameScoreLabel {
             scoreLabel.text = "0"
             return
         }
-        #warning("TODO: Нужно или убрать текущий фейд или доделать")
-//        scoreLabel.fadeTransition(2.25)
-        if let old = score.old {
-            scoreLabel.attributedText = attributedText(score.new, score.new - old)
-            DispatchQueue.main.asyncAfter(
-                deadline: .now() + 1,
-                execute: DispatchWorkItem { [weak self] in
-                    guard self?._latestUsedScore.wrappedValue == score else {
-                        return
-                    }
-                    self?.handle(new: score.makeWithoutOld())
-                }
-            )
-        } else {
-            scoreLabel.attributedText = attributedText(score.new)
-        }
+        scoreLabel.text = String(score.new)
+        setAddedScoreLabel(score.new - (score.old ?? 0))
     }
     
-    func attributedText(_ left: Int, _ right: Int? = nil) -> NSMutableAttributedString {
-        let text = right ?? 0 == 0 ?
-        String(left) :
-        String(left) + " " + (
-            right ?? 0 > 0 ? "+" + String(right ?? 0) : String(right ?? 0)
-        )
-        let string = NSMutableAttributedString(string: text)
-        
-        string.setColorForText(
-            String(left),
-            with: Asset.Palette.black.color
-        )
-        
-        guard
-            right ?? 0 != 0,
-            let right = right
-        else {
-            return string
+    func setAddedScoreLabel(_ diff: Int) {
+        guard isInAnimation == false, diff != 0 else {
+            pendingDiff = diff
+            return
         }
-        
-        string.setColorForText(
-            String(right),
-            with: right > 0 ? Asset.Palette.jungleGreen.color : Asset.Palette.burntSienna.color
-        )
-        
-        guard right > 0 else {
-            return string
+        isInAnimation = true
+        var scoreText = ""
+        if diff > 0 {
+            addedScoreLabel.textColor = Asset.Palette.jungleGreen.color
+            scoreText = "+" + String(diff)
+        } else if diff < 0 {
+            addedScoreLabel.textColor = Asset.Palette.vividTangerine.color
+            scoreText = String(diff)
         }
-        
-        string.setColorForText(
-            "+",
-            with: Asset.Palette.jungleGreen.color
-        )
-        
-        return string
+        addedScoreLabel.scoreUpdateAnimated(text: scoreText) { [weak self] in
+            guard let pending = self?.pendingDiff, pending > 0 else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [weak self] in
+                    self?.addedScoreLabel.alpha = 0
+                    self?.isInAnimation = false
+                }
+                return
+            }
+            self?.isInAnimation = false
+            self?.pendingDiff = nil
+            self?.setAddedScoreLabel(pending)
+        }
     }
 }

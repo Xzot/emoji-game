@@ -8,10 +8,14 @@ import TinyConstraints
 
 // MARK: - GameViewController class
 final class GameViewController: UIViewController {
+    // MARK: Specs
+    private struct Specs {
+        static let spacing: CGFloat = 16
+        static let numberOfItemsInBar: CGFloat = 3
+    }
+    
     // MARK: Properties
     private let viewModel: GameViewModel
-    private let spacing: CGFloat = 16
-    private let numberOfItemsInBar: CGFloat = 3
     private var screenWidth: CGFloat {
         UIScreen.main.bounds.size.width
     }
@@ -19,8 +23,8 @@ final class GameViewController: UIViewController {
     // MARK: UI
     private lazy var gameStatusBar = GameStatusBar(viewModel)
     private lazy var gameField = GameField(
-        spacing: spacing,
-        numberOfItemsInBar: numberOfItemsInBar,
+        spacing: Specs.spacing,
+        numberOfItemsInBar: Specs.numberOfItemsInBar,
         viewModel: viewModel
     )
     

@@ -50,7 +50,7 @@ final class DependencyAssembly {
             GameScoreHandler.self,
             factory: { _ in
                 GameScoreHandler(
-                    config: .init(addedPoints: 10, takenAwayPoints: 25)
+                    config: .init(addedPoints: 10, takenAwayPoints: 15)
                 )
             }
         )
