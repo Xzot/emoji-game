@@ -99,7 +99,7 @@ private extension GOPItemView {
     
     func setIsHiglighted(_ value: Bool) {
         if value == true {
-            let maxTransform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             transform = maxTransform
         } else {
             let minTransform = CGAffineTransform(scaleX: 1, y: 1)
@@ -108,10 +108,25 @@ private extension GOPItemView {
     }
     
     func setIsSelected(_ value: Bool) {
-        if value == true {
-            imageView.layer.borderColor = viewModel?.isCorrect == true ? Asset.Palette.jungleGreen.color.cgColor : Asset.Palette.burntSienna.color.cgColor
-        } else {
+        guard value == true else {
             imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
+            return
+        }
+        
+        if viewModel?.isCorrect == true {
+            imageView.layer.borderColor = Asset.Palette.jungleGreen.color.cgColor
+            imageView.expandAnimated { [weak self] in
+                self?.imageView.backToNormalAnimated {
+                    //nothing
+                }
+            }
+        } else {
+            imageView.layer.borderColor = Asset.Palette.burntSienna.color.cgColor
+            imageView.decreaseAnimated { [weak self] in
+                self?.imageView.backToNormalAnimated {
+                    //nothing
+                }
+            }
         }
     }
 }

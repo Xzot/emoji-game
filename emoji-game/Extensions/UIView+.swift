@@ -29,6 +29,29 @@ extension UIView {
         )
     }
     
+    enum ExpandAnimationPower {
+        case light
+        case hard
+    }
+    
+    func decreaseAnimated(_ closure: @escaping () -> Void) {
+        UIView.animate(
+            withDuration: AppConstants.Animation.shortDuration,
+            delay: .zero,
+            options: [],
+            animations: { [weak self] in
+                guard let `self` = self else { return }
+                self.transform = CGAffineTransform(
+                    scaleX: AppConstants.Animation.decrease,
+                    y: AppConstants.Animation.decrease
+                )
+            },
+            completion: { _ in
+                closure()
+            }
+        )
+    }
+    
     func expandAnimated(_ closure: @escaping () -> Void) {
         UIView.animate(
             withDuration: AppConstants.Animation.shortDuration,
@@ -37,8 +60,8 @@ extension UIView {
             animations: { [weak self] in
                 guard let `self` = self else { return }
                 self.transform = CGAffineTransform(
-                    scaleX: AppConstants.Animation.bigExpand,
-                    y: AppConstants.Animation.bigExpand
+                    scaleX: AppConstants.Animation.expand,
+                    y: AppConstants.Animation.expand
                 )
             },
             completion: { _ in
