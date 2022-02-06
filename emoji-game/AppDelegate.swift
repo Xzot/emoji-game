@@ -20,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         provider.get(NoAdsPurchaseService.self).completeTransactions(nil)
         
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["90f1ee3e8b40010acb7fd8a343e3300c"]
+#if DEBUG
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["9781f58f58fbbb161f99261469294b22"]
+#else
+#endif
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         application.statusBarStyle = .darkContent
