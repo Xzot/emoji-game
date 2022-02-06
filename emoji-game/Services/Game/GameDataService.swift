@@ -8,12 +8,21 @@
 import Foundation
 import Combine
 
+// MARK: - Delegate
+protocol GameDataServiceDelegate: AnyObject {
+    func gameDataService(
+        _ gameDataService: GameDataService,
+        handleFullFillFor model: GameModel
+    )
+}
+
 // MARK: - GameDataService class
 final class GameDataService {
     // MARK: OutPut
     var data: AnyPublisher<GameModel?, Never> {
         dataSubject.eraseToAnyPublisher()
     }
+    var delegate: GameDataServiceDelegate?
     
     // MARK: Properties
     private let modelsProvider: GameModelsProvider
@@ -44,11 +53,17 @@ final class GameDataService {
             model.isCorrect == true,
             let gameData = dataSubject.value
         else { return }
+        
         latestPickedModels.append(model)
-        guard gameData.isFullyGuessed(latestPickedModels) == true else {
-            return
-        }
-        nextGame()
+        
+        guard
+            gameData.isFullyGuessed(latestPickedModels) == true
+        else { return }
+        
+        delegate?.gameDataService(
+            self,
+            handleFullFillFor: gameData
+        )
     }
 }
 

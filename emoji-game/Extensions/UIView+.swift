@@ -28,14 +28,50 @@ extension UIView {
             completion: nil
         )
     }
+    
+    func expandAnimated(_ closure: @escaping () -> Void) {
+        UIView.animate(
+            withDuration: AppConstants.Animation.shortDuration,
+            delay: .zero,
+            options: [],
+            animations: { [weak self] in
+                guard let `self` = self else { return }
+                self.transform = CGAffineTransform(
+                    scaleX: AppConstants.Animation.bigExpand,
+                    y: AppConstants.Animation.bigExpand
+                )
+            },
+            completion: { _ in
+                closure()
+            }
+        )
+    }
+    
+    func backToNormalAnimated(_ closure: @escaping () -> Void) {
+        UIView.animate(
+            withDuration: AppConstants.Animation.shortDuration,
+            delay: 0.4,
+            options: [],
+            animations: { [weak self] in
+                guard let `self` = self else { return }
+                self.transform = CGAffineTransform(
+                    scaleX: 1,
+                    y: 1
+                )
+            },
+            completion: { _ in
+                closure()
+            }
+        )
+    }
 }
 
 extension UILabel {
     func scoreUpdateAnimated(
         text: String,
-        startScale: CGFloat = 0.75,
-        endScale: CGFloat = 1.1,
-        duration: CGFloat = 0.5,
+        startScale: CGFloat = AppConstants.Animation.decrease,
+        endScale: CGFloat = AppConstants.Animation.expand,
+        duration: CGFloat = AppConstants.Animation.longDuration,
         delay: CGFloat = 0,
         didEnd: (() -> Void)?
     ) {

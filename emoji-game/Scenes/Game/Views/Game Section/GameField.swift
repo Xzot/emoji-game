@@ -37,6 +37,16 @@ final class GameField: UIView {
         rightPublisher: viewModel.bottomRight
     )
     
+    // MARK: - API
+    func animateAsDone(_ completion: @escaping () -> Void) {
+        mixedEmojiView.expandAnimated { [weak self] in
+            guard let `self` = self else { return }
+            self.mixedEmojiView.backToNormalAnimated {
+                completion()
+            }
+        }
+    }
+    
     // MARK: Life Cycle
     init(
         spacing: CGFloat,

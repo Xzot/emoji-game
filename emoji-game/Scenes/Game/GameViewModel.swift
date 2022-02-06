@@ -8,6 +8,11 @@ import Combine
 // MARK: - GameListener protocol
 protocol GameListener: AnyObject {}
 
+// MARK: - GameViewModelDelegate
+protocol GameViewModelDelegate: AnyObject {
+    func showDoneAnimation()
+}
+
 // MARK: - Output
 extension GameViewModel {
     // Status Bar
@@ -63,11 +68,16 @@ extension GameViewModel {
         timeState.value == 0 ? timeState.send(AppConstants.startGameTime) : nil
         scheduler.isInvalidated ? scheduler.restart() : nil
     }
+    
+    func fetchNextGameModel() {
+        gameDataProvider.nextGame()
+    }
 }
 
 // MARK: - GameViewModel class
 final class GameViewModel {
     // MARK: Properties
+    var delegate: GameViewModelDelegate?
     private weak var listener: GameListener?
     private var router: GameRouter!
     private let provider: DependencyProvider
@@ -107,6 +117,8 @@ final class GameViewModel {
         self.scheduler = provider.get(TimeUpdater.self)
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.haptic = provider.get(HapticService.self)
+        
+        self.gameDataProvider.delegate = self
         
         self.bind()
     }
@@ -210,5 +222,15 @@ private extension GameViewModel {
             name: AppConstants.deselectGameItemNotificationName,
             object: nil
         )
+    }
+}
+
+// MARK: - GameDataServiceDelegate
+extension GameViewModel: GameDataServiceDelegate {
+    func gameDataService(
+        _ gameDataService: GameDataService,
+        handleFullFillFor model: GameModel
+    ) {
+        delegate?.showDoneAnimation()
     }
 }

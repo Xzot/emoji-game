@@ -17,8 +17,7 @@ final class GameScoreLabel: UIView {
         queue: DispatchQueue.global(qos: .userInitiated)
     ) private var latestUsedScore: GameScoreModel?
     private var cancellable = Set<AnyCancellable>()
-    private var pendingDiff: Int?
-    private var isInAnimation = false
+    private var animationId = ""
     
     // MARK: UI
     private lazy var startView = UIImageView(image: Asset.Images.gameScoreStar.image)
@@ -84,11 +83,8 @@ private extension GameScoreLabel {
     }
     
     func setAddedScoreLabel(_ diff: Int) {
-        guard isInAnimation == false, diff != 0 else {
-            pendingDiff = diff
-            return
-        }
-        isInAnimation = true
+        let aId = UUID().uuidString + ":" + String(Date().timeIntervalSince1970)
+        animationId = aId
         var scoreText = ""
         if diff > 0 {
             addedScoreLabel.textColor = Asset.Palette.jungleGreen.color
@@ -98,16 +94,16 @@ private extension GameScoreLabel {
             scoreText = String(diff)
         }
         addedScoreLabel.scoreUpdateAnimated(text: scoreText) { [weak self] in
-            guard let pending = self?.pendingDiff, pending > 0 else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [weak self] in
-                    self?.addedScoreLabel.alpha = 0
-                    self?.isInAnimation = false
-                }
-                return
-            }
-            self?.isInAnimation = false
-            self?.pendingDiff = nil
-            self?.setAddedScoreLabel(pending)
+            guard
+                let self = self,
+                    self.animationId == aId
+            else { return }
+            UIView.animateKeyframes(
+                withDuration: AppConstants.Animation.shortDuration,
+                delay: AppConstants.Animation.delay
+            ) { [weak self] in
+                self?.addedScoreLabel.alpha = 0
+            } completion: { _ in }
         }
     }
 }

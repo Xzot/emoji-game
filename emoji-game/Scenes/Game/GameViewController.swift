@@ -31,6 +31,7 @@ final class GameViewController: UIViewController {
     // MARK: Life Cycle
     init(viewModel: GameViewModel) {
         self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
         
         view.backgroundColor = Asset.Palette.white.color
@@ -43,6 +44,8 @@ final class GameViewController: UIViewController {
         view.addSubview(gameStatusBar)
         gameStatusBar.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
         gameStatusBar.bottomToTop(of: gameField)
+        
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -52,5 +55,14 @@ final class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.viewDidAppear()
+    }
+}
+
+// MARK: - GameViewModelDelegate
+extension GameViewController: GameViewModelDelegate {
+    func showDoneAnimation() {
+        gameField.animateAsDone { [weak self] in
+            self?.viewModel.fetchNextGameModel()
+        }
     }
 }
