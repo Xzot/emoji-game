@@ -73,7 +73,7 @@ extension UIView {
     func backToNormalAnimated(_ closure: @escaping () -> Void) {
         UIView.animate(
             withDuration: AppConstants.Animation.shortDuration,
-            delay: 0.4,
+            delay: 0.2,
             options: [],
             animations: { [weak self] in
                 guard let `self` = self else { return }
@@ -94,7 +94,7 @@ extension UILabel {
         text: String,
         startScale: CGFloat = AppConstants.Animation.decrease,
         endScale: CGFloat = AppConstants.Animation.expand,
-        duration: CGFloat = AppConstants.Animation.longDuration,
+        duration: CGFloat = AppConstants.Animation.shortDuration,
         delay: CGFloat = 0,
         didEnd: (() -> Void)?
     ) {

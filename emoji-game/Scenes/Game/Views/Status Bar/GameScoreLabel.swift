@@ -90,7 +90,7 @@ private extension GameScoreLabel {
             addedScoreLabel.textColor = Asset.Palette.jungleGreen.color
             scoreText = "+" + String(diff)
         } else if diff < 0 {
-            addedScoreLabel.textColor = Asset.Palette.vividTangerine.color
+            addedScoreLabel.textColor = Asset.Palette.burntSienna.color
             scoreText = String(diff)
         }
         addedScoreLabel.scoreUpdateAnimated(text: scoreText) { [weak self] in
@@ -100,7 +100,7 @@ private extension GameScoreLabel {
             else { return }
             UIView.animateKeyframes(
                 withDuration: AppConstants.Animation.shortDuration,
-                delay: AppConstants.Animation.delay
+                delay: AppConstants.Animation.shortDelay
             ) { [weak self] in
                 self?.addedScoreLabel.alpha = 0
             } completion: { _ in }

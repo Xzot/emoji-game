@@ -79,6 +79,7 @@ final class DependencyAssembly {
                 TimeUpdater()
             }
         )
+            .inObjectScope(.container)
         
         container.register(
             GameDataService.self,
@@ -145,10 +146,9 @@ final class DependencyProvider {
     private let assembly: DependencyAssembly
     
     var applicationObservableServices: [ApplicationObservable] {
-//        [
-//            get(UserInfoProvider.self)
-//        ]
-        fatalError()
+        [
+            get(TimeUpdater.self)
+        ]
     }
     
     init(assembly: DependencyAssembly) {

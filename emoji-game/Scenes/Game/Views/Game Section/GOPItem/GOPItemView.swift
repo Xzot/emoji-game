@@ -98,13 +98,13 @@ private extension GOPItemView {
     }
     
     func setIsHiglighted(_ value: Bool) {
-        if value == true {
-            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-            transform = maxTransform
-        } else {
-            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
-            transform = minTransform
-        }
+//        if value == true {
+//            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+//            transform = maxTransform
+//        } else {
+//            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
+//            transform = minTransform
+//        }
     }
     
     func setIsSelected(_ value: Bool) {

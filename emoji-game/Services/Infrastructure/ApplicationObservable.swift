@@ -8,59 +8,16 @@
 import UIKit
 
 protocol ApplicationObservable {
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-    )
-    func application(
-        _ application: UIApplication,
-        open url: URL,
-        options: [UIApplication.OpenURLOptionsKey: Any]
-    )
-    func application(
-        _ application: UIApplication,
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-    )
-    func application(
-        _ application: UIApplication,
-        didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
-    )
-    func didReceiveFcmRegistrationToken(_ fcmToken: String?)
+    func applicationWillEnterForeground(_ application: UIApplication)
+    func applicationDidEnterBackground(_ application: UIApplication)
 }
 
 extension ApplicationObservable {
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-    ) {
-        // Empty
-    }
-
-    func application(
-        _ application: UIApplication,
-        open url: URL,
-        options: [UIApplication.OpenURLOptionsKey: Any]
-    ) {
-        // Empty
-    }
-
-    func application(
-        _ application: UIApplication,
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-    ) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Empty
     }
     
-    func didReceiveFcmRegistrationToken(_ fcmToken: String?) {
-        // Empty
-    }
-    
-    func application(
-        _ application: UIApplication,
-        didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
-    ) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Empty
     }
 }

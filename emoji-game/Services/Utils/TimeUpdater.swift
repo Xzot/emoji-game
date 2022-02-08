@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 // MARK: - TimeUpdater class
 final class TimeUpdater {
@@ -41,6 +42,17 @@ final class TimeUpdater {
     
     func invalidate() {
         timer.invalidate()
+    }
+}
+
+// MARK: - ApplicationObservable
+extension TimeUpdater: ApplicationObservable {
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        restart()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        invalidate()
     }
 }
 

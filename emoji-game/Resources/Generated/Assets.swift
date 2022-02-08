@@ -39,6 +39,7 @@ internal enum Asset {
     internal static let black = ColorAsset(name: "black")
     internal static let burntSienna = ColorAsset(name: "burnt_sienna")
     internal static let gallery = ColorAsset(name: "gallery")
+    internal static let gullGray = ColorAsset(name: "gull_gray")
     internal static let jungleGreen = ColorAsset(name: "jungle_green")
     internal static let mineShaft = ColorAsset(name: "mine_shaft")
     internal static let vividTangerine = ColorAsset(name: "vivid_tangerine")

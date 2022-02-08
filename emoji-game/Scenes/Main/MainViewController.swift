@@ -36,7 +36,7 @@ final class MainViewController: SwapChildViewController {
             weight: .bold
         )
         $0.setTitleColor(
-            Asset.Palette.black.color,
+            Asset.Palette.gullGray.color,
             for: .normal
         )
         $0.setTitle(

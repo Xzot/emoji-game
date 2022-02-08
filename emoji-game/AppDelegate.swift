@@ -37,4 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        provider.applicationObservableServices.forEach {
+            $0.applicationWillEnterForeground(application)
+        }
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        provider.applicationObservableServices.forEach {
+            $0.applicationDidEnterBackground(application)
+        }
+    }
 }
