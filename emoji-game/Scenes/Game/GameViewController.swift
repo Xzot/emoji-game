@@ -56,6 +56,10 @@ final class GameViewController: UIViewController {
         super.viewDidAppear(animated)
         viewModel.viewDidAppear()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
 }
 
 // MARK: - GameViewModelDelegate

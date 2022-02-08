@@ -112,6 +112,10 @@ final class MainViewController: SwapChildViewController {
         super.viewDidDisappear(animated)
         imageView.stopAnimatingGIF()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
 }
 
 // MARK: - Private

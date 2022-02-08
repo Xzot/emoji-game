@@ -106,6 +106,10 @@ final class FinalViewController: UIViewController {
             .store(in: &self.cancellable)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

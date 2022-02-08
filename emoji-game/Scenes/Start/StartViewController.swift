@@ -44,6 +44,10 @@ final class StartViewController: SwapChildViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
 }
 
 // MARK: - StartViewController private

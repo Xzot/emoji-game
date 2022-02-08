@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
-        application.statusBarStyle = .darkContent
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         let startScene = StartBuilder(provider: provider).build()
         let root = UINavigationController(rootViewController: startScene)
