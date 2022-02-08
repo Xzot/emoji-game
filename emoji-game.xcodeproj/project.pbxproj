@@ -30,9 +30,6 @@
 		3754811B277100A7003C3E16 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548117277100A7003C3E16 /* StartViewModel.swift */; };
 		378890D0276F229500B3D96C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890CF276F229500B3D96C /* AppDelegate.swift */; };
 		378890DC276F229700B3D96C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378890DA276F229700B3D96C /* LaunchScreen.storyboard */; };
-		378890E7276F229700B3D96C /* emoji_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890E6276F229700B3D96C /* emoji_gameTests.swift */; };
-		378890F1276F229700B3D96C /* emoji_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890F0276F229700B3D96C /* emoji_gameUITests.swift */; };
-		378890F3276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378890F2276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift */; };
 		37889114276F238700B3D96C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889103276F238700B3D96C /* Strings.swift */; };
 		37889115276F238700B3D96C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889104276F238700B3D96C /* Assets.swift */; };
 		37889116276F238700B3D96C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37889105276F238700B3D96C /* Localizable.strings */; };
@@ -332,23 +329,6 @@
 		C71B719FCA76DA49DFAEE513 /* Pods_emoji_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2F08123535762EB31E2AF /* Pods_emoji_game.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		378890E3276F229700B3D96C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 378890C4276F229500B3D96C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 378890CB276F229500B3D96C;
-			remoteInfo = "emoji-game";
-		};
-		378890ED276F229700B3D96C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 378890C4276F229500B3D96C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 378890CB276F229500B3D96C;
-			remoteInfo = "emoji-game";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		011E110A3CBE6E34CE104BE0 /* Pods-emoji-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.release.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.release.xcconfig"; sourceTree = "<group>"; };
 		372280362771305100466B64 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -376,11 +356,6 @@
 		378890CF276F229500B3D96C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		378890DB276F229700B3D96C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		378890DD276F229700B3D96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		378890E2276F229700B3D96C /* emoji-gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "emoji-gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		378890E6276F229700B3D96C /* emoji_gameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emoji_gameTests.swift; sourceTree = "<group>"; };
-		378890EC276F229700B3D96C /* emoji-gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "emoji-gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		378890F0276F229700B3D96C /* emoji_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emoji_gameUITests.swift; sourceTree = "<group>"; };
-		378890F2276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emoji_gameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		37889103276F238700B3D96C /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		37889104276F238700B3D96C /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		37889106276F238700B3D96C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -690,20 +665,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		378890DF276F229700B3D96C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		378890E9276F229700B3D96C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -766,8 +727,6 @@
 			isa = PBXGroup;
 			children = (
 				378890CE276F229500B3D96C /* emoji-game */,
-				378890E5276F229700B3D96C /* emoji-gameTests */,
-				378890EF276F229700B3D96C /* emoji-gameUITests */,
 				378890CD276F229500B3D96C /* Products */,
 				B72B37EFBFF69AA655F25377 /* Pods */,
 				A32A26C25B13BD27FA18EF69 /* Frameworks */,
@@ -778,8 +737,6 @@
 			isa = PBXGroup;
 			children = (
 				378890CC276F229500B3D96C /* emoji-game.app */,
-				378890E2276F229700B3D96C /* emoji-gameTests.xctest */,
-				378890EC276F229700B3D96C /* emoji-gameUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -799,23 +756,6 @@
 				3788912F276F2B2700B3D96C /* assets */,
 			);
 			path = "emoji-game";
-			sourceTree = "<group>";
-		};
-		378890E5276F229700B3D96C /* emoji-gameTests */ = {
-			isa = PBXGroup;
-			children = (
-				378890E6276F229700B3D96C /* emoji_gameTests.swift */,
-			);
-			path = "emoji-gameTests";
-			sourceTree = "<group>";
-		};
-		378890EF276F229700B3D96C /* emoji-gameUITests */ = {
-			isa = PBXGroup;
-			children = (
-				378890F0276F229700B3D96C /* emoji_gameUITests.swift */,
-				378890F2276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift */,
-			);
-			path = "emoji-gameUITests";
 			sourceTree = "<group>";
 		};
 		37889100276F231400B3D96C /* Supporting Files */ = {
@@ -1345,42 +1285,6 @@
 			productReference = 378890CC276F229500B3D96C /* emoji-game.app */;
 			productType = "com.apple.product-type.application";
 		};
-		378890E1276F229700B3D96C /* emoji-gameTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 378890F9276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameTests" */;
-			buildPhases = (
-				378890DE276F229700B3D96C /* Sources */,
-				378890DF276F229700B3D96C /* Frameworks */,
-				378890E0276F229700B3D96C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				378890E4276F229700B3D96C /* PBXTargetDependency */,
-			);
-			name = "emoji-gameTests";
-			productName = "emoji-gameTests";
-			productReference = 378890E2276F229700B3D96C /* emoji-gameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		378890EB276F229700B3D96C /* emoji-gameUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 378890FC276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameUITests" */;
-			buildPhases = (
-				378890E8276F229700B3D96C /* Sources */,
-				378890E9276F229700B3D96C /* Frameworks */,
-				378890EA276F229700B3D96C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				378890EE276F229700B3D96C /* PBXTargetDependency */,
-			);
-			name = "emoji-gameUITests";
-			productName = "emoji-gameUITests";
-			productReference = 378890EC276F229700B3D96C /* emoji-gameUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1393,14 +1297,6 @@
 				TargetAttributes = {
 					378890CB276F229500B3D96C = {
 						CreatedOnToolsVersion = 13.2;
-					};
-					378890E1276F229700B3D96C = {
-						CreatedOnToolsVersion = 13.2;
-						TestTargetID = 378890CB276F229500B3D96C;
-					};
-					378890EB276F229700B3D96C = {
-						CreatedOnToolsVersion = 13.2;
-						TestTargetID = 378890CB276F229500B3D96C;
 					};
 				};
 			};
@@ -1418,8 +1314,6 @@
 			projectRoot = "";
 			targets = (
 				378890CB276F229500B3D96C /* emoji-game */,
-				378890E1276F229700B3D96C /* emoji-gameTests */,
-				378890EB276F229700B3D96C /* emoji-gameUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1675,20 +1569,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		378890E0276F229700B3D96C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		378890EA276F229700B3D96C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1835,37 +1715,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		378890DE276F229700B3D96C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				378890E7276F229700B3D96C /* emoji_gameTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		378890E8276F229700B3D96C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				378890F1276F229700B3D96C /* emoji_gameUITests.swift in Sources */,
-				378890F3276F229700B3D96C /* emoji_gameUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		378890E4276F229700B3D96C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 378890CB276F229500B3D96C /* emoji-game */;
-			targetProxy = 378890E3276F229700B3D96C /* PBXContainerItemProxy */;
-		};
-		378890EE276F229700B3D96C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 378890CB276F229500B3D96C /* emoji-game */;
-			targetProxy = 378890ED276F229700B3D96C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		378890DA276F229700B3D96C /* LaunchScreen.storyboard */ = {
@@ -2010,7 +1860,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2042,7 +1892,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2067,82 +1917,6 @@
 			};
 			name = Release;
 		};
-		378890FA276F229700B3D96C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SDQPWCCGCS;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emoji-game.app/emoji-game";
-			};
-			name = Debug;
-		};
-		378890FB276F229700B3D96C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SDQPWCCGCS;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emoji-game.app/emoji-game";
-			};
-			name = Release;
-		};
-		378890FD276F229700B3D96C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SDQPWCCGCS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "emoji-game";
-			};
-			name = Debug;
-		};
-		378890FE276F229700B3D96C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SDQPWCCGCS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shchuka.emojiGame.emoji-gameUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "emoji-game";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2160,24 +1934,6 @@
 			buildConfigurations = (
 				378890F7276F229700B3D96C /* Debug */,
 				378890F8276F229700B3D96C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		378890F9276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				378890FA276F229700B3D96C /* Debug */,
-				378890FB276F229700B3D96C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		378890FC276F229700B3D96C /* Build configuration list for PBXNativeTarget "emoji-gameUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				378890FD276F229700B3D96C /* Debug */,
-				378890FE276F229700B3D96C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
