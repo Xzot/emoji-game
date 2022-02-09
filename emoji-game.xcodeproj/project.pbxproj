@@ -314,6 +314,7 @@
 		37D6030D278A91E20076CD06 /* GameScoreHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030C278A91E20076CD06 /* GameScoreHandler.swift */; };
 		37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */; };
 		37D95EC127B3C3DB0005EB18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37D95EC027B3C3DB0005EB18 /* GoogleService-Info.plist */; };
+		37D95EC327B3CCDA0005EB18 /* ApplicationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D95EC227B3CCDA0005EB18 /* ApplicationObserver.swift */; };
 		37E330B6278C6F49007DE487 /* ThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330B5278C6F49007DE487 /* ThreadSafe.swift */; };
 		37E330B8278C72DE007DE487 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330B7278C72DE007DE487 /* Transaction.swift */; };
 		37E330BF278CA30A007DE487 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330BE278CA30A007DE487 /* UIImage+Gif.swift */; };
@@ -641,6 +642,7 @@
 		37D6030C278A91E20076CD06 /* GameScoreHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreHandler.swift; sourceTree = "<group>"; };
 		37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
 		37D95EC027B3C3DB0005EB18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		37D95EC227B3CCDA0005EB18 /* ApplicationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationObserver.swift; sourceTree = "<group>"; };
 		37E330B5278C6F49007DE487 /* ThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafe.swift; sourceTree = "<group>"; };
 		37E330B7278C72DE007DE487 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		37E330BE278CA30A007DE487 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
@@ -1203,6 +1205,7 @@
 				37D602F027838B470076CD06 /* DataLoader.swift */,
 				37D602EB27838AC10076CD06 /* ImageDataLoader.swift */,
 				37D60303278859E80076CD06 /* TimeUpdater.swift */,
+				37D95EC227B3CCDA0005EB18 /* ApplicationObserver.swift */,
 				3738340A279405320054A23E /* GameModelsInUseChecker.swift */,
 				3749B9B027932C5F0019C171 /* Haptic */,
 			);
@@ -1655,6 +1658,7 @@
 				3788912E276F2B0200B3D96C /* EmojiModel.swift in Sources */,
 				37E330B6278C6F49007DE487 /* ThreadSafe.swift in Sources */,
 				37D602DD27822DBF0076CD06 /* GameScoreLabel.swift in Sources */,
+				37D95EC327B3CCDA0005EB18 /* ApplicationObserver.swift in Sources */,
 				37D60300278570E40076CD06 /* GameModelFactory.swift in Sources */,
 				37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */,
 				37D602D6278121610076CD06 /* ImageView.swift in Sources */,
@@ -1864,7 +1868,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1897,7 +1901,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;

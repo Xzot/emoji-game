@@ -74,6 +74,14 @@ final class DependencyAssembly {
         )
         
         container.register(
+            AppEventProvider.self,
+            factory: { _ in
+                ApplicationObserver()
+            }
+        )
+            .inObjectScope(.container)
+        
+        container.register(
             TimeUpdater.self,
             factory: { _ in
                 TimeUpdater()
@@ -147,7 +155,8 @@ final class DependencyProvider {
     
     var applicationObservableServices: [ApplicationObservable] {
         [
-            get(TimeUpdater.self)
+            get(TimeUpdater.self),
+            get(AppEventProvider.self)
         ]
     }
     

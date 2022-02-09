@@ -83,6 +83,7 @@ final class GameViewModel {
     private let provider: DependencyProvider
     private let gameDataProvider: GameDataService
     private let scheduler: TimeUpdater
+    private let appObserver: AppEventProvider
     private let scoreHandler: GameScoreHandler
     private let haptic: HapticService
     private var shouldStartTimeCount: Bool = false
@@ -117,6 +118,7 @@ final class GameViewModel {
         self.scheduler = provider.get(TimeUpdater.self)
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.haptic = provider.get(HapticService.self)
+        self.appObserver = provider.get(AppEventProvider.self)
         
         self.gameDataProvider.delegate = self
         
@@ -159,6 +161,16 @@ private extension GameViewModel {
                 let model = self.scoreState.value.makeNew(with: newScore)
                 self.scoreState.send(model)
             })
+            .store(in: &cancellables)
+        
+        appObserver.eventPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] appEvent in
+                guard appEvent == .didEnterBackground else {
+                    return
+                }
+                self?.handlePause()
+            }
             .store(in: &cancellables)
     }
     
