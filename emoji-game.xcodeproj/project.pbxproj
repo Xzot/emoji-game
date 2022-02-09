@@ -313,6 +313,7 @@
 		37D6030B278A20DA0076CD06 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030A278A20DA0076CD06 /* Array+.swift */; };
 		37D6030D278A91E20076CD06 /* GameScoreHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030C278A91E20076CD06 /* GameScoreHandler.swift */; };
 		37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */; };
+		37D95EC127B3C3DB0005EB18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37D95EC027B3C3DB0005EB18 /* GoogleService-Info.plist */; };
 		37E330B6278C6F49007DE487 /* ThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330B5278C6F49007DE487 /* ThreadSafe.swift */; };
 		37E330B8278C72DE007DE487 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330B7278C72DE007DE487 /* Transaction.swift */; };
 		37E330BF278CA30A007DE487 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330BE278CA30A007DE487 /* UIImage+Gif.swift */; };
@@ -639,6 +640,7 @@
 		37D6030A278A20DA0076CD06 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		37D6030C278A91E20076CD06 /* GameScoreHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreHandler.swift; sourceTree = "<group>"; };
 		37D6030E278AF9FA0076CD06 /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
+		37D95EC027B3C3DB0005EB18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37E330B5278C6F49007DE487 /* ThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafe.swift; sourceTree = "<group>"; };
 		37E330B7278C72DE007DE487 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		37E330BE278CA30A007DE487 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 				37D602DE278336760076CD06 /* Typealiases.swift */,
 				378890DA276F229700B3D96C /* LaunchScreen.storyboard */,
 				378890DD276F229700B3D96C /* Info.plist */,
+				37D95EC027B3C3DB0005EB18 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1500,6 +1503,7 @@
 				378892B4276F2B2800B3D96C /* emoji_bear.png in Resources */,
 				378892BF276F2B2800B3D96C /* emoji_neutral_face.png in Resources */,
 				37889226276F2B2800B3D96C /* emoji_kissing_face.png in Resources */,
+				37D95EC127B3C3DB0005EB18 /* GoogleService-Info.plist in Resources */,
 				378892E5276F2B2800B3D96C /* emoji_speak_no_evil_monkey.png in Resources */,
 				378892A2276F2B2800B3D96C /* emoji_cloud.png in Resources */,
 				37889260276F2B2800B3D96C /* emoji_globe_showing_americas.png in Resources */,

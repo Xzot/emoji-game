@@ -8,6 +8,7 @@ target 'emoji-game' do
   # Утилиты
   pod 'Gifu'
   pod 'Realm'
+  pod 'Firebase'
   pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'Swinject'

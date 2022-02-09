@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import GoogleMobileAds
 
 @main
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        FirebaseApp.configure()
         provider.get(NoAdsPurchaseService.self).completeTransactions(nil)
         
 #if DEBUG
