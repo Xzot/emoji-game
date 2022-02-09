@@ -21,7 +21,7 @@ final class GameRouter {
     
     func routeToGameOverScene() {
         let gemaOverScene = finalSceneBuilder.build(
-            listener: nil,
+            listener: presentable?.viewModel,
             type: .gameover
         )
         presentable?.navigationController?.pushViewController(
@@ -32,7 +32,7 @@ final class GameRouter {
     
     func routeToPauseScene() {
         let pauseScene = finalSceneBuilder.build(
-            listener: nil,
+            listener: presentable?.viewModel,
             type: .pause
         )
         presentable?.navigationController?.pushViewController(

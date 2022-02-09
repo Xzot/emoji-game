@@ -60,7 +60,9 @@ final class GameScoreLabel: UIView {
         
         score
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: handle(new:))
+            .sink(receiveValue: { [weak self] model in
+                self?.handle(new: model)
+            })
             .store(in: &cancellable)
     }
     

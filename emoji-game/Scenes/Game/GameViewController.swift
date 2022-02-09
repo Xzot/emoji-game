@@ -15,7 +15,7 @@ final class GameViewController: UIViewController {
     }
     
     // MARK: Properties
-    private let viewModel: GameViewModel
+    let viewModel: GameViewModel
     private var screenWidth: CGFloat {
         UIScreen.main.bounds.size.width
     }
@@ -50,6 +50,10 @@ final class GameViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        fatalError()
     }
     
     override func viewDidAppear(_ animated: Bool) {

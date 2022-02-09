@@ -5,7 +5,9 @@
 import Combine
 
 // MARK: - FinalListener protocol
-protocol FinalListener: AnyObject {}
+protocol FinalListener: AnyObject {
+    func resetGame()
+}
 
 // MARK: - Output
 extension FinalViewModel {
@@ -45,13 +47,18 @@ final class FinalViewModel {
     }
     
     func userTapGameOver() {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
         haptic.impact(as: .defaultTap)
         gameDataProvider.nextGame()
+        listener?.resetGame()
         router.routeToMain()
         scoreHandler.reset()
     }
     
     func userTapContinue() {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
         haptic.impact(as: .defaultTap)
         adService.showInterstitialAd(for: router.presentable!) { [weak self] in
             self?.router.routeBack()

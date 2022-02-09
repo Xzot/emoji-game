@@ -53,7 +53,7 @@ extension DataLoader {
 fileprivate final class PendingOperations {
     // MARK: Properties
     private let config: DataLoader.Config
-    private lazy var downloadsInProgress = [String : Operation]()
+    private lazy var downloadsInProgress = Set<String>()
     private let downloadQueue: OperationQueue
     
     // MARK: Life Cycle
@@ -64,10 +64,11 @@ fileprivate final class PendingOperations {
     
     // MARK: Public API
     func append(_ operation: LoadDataOperation) {
-        guard downloadsInProgress[operation.linkToData] == nil else {
+        
+        guard downloadsInProgress.contains(operation.linkToData) == false else {
             return
         }
-        downloadsInProgress[operation.linkToData] = operation
+        downloadsInProgress.insert(operation.linkToData)
         downloadQueue.addOperation(operation)
     }
 }

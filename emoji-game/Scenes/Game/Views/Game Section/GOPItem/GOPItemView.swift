@@ -22,10 +22,14 @@ final class GOPItemView: UIView {
     }
     private lazy var button = UIButton()&>.do {
         $0.publisher(for: \.isSelected)
-            .sink(receiveValue: setIsSelected(_:))
+            .sink(receiveValue: { [weak self] value in
+                self?.setIsSelected(value)
+            })
             .store(in: &cancellable)
         $0.publisher(for: \.isHighlighted)
-            .sink(receiveValue: setIsHiglighted(_:))
+            .sink(receiveValue: { [weak self] value in
+                self?.setIsHiglighted(value)
+            })
             .store(in: &cancellable)
         $0.addTarget(
             self,
@@ -55,7 +59,9 @@ final class GOPItemView: UIView {
         
         publisher
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: handle(viewModel:))
+            .sink(receiveValue: { [weak self] model in
+                self?.handle(viewModel: model)
+            })
             .store(in: &cancellable)
         
         NotificationCenter.default.addObserver(

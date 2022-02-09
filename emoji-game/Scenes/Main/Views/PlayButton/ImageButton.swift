@@ -41,7 +41,9 @@ final class ImageButton: UIView, SelectableTransform {
     }
     private lazy var button = UIButton()&>.do {
         $0.publisher(for: \.isHighlighted)
-            .sink(receiveValue: setIsHighlighted(_:))
+            .sink(receiveValue: { [weak self] value in
+                self?.setIsHighlighted(value)
+            })
             .store(in: &cancellable)
         $0.addTarget(
             self,

@@ -49,7 +49,9 @@ final class ImageView: UIView {
         
         image
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: handle(_:))
+            .sink(receiveValue: { [weak self] image in
+                self?.handle(image)
+            })
             .store(in: &cancellable)
     }
     

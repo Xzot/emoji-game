@@ -57,10 +57,13 @@ extension GameViewModel {
         self.router = router
     }
     
-    func handlePause() {
-        haptic.impact(as: .defaultTap)
+    func handlePause(withSound value: Bool) {
         shouldStartTimeCount = false
         router.routeToPauseScene()
+        guard value == true else {
+            return
+        }
+        haptic.impact(as: .defaultTap)
     }
     
     func viewDidAppear() {
@@ -131,7 +134,9 @@ private extension GameViewModel {
     func bind() {
         gameDataProvider
             .data
-            .sink(receiveValue: handle(_:))
+            .sink(receiveValue: { [weak self] model in
+                self?.handle(model)
+            })
             .store(in: &cancellables)
         
         scheduler.completion
@@ -141,8 +146,8 @@ private extension GameViewModel {
                     self?.gameModelInUse != nil,
                     self?.shouldStartTimeCount == true,
                     let oldTime = self?.timeState.value else {
-                    return
-                }
+                        return
+                    }
                 let newTime = oldTime - 1
                 if newTime >= 0 {
                     self?.timeState.send(newTime)
@@ -169,7 +174,7 @@ private extension GameViewModel {
                 guard appEvent == .didEnterBackground else {
                     return
                 }
-                self?.handlePause()
+                self?.handlePause(withSound: false)
             }
             .store(in: &cancellables)
     }
@@ -179,23 +184,53 @@ private extension GameViewModel {
         gameModelInUse = gameModel
         
         topLeftState.send(
-            GOPItemModel(asset: gameModel?.topPanel.left, completion: handleUserTouch(for:))
+            GOPItemModel(
+                asset: gameModel?.topPanel.left,
+                completion: { [weak self] model in
+                    self?.handleUserTouch(for: model)
+                }
+            )
         )
         topCenterState.send(
-            GOPItemModel(asset: gameModel?.topPanel.center, completion: handleUserTouch(for:))
+            GOPItemModel(
+                asset: gameModel?.topPanel.center,
+                completion: { [weak self] model in
+                    self?.handleUserTouch(for: model)
+                }
+            )
         )
         topRightState.send(
-            GOPItemModel(asset: gameModel?.topPanel.right, completion: handleUserTouch(for:))
+            GOPItemModel(
+                asset: gameModel?.topPanel.right,
+                completion: { [weak self] model in
+                    self?.handleUserTouch(for: model)
+                }
+            )
         )
         
         bottomLeftState.send(
-            GOPItemModel(asset: gameModel?.bottomPanel.left, completion: handleUserTouch(for:))
+            GOPItemModel(
+                asset: gameModel?.bottomPanel.left,
+                completion: { [weak self] model in
+                    self?.handleUserTouch(for: model)
+                }
+            )
         )
         bottomCenterState.send(
-            GOPItemModel(asset: gameModel?.bottomPanel.center, completion: handleUserTouch(for:))
+            GOPItemModel(
+                asset: gameModel?.bottomPanel.center,
+                completion: { [weak self] model in
+                    self?.handleUserTouch(for: model)
+                }
+            )
         )
         bottomRightState.send(
-            GOPItemModel(asset: gameModel?.bottomPanel.right, completion: handleUserTouch(for:))
+            GOPItemModel(
+                asset: gameModel?.bottomPanel.right,
+                completion: { [weak self] model in
+                    self?.handleUserTouch(for: model)
+                }
+            )
         )
         
         centerImageState.send(gameModel?.result)
@@ -244,5 +279,13 @@ extension GameViewModel: GameDataServiceDelegate {
         handleFullFillFor model: GameModel
     ) {
         delegate?.showDoneAnimation()
+    }
+}
+
+// MARK: - FinalListener
+extension GameViewModel: FinalListener {
+    func resetGame() {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
     }
 }
