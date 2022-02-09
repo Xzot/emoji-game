@@ -52,9 +52,13 @@ extension UIView {
         )
     }
     
-    func expandAnimated(_ closure: @escaping () -> Void) {
+    func expandAnimated(
+        with duration: CGFloat = AppConstants.Animation.shortDuration,
+        and delay: CGFloat = .zero,
+        closure: @escaping () -> Void
+    ) {
         UIView.animate(
-            withDuration: AppConstants.Animation.shortDuration,
+            withDuration: duration,
             delay: .zero,
             options: [],
             animations: { [weak self] in
@@ -70,10 +74,14 @@ extension UIView {
         )
     }
     
-    func backToNormalAnimated(_ closure: @escaping () -> Void) {
+    func backToNormalAnimated(
+        with duration: CGFloat = AppConstants.Animation.shortDuration,
+        and delay: CGFloat = 0.2,
+        closure: @escaping () -> Void
+    ) {
         UIView.animate(
-            withDuration: AppConstants.Animation.shortDuration,
-            delay: 0.2,
+            withDuration: duration,
+            delay: delay,
             options: [],
             animations: { [weak self] in
                 guard let `self` = self else { return }

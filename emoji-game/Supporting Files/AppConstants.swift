@@ -28,8 +28,8 @@ extension AppConstants {
     struct Animation {
         static let shortDelay: CGFloat = 0.4
         static let delay: CGFloat = 0.8
-        static let shortDuration: CGFloat = 0.1
-        static let longDuration: CGFloat = 0.2
+        static let shortDuration: CGFloat = 0.15
+        static let longDuration: CGFloat = 0.3
         static let lightExpand: CGFloat = 1.1
         static let expand: CGFloat = 1.2
         static let bigExpand: CGFloat = 1.4

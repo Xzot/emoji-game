@@ -39,9 +39,15 @@ final class GameField: UIView {
     
     // MARK: - API
     func animateAsDone(_ completion: @escaping () -> Void) {
-        mixedEmojiView.expandAnimated { [weak self] in
+        mixedEmojiView.expandAnimated(
+            with: AppConstants.Animation.longDuration,
+            and: AppConstants.Animation.delay
+        ) { [weak self] in
             guard let `self` = self else { return }
-            self.mixedEmojiView.backToNormalAnimated {
+            self.mixedEmojiView.backToNormalAnimated(
+                with: AppConstants.Animation.longDuration,
+                and: AppConstants.Animation.shortDelay
+            ) {
                 completion()
             }
         }
