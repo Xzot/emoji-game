@@ -7,6 +7,7 @@ import Combine
 // MARK: - FinalListener protocol
 protocol FinalListener: AnyObject {
     func resetGame()
+    func resetTime()
 }
 
 // MARK: - Output
@@ -50,7 +51,7 @@ final class FinalViewModel {
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
         haptic.impact(as: .defaultTap)
-        gameDataProvider.nextGame()
+        gameDataProvider.nextGame(forced: true)
         listener?.resetGame()
         router.routeToMain()
         scoreHandler.reset()
@@ -60,6 +61,7 @@ final class FinalViewModel {
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
         haptic.impact(as: .defaultTap)
+        listener?.resetTime()
         adService.showInterstitialAd(for: router.presentable!) { [weak self] in
             self?.router.routeBack()
         }

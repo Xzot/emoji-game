@@ -39,9 +39,11 @@ final class GameDataService {
     }
     
     // MARK: API
-    func nextGame() {
-        guard latestPickedModels.count > 0 else {
-            return
+    func nextGame(forced: Bool = false) {
+        if forced == false {
+            guard latestPickedModels.count > 0 else {
+                return
+            }
         }
         dataSubject.value?.markAsUsed()
         latestPickedModels.removeAll()

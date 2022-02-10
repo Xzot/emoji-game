@@ -301,4 +301,8 @@ extension GameViewModel: FinalListener {
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
     }
+    
+    func resetTime() {
+        timeState.send(AppConstants.startGameTime)
+    }
 }
