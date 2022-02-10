@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         provider.get(NoAdsPurchaseService.self).completeTransactions(nil)
         
 #if DEBUG
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["9781f58f58fbbb161f99261469294b22"]
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["cb711eca3299e63a51bdafcbb9e7bdc3"]
 #else
 #endif
         GADMobileAds.sharedInstance().start(completionHandler: nil)

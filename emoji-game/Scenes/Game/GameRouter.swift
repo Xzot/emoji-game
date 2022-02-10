@@ -7,7 +7,7 @@ import UIKit
 // MARK: - GameRouter class
 final class GameRouter {
     // MARK: Properties
-    private weak var presentable: GameViewController?
+    private(set) weak var presentable: GameViewController?
     private let finalSceneBuilder: FinalBuilder
 
     // MARK: Life Cycle

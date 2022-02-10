@@ -73,7 +73,16 @@ extension GameViewModel {
     }
     
     func fetchNextGameModel() {
-        gameDataProvider.nextGame()
+        adsCounter += 1
+        if adsCounter > 10 {
+            adsCounter = 0
+            shouldStartTimeCount = false
+            adService.showInterstitialAd(for: router.presentable!) { [weak self] in
+                self?.gameDataProvider.nextGame()
+            }
+        } else {
+            gameDataProvider.nextGame()
+        }
     }
 }
 
@@ -88,9 +97,11 @@ final class GameViewModel {
     private let scheduler: TimeUpdater
     private let appObserver: AppEventProvider
     private let scoreHandler: GameScoreHandler
+    private let adService: AppAdService
     private let haptic: HapticService
     private var shouldStartTimeCount: Bool = false
     private var gameModelInUse: GameModel?
+    private var adsCounter: Int = 0
     
     // MARK: - State
     // Status Bar
@@ -122,6 +133,7 @@ final class GameViewModel {
         self.scoreHandler = provider.get(GameScoreHandler.self)
         self.haptic = provider.get(HapticService.self)
         self.appObserver = provider.get(AppEventProvider.self)
+        self.adService = provider.get(AppAdService.self)
         
         self.gameDataProvider.delegate = self
         
@@ -278,6 +290,7 @@ extension GameViewModel: GameDataServiceDelegate {
         _ gameDataService: GameDataService,
         handleFullFillFor model: GameModel
     ) {
+        shouldStartTimeCount = false
         delegate?.showDoneAnimation()
     }
 }
