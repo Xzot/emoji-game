@@ -24,6 +24,7 @@ final class FinalViewModel {
     private var router: FinalRouter!
     private let scoreHandler: GameScoreHandler
     private let gameDataProvider: GameDataService
+    private let appStateProvider: GASProvider
     private let haptic: HapticService
     private weak var listener: FinalListener?
     private let adService: AppAdService
@@ -40,6 +41,7 @@ final class FinalViewModel {
         self.adService = provider.get(AppAdService.self)
         self.haptic = provider.get(HapticService.self)
         self.gameDataProvider = provider.get(GameDataService.self)
+        self.appStateProvider = provider.get(GASProvider.self)
     }
     
     // MARK: API
@@ -62,6 +64,9 @@ final class FinalViewModel {
         cancellables.removeAll()
         haptic.impact(as: .defaultTap)
         listener?.resetTime()
+        guard appStateProvider.isHiddenValue(for: .isAdsHidden) == false else {
+            return
+        }
         adService.showInterstitialAd(for: router.presentable!) { [weak self] in
             self?.router.routeBack()
         }
