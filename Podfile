@@ -3,7 +3,7 @@ platform :ios, '13.0'
 # ignore all warnings from all pods
 inhibit_all_warnings!
 
-target 'emoji-game' do
+target 'EmojiGame' do
   use_frameworks!
   # Утилиты
   pod 'Gifu'

@@ -1,6 +1,6 @@
-output_dir: emoji-game/Resources/Generated/
+output_dir: EmojiGame/Resources/Generated/
 strings:
-  inputs: emoji-game/Resources/en.lproj/Localizable.strings
+  inputs: EmojiGame/Resources/en.lproj/Localizable.strings
   filter: .+\.strings$
   outputs:
     - templateName: structured-swift5
@@ -9,8 +9,8 @@ strings:
         enumName: Strings
 xcassets:
   inputs:
-    - emoji-game/Resources/Images.xcassets
-    - emoji-game/Resources/Palette.xcassets
+    - EmojiGame/Resources/Images.xcassets
+    - EmojiGame/Resources/Palette.xcassets
   outputs:
     templateName: swift5
     output: Assets.swift
