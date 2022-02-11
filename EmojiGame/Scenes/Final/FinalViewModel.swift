@@ -65,6 +65,7 @@ final class FinalViewModel {
         haptic.impact(as: .defaultTap)
         listener?.resetTime()
         guard appStateProvider.isHiddenValue(for: .isAdsHidden) == false else {
+            router.routeBack()
             return
         }
         adService.showInterstitialAd(for: router.presentable!) { [weak self] in
