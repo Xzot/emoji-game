@@ -74,7 +74,7 @@ extension GameViewModel {
     
     func fetchNextGameModel() {
         adsCounter += 1
-        if adsCounter > 10 {
+        if adsCounter > 10 && appStateProvider.isHiddenValue(for: .isAdsHidden) == false {
             adsCounter = 0
             shouldStartTimeCount = false
             adService.showInterstitialAd(for: router.presentable!) { [weak self] in
@@ -97,6 +97,7 @@ final class GameViewModel {
     private let scheduler: TimeUpdater
     private let appObserver: AppEventProvider
     private let scoreHandler: GameScoreHandler
+    private let appStateProvider: GASProvider
     private let adService: AppAdService
     private let haptic: HapticService
     private var shouldStartTimeCount: Bool = false
@@ -134,6 +135,7 @@ final class GameViewModel {
         self.haptic = provider.get(HapticService.self)
         self.appObserver = provider.get(AppEventProvider.self)
         self.adService = provider.get(AppAdService.self)
+        self.appStateProvider = provider.get(GASProvider.self)
         
         self.gameDataProvider.delegate = self
         

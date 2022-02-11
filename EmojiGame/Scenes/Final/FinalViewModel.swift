@@ -64,12 +64,12 @@ final class FinalViewModel {
         cancellables.removeAll()
         haptic.impact(as: .defaultTap)
         listener?.resetTime()
-        guard appStateProvider.isHiddenValue(for: .isAdsHidden) == false else {
+        if appStateProvider.isHiddenValue(for: .isAdsHidden) {
             router.routeBack()
-            return
-        }
-        adService.showInterstitialAd(for: router.presentable!) { [weak self] in
-            self?.router.routeBack()
+        } else {
+            adService.showInterstitialAd(for: router.presentable!) { [weak self] in
+                self?.router.routeBack()
+            }
         }
     }
 }
