@@ -200,14 +200,14 @@ private extension GameViewModel {
                 guard
                     let self = self,
                     Defaults[\.shouldShowTutorial] == true,
-                    timeValue == 6 else {
+                    timeValue == 8 else {
                         return
                     }
                 Defaults[\.shouldShowTutorial] = false
                 self.haptic.impact(as: .rightSelection)
                 self.delegate?.highlightCorrectAnswers()
                 DispatchQueue.main.asyncAfter(
-                    deadline: .now() + 0.5,
+                    deadline: .now() + 0.7,
                     execute: { [weak self] in
                         self?.haptic.impact(as: .rightSelection)
                     }

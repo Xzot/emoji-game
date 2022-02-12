@@ -16,15 +16,21 @@ extension GOPItemView {
             return
         }
         imageView.layer.borderColor = Asset.Palette.jungleGreen.color.cgColor
-        imageView.expandAnimated { [weak self] in
-            self?.imageView.backToNormalAnimated { [weak self] in
-                self?.imageView.expandAnimated { [weak self] in
-                    self?.imageView.backToNormalAnimated { [weak self] in
-                        self?.imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
-                    }
+        imageView.expandAnimated(
+            with: AppConstants.Animation.longDuration,
+            closure: { [weak self] in
+                self?.imageView.backToNormalAnimated { [weak self] in
+                    self?.imageView.expandAnimated(
+                        with: AppConstants.Animation.longDuration,
+                        closure: { [weak self] in
+                            self?.imageView.backToNormalAnimated { [weak self] in
+                                self?.imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
+                            }
+                        }
+                    )
                 }
             }
-        }
+        )
     }
 }
 
@@ -123,13 +129,13 @@ private extension GOPItemView {
     }
     
     func setIsHiglighted(_ value: Bool) {
-//        if value == true {
-//            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-//            transform = maxTransform
-//        } else {
-//            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
-//            transform = minTransform
-//        }
+        //        if value == true {
+        //            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        //            transform = maxTransform
+        //        } else {
+        //            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
+        //            transform = minTransform
+        //        }
     }
     
     func setIsSelected(_ value: Bool) {
