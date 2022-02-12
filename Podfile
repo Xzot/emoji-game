@@ -9,6 +9,8 @@ target 'EmojiGame' do
   pod 'Gifu'
   pod 'Realm'
   pod 'Firebase'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'Swinject'
