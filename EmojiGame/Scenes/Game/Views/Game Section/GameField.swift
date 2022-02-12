@@ -20,17 +20,17 @@ final class GameField: UIView {
     }
     
     // MARK: UI
-    private lazy var topPanel = GameOptionsPanel(
+    private(set) lazy var topPanel = GameOptionsPanel(
         spacing: spacing,
         leftPublisher: viewModel.topLeft,
         centerPublisher: viewModel.topCenter,
         rightPublisher: viewModel.topRight
     )
-    private lazy var mixedEmojiView = ImageView(
+    private(set) lazy var mixedEmojiView = ImageView(
         image: viewModel.centerImage,
         type: .embded
     )
-    private lazy var bottomPanel = GameOptionsPanel(
+    private(set) lazy var bottomPanel = GameOptionsPanel(
         spacing: spacing,
         leftPublisher: viewModel.bottomLeft,
         centerPublisher: viewModel.bottomCenter,

@@ -24,9 +24,9 @@ final class GameOptionsPanel: UIView {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
     }
-    private lazy var leftImageView = GOPItemView(publisher: leftPublisher)
-    private lazy var centerImageView = GOPItemView(publisher: centerPublisher)
-    private lazy var rightImageView = GOPItemView(publisher: rightPublisher)
+    private(set) lazy var leftImageView = GOPItemView(publisher: leftPublisher)
+    private(set) lazy var centerImageView = GOPItemView(publisher: centerPublisher)
+    private(set) lazy var rightImageView = GOPItemView(publisher: rightPublisher)
     
     // MARK: Life Cycle
     init(

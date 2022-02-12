@@ -9,6 +9,31 @@ import UIKit
 import Combine
 import TinyConstraints
 
+// MARK: - API
+extension GOPItemView {
+    func animateClueAsCorrect() {
+        guard viewModel?.isCorrect == true else {
+            return
+        }
+        imageView.layer.borderColor = Asset.Palette.jungleGreen.color.cgColor
+        imageView.expandAnimated(
+            with: AppConstants.Animation.longDuration,
+            closure: { [weak self] in
+                self?.imageView.backToNormalAnimated { [weak self] in
+                    self?.imageView.expandAnimated(
+                        with: AppConstants.Animation.longDuration,
+                        closure: { [weak self] in
+                            self?.imageView.backToNormalAnimated { [weak self] in
+                                self?.imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
+                            }
+                        }
+                    )
+                }
+            }
+        )
+    }
+}
+
 // MARK: - GOPItemView class
 final class GOPItemView: UIView {
     // MARK: UI
@@ -104,13 +129,13 @@ private extension GOPItemView {
     }
     
     func setIsHiglighted(_ value: Bool) {
-//        if value == true {
-//            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-//            transform = maxTransform
-//        } else {
-//            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
-//            transform = minTransform
-//        }
+        //        if value == true {
+        //            let maxTransform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        //            transform = maxTransform
+        //        } else {
+        //            let minTransform = CGAffineTransform(scaleX: 1, y: 1)
+        //            transform = minTransform
+        //        }
     }
     
     func setIsSelected(_ value: Bool) {

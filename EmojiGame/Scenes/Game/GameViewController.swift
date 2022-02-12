@@ -73,4 +73,14 @@ extension GameViewController: GameViewModelDelegate {
             self?.viewModel.fetchNextGameModel()
         }
     }
+    
+    func highlightCorrectAnswers() {
+        gameField.topPanel.leftImageView.animateClueAsCorrect()
+        gameField.topPanel.centerImageView.animateClueAsCorrect()
+        gameField.topPanel.rightImageView.animateClueAsCorrect()
+        
+        gameField.bottomPanel.leftImageView.animateClueAsCorrect()
+        gameField.bottomPanel.centerImageView.animateClueAsCorrect()
+        gameField.bottomPanel.rightImageView.animateClueAsCorrect()
+    }
 }
