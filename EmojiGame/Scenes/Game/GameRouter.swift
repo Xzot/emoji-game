@@ -31,6 +31,9 @@ final class GameRouter {
     }
     
     func routeToPauseScene() {
+        guard presentable?.navigationController?.viewControllers.last == presentable else {
+            return
+        }
         let pauseScene = finalSceneBuilder.build(
             listener: presentable?.viewModel,
             type: .pause
