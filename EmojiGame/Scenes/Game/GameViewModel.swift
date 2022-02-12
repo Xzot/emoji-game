@@ -4,6 +4,7 @@
 
 import UIKit
 import Combine
+import SwiftyUserDefaults
 
 // MARK: - GameListener protocol
 protocol GameListener: AnyObject {}
@@ -11,6 +12,7 @@ protocol GameListener: AnyObject {}
 // MARK: - GameViewModelDelegate
 protocol GameViewModelDelegate: AnyObject {
     func showDoneAnimation()
+    func highlightCorrectAnswers()
 }
 
 // MARK: - Output
@@ -191,6 +193,27 @@ private extension GameViewModel {
                 self?.handlePause(withSound: false)
             }
             .store(in: &cancellables)
+        
+        timeState
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] timeValue in
+                guard
+                    let self = self,
+                    Defaults[\.shouldShowTutorial] == true,
+                    timeValue == 6 else {
+                        return
+                    }
+                Defaults[\.shouldShowTutorial] = false
+                self.haptic.impact(as: .rightSelection)
+                self.delegate?.highlightCorrectAnswers()
+                DispatchQueue.main.asyncAfter(
+                    deadline: .now() + 0.5,
+                    execute: { [weak self] in
+                        self?.haptic.impact(as: .rightSelection)
+                    }
+                )
+            }
+            .store(in: &cancellables)
     }
     
     func handle(_ gameModel: GameModel?) {
@@ -292,6 +315,7 @@ extension GameViewModel: GameDataServiceDelegate {
         _ gameDataService: GameDataService,
         handleFullFillFor model: GameModel
     ) {
+        Defaults[\.shouldShowTutorial] = false
         shouldStartTimeCount = false
         delegate?.showDoneAnimation()
     }

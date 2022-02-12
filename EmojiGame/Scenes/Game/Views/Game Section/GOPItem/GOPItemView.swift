@@ -9,6 +9,25 @@ import UIKit
 import Combine
 import TinyConstraints
 
+// MARK: - API
+extension GOPItemView {
+    func animateClueAsCorrect() {
+        guard viewModel?.isCorrect == true else {
+            return
+        }
+        imageView.layer.borderColor = Asset.Palette.jungleGreen.color.cgColor
+        imageView.expandAnimated { [weak self] in
+            self?.imageView.backToNormalAnimated { [weak self] in
+                self?.imageView.expandAnimated { [weak self] in
+                    self?.imageView.backToNormalAnimated { [weak self] in
+                        self?.imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
+                    }
+                }
+            }
+        }
+    }
+}
+
 // MARK: - GOPItemView class
 final class GOPItemView: UIView {
     // MARK: UI

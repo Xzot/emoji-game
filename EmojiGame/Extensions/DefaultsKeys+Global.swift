@@ -23,4 +23,8 @@ extension DefaultsKeys {
     var isSoundsHidden: DefaultsKey<Bool> {
         .init("EmojiGame.DefaultsKeys.isSoundsHidden", defaultValue: false)
     }
+    
+    var shouldShowTutorial: DefaultsKey<Bool> {
+        .init("EmojiGame.DefaultsKeys.shouldShowTutorial", defaultValue: true)
+    }
 }
