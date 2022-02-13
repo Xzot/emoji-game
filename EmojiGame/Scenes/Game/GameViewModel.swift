@@ -90,6 +90,12 @@ extension GameViewModel {
 
 // MARK: - GameViewModel class
 final class GameViewModel {
+    // MARK: GameType enum
+    enum GameType {
+        case infinite
+        case timeAttack
+    }
+    
     // MARK: Properties
     var delegate: GameViewModelDelegate?
     private weak var listener: GameListener?
@@ -105,6 +111,7 @@ final class GameViewModel {
     private var shouldStartTimeCount: Bool = false
     private var gameModelInUse: GameModel?
     private var adsCounter: Int = 0
+    private let gameType: GameType
     
     // MARK: - State
     // Status Bar
@@ -126,9 +133,11 @@ final class GameViewModel {
     
     // MARK: Life Cycle
     init(
+        gameType: GameViewModel.GameType = .infinite,
         provider: DependencyProvider,
         listener: GameListener?
     ) {
+        self.gameType = gameType
         self.provider = provider
         self.listener = listener
         self.gameDataProvider = provider.get(GameDataService.self)
@@ -217,7 +226,9 @@ private extension GameViewModel {
     }
     
     func handle(_ gameModel: GameModel?) {
-        gameModelInUse != nil ? timeState.send(AppConstants.startGameTime) : nil
+        if gameType == .infinite {
+            gameModelInUse != nil ? timeState.send(AppConstants.startGameTime) : nil
+        }
         gameModelInUse = gameModel
         
         topLeftState.send(
@@ -291,9 +302,15 @@ private extension GameViewModel {
         if model.isCorrect {
             haptic.impact(as: .rightSelection)
             scoreHandler.userDidGuess()
+            if gameType == .timeAttack {
+                timeState.send((timeState.value ?? 0) + 1)
+            }
         } else {
             haptic.impact(as: .wrongSelection)
             scoreHandler.userDidNotGuess()
+            if gameType == .timeAttack {
+                timeState.send((timeState.value ?? 2) - 2)
+            }
         }
         gameDataProvider.handleModelSelection(model)
     }

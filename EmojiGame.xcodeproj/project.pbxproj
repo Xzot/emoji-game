@@ -270,6 +270,7 @@
 		378892F7276F2B2800B3D96C /* emoji_pouting_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889213276F2B2700B3D96C /* emoji_pouting_face.png */; };
 		378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892FA276F31A600B3D96C /* EmojiItemsModel.swift */; };
 		37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */; };
+		37CFF59927B87DDC00691D8C /* InfiniteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CFF59827B87DDC00691D8C /* InfiniteButton.swift */; };
 		37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */; };
 		37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A5277F2D000076CD06 /* UIViewController+.swift */; };
 		37D602AC27809DE60076CD06 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602A727809DE60076CD06 /* Quicksand-Bold.ttf */; };
@@ -598,6 +599,7 @@
 		37889213276F2B2700B3D96C /* emoji_pouting_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pouting_face.png; sourceTree = "<group>"; };
 		378892FA276F31A600B3D96C /* EmojiItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItemsModel.swift; sourceTree = "<group>"; };
 		37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Global.swift"; sourceTree = "<group>"; };
+		37CFF59827B87DDC00691D8C /* InfiniteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteButton.swift; sourceTree = "<group>"; };
 		37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeOperator.swift; sourceTree = "<group>"; };
 		37D602A5277F2D000076CD06 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		37D602A727809DE60076CD06 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -1131,6 +1133,7 @@
 			children = (
 				37D602BA2780B44B0076CD06 /* PlayButton */,
 				37D602B82780ADA90076CD06 /* PlaySceneBar.swift */,
+				37CFF59827B87DDC00691D8C /* InfiniteButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1745,6 +1748,7 @@
 				37D602F5278442630076CD06 /* EmojiImageLoader.swift in Sources */,
 				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,
 				37D602F3278397ED0076CD06 /* HypothesisProvider.swift in Sources */,
+				37CFF59927B87DDC00691D8C /* InfiniteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1897,7 +1901,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EmojiGame/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Emoji Mix Quiz";

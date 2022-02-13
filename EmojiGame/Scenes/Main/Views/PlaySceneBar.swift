@@ -12,10 +12,21 @@ import TinyConstraints
 // MARK: - PlaySceneBar class
 final class PlaySceneBar: UIView {
     // MARK: UI
-    private lazy var playButton = PlayButton(
-        score: viewModel.scoreOutut,
+    private lazy var stackView = UIStackView()&>.do {
+        $0.spacing = 16
+        $0.axis = .vertical
+        $0.distribution = .fillEqually
+    }
+    private lazy var timeAttackButton = InfiniteButton(
+        title: "TIME ATTACK",
         completion: { [weak self] in
-            self?.viewModel.playTapped()
+            self?.viewModel.timeAttackPlayTapped()
+        }
+    )
+    private lazy var infiniteButton = InfiniteButton(
+        title: "INFINITE",
+        completion: { [weak self] in
+            self?.viewModel.infinitePlayTapped()
         }
     )
     private lazy var adsButton = ImageButton(
@@ -47,18 +58,16 @@ final class PlaySceneBar: UIView {
         
         super.init(frame: .zero)
         
-        addSubview(playButton)
-        
-        let playButtonSize = AppConstants.MainScene.playButtonSize
-        playButton.size(
-            CGSize(
-                width: playButtonSize,
-                height: playButtonSize
-            )
+        addSubview(stackView)
+        stackView.horizontalToSuperview(
+            insets: .left(max(16, 24 * UIDevice.sizeFactor)) + .right(max(16, 24 * UIDevice.sizeFactor))
         )
-        playButton.centerXToSuperview()
-        playButton.topToSuperview(offset: max(30, 40 * UIDevice.sizeFactor))
+        stackView.topToSuperview(offset: max(30, 40 * UIDevice.sizeFactor))
+        stackView.height(to: self, multiplier: 0.4)
         
+        stackView.addArrangedSubview(timeAttackButton)
+        stackView.addArrangedSubview(infiniteButton)
+                
         let smallButtonsSize: CGFloat = max(60, 72 * UIDevice.sizeFactor)
         let smallButtonBottomOffset: CGFloat = max(10, 16 * UIDevice.sizeFactor)
         let smallButtonSideOffset: CGFloat = max(18, 24 * UIDevice.sizeFactor)

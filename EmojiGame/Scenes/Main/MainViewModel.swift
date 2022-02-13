@@ -41,9 +41,14 @@ final class MainViewModel {
         self.router = router
     }
     
-    func playTapped() {
+    func timeAttackPlayTapped() {
         haptic.impact(as: .defaultTap)
-        router.makeGameSceneRoute()
+        router.routeToTimeAttackGame()
+    }
+    
+    func infinitePlayTapped() {
+        haptic.impact(as: .defaultTap)
+        router.routeToInfiniteGame()
     }
     
     func restoreNoAdsTapped() {

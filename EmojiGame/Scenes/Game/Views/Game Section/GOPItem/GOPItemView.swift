@@ -15,7 +15,7 @@ extension GOPItemView {
         guard viewModel?.isCorrect == true else {
             return
         }
-        imageView.layer.borderColor = Asset.Palette.jungleGreen.color.cgColor
+//        imageView.layer.borderColor = Asset.Palette.jungleGreen.color.cgColor
         imageView.expandAnimated(
             with: AppConstants.Animation.longDuration,
             closure: { [weak self] in
@@ -24,7 +24,7 @@ extension GOPItemView {
                         with: AppConstants.Animation.longDuration,
                         closure: { [weak self] in
                             self?.imageView.backToNormalAnimated { [weak self] in
-                                self?.imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
+//                                self?.imageView.layer.borderColor = Asset.Palette.gallery.color.cgColor
                             }
                         }
                     )

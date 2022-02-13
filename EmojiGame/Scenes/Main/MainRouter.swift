@@ -21,8 +21,16 @@ final class MainRouter {
     }
     
     // MARK: API
-    func makeGameSceneRoute() {
-        let gameScene = gameSceneBuilder.build(listener: nil)
+    func routeToTimeAttackGame() {
+        let gameScene = gameSceneBuilder.build(.timeAttack, listener: nil)
+        presentable?.navigationController?.pushViewController(
+            gameScene,
+            animated: false
+        )
+    }
+    
+    func routeToInfiniteGame() {
+        let gameScene = gameSceneBuilder.build(.infinite, listener: nil)
         presentable?.navigationController?.pushViewController(
             gameScene,
             animated: false

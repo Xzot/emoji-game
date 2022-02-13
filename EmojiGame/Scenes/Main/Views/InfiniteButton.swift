@@ -1,5 +1,5 @@
 //
-//  GameOverButton.swift
+//  InfiniteButton.swift
 //  emoji-game
 //
 //  Created by Vlad Shchuka on 14.01.2022.
@@ -9,11 +9,12 @@ import UIKit
 import Combine
 import TinyConstraints
 
-// MARK: - GameOverButton class
-final class GameOverButton: UIView, SelectableTransform {
+// MARK: - InfiniteButton class
+final class InfiniteButton: UIView, SelectableTransform {
     // MARK: Properties
     private var completion: VoidCompletion
     private var cancellable = Set<AnyCancellable>()
+    private let title: String
     
     // MARK: UI
     private lazy var button = UIButton()&>.do {
@@ -29,8 +30,8 @@ final class GameOverButton: UIView, SelectableTransform {
         )
     }
     private lazy var titleLable = UILabel()&>.do {
-        $0.textColor = Asset.Palette.black.color
-        $0.text = Strings.FinalScene.gameOverButtonTitle
+        $0.textColor = Asset.Palette.white.color
+        $0.text = title
         $0.font = .quicksand(
             ofSize: max(28, 32 * UIDevice.sizeFactor),
             weight: .bold
@@ -39,12 +40,13 @@ final class GameOverButton: UIView, SelectableTransform {
     }
     
     // MARK: Life Cycle
-    init(completion: @escaping VoidCompletion) {
+    init(title: String, completion: @escaping VoidCompletion) {
+        self.title = title
         self.completion = completion
         
         super.init(frame: .zero)
         
-        backgroundColor = Asset.Palette.white.color
+        backgroundColor = Asset.Palette.jungleGreen.color
         
         addSubview(titleLable)
         titleLable.centerYToSuperview()
@@ -54,8 +56,6 @@ final class GameOverButton: UIView, SelectableTransform {
         button.edgesToSuperview()
         
         layer.cornerRadius = 20
-        layer.borderWidth = 4
-        layer.borderColor = Asset.Palette.gallery.color.cgColor
         clipsToBounds = true
     }
     
@@ -65,7 +65,7 @@ final class GameOverButton: UIView, SelectableTransform {
 }
 
 // MARK: - Private
-private extension GameOverButton {
+private extension InfiniteButton {
     @objc
     func handleButtonTap() {
         completion()
