@@ -111,7 +111,7 @@ final class GameViewModel {
     private var shouldStartTimeCount: Bool = false
     private var gameModelInUse: GameModel?
     private var adsCounter: Int = 0
-    private let gameType: GameType
+    let gameType: GameType
     
     // MARK: - State
     // Status Bar
@@ -164,24 +164,6 @@ private extension GameViewModel {
             })
             .store(in: &cancellables)
         
-        scheduler.completion
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard
-                    self?.gameModelInUse != nil,
-                    self?.shouldStartTimeCount == true,
-                    let oldTime = self?.timeState.value else {
-                        return
-                    }
-                let newTime = oldTime - 1
-                if newTime >= 0 {
-                    self?.timeState.send(newTime)
-                } else {
-                    self?.gameOver()
-                }
-            }
-            .store(in: &cancellables)
-        
         scoreHandler.scorePublisher
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] newScore in
@@ -221,6 +203,28 @@ private extension GameViewModel {
                         self?.haptic.impact(as: .rightSelection)
                     }
                 )
+            }
+            .store(in: &cancellables)
+        
+        guard gameType == .timeAttack else {
+            return
+        }
+        
+        scheduler.completion
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard
+                    self?.gameModelInUse != nil,
+                    self?.shouldStartTimeCount == true,
+                    let oldTime = self?.timeState.value else {
+                        return
+                    }
+                let newTime = oldTime - 1
+                if newTime >= 0 {
+                    self?.timeState.send(newTime)
+                } else {
+                    self?.gameOver()
+                }
             }
             .store(in: &cancellables)
     }
@@ -303,12 +307,19 @@ private extension GameViewModel {
             haptic.impact(as: .rightSelection)
             scoreHandler.userDidGuess()
             if gameType == .timeAttack {
-                timeState.send((timeState.value ?? 0) + 1)
+                if gameDataProvider.latestPickedModels.filter { $0.isCorrect }.count == 1 {
+                    timeState.send((timeState.value ?? 0) + 2)
+                } else {
+                    timeState.send((timeState.value ?? 0) + 1)
+                }
             }
         } else {
             haptic.impact(as: .wrongSelection)
             scoreHandler.userDidNotGuess()
             if gameType == .timeAttack {
+                if (timeState.value ?? 2) - 2 <= 0 {
+                    gameOver()
+                }
                 timeState.send((timeState.value ?? 2) - 2)
             }
         }

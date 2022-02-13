@@ -36,6 +36,9 @@ final class GameStatusBar: UIView {
         scoreLabel.verticalToSuperview()
         pauseButton.rightToLeft(of: scoreLabel, offset: -16)
         
+        guard viewModel.gameType == .timeAttack else {
+            return
+        }
         addSubview(timerLabel)
         timerLabel.verticalToSuperview()
         timerLabel.rightToSuperview()
