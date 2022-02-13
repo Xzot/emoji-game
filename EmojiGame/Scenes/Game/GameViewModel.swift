@@ -308,9 +308,17 @@ private extension GameViewModel {
             scoreHandler.userDidGuess()
             if gameType == .timeAttack {
                 if gameDataProvider.latestPickedModels.filter { $0.isCorrect }.count == 1 {
-                    timeState.send((timeState.value ?? 0) + 2)
+                    if (timeState.value ?? 0) + 2 > 10 {
+                        timeState.send(10)
+                    } else {
+                        timeState.send((timeState.value ?? 0) + 2)
+                    }
                 } else {
-                    timeState.send((timeState.value ?? 0) + 1)
+                    if (timeState.value ?? 0) + 1 > 10 {
+                        timeState.send(10)
+                    } else {
+                        timeState.send((timeState.value ?? 0) + 1)
+                    }
                 }
             }
         } else {
