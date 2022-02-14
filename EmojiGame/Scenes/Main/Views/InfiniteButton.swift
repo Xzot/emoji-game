@@ -50,18 +50,32 @@ final class InfiniteButton: UIView, SelectableTransform {
         
         backgroundColor = Asset.Palette.jungleGreen.color
         
+        let leftSpacing = UIView()
+        let rightSpacing = UIView()
+        
+        addSubview(leftSpacing)
+        addSubview(rightSpacing)
+        
+        leftSpacing.width(to: rightSpacing)
+        leftSpacing.edgesToSuperview(excluding: .right)
+        rightSpacing.edgesToSuperview(excluding: .left)
+        
+        
         addSubview(imageView)
         let imageViewSize = max(32, 32 * UIDevice.sizeFactor)
         imageView.size(
             CGSize(width: imageViewSize, height: imageViewSize)
         )
         imageView.centerYToSuperview()
-        imageView.leftToSuperview(offset: max(74, 74 * UIDevice.sizeFactor))
+        imageView.leftToRight(of: leftSpacing)
         
         addSubview(titleLable)
         titleLable.centerYToSuperview()
-        titleLable.rightToSuperview()
-        titleLable.leftToRight(of: imageView, offset: max(16, 16 * UIDevice.sizeFactor))
+        titleLable.rightToLeft(of: rightSpacing)
+        titleLable.leftToRight(
+            of: imageView,
+            offset: max(16, 16 * UIDevice.sizeFactor)
+        )
         
         addSubview(button)
         button.edgesToSuperview()

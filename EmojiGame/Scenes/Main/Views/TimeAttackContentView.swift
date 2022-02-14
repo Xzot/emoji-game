@@ -41,22 +41,32 @@ final class TimeAttackContentView: UIView {
     init(_ score: AnyPublisher<Int, Never>) {
         super.init(frame: .zero)
         
+        let leftSpacing = UIView()
+        let rightSpacing = UIView()
+        
+        addSubview(leftSpacing)
+        addSubview(rightSpacing)
+        
+        leftSpacing.width(to: rightSpacing)
+        leftSpacing.edgesToSuperview(excluding: .right)
+        rightSpacing.edgesToSuperview(excluding: .left)
+        
         addSubview(imageView)
         let imageViewSize = max(32, 32 * UIDevice.sizeFactor)
         imageView.size(
             CGSize(width: imageViewSize, height: imageViewSize)
         )
         imageView.centerYToSuperview()
-        imageView.leftToSuperview(offset: max(42, 42 * UIDevice.sizeFactor))
+        imageView.leftToRight(of: leftSpacing)
         
         addSubview(nameLabel)
         nameLabel.topToSuperview()
-        nameLabel.rightToSuperview()
+        nameLabel.rightToLeft(of: rightSpacing)
         nameLabel.leftToRight(of: imageView, offset: max(16, 16 * UIDevice.sizeFactor))
         
         addSubview(bestScoreLabel)
         bestScoreLabel.bottomToSuperview()
-        bestScoreLabel.rightToSuperview()
+        bestScoreLabel.rightToLeft(of: rightSpacing)
         bestScoreLabel.topToBottom(of: nameLabel)
         bestScoreLabel.leftToRight(of: imageView, offset: max(16, 16 * UIDevice.sizeFactor))
         
