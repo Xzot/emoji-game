@@ -1,5 +1,5 @@
 //
-//  PlayButton.swift
+//  TimeAttackButton.swift
 //  emoji-game
 //
 //  Created by Vlad Shchuka on 01.01.2022.
@@ -9,13 +9,13 @@ import UIKit
 import Combine
 import TinyConstraints
 
-// MARK: - PlayButton class
-final class PlayButton: UIView, SelectableTransform {
+// MARK: - TimeAttackButton class
+final class TimeAttackButton: UIView, SelectableTransform {
     // MARK: UI
     private lazy var backgroundView = UIView()&>.do {
-        $0.backgroundColor = Asset.Palette.jungleGreen.color
+        $0.backgroundColor = Asset.Palette.royalBlue.color
     }
-    private lazy var absorbingView = PBAbsorbingView(scorePublisher)
+    private lazy var absorbingView = TimeAttackContentView(scorePublisher)
     private lazy var button = UIButton()&>.do {
         $0.publisher(for: \.isHighlighted)
             .sink(receiveValue: { [weak self] value in
@@ -46,7 +46,6 @@ final class PlayButton: UIView, SelectableTransform {
         
         addSubview(backgroundView)
         backgroundView.edgesToSuperview()
-        backgroundView.layer.cornerRadius = AppConstants.MainScene.playButtonSize / 2
         
         addSubview(absorbingView)
         absorbingView.centerInSuperview()
@@ -54,6 +53,9 @@ final class PlayButton: UIView, SelectableTransform {
         
         addSubview(button)
         button.edgesToSuperview()
+        
+        layer.cornerRadius = max(16, 18 * UIDevice.sizeFactor)
+        clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -62,7 +64,7 @@ final class PlayButton: UIView, SelectableTransform {
 }
 
 // MARK: - Private
-private extension PlayButton {
+private extension TimeAttackButton {
     @objc
     func handleButtonTap() {
         completion()

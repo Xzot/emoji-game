@@ -280,9 +280,8 @@
 		37D602B027809DE60076CD06 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D602AB27809DE60076CD06 /* Quicksand-SemiBold.ttf */; };
 		37D602B227809E740076CD06 /* UIFont+Quicksand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B127809E740076CD06 /* UIFont+Quicksand.swift */; };
 		37D602B42780A11E0076CD06 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B32780A11E0076CD06 /* UIDevice+.swift */; };
-		37D602B72780AD450076CD06 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B62780AD450076CD06 /* PlayButton.swift */; };
-		37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B82780ADA90076CD06 /* PlaySceneBar.swift */; };
-		37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */; };
+		37D602B72780AD450076CD06 /* TimeAttackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602B62780AD450076CD06 /* TimeAttackButton.swift */; };
+		37D602BC2780B4610076CD06 /* TimeAttackContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BB2780B4610076CD06 /* TimeAttackContentView.swift */; };
 		37D602BE2780CFCA0076CD06 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BD2780CFCA0076CD06 /* UIView+.swift */; };
 		37D602C02780D0D10076CD06 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602BF2780D0D10076CD06 /* AppConstants.swift */; };
 		37D602C627810D550076CD06 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602C527810D550076CD06 /* ImageButton.swift */; };
@@ -609,9 +608,8 @@
 		37D602AB27809DE60076CD06 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
 		37D602B127809E740076CD06 /* UIFont+Quicksand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Quicksand.swift"; sourceTree = "<group>"; };
 		37D602B32780A11E0076CD06 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
-		37D602B62780AD450076CD06 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
-		37D602B82780ADA90076CD06 /* PlaySceneBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySceneBar.swift; sourceTree = "<group>"; };
-		37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAbsorbingView.swift; sourceTree = "<group>"; };
+		37D602B62780AD450076CD06 /* TimeAttackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAttackButton.swift; sourceTree = "<group>"; };
+		37D602BB2780B4610076CD06 /* TimeAttackContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAttackContentView.swift; sourceTree = "<group>"; };
 		37D602BD2780CFCA0076CD06 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		37D602BF2780D0D10076CD06 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		37D602C527810D550076CD06 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
@@ -1131,21 +1129,12 @@
 		37D602B52780AD2B0076CD06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37D602BA2780B44B0076CD06 /* PlayButton */,
-				37D602B82780ADA90076CD06 /* PlaySceneBar.swift */,
+				37D602B62780AD450076CD06 /* TimeAttackButton.swift */,
+				37D602BB2780B4610076CD06 /* TimeAttackContentView.swift */,
 				37CFF59827B87DDC00691D8C /* InfiniteButton.swift */,
+				37D602C527810D550076CD06 /* ImageButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		37D602BA2780B44B0076CD06 /* PlayButton */ = {
-			isa = PBXGroup;
-			children = (
-				37D602B62780AD450076CD06 /* PlayButton.swift */,
-				37D602C527810D550076CD06 /* ImageButton.swift */,
-				37D602BB2780B4610076CD06 /* PBAbsorbingView.swift */,
-			);
-			path = PlayButton;
 			sourceTree = "<group>";
 		};
 		37D602C7278113BD0076CD06 /* Game */ = {
@@ -1674,7 +1663,7 @@
 				37D602E7278374250076CD06 /* GameModel.swift in Sources */,
 				3754811A277100A7003C3E16 /* StartBuilder.swift in Sources */,
 				37D602F127838B470076CD06 /* DataLoader.swift in Sources */,
-				37D602B72780AD450076CD06 /* PlayButton.swift in Sources */,
+				37D602B72780AD450076CD06 /* TimeAttackButton.swift in Sources */,
 				37E330D127906549007DE487 /* ContinueButton.swift in Sources */,
 				37548118277100A7003C3E16 /* StartRouter.swift in Sources */,
 				37D602CF278115250076CD06 /* GameViewModel.swift in Sources */,
@@ -1707,7 +1696,7 @@
 				37D602EA27837CBF0076CD06 /* GameDataService.swift in Sources */,
 				37D6030F278AF9FA0076CD06 /* NSMutableAttributedString+.swift in Sources */,
 				37E330B8278C72DE007DE487 /* Transaction.swift in Sources */,
-				37D602BC2780B4610076CD06 /* PBAbsorbingView.swift in Sources */,
+				37D602BC2780B4610076CD06 /* TimeAttackContentView.swift in Sources */,
 				3738340B279405320054A23E /* GameModelsInUseChecker.swift in Sources */,
 				37D602EC27838AC10076CD06 /* ImageDataLoader.swift in Sources */,
 				37F8D64227A2B50E00C780F6 /* NoAdsPurchaseService.swift in Sources */,
@@ -1744,7 +1733,6 @@
 				3749B9B7279339240019C171 /* GameOverHapticEngine.swift in Sources */,
 				37D602C627810D550076CD06 /* ImageButton.swift in Sources */,
 				3749B9B227932C680019C171 /* HapticEngine.swift in Sources */,
-				37D602B92780ADA90076CD06 /* PlaySceneBar.swift in Sources */,
 				37D602F5278442630076CD06 /* EmojiImageLoader.swift in Sources */,
 				3722803D2771305100466B64 /* MainViewModel.swift in Sources */,
 				37D602F3278397ED0076CD06 /* HypothesisProvider.swift in Sources */,
@@ -1897,7 +1885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
@@ -1931,7 +1919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				GENERATE_INFOPLIST_FILE = YES;

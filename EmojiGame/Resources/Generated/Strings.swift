@@ -19,13 +19,16 @@ internal enum Strings {
   }
 
   internal enum MainScene {
-    /// Who's that
-    /// Emoji?
+    /// Best score: 
+    internal static let bestScoreButtonScoreTitle = Strings.tr("Localizable", "mainScene.bestScoreButtonScoreTitle")
+    /// INFINITE
+    internal static let infiniteButtonName = Strings.tr("Localizable", "mainScene.infiniteButtonName")
+    /// Emoji Mix
     internal static let labelText = Strings.tr("Localizable", "mainScene.labelText")
-    /// PLAY
-    internal static let playButtonName = Strings.tr("Localizable", "mainScene.playButtonName")
-    /// Best: 
-    internal static let playButtonScoreTitle = Strings.tr("Localizable", "mainScene.playButtonScoreTitle")
+    /// Restore purchase
+    internal static let restorePurchaseButtonScoreTitle = Strings.tr("Localizable", "mainScene.restorePurchaseButtonScoreTitle")
+    /// TIME ATTACK
+    internal static let timeAttackButtonName = Strings.tr("Localizable", "mainScene.timeAttackButtonName")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

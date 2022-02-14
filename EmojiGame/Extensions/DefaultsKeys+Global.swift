@@ -13,7 +13,7 @@ extension DefaultsKeys {
     }
     
     var scoreRecordValue: DefaultsKey<Int> {
-        .init("EmojiGame.DefaultsKeys.scoreRecordValue", defaultValue: 0)
+        .init("EmojiGame.DefaultsKeys.scoreRecordValueKey", defaultValue: 0)
     }
     
     var isAdsHidden: DefaultsKey<Bool> {

@@ -31,9 +31,11 @@ internal enum Asset {
     internal static let gameTimer = ImageAsset(name: "game_timer")
     internal static let launchScreen = ImageAsset(name: "launch_screen")
     internal static let startHeader = ImageAsset(name: "start_header")
+    internal static let startInfinite = ImageAsset(name: "start_infinite")
     internal static let startNoAds = ImageAsset(name: "start_no_ads")
     internal static let startSoundOff = ImageAsset(name: "start_sound_off")
     internal static let startSoundOn = ImageAsset(name: "start_sound_on")
+    internal static let startTimeAttack = ImageAsset(name: "start_time_attack")
   }
   internal enum Palette {
     internal static let black = ColorAsset(name: "black")
@@ -42,6 +44,7 @@ internal enum Asset {
     internal static let gullGray = ColorAsset(name: "gull_gray")
     internal static let jungleGreen = ColorAsset(name: "jungle_green")
     internal static let mineShaft = ColorAsset(name: "mine_shaft")
+    internal static let royalBlue = ColorAsset(name: "royal_blue")
     internal static let vividTangerine = ColorAsset(name: "vivid_tangerine")
     internal static let white = ColorAsset(name: "white")
   }

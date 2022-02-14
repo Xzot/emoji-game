@@ -1,7 +1,9 @@
 
-"mainScene.labelText" = "Who's that\nEmoji?";
-"mainScene.playButtonName" = "PLAY";
-"mainScene.playButtonScoreTitle" = "Best: ";
+"mainScene.labelText" = "Emoji Mix";
+"mainScene.infiniteButtonName" = "INFINITE";
+"mainScene.timeAttackButtonName" = "TIME ATTACK";
+"mainScene.bestScoreButtonScoreTitle" = "Best score: ";
+"mainScene.restorePurchaseButtonScoreTitle" = "Restore purchase";
 
 
 "finalScene.continueButtonTitle" = "CONTINUE";

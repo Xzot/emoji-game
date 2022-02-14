@@ -18,13 +18,6 @@ enum AppConstants {
 }
 
 extension AppConstants {
-    struct MainScene {
-        static let gifMultiplier: CGFloat = 0.34
-        static let playButtonSize: CGFloat = max(160, 196 * UIDevice.sizeFactor)
-    }
-}
-
-extension AppConstants {
     struct Animation {
         static let shortDelay: CGFloat = 0.4
         static let delay: CGFloat = 0.8
