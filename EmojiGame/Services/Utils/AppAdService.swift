@@ -69,7 +69,7 @@ private extension AppAdService {
         interstitialAdQueue.listCount
             .dropFirst()
             .sink { [weak self] count in
-                guard count < 5 else { return }
+                guard count < 1 else { return }
                 self?.fetchInterstitialAd()
             }
             .store(in: &cancellable)
