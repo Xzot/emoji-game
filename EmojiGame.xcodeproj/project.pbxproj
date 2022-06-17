@@ -270,6 +270,7 @@
 		378892F7276F2B2800B3D96C /* emoji_pouting_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 37889213276F2B2700B3D96C /* emoji_pouting_face.png */; };
 		378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378892FA276F31A600B3D96C /* EmojiItemsModel.swift */; };
 		37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */; };
+		379332BA285C414000EECCCA /* GameTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379332B9285C414000EECCCA /* GameTimeModel.swift */; };
 		37CFF59927B87DDC00691D8C /* InfiniteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CFF59827B87DDC00691D8C /* InfiniteButton.swift */; };
 		37D602A4277F29BE0076CD06 /* DeclarativeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */; };
 		37D602A6277F2D000076CD06 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D602A5277F2D000076CD06 /* UIViewController+.swift */; };
@@ -598,6 +599,7 @@
 		37889213276F2B2700B3D96C /* emoji_pouting_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_pouting_face.png; sourceTree = "<group>"; };
 		378892FA276F31A600B3D96C /* EmojiItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItemsModel.swift; sourceTree = "<group>"; };
 		37889303276F955A00B3D96C /* DefaultsKeys+Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Global.swift"; sourceTree = "<group>"; };
+		379332B9285C414000EECCCA /* GameTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeModel.swift; sourceTree = "<group>"; };
 		37CFF59827B87DDC00691D8C /* InfiniteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteButton.swift; sourceTree = "<group>"; };
 		37D602A3277F29BE0076CD06 /* DeclarativeOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeOperator.swift; sourceTree = "<group>"; };
 		37D602A5277F2D000076CD06 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				3788912D276F2B0200B3D96C /* EmojiModel.swift */,
 				378892FA276F31A600B3D96C /* EmojiItemsModel.swift */,
 				37D602E027833AD60076CD06 /* GameScoreModel.swift */,
+				379332B9285C414000EECCCA /* GameTimeModel.swift */,
 				37D602E6278374250076CD06 /* GameModel.swift */,
 			);
 			path = Models;
@@ -1706,6 +1709,7 @@
 				378892FB276F31A600B3D96C /* EmojiItemsModel.swift in Sources */,
 				37D602EF27838B2F0076CD06 /* Queue.swift in Sources */,
 				3722803B2771305100466B64 /* MainViewController.swift in Sources */,
+				379332BA285C414000EECCCA /* GameTimeModel.swift in Sources */,
 				37D6030B278A20DA0076CD06 /* Array+.swift in Sources */,
 				3738340D27943A050054A23E /* GASProvider.swift in Sources */,
 				37D602D12781177E0076CD06 /* SwapChildViewController.swift in Sources */,

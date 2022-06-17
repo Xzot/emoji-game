@@ -20,7 +20,7 @@ final class GameScoreLabel: UIView {
     private var animationId = ""
     
     // MARK: UI
-    private lazy var startView = UIImageView(image: Asset.Images.gameScoreStar.image)
+    private lazy var starImageView = UIImageView(image: Asset.Images.gameScoreStar.image)
     private lazy var scoreLabel = UILabel()&>.do {
         $0.font = .quicksand(
             ofSize: max(28, 32 * UIDevice.sizeFactor),
@@ -39,10 +39,10 @@ final class GameScoreLabel: UIView {
     init(_ score: GameScorePublisher) {
         super.init(frame: .zero)
         
-        addSubview(startView)
-        startView.centerYToSuperview()
-        startView.leftToSuperview()
-        startView.size(
+        addSubview(starImageView)
+        starImageView.centerYToSuperview()
+        starImageView.leftToSuperview()
+        starImageView.size(
             CGSize(
                 width: 22,
                 height: 22
@@ -51,7 +51,7 @@ final class GameScoreLabel: UIView {
         
         addSubview(scoreLabel)
         scoreLabel.verticalToSuperview()
-        scoreLabel.leftToRight(of: startView, offset: 8)
+        scoreLabel.leftToRight(of: starImageView, offset: 8)
         
         addSubview(addedScoreLabel)
         addedScoreLabel.verticalToSuperview()

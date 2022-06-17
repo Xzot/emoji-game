@@ -21,6 +21,10 @@ typealias IntState = CurrentValueSubject<Int?, Never>
 typealias ImagePublisher = AnyPublisher<UIImage?, Never>
 typealias ImageState = CurrentValueSubject<UIImage?, Never>
 
+// MARK: Time
+typealias GameTimePublisher = AnyPublisher<GameTimeModel, Never>
+typealias GameTimeState = CurrentValueSubject<GameTimeModel, Never>
+
 // MARK: Score
 typealias GameScorePublisher = AnyPublisher<GameScoreModel, Never>
 typealias GameScoreState = CurrentValueSubject<GameScoreModel, Never>

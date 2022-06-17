@@ -21,7 +21,7 @@ extension GameViewModel {
     var score: GameScorePublisher {
         scoreState.eraseToAnyPublisher()
     }
-    var time: IntPublisher {
+    var time: GameTimePublisher {
         timeState.eraseToAnyPublisher()
     }
     
@@ -70,7 +70,7 @@ extension GameViewModel {
     
     func viewDidAppear() {
         shouldStartTimeCount = true
-        timeState.value == 0 ? timeState.send(AppConstants.startGameTime) : nil
+        timeState.value.new == 0 ? timeState.send(.init(old: nil, new: AppConstants.startGameTime)) : nil
         scheduler.isInvalidated ? scheduler.restart() : nil
     }
     
@@ -118,7 +118,9 @@ final class GameViewModel {
     private lazy var scoreState = GameScoreState(
         .init(old: nil, new: self.scoreHandler.score)
     )
-    private let timeState = IntState(AppConstants.startGameTime)
+    private let timeState = GameTimeState(
+        .init(old: nil, new: AppConstants.startGameTime)
+    )
     // Top
     private let topLeftState = GOPIVMState(nil)
     private let topCenterState = GOPIVMState(nil)
@@ -187,11 +189,11 @@ private extension GameViewModel {
         
         timeState
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] timeValue in
+            .sink { [weak self] time in
                 guard
                     let self = self,
                     Defaults[\.shouldShowTutorial] == true,
-                    timeValue == 8 else {
+                    time.new == 8 else {
                         return
                     }
                 Defaults[\.shouldShowTutorial] = false
@@ -216,12 +218,12 @@ private extension GameViewModel {
                 guard
                     self?.gameModelInUse != nil,
                     self?.shouldStartTimeCount == true,
-                    let oldTime = self?.timeState.value else {
+                    let oldTime = self?.timeState.value.new else {
                         return
                     }
                 let newTime = oldTime - 1
                 if newTime >= 0 {
-                    self?.timeState.send(newTime)
+                    self?.timeState.send(.init(old: oldTime, new: newTime))
                 } else {
                     self?.gameOver()
                 }
@@ -231,7 +233,7 @@ private extension GameViewModel {
     
     func handle(_ gameModel: GameModel?) {
         if gameType == .infinite {
-            gameModelInUse != nil ? timeState.send(AppConstants.startGameTime) : nil
+            gameModelInUse != nil ? timeState.send(.init(old: nil, new: AppConstants.startGameTime)) : nil
         }
         gameModelInUse = gameModel
         
@@ -307,20 +309,20 @@ private extension GameViewModel {
             haptic.impact(as: .rightSelection)
             scoreHandler.userDidGuess()
             if gameType == .timeAttack {
-                if (timeState.value ?? 0) + 1 > 10 {
-                    timeState.send(10)
+                if timeState.value.new + 1 > 10 {
+                    timeState.send(.init(old: nil, new: 10))
                 } else {
-                    timeState.send((timeState.value ?? 0) + 1)
+                    timeState.send(.init(old: timeState.value.new, new: timeState.value.new + 1))
                 }
             }
         } else {
             haptic.impact(as: .wrongSelection)
             scoreHandler.userDidNotGuess()
             if gameType == .timeAttack {
-                if (timeState.value ?? 2) - 2 <= 0 {
+                if timeState.value.new - 2 <= 0 {
                     gameOver()
                 }
-                timeState.send((timeState.value ?? 2) - 2)
+                timeState.send(.init(old: timeState.value.new, new: timeState.value.new - 2))
             }
         }
         gameDataProvider.handleModelSelection(model)
@@ -357,6 +359,6 @@ extension GameViewModel: FinalListener {
     }
     
     func resetTime() {
-        timeState.send(AppConstants.startGameTime)
+        timeState.send(.init(old: nil, new: AppConstants.startGameTime))
     }
 }

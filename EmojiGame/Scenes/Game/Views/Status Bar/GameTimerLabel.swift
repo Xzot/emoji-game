@@ -13,10 +13,15 @@ import TinyConstraints
 final class GameTimerLabel: UIView {
     // MARK: Properties
     private var cancellable = Set<AnyCancellable>()
+    @ThreadSafe(
+        wrappedValue: nil,
+        queue: DispatchQueue.global(qos: .userInitiated)
+    ) private var latestUsedScore: GameTimeModel?
+    private var animationId = ""
     
     // MARK: UI
     private lazy var timerImage = UIImageView(image: Asset.Images.gameTimer.image)
-    private lazy var label = UILabel()&>.do {
+    private lazy var timeLabel = UILabel()&>.do {
         $0.font = .quicksand(
             ofSize: max(28, 32 * UIDevice.sizeFactor),
             weight: .bold
@@ -24,9 +29,15 @@ final class GameTimerLabel: UIView {
         $0.textColor = Asset.Palette.black.color
         $0.textAlignment = .left
     }
+    private lazy var addedTimeLabel = UILabel()&>.do {
+        $0.font = .quicksand(
+            ofSize: max(28, 32 * UIDevice.sizeFactor),
+            weight: .bold
+        )
+    }
     
     // MARK: Life Cycle
-    init(_ timeValuePublisher: IntPublisher) {
+    init(_ timePublisher: GameTimePublisher) {
         super.init(frame: .zero)
         
         addSubview(timerImage)
@@ -34,20 +45,65 @@ final class GameTimerLabel: UIView {
         timerImage.leftToSuperview()
         timerImage.size(CGSize(width: 24, height: 24))
         
-        addSubview(label)
-        label.verticalToSuperview()
-        label.leftToRight(of: timerImage, offset: 8)
-        label.rightToSuperview()
+        addSubview(timeLabel)
+        timeLabel.verticalToSuperview()
+        timeLabel.leftToRight(of: timerImage, offset: 8)
         
-        timeValuePublisher
+        addSubview(addedTimeLabel)
+        addedTimeLabel.verticalToSuperview()
+        addedTimeLabel.leftToRight(of: timeLabel, offset: 8)
+        addedTimeLabel.rightToSuperview(relation: .equalOrLess)
+        
+        timePublisher
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] newTimeValue in
-                self?.label.text = String(newTimeValue ?? 0)
+            .sink { [weak self] time in
+                self?.handle(new: time)
             }
             .store(in: &cancellable)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension GameTimerLabel {
+    func handle(new score: GameTimeModel?) {
+        _latestUsedScore.mutate { $0 = score }
+        
+        guard let score = score else {
+            timeLabel.text = "0"
+            return
+        }
+        timeLabel.text = String(score.new)
+        setAddedScoreLabel(score.new - (score.old ?? 0))
+    }
+    
+    func setAddedScoreLabel(_ diff: Int) {
+        guard diff != -1, diff < 5 else {
+            return
+        }
+        let aId = UUID().uuidString + ":" + String(Date().timeIntervalSince1970)
+        animationId = aId
+        var scoreText = ""
+        if diff > 0 {
+            addedTimeLabel.textColor = Asset.Palette.jungleGreen.color
+            scoreText = "+" + String(diff)
+        } else if diff < 0 {
+            addedTimeLabel.textColor = Asset.Palette.burntSienna.color
+            scoreText = String(diff)
+        }
+        addedTimeLabel.scoreUpdateAnimated(text: scoreText) { [weak self] in
+            guard
+                let self = self,
+                self.animationId == aId
+            else { return }
+            UIView.animateKeyframes(
+                withDuration: AppConstants.Animation.shortDuration,
+                delay: AppConstants.Animation.shortDelay
+            ) { [weak self] in
+                self?.addedTimeLabel.alpha = 0
+            } completion: { _ in }
+        }
     }
 }

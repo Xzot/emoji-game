@@ -42,7 +42,7 @@ final class GameStatusBar: UIView {
         addSubview(timerLabel)
         timerLabel.verticalToSuperview()
         timerLabel.rightToSuperview()
-        timerLabel.widthToSuperview(multiplier: 0.225)
+        timerLabel.widthToSuperview(multiplier: 0.3)
         
         scoreLabel.rightToLeft(of: timerLabel)
     }
