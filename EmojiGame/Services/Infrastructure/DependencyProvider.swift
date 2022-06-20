@@ -39,6 +39,16 @@ final class DependencyAssembly {
             .inObjectScope(.container)
         
         container.register(
+            NoAdsPurchaseCheatService.self,
+            factory: { resolver in
+                NoAdsPurchaseCheatService(
+                    globalAppStateProvider: resolver.resolve(GASProvider.self)!,
+                    hapticEngine: resolver.resolve(HapticService.self)!
+                )
+            }
+        )
+        
+        container.register(
             AppAdService.self,
             factory: { _ in
                 AppAdService()

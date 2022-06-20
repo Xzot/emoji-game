@@ -11,6 +11,7 @@
 		3722803B2771305100466B64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280372771305100466B64 /* MainViewController.swift */; };
 		3722803C2771305100466B64 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280382771305100466B64 /* MainBuilder.swift */; };
 		3722803D2771305100466B64 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280392771305100466B64 /* MainViewModel.swift */; };
+		372E5CD82860579C002D8658 /* NoAdsPurchaseCheatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E5CD72860579C002D8658 /* NoAdsPurchaseCheatService.swift */; };
 		372F2A232791C7C10066E051 /* AppAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F2A222791C7C10066E051 /* AppAdService.swift */; };
 		3738340B279405320054A23E /* GameModelsInUseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738340A279405320054A23E /* GameModelsInUseChecker.swift */; };
 		3738340D27943A050054A23E /* GASProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738340C27943A050054A23E /* GASProvider.swift */; };
@@ -338,6 +339,7 @@
 		372280372771305100466B64 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		372280382771305100466B64 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		372280392771305100466B64 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		372E5CD72860579C002D8658 /* NoAdsPurchaseCheatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAdsPurchaseCheatService.swift; sourceTree = "<group>"; };
 		372F2A222791C7C10066E051 /* AppAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdService.swift; sourceTree = "<group>"; };
 		3738340A279405320054A23E /* GameModelsInUseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelsInUseChecker.swift; sourceTree = "<group>"; };
 		3738340C27943A050054A23E /* GASProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASProvider.swift; sourceTree = "<group>"; };
@@ -1244,6 +1246,7 @@
 			isa = PBXGroup;
 			children = (
 				37F8D64127A2B50D00C780F6 /* NoAdsPurchaseService.swift */,
+				372E5CD72860579C002D8658 /* NoAdsPurchaseCheatService.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
@@ -1694,6 +1697,7 @@
 				37D60304278859E80076CD06 /* TimeUpdater.swift in Sources */,
 				37E330CC278D551A007DE487 /* FinalViewModel.swift in Sources */,
 				37E330CA278D551A007DE487 /* FinalViewController.swift in Sources */,
+				372E5CD82860579C002D8658 /* NoAdsPurchaseCheatService.swift in Sources */,
 				37889304276F955A00B3D96C /* DefaultsKeys+Global.swift in Sources */,
 				37E330CF278F5AA8007DE487 /* FinalSceneBar.swift in Sources */,
 				37D602EA27837CBF0076CD06 /* GameDataService.swift in Sources */,

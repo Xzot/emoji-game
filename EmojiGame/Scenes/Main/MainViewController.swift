@@ -84,7 +84,14 @@ final class MainViewController: SwapChildViewController {
         )
         $0.addTarget(
             self,
-            action: #selector(handleButtonTap),
+            action: #selector(handleRestoreButtonTap),
+            for: .touchUpInside
+        )
+    }
+    private lazy var cheatButton = UIButton()&>.do {
+        $0.addTarget(
+            self,
+            action: #selector(handleCheatButtonTap),
             for: .touchUpInside
         )
     }
@@ -185,6 +192,11 @@ final class MainViewController: SwapChildViewController {
         restoreButton.topToSuperview(usingSafeArea: true)
         restoreButton.leftToSuperview(offset: 16, usingSafeArea: true)
         
+        view.addSubview(cheatButton)
+        cheatButton.size(CGSize(width: 160, height: 40))
+        cheatButton.topToSuperview(usingSafeArea: true)
+        cheatButton.rightToSuperview(offset: -16, usingSafeArea: true)
+        
         imageView.prepareForAnimation(
             withGIFNamed: "main_emojis",
             completionHandler: nil
@@ -211,8 +223,13 @@ final class MainViewController: SwapChildViewController {
 // MARK: - Private
 private extension MainViewController {
     @objc
-    func handleButtonTap() {
+    func handleRestoreButtonTap() {
         viewModel.restoreNoAdsTapped()
+    }
+    
+    @objc
+    func handleCheatButtonTap() {
+        viewModel.cheatTapped()
     }
     
     func bind() {

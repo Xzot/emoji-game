@@ -25,6 +25,7 @@ final class MainViewModel {
     private let haptic: HapticService
     private let appStateProvider: GASProvider
     private let purchaseService: NoAdsPurchaseService
+    private let purchaseCheatService: NoAdsPurchaseCheatService
     private var cancellables: [AnyCancellable] = []
     
     // MARK: Life Cycle
@@ -34,6 +35,7 @@ final class MainViewModel {
         self.haptic = provider.get(HapticService.self)
         self.appStateProvider = provider.get(GASProvider.self)
         self.purchaseService = provider.get(NoAdsPurchaseService.self)
+        self.purchaseCheatService = provider.get(NoAdsPurchaseCheatService.self)
     }
     
     // MARK: API
@@ -64,5 +66,9 @@ final class MainViewModel {
     func soundTapped() {
         appStateProvider.revert(.isSoundsHidden)
         haptic.impact(as: .defaultTap)
+    }
+    
+    func cheatTapped() {
+        purchaseCheatService.increaseCounter()
     }
 }
