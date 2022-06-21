@@ -12,6 +12,17 @@
 		3722803C2771305100466B64 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280382771305100466B64 /* MainBuilder.swift */; };
 		3722803D2771305100466B64 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372280392771305100466B64 /* MainViewModel.swift */; };
 		372E5CD82860579C002D8658 /* NoAdsPurchaseCheatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E5CD72860579C002D8658 /* NoAdsPurchaseCheatService.swift */; };
+		372E5CE828618514002D8658 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CE728618514002D8658 /* FirebaseAnalyticsSwift */; };
+		372E5CEA28618514002D8658 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CE928618514002D8658 /* FirebaseAuth */; };
+		372E5CEC28618514002D8658 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CEB28618514002D8658 /* FirebaseCrashlytics */; };
+		372E5CEE28618514002D8658 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CED28618514002D8658 /* FirebaseFirestoreSwift */; };
+		372E5CF028618514002D8658 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CEF28618514002D8658 /* FirebasePerformance */; };
+		372E5CFB28618A35002D8658 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CFA28618A35002D8658 /* Gifu */; };
+		372E5CFE28618E2E002D8658 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5CFD28618E2E002D8658 /* TinyConstraints */; };
+		372E5D0128618E7F002D8658 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5D0028618E7F002D8658 /* SwiftyUserDefaults */; };
+		372E5D0428618F59002D8658 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5D0328618F59002D8658 /* GoogleMobileAds */; };
+		372E5D0728618FAB002D8658 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5D0628618FAB002D8658 /* SwiftyStoreKit */; };
+		372E5D0A28619008002D8658 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 372E5D0928619008002D8658 /* Swinject */; };
 		372F2A232791C7C10066E051 /* AppAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F2A222791C7C10066E051 /* AppAdService.swift */; };
 		3738340B279405320054A23E /* GameModelsInUseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738340A279405320054A23E /* GameModelsInUseChecker.swift */; };
 		3738340D27943A050054A23E /* GASProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738340C27943A050054A23E /* GASProvider.swift */; };
@@ -330,11 +341,9 @@
 		37E330D127906549007DE487 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330D027906549007DE487 /* ContinueButton.swift */; };
 		37E330D327917718007DE487 /* GameOverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E330D227917718007DE487 /* GameOverButton.swift */; };
 		37F8D64227A2B50E00C780F6 /* NoAdsPurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8D64127A2B50D00C780F6 /* NoAdsPurchaseService.swift */; };
-		5F23F91FFD1AEE02A884F56B /* Pods_EmojiGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FB4FD6B8D38641234D3ED /* Pods_EmojiGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		011E110A3CBE6E34CE104BE0 /* Pods-emoji-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.release.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.release.xcconfig"; sourceTree = "<group>"; };
 		372280362771305100466B64 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		372280372771305100466B64 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		372280382771305100466B64 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
@@ -660,10 +669,6 @@
 		37E330D027906549007DE487 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		37E330D227917718007DE487 /* GameOverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverButton.swift; sourceTree = "<group>"; };
 		37F8D64127A2B50D00C780F6 /* NoAdsPurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAdsPurchaseService.swift; sourceTree = "<group>"; };
-		599FB4FD6B8D38641234D3ED /* Pods_EmojiGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F055B13AD6FAE087700971F /* Pods-EmojiGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiGame.release.xcconfig"; path = "Target Support Files/Pods-EmojiGame/Pods-EmojiGame.release.xcconfig"; sourceTree = "<group>"; };
-		6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emoji-game.debug.xcconfig"; path = "Target Support Files/Pods-emoji-game/Pods-emoji-game.debug.xcconfig"; sourceTree = "<group>"; };
-		F9A00AEC8774C6290564B75E /* Pods-EmojiGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiGame.debug.xcconfig"; path = "Target Support Files/Pods-EmojiGame/Pods-EmojiGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -671,7 +676,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F23F91FFD1AEE02A884F56B /* Pods_EmojiGame.framework in Frameworks */,
+				372E5CFE28618E2E002D8658 /* TinyConstraints in Frameworks */,
+				372E5CEC28618514002D8658 /* FirebaseCrashlytics in Frameworks */,
+				372E5CE828618514002D8658 /* FirebaseAnalyticsSwift in Frameworks */,
+				372E5D0728618FAB002D8658 /* SwiftyStoreKit in Frameworks */,
+				372E5D0428618F59002D8658 /* GoogleMobileAds in Frameworks */,
+				372E5D0A28619008002D8658 /* Swinject in Frameworks */,
+				372E5CF028618514002D8658 /* FirebasePerformance in Frameworks */,
+				372E5CEA28618514002D8658 /* FirebaseAuth in Frameworks */,
+				372E5CEE28618514002D8658 /* FirebaseFirestoreSwift in Frameworks */,
+				372E5CFB28618A35002D8658 /* Gifu in Frameworks */,
+				372E5D0128618E7F002D8658 /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,8 +753,6 @@
 			children = (
 				378890CE276F229500B3D96C /* EmojiGame */,
 				378890CD276F229500B3D96C /* Products */,
-				B72B37EFBFF69AA655F25377 /* Pods */,
-				A32A26C25B13BD27FA18EF69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1251,25 +1264,6 @@
 			path = Purchases;
 			sourceTree = "<group>";
 		};
-		A32A26C25B13BD27FA18EF69 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				599FB4FD6B8D38641234D3ED /* Pods_EmojiGame.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B72B37EFBFF69AA655F25377 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6306EBC2E6A2FD3BEFE0E720 /* Pods-emoji-game.debug.xcconfig */,
-				011E110A3CBE6E34CE104BE0 /* Pods-emoji-game.release.xcconfig */,
-				F9A00AEC8774C6290564B75E /* Pods-EmojiGame.debug.xcconfig */,
-				5F055B13AD6FAE087700971F /* Pods-EmojiGame.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1277,11 +1271,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 378890F6276F229700B3D96C /* Build configuration list for PBXNativeTarget "EmojiGame" */;
 			buildPhases = (
-				1DB8BEC067D163AC66A79863 /* [CP] Check Pods Manifest.lock */,
 				378890C8276F229500B3D96C /* Sources */,
 				378890C9276F229500B3D96C /* Frameworks */,
 				378890CA276F229500B3D96C /* Resources */,
-				155AB31E14573A09C3759123 /* [CP] Embed Pods Frameworks */,
 				3754811C27710193003C3E16 /* SwiftGen */,
 				37B0DD7527B7ECA8001C14FA /* Firebase dsym */,
 			);
@@ -1290,6 +1282,19 @@
 			dependencies = (
 			);
 			name = EmojiGame;
+			packageProductDependencies = (
+				372E5CE728618514002D8658 /* FirebaseAnalyticsSwift */,
+				372E5CE928618514002D8658 /* FirebaseAuth */,
+				372E5CEB28618514002D8658 /* FirebaseCrashlytics */,
+				372E5CED28618514002D8658 /* FirebaseFirestoreSwift */,
+				372E5CEF28618514002D8658 /* FirebasePerformance */,
+				372E5CFA28618A35002D8658 /* Gifu */,
+				372E5CFD28618E2E002D8658 /* TinyConstraints */,
+				372E5D0028618E7F002D8658 /* SwiftyUserDefaults */,
+				372E5D0328618F59002D8658 /* GoogleMobileAds */,
+				372E5D0628618FAB002D8658 /* SwiftyStoreKit */,
+				372E5D0928619008002D8658 /* Swinject */,
+			);
 			productName = "emoji-game";
 			productReference = 378890CC276F229500B3D96C /* EmojiGame.app */;
 			productType = "com.apple.product-type.application";
@@ -1318,6 +1323,17 @@
 				Base,
 			);
 			mainGroup = 378890C3276F229500B3D96C;
+			packageReferences = (
+				372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				372E5CF22861864E002D8658 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				372E5CF328618790002D8658 /* XCRemoteSwiftPackageReference "SwiftGen" */,
+				372E5CF928618A35002D8658 /* XCRemoteSwiftPackageReference "Gifu" */,
+				372E5CFC28618E2D002D8658 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				372E5CFF28618E7F002D8658 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
+				372E5D0228618F59002D8658 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				372E5D0528618FAB002D8658 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+				372E5D0828619008002D8658 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 378890CD276F229500B3D96C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1582,45 +1598,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		155AB31E14573A09C3759123 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EmojiGame/Pods-EmojiGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EmojiGame/Pods-EmojiGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmojiGame/Pods-EmojiGame-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1DB8BEC067D163AC66A79863 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EmojiGame-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3754811C27710193003C3E16 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1657,7 +1634,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1888,7 +1865,6 @@
 		};
 		378890F7276F229700B3D96C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9A00AEC8774C6290564B75E /* Pods-EmojiGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1922,7 +1898,6 @@
 		};
 		378890F8276F229700B3D96C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F055B13AD6FAE087700971F /* Pods-EmojiGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1975,6 +1950,139 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		372E5CF22861864E002D8658 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		372E5CF328618790002D8658 /* XCRemoteSwiftPackageReference "SwiftGen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftGen/SwiftGen.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		372E5CF928618A35002D8658 /* XCRemoteSwiftPackageReference "Gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/Gifu.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		372E5CFC28618E2D002D8658 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		372E5CFF28618E7F002D8658 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		372E5D0228618F59002D8658 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		372E5D0528618FAB002D8658 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		372E5D0828619008002D8658 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		372E5CE728618514002D8658 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		372E5CE928618514002D8658 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		372E5CEB28618514002D8658 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		372E5CED28618514002D8658 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		372E5CEF28618514002D8658 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CE628618514002D8658 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		372E5CFA28618A35002D8658 /* Gifu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CF928618A35002D8658 /* XCRemoteSwiftPackageReference "Gifu" */;
+			productName = Gifu;
+		};
+		372E5CFD28618E2E002D8658 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CFC28618E2D002D8658 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
+		372E5D0028618E7F002D8658 /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5CFF28618E7F002D8658 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+		372E5D0328618F59002D8658 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5D0228618F59002D8658 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		372E5D0628618FAB002D8658 /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5D0528618FAB002D8658 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
+		};
+		372E5D0928619008002D8658 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 372E5D0828619008002D8658 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 378890C4276F229500B3D96C /* Project object */;
 }

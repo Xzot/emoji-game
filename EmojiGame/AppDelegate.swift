@@ -6,8 +6,12 @@
 //
 
 import UIKit
-import Firebase
 import GoogleMobileAds
+
+import Firebase
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
