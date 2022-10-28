@@ -75,7 +75,8 @@ extension GameViewModel {
     }
     
     func fetchNextGameModel() {
-        adsCounter += 1
+        // TODO Return after fixing AdMob Problem
+        /* adsCounter += 1
         if adsCounter > 10 && appStateProvider.isHiddenValue(for: .isAdsHidden) == false {
             adsCounter = 0
             shouldStartTimeCount = false
@@ -83,8 +84,10 @@ extension GameViewModel {
                 self?.gameDataProvider.nextGame()
             }
         } else {
-            gameDataProvider.nextGame()
+            
         }
+        */
+        gameDataProvider.nextGame()
     }
 }
 
@@ -110,7 +113,7 @@ final class GameViewModel {
     private let haptic: HapticService
     private var shouldStartTimeCount: Bool = false
     private var gameModelInUse: GameModel?
-    private var adsCounter: Int = 0
+//    private var adsCounter: Int = 0
     let gameType: GameType
     
     // MARK: - State
