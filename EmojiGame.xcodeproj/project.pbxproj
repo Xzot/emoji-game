@@ -1255,7 +1255,6 @@
 				EBABCD2505A0B5DBA0C2C6C6 /* Pods-EmojiGame.debug.xcconfig */,
 				7BFFC5E19ACC66003354BBA1 /* Pods-EmojiGame.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1617,6 +1616,7 @@
 		};
 		37B0DD7527B7ECA8001C14FA /* Firebase dsym */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1633,7 +1633,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		3B8BDAD34C69E8E046B7F518 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

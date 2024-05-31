@@ -82,8 +82,6 @@ private extension NoAdsPurchaseService {
                 self?.state.set(isHidden: true, for: .isAdsHidden)
             case .error(_):
                 break
-            case .deferred(purchase: _):
-                break
             }
             self?.isInPurchaseAction = false
         }

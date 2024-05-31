@@ -12,31 +12,37 @@ public extension UIDevice {
     static var sizeType: SizeType {
         if UIDevice.current.userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
+            case 960:
+                return .iPhone4
             case 1136:
-                return .iPhone_5_5S_5C_SE1
+                return .iPhone5_SE
             case 1334:
-                return .iPhone_6_6S_7_8_SE2
-            case 1920, 2208:
-                return .iPhone_6Plus_6SPlus_7Plus_8Plus
-            case 2340:
-                return .iPhone_13mini
-            case 2436:
-                return .iPhone_X_XS_11Pro_12mini
-            case 2532:
-                return .iPhone_12Pro
-            case 2688:
-                return .iPhone_XSMax_11ProMax
-            case 2778:
-                return .iPhone_12ProMax
+                return .iPhone6_7_8_SE2_SE3
             case 1792:
-                return .iPhone_XR_11
+                return .iPhoneXr_11
+            case 1920:
+                return .iPhone6Plus_7Plus_8Plus
+            case 2340:
+                return .iPhone12Mini_13Mini
+            case 2436:
+                return .iPhoneX_XS_11Pro
+            case 2532:
+                return .iPhone12Pro_12_13Pro_13_14
+            case 2556:
+                return .iPhone14Pro
+            case 2688:
+                return .iPhoneXsMax_11ProMax
+            case 2778:
+                return .iPhone12ProMax_13ProMax_14Plus
+            case 2796:
+                return .iPhone14ProMax
             default:
                 assertionFailure("Unsupported phone device detected!")
-                return .iPhone_6_6S_7_8_SE2
+                return .iPhone6_7_8_SE2_SE3
             }
         } else {
             assertionFailure("Unsupported idiom device detected!")
-            return .iPhone_6_6S_7_8_SE2
+            return .iPhone6_7_8_SE2_SE3
         }
     }
     
@@ -49,45 +55,50 @@ public extension UIDevice {
     }
     
     static var isSmall: Bool {
-        return sizeType == .iPhone_5_5S_5C_SE1
+        return sizeType == .iPhone5_SE || sizeType == .iPhone4
     }
     
     static func value<T>(from values: [SizeType: T], defaultValue: T? = nil) -> T {
         // swiftlint:disable:next force_unwrapping
-        return values[Self.sizeType] ?? defaultValue ?? values[.iPhone_6_6S_7_8_SE2]!
+        return values[Self.sizeType] ?? defaultValue ?? values[.iPhone6_7_8_SE2_SE3]!
     }
     
     static let sizeFactor: CGFloat = sizeFactorFor(sizeType: UIDevice.sizeType)
     static func sizeFactorFor(sizeType: SizeType) -> CGFloat {
-        return sizeType == SizeType.iPhone_X_XS_11Pro_12mini
-            || sizeType == SizeType.iPhone_XSMax_11ProMax
-            || sizeType == SizeType.iPhone_XR_11 ?
-            UIScreen.main.bounds.width / 375 :
-            UIScreen.main.bounds.height / 812
+        return sizeType == SizeType.iPhoneX_XS_11Pro
+        || sizeType == SizeType.iPhone12Mini_13Mini
+        || sizeType == SizeType.iPhoneXsMax_11ProMax
+        || sizeType == SizeType.iPhoneXr_11 ?
+        UIScreen.main.bounds.width / 375 :
+        UIScreen.main.bounds.height / 812
     }
 }
 
 // MARK: - SizeType
 public extension UIDevice {
     enum SizeType: String, CaseIterable {
-        case iPhone_5_5S_5C_SE1
-        case iPhone_6_6S_7_8_SE2
-        case iPhone_6Plus_6SPlus_7Plus_8Plus
-        
-        case iPhone_X_XS_11Pro_12mini
-        case iPhone_13mini
-        case iPhone_XR_11
-        case iPhone_XSMax_11ProMax
-        case iPhone_12Pro
-        case iPhone_12ProMax
+        case iPhone4
+        case iPhone5_SE
+        case iPhone6_7_8_SE2_SE3
+        case iPhoneXr_11
+        case iPhone6Plus_7Plus_8Plus
+        case iPhone12Mini_13Mini
+        case iPhoneX_XS_11Pro
+        case iPhone12Pro_12_13Pro_13_14
+        case iPhone14Pro
+        case iPhoneXsMax_11ProMax
+        case iPhone12ProMax_13ProMax_14Plus
+        case iPhone14ProMax
         
         static var notch: [SizeType] = [
-            iPhone_X_XS_11Pro_12mini,
-            iPhone_13mini,
-            iPhone_XR_11,
-            iPhone_XSMax_11ProMax,
-            iPhone_12Pro,
-            iPhone_12ProMax,
+            iPhoneXr_11,
+            iPhone12Mini_13Mini,
+            iPhoneX_XS_11Pro,
+            iPhone12Pro_12_13Pro_13_14,
+            iPhone14Pro,
+            iPhoneXsMax_11ProMax,
+            iPhone12ProMax_13ProMax_14Plus,
+            iPhone14ProMax
         ]
     }
 }
