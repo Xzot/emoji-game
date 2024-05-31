@@ -1957,7 +1957,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 10.0.0;
 			};
 		};
 		372E5CF22861864E002D8658 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -2004,8 +2004,9 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = versionRange;
+				maximumVersion = 100.0.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 		372E5D0528618FAB002D8658 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
